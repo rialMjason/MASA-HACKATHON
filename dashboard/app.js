@@ -1,11 +1,12 @@
 // Initialize map
 const map = L.map('map').setView([10, 108], 5);
 
-// Add base map layer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors',
-    maxZoom: 19,
-    minZoom: 3
+// Add Google Maps tile layer
+L.tileLayer('https://{s}.google.com/maps/vt/lyrs=m@221097413,padmc@221205649&hl=en&src=apk&apn=com.google.android.apps.maps&pn=com.google.maps.android&x={x}&y={y}&z={z}&s=Galile', {
+    minZoom: 0,
+    maxZoom: 21,
+    attribution: '© Google Maps',
+    subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
 }).addTo(map);
 
 // Color scheme for markers
