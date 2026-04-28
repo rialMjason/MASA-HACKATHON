@@ -34,8 +34,8 @@ function createFlagIcon(country) {
                         </div>
                         <div class="ball-shine"></div>
                     </div>`,
-            iconSize: [80, 80],
-            iconAnchor: [40, 40],
+            iconSize: [64, 64],
+            iconAnchor: [32, 32],
             popupAnchor: [0, -40]
         });
     } else {
@@ -48,8 +48,8 @@ function createFlagIcon(country) {
                         </div>
                         <div class="ball-shine"></div>
                     </div>`,
-            iconSize: [80, 80],
-            iconAnchor: [40, 40],
+            iconSize: [64, 64],
+            iconAnchor: [32, 32],
             popupAnchor: [0, -40]
         });
     }
@@ -73,7 +73,7 @@ function initializeMarkers() {
         // Hover effect
         marker.on('mouseover', function() {
             this.setZIndexOffset(1001);
-            this.getElement().querySelector('.flag-ball').style.transform = 'scale(1.4)';
+            this.getElement().querySelector('.flag-ball').style.transform = 'scale(1.25)';
             this.getElement().querySelector('.flag-ball').style.boxShadow = '0 16px 32px rgba(102, 126, 234, 0.7), inset -2px -2px 8px rgba(0, 0, 0, 0.15)';
         });
 
@@ -97,6 +97,13 @@ function selectCountry(country) {
 
     // Update info panel
     document.getElementById('countryName').textContent = country.name;
+    const countryFlagPreview = document.getElementById('countryFlagPreview');
+    const countryFlagImage = document.getElementById('countryFlagImage');
+    if (countryFlagPreview && countryFlagImage && country.flagUrl) {
+        countryFlagImage.src = country.flagUrl;
+        countryFlagImage.alt = `${country.name} national flag`;
+        countryFlagPreview.classList.add('visible');
+    }
     document.getElementById('placeholderText').style.display = 'none';
     document.getElementById('countryDetails').style.display = 'block';
     document.getElementById('backButton').classList.remove('hidden');
@@ -169,7 +176,7 @@ function moveMarkerToTopRight(country) {
     if (!marker || !currentCountry || currentCountry.code !== country.code) return;
 
     // Get current map bounds and convert top-right pixel to coordinates
-    const topRightPixel = L.point(map.getSize().x - 60, 60); // 60px from top-right corner
+    const topRightPixel = L.point(map.getSize().x - 55, 55); // 55px from top-right corner
     const topRightCoords = map.containerPointToLatLng(topRightPixel);
     
     // Update marker position
@@ -241,6 +248,14 @@ document.getElementById('backButton').addEventListener('click', function() {
     currentCountry = null;
 
     document.getElementById('countryName').textContent = 'Southeast Asia Dashboard';
+    const countryFlagPreview = document.getElementById('countryFlagPreview');
+    const countryFlagImage = document.getElementById('countryFlagImage');
+    if (countryFlagPreview) {
+        countryFlagPreview.classList.remove('visible');
+    }
+    if (countryFlagImage) {
+        countryFlagImage.removeAttribute('src');
+    }
     document.getElementById('placeholderText').style.display = 'block';
     document.getElementById('countryDetails').style.display = 'none';
     document.getElementById('backButton').classList.add('hidden');
@@ -270,8 +285,8 @@ style.innerHTML = `
     }
 
     .flag-ball {
-        width: 80px;
-        height: 80px;
+        width: 64px;
+        height: 64px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -288,8 +303,8 @@ style.innerHTML = `
 
     .flag-image-container {
         position: absolute;
-        width: 76px;
-        height: 76px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         overflow: hidden;
         top: 50%;
@@ -315,7 +330,7 @@ style.innerHTML = `
     }
 
     .flag-emoji {
-        font-size: 48px;
+        font-size: 36px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -325,12 +340,12 @@ style.innerHTML = `
 
     .ball-shine {
         position: absolute;
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
         background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.8), transparent);
         border-radius: 50%;
-        top: 8px;
-        left: 8px;
+        top: 7px;
+        left: 7px;
         pointer-events: none;
         z-index: 4;
     }

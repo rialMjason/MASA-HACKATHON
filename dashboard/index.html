@@ -115,6 +115,40 @@
             color: #333;
         }
 
+        .country-flag-preview {
+            display: none;
+            margin-bottom: 18px;
+            padding: 14px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #eef2ff 100%);
+            border: 1px solid #dde3f0;
+            border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .country-flag-preview.visible {
+            display: block;
+        }
+
+        .country-flag-image {
+            width: 100%;
+            max-width: 180px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            background: white;
+            border: 1px solid #d7dce6;
+        }
+
+        .country-flag-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
         .risk-metrics {
             display: grid;
             gap: 15px;
@@ -293,6 +327,11 @@
                 </div>
 
                 <div id="countryDetails" style="display: none;">
+                    <div class="country-flag-preview" id="countryFlagPreview">
+                        <div class="country-flag-label">National Flag</div>
+                        <img id="countryFlagImage" class="country-flag-image" alt="Country flag" />
+                    </div>
+
                     <div class="country-description" id="countryDescription"></div>
 
                     <div class="risk-metrics">
