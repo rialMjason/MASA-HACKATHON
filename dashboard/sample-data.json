@@ -1,0 +1,116 @@
+{
+  "description": "Sample risk data for Southeast Asian countries. Replace values with your actual data.",
+  "countries": [
+    {
+      "code": "TH",
+      "name": "Thailand",
+      "physicalRisk": 7.5,
+      "physicalRiskPercent": 75,
+      "transitionRisk": 5.2,
+      "transitionRiskPercent": 52,
+      "liabilityRisk": 3.8,
+      "liabilityRiskPercent": 38
+    },
+    {
+      "code": "VN",
+      "name": "Vietnam",
+      "physicalRisk": 8.2,
+      "physicalRiskPercent": 82,
+      "transitionRisk": 6.1,
+      "transitionRiskPercent": 61,
+      "liabilityRisk": 4.5,
+      "liabilityRiskPercent": 45
+    },
+    {
+      "code": "ID",
+      "name": "Indonesia",
+      "physicalRisk": 8.8,
+      "physicalRiskPercent": 88,
+      "transitionRisk": 5.9,
+      "transitionRiskPercent": 59,
+      "liabilityRisk": 4.2,
+      "liabilityRiskPercent": 42
+    },
+    {
+      "code": "PH",
+      "name": "Philippines",
+      "physicalRisk": 9.0,
+      "physicalRiskPercent": 90,
+      "transitionRisk": 6.3,
+      "transitionRiskPercent": 63,
+      "liabilityRisk": 4.7,
+      "liabilityRiskPercent": 47
+    },
+    {
+      "code": "MY",
+      "name": "Malaysia",
+      "physicalRisk": 6.8,
+      "physicalRiskPercent": 68,
+      "transitionRisk": 5.5,
+      "transitionRiskPercent": 55,
+      "liabilityRisk": 3.9,
+      "liabilityRiskPercent": 39
+    },
+    {
+      "code": "SG",
+      "name": "Singapore",
+      "physicalRisk": 7.2,
+      "physicalRiskPercent": 72,
+      "transitionRisk": 4.1,
+      "transitionRiskPercent": 41,
+      "liabilityRisk": 3.2,
+      "liabilityRiskPercent": 32
+    },
+    {
+      "code": "MM",
+      "name": "Myanmar",
+      "physicalRisk": 8.5,
+      "physicalRiskPercent": 85,
+      "transitionRisk": 6.7,
+      "transitionRiskPercent": 67,
+      "liabilityRisk": 4.9,
+      "liabilityRiskPercent": 49
+    },
+    {
+      "code": "KH",
+      "name": "Cambodia",
+      "physicalRisk": 7.9,
+      "physicalRiskPercent": 79,
+      "transitionRisk": 6.2,
+      "transitionRiskPercent": 62,
+      "liabilityRisk": 4.4,
+      "liabilityRiskPercent": 44
+    },
+    {
+      "code": "LA",
+      "name": "Laos",
+      "physicalRisk": 7.3,
+      "physicalRiskPercent": 73,
+      "transitionRisk": 5.8,
+      "transitionRiskPercent": 58,
+      "liabilityRisk": 4.0,
+      "liabilityRiskPercent": 40
+    },
+    {
+      "code": "BN",
+      "name": "Brunei",
+      "physicalRisk": 6.5,
+      "physicalRiskPercent": 65,
+      "transitionRisk": 4.9,
+      "transitionRiskPercent": 49,
+      "liabilityRisk": 3.5,
+      "liabilityRiskPercent": 35
+    },
+    {
+      "code": "TL",
+      "name": "Timor-Leste",
+      "physicalRisk": 8.0,
+      "physicalRiskPercent": 80,
+      "transitionRisk": 6.5,
+      "transitionRiskPercent": 65,
+      "liabilityRisk": 4.3,
+      "liabilityRiskPercent": 43
+    }
+  ],
+  "notes": "Replace the numerical values with your actual data. Use scales of 0-10 for risk values and 0-100 for percentages."
+}
