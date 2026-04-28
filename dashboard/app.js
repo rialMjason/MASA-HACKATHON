@@ -325,24 +325,25 @@ style.innerHTML = `
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center center;
         border-radius: 50%;
         transform-origin: center;
     }
 
     /* Country-specific focus tuning for small marker balls */
     .flag-image.flag-focus-my {
-        object-position: 34% 50%;
-        transform: scale(1.2);
+        object-position: 18% 50%;
+        transform: scale(1.24);
     }
 
     .flag-image.flag-focus-sg {
-        object-position: 35% 45%;
-        transform: scale(1.18);
+        object-position: 20% 42%;
+        transform: scale(1.24);
     }
 
     .flag-image.flag-focus-tl {
-        object-position: 36% 50%;
-        transform: scale(1.16);
+        object-position: 16% 50%;
+        transform: scale(1.22);
     }
 
     .flag-emoji {
