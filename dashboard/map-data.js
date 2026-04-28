@@ -31,7 +31,7 @@ const countriesData = [
     {
         name: "Indonesia",
         code: "ID",
-        flagEmoji: "🇮🇩",
+        flagUrl: "flags/id.png",
         coordinates: [-0.789275, 113.921327],
         description: "Indonesia is the world's largest archipelago, stretching across multiple islands. It faces significant climate-related physical risks including flooding, earthquakes, and volcanic activity, alongside rapid economic development challenges.",
         states: ["Jakarta", "Surabaya", "Bandung", "Medan", "Semarang", "Makassar", "Bekasi"],

@@ -23,11 +23,13 @@ let countryLayer = null;
 function createFlagIcon(country) {
     // Use flagUrl if available, otherwise use emoji
     if (country.flagUrl) {
+        // Add special class for Malaysia and Singapore to crop center
+        const cropClass = (country.code === 'MY' || country.code === 'SG') ? 'flag-crop-red' : '';
         return L.divIcon({
             className: 'flag-marker',
             html: `<div class="flag-ball">
                         <div class="flag-image-container">
-                            <img src="${country.flagUrl}" alt="${country.name} flag" class="flag-image" onerror="this.parentElement.innerHTML='<div class=\\\"flag-emoji\\\">${country.flagEmoji || '🏴'}</div>'">
+                            <img src="${country.flagUrl}" alt="${country.name} flag" class="flag-image ${cropClass}" onerror="this.parentElement.innerHTML='<div class=\\\"flag-emoji\\\">${country.flagEmoji || '🏴'}</div>'">
                         </div>
                         <div class="ball-shine"></div>
                     </div>`,
@@ -107,6 +109,22 @@ function selectCountry(country) {
     if (countryLayer) {
         map.removeLayer(countryLayer);
     }
+
+    // Add highlighted border circle around country
+    countryLayer = L.circle(country.coordinates, {
+        radius: 150000, // ~150km radius for visibility
+        color: '#FFD700',
+        weight: 3,
+        opacity: 0.9,
+        fill: false,
+        dashArray: '5, 5'
+    }).addTo(map);
+
+    // Bring highlighted country marker to front
+    const marker = countryMarkers[country.code];
+    if (marker) {
+        marker.setZIndexOffset(2000);
+    }
 }
 
 // Update risk metrics display
@@ -163,6 +181,11 @@ document.getElementById('backButton').addEventListener('click', function() {
         map.removeLayer(countryLayer);
     }
 
+    // Reset all marker z-index offsets
+    Object.values(countryMarkers).forEach(marker => {
+        marker.setZIndexOffset(1000);
+    });
+
     map.setView([10, 108], 5);
 });
 
@@ -197,8 +220,9 @@ style.innerHTML = `
         height: 76px;
         border-radius: 50%;
         overflow: hidden;
-        top: 2px;
-        left: 2px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 3;
         display: flex;
         align-items: center;
@@ -210,6 +234,12 @@ style.innerHTML = `
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
+    }
+
+    /* For Malaysia and Singapore - show only red parts */
+    .flag-image.flag-crop-red {
+        object-position: left center;
+        width: 150%;
     }
 
     .flag-emoji {
