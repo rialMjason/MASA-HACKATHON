@@ -18,6 +18,7 @@ const markerColors = {
 let countryMarkers = {};
 let currentCountry = null;
 let countryLayer = null;
+let originalCountryCoordinates = {};
 
 // Create custom icon for country flags
 function createFlagIcon(country) {
@@ -57,6 +58,9 @@ function createFlagIcon(country) {
 // Initialize markers for all countries
 function initializeMarkers() {
     countriesData.forEach(country => {
+        // Store original coordinates
+        originalCountryCoordinates[country.code] = country.coordinates;
+
         const marker = L.marker(country.coordinates, {
             icon: createFlagIcon(country),
             zIndexOffset: 1000
@@ -86,9 +90,6 @@ function initializeMarkers() {
 // Select and display country
 function selectCountry(country) {
     currentCountry = country;
-
-    // Add zoomed class to container
-    document.querySelector('.container').classList.add('zoomed');
 
     // Update info panel
     document.getElementById('countryName').textContent = country.name;
@@ -135,6 +136,11 @@ function selectCountry(country) {
                 // Fit map bounds to show entire country with padding
                 const bounds = countryLayer.getBounds();
                 map.fitBounds(bounds, { padding: [50, 50] });
+                
+                // Move marker to top-left after zoom completes
+                map.once('moveend', () => {
+                    moveMarkerToTopLeft(country);
+                });
             } else {
                 // Fallback to simple zoom if border data not found
                 map.setView(country.coordinates, 7);
@@ -151,6 +157,19 @@ function selectCountry(country) {
     if (marker) {
         marker.setZIndexOffset(2000);
     }
+}
+
+// Move marker to top-left corner of map
+function moveMarkerToTopLeft(country) {
+    const marker = countryMarkers[country.code];
+    if (!marker) return;
+
+    // Get current map bounds and convert top-left pixel to coordinates
+    const topLeftPixel = L.point(60, 60); // 60px from top-left corner
+    const topLeftCoords = map.containerPointToLatLng(topLeftPixel);
+    
+    // Update marker position
+    marker.setLatLng(topLeftCoords);
 }
 
 // Update risk metrics display
@@ -198,9 +217,6 @@ function updateStatesList(country) {
 // Back button functionality
 document.getElementById('backButton').addEventListener('click', function() {
     currentCountry = null;
-    
-    // Remove zoomed class from container
-    document.querySelector('.container').classList.remove('zoomed');
 
     document.getElementById('countryName').textContent = 'Southeast Asia Dashboard';
     document.getElementById('placeholderText').style.display = 'block';
@@ -211,9 +227,13 @@ document.getElementById('backButton').addEventListener('click', function() {
         map.removeLayer(countryLayer);
     }
 
-    // Reset all marker z-index offsets
-    Object.values(countryMarkers).forEach(marker => {
-        marker.setZIndexOffset(1000);
+    // Reset all marker positions to original coordinates
+    Object.keys(countryMarkers).forEach(code => {
+        const marker = countryMarkers[code];
+        if (marker && originalCountryCoordinates[code]) {
+            marker.setLatLng(originalCountryCoordinates[code]);
+            marker.setZIndexOffset(1000);
+        }
     });
 
     map.setView([10, 108], 5);
@@ -315,37 +335,6 @@ style.innerHTML = `
     .leaflet-popup-content {
         margin: 0;
         padding: 8px;
-    }
-
-    /* Zoomed state - info panel repositioned */
-    .container.zoomed {
-        flex-direction: column;
-    }
-
-    .container.zoomed .map-container {
-        flex: 1;
-        order: 1;
-    }
-
-    .container.zoomed .info-panel {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        width: 350px;
-        height: auto;
-        max-height: 60vh;
-        order: 2;
-        z-index: 500;
-        max-width: 25vw;
-    }
-
-    @media (max-width: 768px) {
-        .container.zoomed .info-panel {
-            width: 90vw;
-            max-width: 90vw;
-            left: 10px;
-            top: 10px;
-        }
     }
 `;
 document.head.appendChild(style);
