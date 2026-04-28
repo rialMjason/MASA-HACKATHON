@@ -141,9 +141,9 @@ function selectCountry(country) {
                 const bounds = countryLayer.getBounds();
                 map.fitBounds(bounds, { padding: [50, 50] });
                 
-                // Move marker to top-left after zoom completes
+                // Move marker to top-right after zoom completes
                 map.once('moveend', () => {
-                    moveMarkerToTopLeft(country);
+                    moveMarkerToTopRight(country);
                 });
             } else {
                 // Fallback to simple zoom if border data not found
@@ -163,17 +163,17 @@ function selectCountry(country) {
     }
 }
 
-// Move marker to top-left corner of map
-function moveMarkerToTopLeft(country) {
+// Move marker to top-right corner of map
+function moveMarkerToTopRight(country) {
     const marker = countryMarkers[country.code];
     if (!marker || !currentCountry || currentCountry.code !== country.code) return;
 
-    // Get current map bounds and convert top-left pixel to coordinates
-    const topLeftPixel = L.point(60, 60); // 60px from top-left corner
-    const topLeftCoords = map.containerPointToLatLng(topLeftPixel);
+    // Get current map bounds and convert top-right pixel to coordinates
+    const topRightPixel = L.point(map.getSize().x - 60, 60); // 60px from top-right corner
+    const topRightCoords = map.containerPointToLatLng(topRightPixel);
     
     // Update marker position
-    marker.setLatLng(topLeftCoords);
+    marker.setLatLng(topRightCoords);
 }
 
 // Return the active marker to its original location when the map is zoomed again
