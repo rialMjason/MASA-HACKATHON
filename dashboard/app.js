@@ -1,27 +1,11 @@
 // Initialize map
 const map = L.map('map').setView([10, 108], 5);
 
-// Add custom Southeast Asia map with water background
-const customMapBounds = [
-    [-15, 75],      // Southwest corner
-    [30, 145]       // Northeast corner
-];
-
-L.imageOverlay('custom-map.png', customMapBounds, {
-    opacity: 1,
-    attribution: 'Custom Southeast Asia Risk Map'
-}).addTo(map);
-
-// Set map bounds
-map.fitBounds(customMapBounds);
-
-// Add OpenStreetMap as fallback/reference layer (optional)
+// Add base map layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors',
     maxZoom: 19,
-    minZoom: 3,
-    opacity: 0.3,   // Semi-transparent as reference
-    interactive: false
+    minZoom: 3
 }).addTo(map);
 
 // Color scheme for markers
