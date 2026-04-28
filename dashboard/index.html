@@ -221,6 +221,38 @@
             display: block;
         }
 
+        /* Water effect animations */
+        .leaflet-container {
+            background: linear-gradient(180deg, #4a90e2 0%, #357abd 50%, #1f4f89 100%);
+            position: relative;
+        }
+
+        .leaflet-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, 
+                    rgba(255, 255, 255, 0.1) 0%, 
+                    transparent 50%, 
+                    rgba(255, 255, 255, 0.1) 100%);
+            z-index: 1;
+            pointer-events: none;
+            animation: waterGlimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes waterGlimmer {
+            0%, 100% {
+                opacity: 0.1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
         @media (max-width: 1024px) {
             .container {
                 flex-direction: column;
@@ -243,7 +275,7 @@
     <div class="container">
         <div class="map-container">
             <div id="map"></div>
-            <div class="zoom-info">Click on any country flag to zoom in</div>
+            <div class="zoom-info">🎯 Click on any flag ball to zoom into that country</div>
         </div>
 
         <div class="info-panel">
