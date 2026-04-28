@@ -20,11 +20,11 @@ let currentCountry = null;
 let countryLayer = null;
 
 // Create custom icon for country flags
-function createFlagIcon(flag) {
+function createFlagIcon(country) {
     return L.divIcon({
         className: 'flag-marker',
         html: `<div class="flag-ball">
-                    <div class="ball-inner">${flag}</div>
+                    <img src="${country.flagUrl}" alt="${country.name} flag" class="flag-image">
                     <div class="ball-shine"></div>
                 </div>`,
         iconSize: [80, 80],
@@ -37,7 +37,7 @@ function createFlagIcon(flag) {
 function initializeMarkers() {
     countriesData.forEach(country => {
         const marker = L.marker(country.coordinates, {
-            icon: createFlagIcon(country.flag),
+            icon: createFlagIcon(country),
             zIndexOffset: 1000
         }).addTo(map);
 
@@ -170,19 +170,15 @@ style.innerHTML = `
         position: relative;
         animation: ballBounce 0.6s ease-in-out infinite;
         border: 3px solid rgba(255, 255, 255, 0.4);
+        overflow: hidden;
     }
 
-    .ball-inner {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .flag-image {
         width: 100%;
         height: 100%;
-        position: relative;
+        object-fit: cover;
+        border-radius: 50%;
         z-index: 3;
-        line-height: 1;
-        font-weight: bold;
-        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
     }
 
     .ball-shine {
