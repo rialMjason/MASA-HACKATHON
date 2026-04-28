@@ -89,6 +89,10 @@ function initializeMarkers() {
 
 // Select and display country
 function selectCountry(country) {
+    if (currentCountry && currentCountry.code !== country.code) {
+        restoreCountryMarker(currentCountry.code);
+    }
+
     currentCountry = country;
 
     // Update info panel
@@ -162,7 +166,7 @@ function selectCountry(country) {
 // Move marker to top-left corner of map
 function moveMarkerToTopLeft(country) {
     const marker = countryMarkers[country.code];
-    if (!marker) return;
+    if (!marker || !currentCountry || currentCountry.code !== country.code) return;
 
     // Get current map bounds and convert top-left pixel to coordinates
     const topLeftPixel = L.point(60, 60); // 60px from top-left corner
@@ -170,6 +174,17 @@ function moveMarkerToTopLeft(country) {
     
     // Update marker position
     marker.setLatLng(topLeftCoords);
+}
+
+// Restore a moved marker to its original position
+function restoreCountryMarker(code) {
+    const marker = countryMarkers[code];
+    const originalCoordinates = originalCountryCoordinates[code];
+
+    if (marker && originalCoordinates) {
+        marker.setLatLng(originalCoordinates);
+        marker.setZIndexOffset(1000);
+    }
 }
 
 // Update risk metrics display
