@@ -1,0 +1,26 @@
+rows: 1486
+unique_labels: 1486
+input_column: INDICATOR_LABEL
+svd_components: 100
+selected_k: 15
+silhouette_score: 0.12772947746668487
+
+k_search_inertia:
+k=15: 1119.1588782923777
+
+cluster_sizes:
+cluster_0: 104
+cluster_1: 79
+cluster_2: 237
+cluster_3: 65
+cluster_4: 104
+cluster_5: 75
+cluster_6: 43
+cluster_7: 71
+cluster_8: 124
+cluster_9: 138
+cluster_10: 33
+cluster_11: 253
+cluster_12: 66
+cluster_13: 33
+cluster_14: 61

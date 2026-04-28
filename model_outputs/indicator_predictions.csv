@@ -1,0 +1,995 @@
+indicator,corr,n,abs_corr,informative,informative_probability,predicted_label,predicted_class
+Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita),1.0,13805,1.0,1,0.3450602203833552,0,non_informative
+Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita),0.9655413461641452,13805,0.9655413461641452,1,0.439290528267645,0,non_informative
+Energy use (kg of oil equivalent per capita),0.8724264383525488,6608,0.8724264383525488,1,0.7179836133935539,1,informative
+Carbon intensity of GDP (kg CO2e per 2021 PPP $ of GDP),0.7260988445750838,8256,0.7260988445750838,1,0.7510186328839435,1,informative
+Electric power consumption (kWh per capita),0.6442547828319654,6449,0.6442547828319654,1,0.8648760079256318,1,informative
+Adjusted net national income per capita (constant 2015 US$),0.6439458554100914,6264,0.6439458554100914,1,0.7227910849876832,1,informative
+GDP per person employed (constant 2021 PPP $),0.6416343089700878,7493,0.6416343089700878,1,0.6069334008764762,1,informative
+"Industry (including construction), value added per worker (constant 2015 US$)",0.5919100836312634,6849,0.5919100836312634,1,0.4217874016121792,0,non_informative
+Carbon intensity of GDP (kg CO2e per constant 2015 US$ of GDP),0.5882739421593822,12492,0.5882739421593822,1,0.5480283404537052,1,informative
+"Wage and salaried workers, total (% of total employment) (modeled ILO estimate)",0.573057716899985,7814,0.573057716899985,1,0.7694371341108938,1,informative
+People using safely managed sanitation services (% of population),0.556188141483803,4125,0.556188141483803,1,0.8069288675310403,1,informative
+"Services, value added per worker (constant 2015 US$)",0.5518240750134511,6762,0.5518240750134511,1,0.47587147496360294,0,non_informative
+Claims on other sectors of the domestic economy (% of GDP),0.5473601189087777,1016,0.5473601189087777,1,0.7217077575505247,1,informative
+"Account ownership at a financial institution or with a mobile-money-service provider, poorest 40% (% of population ages 15+)",0.4955571390031648,746,0.4955571390031648,1,0.8990902845532992,1,informative
+Logistics performance index: Quality of trade and transport-related infrastructure (1=low to 5=high),0.4949848223079615,1394,0.4949848223079615,1,0.7896646996091992,1,informative
+Account ownership at a financial institution or with a mobile-money-service provider (% of population ages 15+),0.4942716390748862,783,0.4942716390748862,1,0.9035114572788676,1,informative
+"Account ownership at a financial institution or with a mobile-money-service provider, older adults (% of population ages 25+)",0.4896720446036352,759,0.4896720446036352,1,0.9095397824295193,1,informative
+"GNI per capita, PPP (constant 2021 international $)",0.4873527437310681,5069,0.4873527437310681,1,0.782236000224652,1,informative
+Households and NPISHs Final consumption expenditure per capita (constant 2015 US$),0.4841247903439848,8062,0.4841247903439848,1,0.7349938084897032,1,informative
+"GNI per capita, PPP (current international $)",0.4814451687240693,8101,0.4814451687240693,1,0.7646918272446487,1,informative
+"Households and NPISHs Final consumption expenditure per capita, PPP (constant 2021 international $)",0.4790469423952079,6168,0.4790469423952079,1,0.7609965174546003,1,informative
+"GDP per capita, PPP (constant 2021 international $)",0.475276314617719,8256,0.475276314617719,1,0.6693152975012335,1,informative
+"Account ownership at a financial institution or with a mobile-money-service provider, richest 60% (% of population ages 15+)",0.4734210572279059,746,0.4734210572279059,1,0.9014489792674136,1,informative
+Logistics performance index: Overall (1=low to 5=high),0.4728766283803134,1394,0.4728766283803134,1,0.8154997215948476,1,informative
+GNI per capita (constant 2015 US$),0.4664724832637819,6336,0.4664724832637819,1,0.7987913829493023,1,informative
+"GDP per capita, PPP (current international $)",0.461848454499739,8294,0.461848454499739,1,0.7552371648019905,1,informative
+Logistics performance index: Ability to track and trace consignments (1=low to 5=high),0.456343715376109,1394,0.456343715376109,1,0.8122701785425283,1,informative
+Employment in industry (% of total employment) (modeled ILO estimate),0.4559426097505019,7814,0.4559426097505019,1,0.7905995132284226,1,informative
+Logistics performance index: Efficiency of customs clearance process (1=low to 5=high),0.4550622900073059,1394,0.4550622900073059,1,0.812931107151262,1,informative
+"Account ownership at a financial institution or with a mobile-money-service provider, young adults (% of population ages 15-24)",0.4518913394472831,759,0.4518913394472831,1,0.889810858088803,1,informative
+Logistics performance index: Frequency with which shipments reach consignee within scheduled or expected time (1=low to 5=high),0.4501426129069391,1394,0.4501426129069391,1,0.812081807303556,1,informative
+Logistics performance index: Competence and quality of logistics services (1=low to 5=high),0.446041751939697,1394,0.446041751939697,1,0.8392675213461569,1,informative
+Completeness of birth registration (%),0.4432977396568286,624,0.4432977396568286,1,0.7701865212319009,1,informative
+Access to clean fuels and technologies for cooking (% of population),0.4319988999702534,5544,0.4319988999702534,1,0.8202872809674538,1,informative
+Oil rents (% of GDP),0.4314334363535889,10732,0.4314334363535889,1,0.48314812587129363,0,non_informative
+Population in urban agglomerations of more than 1 million (% of total population),0.4311738954588313,8690,0.4311738954588313,1,0.576404721913702,1,informative
+"Agriculture, forestry, and fishing, value added per worker (constant 2015 US$)",0.4298812562676934,6889,0.4298812562676934,1,0.6469010728890795,1,informative
+"Account ownership at a financial institution or with a mobile-money-service provider, primary education or less (% of population ages 15+)",0.4250776587232232,758,0.4250776587232232,1,0.8862111944888104,1,informative
+"Account ownership at a financial institution or with a mobile-money-service provider, secondary education or more (% of population ages 15+)",0.4233122841529295,758,0.4233122841529295,1,0.9001911246153508,1,informative
+Income share held by fourth 20%,0.420023478961925,2351,0.420023478961925,1,0.8012793759977024,1,informative
+Employment in services (% of total employment) (modeled ILO estimate),0.4193450635267797,7814,0.4193450635267797,1,0.7567943512856065,1,informative
+Logistics performance index: Ease of arranging competitively priced shipments (1=low to 5=high),0.4183484744273185,1394,0.4183484744273185,1,0.8457013166528106,1,informative
+International migrant stock (% of population),0.4145574138881869,2008,0.4145574138881869,1,0.8944925896714674,1,informative
+"Human capital index plus (HCI+): on-the-job learning pillar score, total (scale -30–87)",0.4106967683630382,505,0.4106967683630382,1,0.8334623189850443,1,informative
+Income share held by third 20%,0.4103567449035883,2351,0.4103567449035883,1,0.8012793759977024,1,informative
+Coverage of social safety net programs in poorest quintile (% of population),0.407777507257675,545,0.407777507257675,1,0.902448398746287,1,informative
+"Households and NPISHs Final consumption expenditure per capita, PPP (current international $)",0.4075056197360295,6388,0.4075056197360295,1,0.7985764704727116,1,informative
+Level of water stress: freshwater withdrawal as a proportion of available freshwater resources,0.4067464617929243,6137,0.4067464617929243,1,0.6105445628760368,1,informative
+People using safely managed drinking water services (% of population),0.4047503504269408,4201,0.4047503504269408,1,0.8227787436828974,1,informative
+UHC service coverage index,0.4045870126539383,5616,0.4045870126539383,1,0.7061558555721037,1,informative
+"Educational attainment, at least completed short-cycle tertiary, population 25+, total (%) (cumulative)",0.4042266206061046,2215,0.4042266206061046,1,0.7994057984211973,1,informative
+"Cause of death, by non-communicable diseases (% of total)",0.3967533186070052,1374,0.3967533186070052,1,0.7284987443048004,1,informative
+Adjusted net national income per capita (current US$),0.3966111865486615,9502,0.3966111865486615,1,0.4437585276581043,0,non_informative
+People with basic handwashing facilities including soap and water (% of population),0.3960913669119286,2151,0.3960913669119286,1,0.8532785171803786,1,informative
+UHC service coverage sub-index on service capacity and access,0.3954657297191478,4752,0.3954657297191478,1,0.7397702853885814,1,informative
+"School enrollment, tertiary (gross), gender parity index (GPI)",0.3929168444635605,6482,0.3929168444635605,1,0.5844722238552087,1,informative
+GDP per capita (constant 2015 US$),0.3910079636786112,12417,0.3910079636786112,1,0.583862904874797,1,informative
+Coverage of social safety net programs in richest quintile (% of population),0.3901401930234427,545,0.3901401930234427,1,0.9142754731504472,1,informative
+Coverage of social safety net programs (% of population),0.3896474569997654,545,0.3896474569997654,1,0.9111901367413191,1,informative
+Domestic credit provided by financial sector (% of GDP),0.3888629338427797,1585,0.3888629338427797,1,0.6918903090713427,1,informative
+Adjusted savings: energy depletion (% of GNI),0.3887660475981301,10273,0.3887660475981301,1,0.24036438204618285,0,non_informative
+Coverage of social insurance programs in 2nd quintile (% of population),0.3879957820178045,504,0.3879957820178045,1,0.9156098284113159,1,informative
+"Educational attainment, at least Bachelor's or equivalent, population 25+, total (%) (cumulative)",0.3876354731246773,1341,0.3876354731246773,1,0.7870298931794522,1,informative
+Coverage of social insurance programs (% of population),0.3868886175646155,504,0.3868886175646155,1,0.9253592402751157,1,informative
+People using at least basic sanitation services (% of population),0.3865855190928485,6094,0.3865855190928485,1,0.8001431620148348,1,informative
+Coverage of social insurance programs in 3rd quintile (% of population),0.3860821947456439,504,0.3860821947456439,1,0.9156098284113159,1,informative
+UHC service coverage sub-index on infectious diseases,0.3827815497484005,4752,0.3827815497484005,1,0.726179704638076,1,informative
+"Nurses and midwives (per 1,000 people)",0.380869247850067,3465,0.380869247850067,1,0.8531198043615634,1,informative
+Coverage of social insurance programs in 4th quintile (% of population),0.3790677515498328,504,0.3790677515498328,1,0.9156098284113159,1,informative
+Income share held by second 20%,0.3764663317135249,2351,0.3764663317135249,1,0.8012793759977024,1,informative
+Coverage of social insurance programs in poorest quintile (% of population),0.3700190628993304,504,0.3700190628993304,1,0.9131997984639472,1,informative
+"Domestic general government health expenditure per capita, PPP (current international $)",0.3679029581378229,5547,0.3679029581378229,1,0.8067044873995103,1,informative
+Coverage of social protection and labor programs (% of population),0.3673794471310901,590,0.3673794471310901,1,0.8881295298318402,1,informative
+"Current health expenditure per capita, PPP (current international $)",0.3671379039161605,5564,0.3671379039161605,1,0.8124937994758643,1,informative
+Coverage of social safety net programs in 2nd quintile (% of population),0.3661299577629946,545,0.3661299577629946,1,0.9058557242844605,1,informative
+"Educational attainment, at least completed post-secondary, population 25+, total (%) (cumulative)",0.3608753986718361,1483,0.3608753986718361,1,0.8339594727854248,1,informative
+Domestic general government health expenditure (% of current health expenditure),0.3570055572991932,5548,0.3570055572991932,1,0.5675162163671229,1,informative
+Coverage of social insurance programs in richest quintile (% of population),0.3536037133618791,504,0.3536037133618791,1,0.9251575495244676,1,informative
+Coverage of social safety net programs in 4th quintile (% of population),0.3527191119680398,545,0.3527191119680398,1,0.9058557242844605,1,informative
+"Educational attainment, at least completed upper secondary, population 25+, total (%) (cumulative)",0.3499170959980019,2398,0.3499170959980019,1,0.7891314155092292,1,informative
+Coverage of social safety net programs in 3rd quintile (% of population),0.3450910806367901,545,0.3450910806367901,1,0.9058557242844605,1,informative
+"Human capital index plus (HCI+): health pillar score, female (scale 0–50)",0.3446353603835838,588,0.3446353603835838,1,0.8437276849658398,1,informative
+"Human capital index plus (HCI+): health pillar score, male (scale 0–50)",0.3442539248714594,588,0.3442539248714594,1,0.8437276849658398,1,informative
+"Human capital index plus (HCI+): health pillar score, total (scale 0–50)",0.3423302051906591,588,0.3423302051906591,1,0.8415569897102552,1,informative
+Marine protected areas (% of territorial waters),0.342311966134791,2557,0.342311966134791,1,0.7577309067757367,1,informative
+Social contributions (% of revenue),0.3415230146917027,3898,0.3415230146917027,1,0.6530259562296649,1,informative
+Gross domestic savings (% of GDP),0.3414408369741302,9846,0.3414408369741302,1,0.46327518000941004,0,non_informative
+Other manufacturing (% of value added in manufacturing),0.3378224785074674,5199,0.3378224785074674,1,0.6959998909276922,1,informative
+Refugees under the mandate of the UNRWA by country or territory of asylum,0.3369355113780608,1045,0.3369355113780608,1,0.704768158474785,1,informative
+Trained teachers in secondary education (% of total teachers),0.3365805530991631,1902,0.3365805530991631,1,0.8326650426764937,1,informative
+People using at least basic drinking water services (% of population),0.3357744332489101,6131,0.3357744332489101,1,0.8141459289644472,1,informative
+Rail lines (total route-km),0.3315429417967691,2100,0.3315429417967691,1,0.5122917725415881,1,informative
+"Automated teller machines (ATMs) (per 100,000 adults)",0.3303000289927476,4130,0.3303000289927476,1,0.6677187042724794,1,informative
+Trained teachers in upper secondary education (% of total teachers),0.3302932687348145,1322,0.3302932687348145,1,0.8211859862129623,1,informative
+"Industry (including construction), value added (% of GDP)",0.3264967261473419,10189,0.3264967261473419,1,0.2632801555478382,0,non_informative
+Electricity production from natural gas sources (% of total),0.3263776332469998,7645,0.3263776332469998,1,0.23858034301984984,0,non_informative
+"Literacy rate, adult total (% of people ages 15 and above)",0.3258985363125848,2811,0.3258985363125848,1,0.670672825315227,1,informative
+"Persistence to last grade of primary, total (% of cohort)",0.3257541623592213,6378,0.3257541623592213,1,0.5348807530621958,1,informative
+Researchers in R&D (per million people),0.3212114517427191,2432,0.3212114517427191,1,0.8754170824911283,1,informative
+Fuel exports (% of merchandise exports),0.3176425674814738,8636,0.3176425674814738,1,0.31176400766573875,0,non_informative
+"Out-of-pocket expenditure per capita, PPP (current international $)",0.3174006977051026,5564,0.3174006977051026,1,0.8388855487401478,1,informative
+"Depositors with commercial banks (per 1,000 adults)",0.3165208605224441,2062,0.3165208605224441,1,0.8311325138742103,1,informative
+"Contraceptive prevalence, any method (% of married women ages 15-49)",0.315854223086895,1324,0.315854223086895,1,0.8192753712815619,1,informative
+External balance on goods and services (% of GDP),0.3139898183141049,10096,0.3139898183141049,1,0.16392049340315387,0,non_informative
+Access to electricity (% of population),0.3133851912567677,7431,0.3133851912567677,1,0.7073826831611977,1,informative
+Cereal yield (kg per hectare),0.3112506672188009,11537,0.3112506672188009,1,0.5338414701109847,1,informative
+"Educational attainment, at least completed lower secondary, population 25+, total (%) (cumulative)",0.310930259465288,2040,0.310930259465288,1,0.8185764786583554,1,informative
+Current health expenditure per capita (current US$),0.3088104630782667,5562,0.3088104630782667,1,0.6708904811119246,1,informative
+"Railways, goods transported (million ton-km)",0.3081529906816518,2660,0.3081529906816518,1,0.616615541745105,1,informative
+Domestic general government health expenditure per capita (current US$),0.3075918423217538,5545,0.3075918423217538,1,0.6835488523501507,1,informative
+Technicians in R&D (per million people),0.3027686033742507,1284,0.3027686033742507,1,0.8949039676302892,1,informative
+"Borrowers from commercial banks (per 1,000 adults)",0.2998900416372583,2119,0.2998900416372583,1,0.808523661542495,1,informative
+Fixed telephone subscriptions (per 100 people),0.2987972677414272,12763,0.2987972677414272,1,0.3706367665049282,0,non_informative
+"Prevalence of overweight, weight for height (% of children under 5)",0.2962841787515821,1020,0.2962841787515821,1,0.8593480350652302,1,informative
+"Domestic private health expenditure per capita, PPP (current international $)",0.2947010330038065,5547,0.2947010330038065,1,0.8060036588300498,1,informative
+Statistical performance indicators (SPI): Pillar 4 data sources score (scale 0-100),0.2889462808923805,1732,0.2889462808923805,1,0.5419828243003084,1,informative
+Income share held by lowest 20%,0.2888178436103509,2351,0.2888178436103509,1,0.7689151154183517,1,informative
+Out-of-pocket expenditure per capita (current US$),0.2870882883313942,5562,0.2870882883313942,1,0.7303484826086939,1,informative
+Births attended by skilled health staff (% of total),0.2847581930802846,3101,0.2847581930802846,1,0.7536688897100801,1,informative
+"Commercial bank branches (per 100,000 adults)",0.2821401061038581,4284,0.2821401061038581,1,0.6620693525931608,1,informative
+"Educational attainment, at least completed primary, population 25+ years, total (%) (cumulative)",0.2817037901220569,2355,0.2817037901220569,1,0.7742439709576466,1,informative
+Research and development expenditure (% of GDP),0.2810928825911592,3148,0.2810928825911592,1,0.6177991454296563,1,informative
+Total natural resources rents (% of GDP),0.2792918911660531,11380,0.2792918911660531,1,0.4588846331621013,0,non_informative
+"GNI per capita, Atlas method (current US$)",0.278297310203921,11710,0.278297310203921,1,0.48987263223650107,0,non_informative
+"Prevalence of overweight (modeled estimate, % of children under 5)",0.2777142096580812,5125,0.2777142096580812,1,0.794647517228611,1,informative
+"Water productivity, total (constant 2015 US$ GDP per cubic meter of total freshwater withdrawal)",0.2776323407513189,8378,0.2776323407513189,1,0.5983160420910184,1,informative
+Adequacy of social protection and labor programs (% of total welfare of beneficiary households),0.2774699402303772,523,0.2774699402303772,1,0.8354936055141833,1,informative
+"Physicians (per 1,000 people)",0.2771631597109555,5027,0.2771631597109555,1,0.8035691718447288,1,informative
+Trained teachers in primary education (% of total teachers),0.2760585826393004,2710,0.2760585826393004,1,0.7869074486545478,1,informative
+Progression to secondary school (%),0.2654987018036613,5042,0.2654987018036613,1,0.5585817229266796,1,informative
+Individuals using the Internet (% of population),0.2654545788389227,6693,0.2654545788389227,1,0.8301133858215168,1,informative
+"UHC service coverage sub-index on reproductive, maternal, newborn and child health",0.2648911406216965,4752,0.2648911406216965,1,0.7772855227676642,1,informative
+Adjusted savings: gross savings (% of GNI),0.2629228542970887,7624,0.2629228542970887,1,0.32250546119998436,0,non_informative
+Trained teachers in lower secondary education (% of total teachers),0.2608538112373535,1452,0.2608538112373535,1,0.8386771720513372,1,informative
+Medium and high-tech manufacturing value added (% manufacturing value added),0.2598255273517625,4949,0.2598255273517625,1,0.5718240709158939,1,informative
+"Contraceptive prevalence, any modern method (% of married women ages 15-49)",0.2593720413232908,1268,0.2593720413232908,1,0.8206587763326793,1,informative
+Terrestrial and marine protected areas (% of total territorial area),0.2588815738291523,2986,0.2588815738291523,1,0.7441659448626292,1,informative
+"Hospital beds (per 1,000 people)",0.2584404767945105,5559,0.2584404767945105,1,0.7891359448292415,1,informative
+"Government expenditure per student, primary (% of GDP per capita)",0.256429158261502,1865,0.256429158261502,1,0.8257623050662547,1,informative
+Price level index (Households and NPISHs Final consumption expenditure),0.2523119407603558,5997,0.2523119407603558,1,0.5904815883557591,1,informative
+"School enrollment, secondary (% gross)",0.2519374120952031,8170,0.2519374120952031,1,0.4439236706197485,0,non_informative
+Trained teachers in preprimary education (% of total teachers),0.2514588705704323,1883,0.2514588705704323,1,0.8063835367140199,1,informative
+"School enrollment, tertiary (% gross)",0.2512815142833053,7258,0.2512815142833053,1,0.5718031987442581,1,informative
+"Persistence to grade 5, total (% of cohort)",0.2507438220773198,3809,0.2507438220773198,1,0.5750116091079587,1,informative
+"Educational attainment, Doctoral or equivalent, population 25+, total (%) (cumulative)",0.2496362292404265,768,0.2496362292404265,0,0.7210653009093883,1,informative
+Fossil fuel energy consumption (% of total),0.2495915798275773,7439,0.2495915798275773,0,0.6076190065458474,1,informative
+"Taxes on income, profits and capital gains (% of total taxes)",0.2491434098314618,4535,0.2491434098314618,0,0.365269440771296,0,non_informative
+GDP per capita (current US$),0.2485028779286055,12546,0.2485028779286055,0,0.3930443161073777,0,non_informative
+Domestic private health expenditure per capita (current US$),0.2480658217968478,5545,0.2480658217968478,0,0.6596466092572157,1,informative
+"School enrollment, secondary (% net)",0.2475259478078318,3978,0.2475259478078318,0,0.5052449481411586,1,informative
+"Tuberculosis case detection rate (%, all forms)",0.2421964264469688,5279,0.2421964264469688,0,0.3023341566680685,0,non_informative
+Total debt service (% of GNI),0.2346677469278523,7026,0.2346677469278523,0,0.25970147309633806,0,non_informative
+"Life expectancy at birth, total (years)",0.2342129548038991,13805,0.2342129548038991,0,0.19563312975549907,0,non_informative
+Exports of goods and services (% of GDP),0.2336618887254403,10134,0.2336618887254403,0,0.1988226094319535,0,non_informative
+"Annual freshwater withdrawals, total (% of internal resources)",0.2320657478769497,6529,0.2320657478769497,0,0.31406979619250924,0,non_informative
+CPIA gender equality rating (1=low to 6=high),0.2320091050691245,2327,0.2320091050691245,0,0.24453973344936736,0,non_informative
+Income share held by lowest 10%,0.2298653437649186,2351,0.2298653437649186,0,0.7461782585526014,1,informative
+"Immunization, DPT (% of children ages 12-23 months)",0.2266177758923758,9964,0.2266177758923758,0,0.2957918098860522,0,non_informative
+"Binding coverage, manufactured products (%)",0.2256641263260531,3300,0.2256641263260531,0,0.6218853667488398,1,informative
+Short-term debt (% of total external debt),0.2238591986769016,6395,0.2238591986769016,0,0.24200506153369672,0,non_informative
+"Charges for the use of intellectual property, receipts (BoP, current US$)",0.2237734997219201,3863,0.2237734997219201,0,0.27169717835951046,0,non_informative
+Adjusted savings: natural resources depletion (% of GNI),0.2216313952469978,9594,0.2216313952469978,0,0.299522910027087,0,non_informative
+Domestic general government health expenditure (% of GDP),0.2210009744256049,5548,0.2210009744256049,0,0.5985318804520455,1,informative
+Diabetes prevalence (% of population ages 20 to 79),0.2195990742135127,507,0.2195990742135127,0,0.8893698568260326,1,informative
+"Binding coverage, all products (%)",0.2173057716064122,3300,0.2173057716064122,0,0.6275471957824647,1,informative
+"Gross fixed capital formation, private sector (% of GDP)",0.2168997687908179,3220,0.2168997687908179,0,0.3912584444209198,0,non_informative
+Fixed broadband subscriptions (per 100 people),0.216373609209865,5131,0.216373609209865,0,0.5159013962390891,1,informative
+"Lower secondary completion rate, total (% of relevant age group)",0.215084988271885,5874,0.215084988271885,0,0.3263520017239001,0,non_informative
+"School enrollment, primary (% net)",0.2143210527262986,6030,0.2143210527262986,0,0.3078661952194601,0,non_informative
+Net intake rate in grade 1 (% of official school-age population),0.2139929557033521,2013,0.2139929557033521,0,0.5974411843207018,1,informative
+Public private partnerships investment in transport (current US$),0.2119280921186798,940,0.2119280921186798,0,0.27202592797467395,0,non_informative
+"Annual freshwater withdrawals, industry (% of total freshwater withdrawal)",0.2109320562201794,6063,0.2109320562201794,0,0.42623297027891666,0,non_informative
+Domestic credit to private sector (% of GDP),0.207652005072108,8815,0.207652005072108,0,0.2897028443038255,0,non_informative
+"Immunization, measles (% of children ages 12-23 months)",0.2072158652686155,9849,0.2072158652686155,0,0.29981616652064097,0,non_informative
+Pregnant women receiving prenatal care (%),0.2048436740937335,1048,0.2048436740937335,0,0.5593041101686973,1,informative
+"School enrollment, primary and secondary (gross), gender parity index (GPI)",0.2037477577065767,8039,0.2037477577065767,0,0.4267400670217658,0,non_informative
+Lifetime risk of maternal death (1 in: rate varies by country),0.2024452535958415,9165,0.2024452535958415,0,0.511154320936787,1,informative
+Gross savings (% of GNI),0.2015479724515234,8055,0.2015479724515234,0,0.33252280634016484,0,non_informative
+Medium and high-tech exports (% manufactured exports),0.2008155215735144,4949,0.2008155215735144,0,0.3616905049624664,0,non_informative
+CPIA quality of budgetary and financial management rating (1=low to 6=high),0.2000400464059908,2327,0.2000400464059908,0,0.36459386849226477,0,non_informative
+Military expenditure (% of GDP),0.1992846549206698,9450,0.1992846549206698,0,0.28100103417530037,0,non_informative
+Adjusted savings: consumption of fixed capital (% of GNI),0.1976710511821628,10713,0.1976710511821628,0,0.21750865978116862,0,non_informative
+Travel services (% of commercial service imports),0.1962023038162061,9304,0.1962023038162061,0,0.188019475663276,0,non_informative
+Natural gas rents (% of GDP),0.1951403656524618,10750,0.1951403656524618,0,0.408295576398042,0,non_informative
+Completeness of death registration with cause-of-death information (%),0.1941519815784971,653,0.1941519815784971,0,0.720915314158256,1,informative
+Chemicals (% of value added in manufacturing),0.1941472156101087,4863,0.1941472156101087,0,0.7429091650514738,1,informative
+"Total alcohol consumption per capita (liters of pure alcohol, projected estimates, 15+ years of age)",0.1929763031439592,4872,0.1929763031439592,0,0.8501582754510301,1,informative
+External health expenditure per capita (current US$),0.1906319728941832,4932,0.1906319728941832,0,0.6144736231117172,1,informative
+"Taxes on income, profits and capital gains (% of revenue)",0.1903591985677239,5635,0.1903591985677239,0,0.32625370512115504,0,non_informative
+"School enrollment, preprimary (% gross)",0.1889700214483899,8256,0.1889700214483899,0,0.33950124621376904,0,non_informative
+"School enrollment, secondary (gross), gender parity index (GPI)",0.1881321802415024,8211,0.1881321802415024,0,0.4507747270039433,0,non_informative
+"Travel services (% of service imports, BoP)",0.18764296978751,9304,0.18764296978751,0,0.16127584998023983,0,non_informative
+"School enrollment, primary (gross), gender parity index (GPI)",0.1845637233279758,9696,0.1845637233279758,0,0.2942694352954143,0,non_informative
+Statistical performance indicators (SPI): Pillar 5 data infrastructure score (scale 0-100),0.1816186025977206,1689,0.1816186025977206,0,0.5503879698643418,1,informative
+Domestic credit to private sector by banks (% of GDP),0.1810890844323386,10267,0.1810890844323386,0,0.24903741454433342,0,non_informative
+Subsidies and other transfers (% of expense),0.1807512062734723,4496,0.1807512062734723,0,0.313461167710609,0,non_informative
+"Labor force participation rate, total (% of total population ages 15-64) (modeled ILO estimate)",0.1799840387024135,8044,0.1799840387024135,0,0.4921850307613931,0,non_informative
+"Electricity production from oil, gas and coal sources (% of total)",0.1798424776553493,7590,0.1798424776553493,0,0.24006253641347944,0,non_informative
+Manufactures imports (% of merchandise imports),0.1788030132060206,9108,0.1788030132060206,0,0.1734223397683413,0,non_informative
+CPIA social protection rating (1=low to 6=high),0.1774651013797475,2319,0.1774651013797475,0,0.31351297808012746,0,non_informative
+Monetary Sector credit to private sector (% GDP),0.177416119921736,10135,0.177416119921736,0,0.15952081973523835,0,non_informative
+"Insurance and financial services (% of service exports, BoP)",0.1766722963986758,8154,0.1766722963986758,0,0.20395049872314525,0,non_informative
+Investment in transport with private participation (current US$),0.1765898877422464,942,0.1765898877422464,0,0.2804747313847871,0,non_informative
+General government final consumption expenditure (% of GDP),0.1752290592160778,9749,0.1752290592160778,0,0.2823857878910497,0,non_informative
+Merchandise imports from high-income economies (% of total merchandise imports),0.1736837687400033,11822,0.1736837687400033,0,0.09516187950627697,0,non_informative
+Energy intensity level of primary energy (MJ/$2017 PPP GDP),0.1731151999955739,5426,0.1731151999955739,0,0.6482604380970723,1,informative
+"Adjusted net enrollment rate, primary (% of primary school age children)",0.1725231986293498,4736,0.1725231986293498,0,0.40313265304906415,0,non_informative
+"International tourism, expenditures (% of total imports)",0.1702560120885076,4713,0.1702560120885076,0,0.29726781726202095,0,non_informative
+CPIA policies for social inclusion/equity cluster average (1=low to 6=high),0.1699777131740492,2322,0.1699777131740492,0,0.44290795719478815,0,non_informative
+"Primary completion rate, total (% of relevant age group)",0.1695532485787083,6732,0.1695532485787083,0,0.2471926861109846,0,non_informative
+IDA resource allocation index (1=low to 6=high),0.1663722718935761,2327,0.1663722718935761,0,0.4672396351281475,0,non_informative
+CPIA public sector management and institutions cluster average (1=low to 6=high),0.1658800044722081,2327,0.1658800044722081,0,0.3473907004039665,0,non_informative
+Price level index (GDP),0.1655757712243263,6615,0.1655757712243263,0,0.4869183375365389,0,non_informative
+Current account balance (% of GDP),0.1651151348121353,7452,0.1651151348121353,0,0.30581109188705097,0,non_informative
+"Charges for the use of intellectual property, payments (BoP, current US$)",0.1650910314061589,5059,0.1650910314061589,0,0.2338468945974932,0,non_informative
+"Suicide mortality rate (per 100,000 population)",0.1637359215225925,5038,0.1637359215225925,0,0.6024318836889895,1,informative
+Domestic general government health expenditure (% of general government expenditure),0.1629414461307273,4827,0.1629414461307273,0,0.46182023855327436,0,non_informative
+Adjusted net national income (constant 2015 US$),0.1627629100413188,6264,0.1627629100413188,0,0.3608586993305926,0,non_informative
+Labor force with intermediate education (% of total working-age population with intermediate education),0.1624701770788001,2753,0.1624701770788001,0,0.49255697342463606,0,non_informative
+"External health expenditure per capita, PPP (current international $)",0.162328211572425,4934,0.162328211572425,0,0.7776261299993313,1,informative
+"Transport services (% of service exports, BoP)",0.1602428728696231,9205,0.1602428728696231,0,0.15580335951993993,0,non_informative
+CPIA efficiency of revenue mobilization rating (1=low to 6=high),0.1599632301394098,2327,0.1599632301394098,0,0.35541189015548874,0,non_informative
+"Binding coverage, primary products (%)",0.1597072271061288,3300,0.1597072271061288,0,0.48408352271325666,0,non_informative
+CPIA building human resources rating (1=low to 6=high),0.1573838129944703,2327,0.1573838129944703,0,0.3137265175382442,0,non_informative
+"Immunization, HepB3 (% of one-year-old children)",0.1568572482316318,6410,0.1568572482316318,0,0.5732494252488743,1,informative
+Adjusted savings: energy depletion (current US$),0.1560063885534307,9553,0.1560063885534307,0,0.1290071432364038,0,non_informative
+"External debt stocks, private nonguaranteed (PNG) (DOD, current US$)",0.1537426317243902,3716,0.1537426317243902,0,0.1657448641645096,0,non_informative
+Benefit incidence of social protection and labor programs to poorest quintile (% of total SPL benefits),0.1524471402185068,524,0.1524471402185068,0,0.7490810318351981,1,informative
+"Adjusted net savings, including particulate emission damage (current US$)",0.1505225004941075,4064,0.1505225004941075,0,0.2666563511969614,0,non_informative
+Statistical performance indicators (SPI): Overall score (scale 0-100),0.1504137219275016,1611,0.1504137219275016,0,0.5493058406399277,1,informative
+Trade (% of GDP),0.1479161922944307,9945,0.1479161922944307,0,0.38054916220256424,0,non_informative
+Gross savings (% of GDP),0.1475488302726419,7704,0.1475488302726419,0,0.42834394759087435,0,non_informative
+"Adjusted net savings, excluding particulate emission damage (current US$)",0.1474342162118437,4197,0.1474342162118437,0,0.2654248979792123,0,non_informative
+High-technology exports (% of manufactured exports),0.1458497428298664,3290,0.1458497428298664,0,0.4131243208657084,0,non_informative
+"External debt stocks, short-term (DOD, current US$)",0.1457612729623471,6156,0.1457612729623471,0,0.12853597988357807,0,non_informative
+General government final consumption expenditure (constant 2015 US$),0.145587381525573,7726,0.145587381525573,0,0.27051424748401115,0,non_informative
+Net ODA received per capita (current US$),0.144821144459407,10055,0.144821144459407,0,0.23994819701248327,0,non_informative
+"Secondary income, other sectors, payments (BoP, current US$)",0.1446334062347065,7074,0.1446334062347065,0,0.14150784464859506,0,non_informative
+"Debt service on external debt, total (TDS, current US$)",0.1438824755619312,6329,0.1438824755619312,0,0.12917014339507873,0,non_informative
+Ores and metals imports (% of merchandise imports),0.1434332922583739,9099,0.1434332922583739,0,0.1952297551896647,0,non_informative
+Adjusted savings: net national savings (% of GNI),0.1432668915395419,7585,0.1432668915395419,0,0.27806727064099285,0,non_informative
+"Preprimary education, duration (years)",0.1428506903120305,5565,0.1428506903120305,0,0.28545137461962566,0,non_informative
+CPIA structural policies cluster average (1=low to 6=high),0.141238017430657,2327,0.141238017430657,0,0.3854136078783979,0,non_informative
+Machinery and transport equipment (% of value added in manufacturing),0.1402210213277324,4804,0.1402210213277324,0,0.7295763172601791,1,informative
+"Goods exports (BoP, current US$)",0.1392031242244461,7638,0.1392031242244461,0,0.07188464491691005,0,non_informative
+"Annual freshwater withdrawals, domestic (% of total freshwater withdrawal)",0.1389847452706019,6181,0.1389847452706019,0,0.44459304212988177,0,non_informative
+Taxes less subsidies on products (current US$),0.1374793851604278,7511,0.1374793851604278,0,0.15076325807372867,0,non_informative
+"Exports of goods and services (BoP, current US$)",0.1369665315502372,7639,0.1369665315502372,0,0.08588258003279618,0,non_informative
+"Imports of goods and services (BoP, current US$)",0.136115783450393,7639,0.136115783450393,0,0.07732062963415703,0,non_informative
+"External debt stocks, total (DOD, current US$)",0.1357673368521451,6344,0.1357673368521451,0,0.11016887822305244,0,non_informative
+Terrestrial protected areas (% of total land area),0.135657031739367,2986,0.135657031739367,0,0.5817325145635189,1,informative
+Arms exports (SIPRI trend indicator values),0.135551851955901,2998,0.135551851955901,0,0.3690347152767776,0,non_informative
+Expense (% of GDP),0.1352479794240109,5171,0.1352479794240109,0,0.4061527926329727,0,non_informative
+"Goods imports (BoP, current US$)",0.1351042765796022,7639,0.1351042765796022,0,0.07218637435639412,0,non_informative
+Mobile cellular subscriptions (per 100 people),0.1337907075808148,12273,0.1337907075808148,0,0.28172583959895825,0,non_informative
+Antiretroviral therapy coverage for PMTCT (% of pregnant women living with HIV),0.1335755431705999,2369,0.1335755431705999,0,0.45459968378223126,0,non_informative
+CPIA financial sector rating (1=low to 6=high),0.1332252123191731,2327,0.1332252123191731,0,0.283384925182596,0,non_informative
+Adjusted savings: education expenditure (current US$),0.132903180336937,8251,0.132903180336937,0,0.10825837515436913,0,non_informative
+"Primary income payments (BoP, current US$)",0.1318231555583834,7609,0.1318231555583834,0,0.08701919920909106,0,non_informative
+Insurance and financial services (% of commercial service exports),0.1307913606546513,8150,0.1307913606546513,0,0.23486994773803965,0,non_informative
+"Service imports (BoP, current US$)",0.1307246617181616,7630,0.1307246617181616,0,0.07779508910612006,0,non_informative
+Net primary income (Net income from abroad) (constant LCU),0.1306809261788137,991,0.1306809261788137,0,0.26607623886376114,0,non_informative
+"Debt service on external debt, public and publicly guaranteed (PPG) (TDS, current US$)",0.1300373255574946,6329,0.1300373255574946,0,0.13364493426733967,0,non_informative
+Antiretroviral therapy coverage (% of people living with HIV),0.1296169215152414,4021,0.1296169215152414,0,0.42525225987066667,0,non_informative
+"Services, value added (% of GDP)",0.1295099265507263,9745,0.1295099265507263,0,0.3131303313842818,0,non_informative
+"External debt stocks, long-term (DOD, current US$)",0.1292331810742673,6340,0.1292331810742673,0,0.11630059586120907,0,non_informative
+CPIA debt policy rating (1=low to 6=high),0.1291538664918199,2327,0.1291538664918199,0,0.2198221802501362,0,non_informative
+"Educational attainment, at least Master's or equivalent, population 25+, total (%) (cumulative)",0.128330689707049,1041,0.128330689707049,0,0.7953234812505918,1,informative
+"Primary income receipts (BoP, current US$)",0.1278538038666272,7494,0.1278538038666272,0,0.08863772987768374,0,non_informative
+"Net ODA provided, total (constant 2021 US$)",0.1268656840429985,1454,0.1268656840429985,0,0.3479394850725485,0,non_informative
+Households and NPISHs Final consumption expenditure (constant 2015 US$),0.1261478280048635,8062,0.1261478280048635,0,0.41144977098001845,0,non_informative
+UHC service coverage sub-index on non-communicable diseases,0.1261247232593233,4752,0.1261247232593233,0,0.698168260134104,1,informative
+Taxes on exports (current LCU),0.1241778590999207,1590,0.1241778590999207,0,0.22115614397138325,0,non_informative
+Liner shipping connectivity index (maximum value in 2004 = 100),0.1225496812476687,2590,0.1225496812476687,0,0.6201058499511279,1,informative
+Final consumption expenditure (constant 2015 US$),0.122216715142339,8238,0.122216715142339,0,0.28951566948158575,0,non_informative
+CPIA property rights and rule-based governance rating (1=low to 6=high),0.1216185033198412,2327,0.1216185033198412,0,0.28629351019057037,0,non_informative
+Gross fixed capital formation (constant 2015 US$),0.1208018320273001,7487,0.1208018320273001,0,0.2244429627463602,0,non_informative
+Transport services (% of commercial service exports),0.1207256699850786,9205,0.1207256699850786,0,0.18657430470922445,0,non_informative
+Merchandise trade (% of GDP),0.1204807670560579,12236,0.1204807670560579,0,0.25729564206370026,0,non_informative
+GNI (constant 2015 US$),0.1197069160752428,6336,0.1197069160752428,0,0.34136403325551457,0,non_informative
+"Age dependency ratio, old (% of working-age population)",0.1187188062557142,13805,0.1187188062557142,0,0.33571062138844343,0,non_informative
+CPIA business regulatory environment rating (1=low to 6=high),0.1186851080080279,2327,0.1186851080080279,0,0.23411740345923454,0,non_informative
+"Compulsory education, duration (years)",0.1180587267608678,5990,0.1180587267608678,0,0.2695094916685442,0,non_informative
+"Energy use (kg of oil equivalent) per $1,000 GDP (constant 2021 PPP)",0.1178885595125879,6366,0.1178885595125879,0,0.6344690668323181,1,informative
+CPIA economic management cluster average (1=low to 6=high),0.1177602972843791,2327,0.1177602972843791,0,0.37517680608607584,0,non_informative
+"Net bilateral aid flows from DAC donors, Slovenia (current US$)",0.1177223380013232,1219,0.1177223380013232,0,0.12121679480687254,0,non_informative
+Primary government expenditures as a proportion of original approved budget (%),0.1173095175356376,2286,0.1173095175356376,0,0.4647349717076388,0,non_informative
+Expenditure on secondary education (% of government expenditure on education),0.1172291839679303,3173,0.1172291839679303,0,0.35338598519132086,0,non_informative
+"Service exports (BoP, current US$)",0.1171407736955754,7627,0.1171407736955754,0,0.07649071830784587,0,non_informative
+Gross national expenditure (constant 2015 US$),0.1166081167709968,7685,0.1166081167709968,0,0.25071820994041405,0,non_informative
+CPIA quality of public administration rating (1=low to 6=high),0.1162061328550058,2327,0.1162061328550058,0,0.31947013819597614,0,non_informative
+Other expense (% of expense),0.1161911915885517,3950,0.1161911915885517,0,0.30509336040230106,0,non_informative
+Public private partnerships investment in energy (current US$),0.1151911937906919,1417,0.1151911937906919,0,0.3078069948089039,0,non_informative
+Electricity production from nuclear sources (% of total),0.1127192175805524,7439,0.1127192175805524,0,0.21951855894559383,0,non_informative
+"Current education expenditure, total (% of total expenditure in public institutions)",0.1125634066261927,2068,0.1125634066261927,0,0.391790609867148,0,non_informative
+Gross savings (current US$),0.1122266865695752,6181,0.1122266865695752,0,0.1507177605895458,0,non_informative
+"External debt stocks, public and publicly guaranteed (PPG) (DOD, current US$)",0.1117657872773782,6367,0.1117657872773782,0,0.12702999448100663,0,non_informative
+Net migration,0.1114637122520628,13805,0.1114637122520628,0,0.04678523984057055,0,non_informative
+"Employment to population ratio, 15+, total (%) (national estimate)",0.1107427634962806,4682,0.1107427634962806,0,0.4842084270081099,0,non_informative
+"Revenue, excluding grants (% of GDP)",0.110725802099073,5604,0.110725802099073,0,0.3849477537985161,0,non_informative
+Military expenditure (current USD),0.1098285021696674,9549,0.1098285021696674,0,0.12095498181082255,0,non_informative
+"Net flows on external debt, private nonguaranteed (PNG) (NFL, current US$)",0.1096279373006797,3565,0.1096279373006797,0,0.1271051862808614,0,non_informative
+Merchandise exports to high-income economies (% of total merchandise exports),0.1094131536613589,11806,0.1094131536613589,0,0.12563551417755336,0,non_informative
+"PM2.5 pollution, population exposed to levels exceeding WHO Interim Target-1 value (% of total)",0.1093637045714877,2268,0.1093637045714877,0,0.56248385305531,1,informative
+"Current education expenditure, secondary (% of total expenditure in secondary public institutions)",0.1080124372132843,2051,0.1080124372132843,0,0.43974738867344876,0,non_informative
+"Use of IMF credit (DOD, current US$)",0.1079990791118652,5929,0.1079990791118652,0,0.20489414547203724,0,non_informative
+Gross value added at basic prices (GVA) (current US$),0.1065471003997053,9837,0.1065471003997053,0,0.1670024772616378,0,non_informative
+"Patent applications, nonresidents",0.1058128595195634,4523,0.1058128595195634,0,0.29555753164808984,0,non_informative
+Adjusted savings: net national savings (current US$),0.1055528367499251,5760,0.1055528367499251,0,0.1787937180278422,0,non_informative
+Merchandise imports from economies in the Arab World (% of total merchandise imports),0.1054632388191224,11079,0.1054632388191224,0,0.13528555543227866,0,non_informative
+CPIA trade rating (1=low to 6=high),0.1054406144539831,2327,0.1054406144539831,0,0.24732044014082635,0,non_informative
+"PNG, commercial banks and other creditors (NFL, current US$)",0.1051366439380123,3530,0.1051366439380123,0,0.22852004723630728,0,non_informative
+Public and publicly guaranteed debt service (% of GNI),0.1050293984192417,7027,0.1050293984192417,0,0.23541998438297096,0,non_informative
+"Adjusted net savings, including particulate emission damage (% of GNI)",0.1038279142029949,5407,0.1038279142029949,0,0.3772052163653197,0,non_informative
+Gross capital formation (% of GDP),0.1029846409612996,9696,0.1029846409612996,0,0.23585845714731485,0,non_informative
+Armed forces personnel (% of total labor force),0.1026496336078436,6377,0.1026496336078436,0,0.31410799290938524,0,non_informative
+Gross fixed capital formation (% of GDP),0.0997904522532704,9377,0.0997904522532704,0,0.21766465575535862,0,non_informative
+Investment in energy with private participation (current US$),0.0996633870346064,1571,0.0996633870346064,0,0.3288254198041331,0,non_informative
+"School enrollment, primary (% gross)",0.098969606586453,9404,0.098969606586453,0,0.24942383850351937,0,non_informative
+"CPIA transparency, accountability, and corruption in the public sector rating (1=low to 6=high)",0.0989633293783953,2327,0.0989633293783953,0,0.3193932764483012,0,non_informative
+Exports of goods and services (constant 2015 US$),0.0983502535265811,8130,0.0983502535265811,0,0.20141475629689265,0,non_informative
+Gross capital formation (constant 2015 US$),0.0980382595569513,7659,0.0980382595569513,0,0.23695014990366212,0,non_informative
+Imports of goods and services (constant 2015 US$),0.0976969293239879,8202,0.0976969293239879,0,0.18137358153664856,0,non_informative
+"International tourism, receipts for passenger transport items (current US$)",0.0975333513347258,4166,0.0975333513347258,0,0.2080849939230808,0,non_informative
+Current health expenditure (% of GDP),0.0973663098781051,5565,0.0973663098781051,0,0.5720465837146343,1,informative
+"Portfolio equity, net inflows (BoP, current US$)",0.0967766373989761,8535,0.0967766373989761,0,0.09048030533415345,0,non_informative
+"Multilateral debt service (TDS, current US$)",0.0965566459059963,6251,0.0965566459059963,0,0.12805135008378082,0,non_informative
+"PPG, private creditors (NFL, US$)",0.0964529159836161,5403,0.0964529159836161,0,0.19170584235244859,0,non_informative
+CPIA macroeconomic management rating (1=low to 6=high),0.0961571394625639,2327,0.0961571394625639,0,0.2315916838165737,0,non_informative
+"Gross fixed capital formation, private sector (current LCU)",0.0951239356967812,2895,0.0951239356967812,0,0.15859947039598402,0,non_informative
+"International tourism, expenditures for passenger transport items (current US$)",0.0938886270224702,4293,0.0938886270224702,0,0.20539013869714792,0,non_informative
+"Labor force participation rate, total (% of total population ages 15+) (national estimate)",0.0929048692136111,5225,0.0929048692136111,0,0.43992186511421616,0,non_informative
+Statistical performance indicators (SPI): Pillar 2 data services score (scale 0-100),0.09259070068319,1611,0.09259070068319,0,0.5270743895543146,1,informative
+"Personal remittances, paid (current US$)",0.0921632744858678,9886,0.0921632744858678,0,0.09147454811180115,0,non_informative
+"PPG, bonds (NFL, current US$)",0.0916969004644126,2584,0.0916969004644126,0,0.18245670756254775,0,non_informative
+"Air transport, registered carrier departures worldwide",0.0913446876599145,10214,0.0913446876599145,0,0.1864077697238677,0,non_informative
+"Commercial banks and other lending (PPG + PNG) (NFL, current US$)",0.0905958461911965,4569,0.0905958461911965,0,0.18873768002161356,0,non_informative
+Fertilizer consumption (kilograms per hectare of arable land),0.0905919602040563,11173,0.0905919602040563,0,0.30680612658007494,0,non_informative
+"Portfolio investment, bonds (PPG + PNG) (NFL, current US$)",0.0904165184944588,2303,0.0904165184944588,0,0.22052391941409638,0,non_informative
+Adjusted savings: consumption of fixed capital (current US$),0.0899340982737059,8819,0.0899340982737059,0,0.15831194162531398,0,non_informative
+"International tourism, receipts (current US$)",0.0899164103769814,4863,0.0899164103769814,0,0.13420212679372748,0,non_informative
+"IMF repurchases and charges (TDS, current US$)",0.0896333347848474,5662,0.0896333347848474,0,0.18614737110949472,0,non_informative
+"Services, value added (current US$)",0.0891672656659806,9728,0.0891672656659806,0,0.09064097527064796,0,non_informative
+Unemployment with basic education (% of total labor force with basic education),0.0883293968036371,2772,0.0883293968036371,0,0.4920110837240683,0,non_informative
+Market capitalization of listed domestic companies (% of GDP),0.0880085692760404,3632,0.0880085692760404,0,0.5530365885957276,1,informative
+"Stocks traded, total value (% of GDP)",0.0875310670021242,4013,0.0875310670021242,0,0.5251348546848131,1,informative
+CPIA fiscal policy rating (1=low to 6=high),0.0858874814052285,2327,0.0858874814052285,0,0.24521950644550872,0,non_informative
+New businesses registered (number),0.085630100858744,2279,0.085630100858744,0,0.305042693153718,0,non_informative
+"Secondary education, duration (years)",0.0848437476683871,13214,0.0848437476683871,0,0.1152983483132585,0,non_informative
+Import volume index (2015 = 100),0.0846512564006731,6397,0.0846512564006731,0,0.29115162283552354,0,non_informative
+"Total debt service (% of exports of goods, services and primary income)",0.0827402028849342,5195,0.0827402028849342,0,0.26477415969701157,0,non_informative
+Electricity production from coal sources (% of total),0.0822611701526829,7597,0.0822611701526829,0,0.21244939937750423,0,non_informative
+"Employment to population ratio, 15+, total (%) (modeled ILO estimate)",0.0816554560024693,7814,0.0816554560024693,0,0.5355901207838304,1,informative
+"Imports of goods, services and primary income (BoP, current US$)",0.0816250162677111,9581,0.0816250162677111,0,0.0678798889692482,0,non_informative
+"Exports of goods, services and primary income (BoP, current US$)",0.0810581142384234,9367,0.0810581142384234,0,0.07683179797992998,0,non_informative
+"Foreign direct investment, net outflows (BoP, current US$)",0.081024198150976,9828,0.081024198150976,0,0.07083452192253288,0,non_informative
+"Air transport, freight (million ton-km)",0.0810207953507805,9778,0.0810207953507805,0,0.3016595686261579,0,non_informative
+ICT goods imports (% total goods imports),0.0808164378288132,4585,0.0808164378288132,0,0.2665005698876119,0,non_informative
+Commercial service exports (current US$),0.0807150448694122,9511,0.0807150448694122,0,0.09161952018532779,0,non_informative
+"Government expenditure on education, total (% of GDP)",0.0801605363881572,6234,0.0801605363881572,0,0.25044124110380345,0,non_informative
+Population growth (annual %),0.0798199704369064,13803,0.0798199704369064,0,0.08255906235698027,0,non_informative
+"Secondary income receipts (BoP, current US$)",0.0797725610168903,7408,0.0797725610168903,0,0.12014853497710144,0,non_informative
+Military expenditure (% of general government expenditure),0.0795933963495121,5732,0.0795933963495121,0,0.28290175274342755,0,non_informative
+"Stocks traded, turnover ratio of domestic shares (%)",0.078299499403635,4281,0.078299499403635,0,0.6019053268382455,1,informative
+Adjusted savings: carbon dioxide damage (current US$),0.0782492824408591,6657,0.0782492824408591,0,0.1882292716884349,0,non_informative
+Commercial service imports (current US$),0.0768333800089399,9537,0.0768333800089399,0,0.07961568120587151,0,non_informative
+Changes in inventories (current US$),0.0768203793116712,7176,0.0768203793116712,0,0.16576022246791539,0,non_informative
+CPIA equity of public resource use rating (1=low to 6=high),0.076592434168606,2327,0.076592434168606,0,0.26621321321022184,0,non_informative
+"PPG, IBRD (DOD, current US$)",0.0754356504920241,4046,0.0754356504920241,0,0.1798332704436846,0,non_informative
+"Net financial flows, RDB nonconcessional (NFL, current US$)",0.0751926485041419,4366,0.0751926485041419,0,0.15480855862475623,0,non_informative
+Adjusted net national income (current US$),0.0747141196376276,9502,0.0747141196376276,0,0.12658418181704678,0,non_informative
+"International tourism, expenditures (current US$)",0.0739607217930713,4714,0.0739607217930713,0,0.13293191928035528,0,non_informative
+"Air transport, passengers carried",0.0735595990678226,10220,0.0735595990678226,0,0.1638280428199066,0,non_informative
+"Insurance and financial services (% of service imports, BoP)",0.0734760961341997,9140,0.0734760961341997,0,0.17793902001247497,0,non_informative
+"School enrollment, primary, private (% of total primary)",0.072658116562248,6024,0.072658116562248,0,0.36828734598186,0,non_informative
+Final consumption expenditure (current US$),0.0726203155310648,9842,0.0726203155310648,0,0.10444577577127433,0,non_informative
+"Adjusted net savings, excluding particulate emission damage (% of GNI)",0.0722182354506643,6004,0.0722182354506643,0,0.35821095661867275,0,non_informative
+Households and NPISHs Final consumption expenditure (current US$),0.0721723745432624,9746,0.0721723745432624,0,0.21664206630459323,0,non_informative
+"IFC, private nonguaranteed (NFL, US$)",0.0720493503847056,8408,0.0720493503847056,0,0.13640624041047178,0,non_informative
+"GNI, PPP (constant 2021 international $)",0.0719645383147763,5069,0.0719645383147763,0,0.3738146465885684,0,non_informative
+General government final consumption expenditure (current US$),0.0714677045147221,9736,0.0714677045147221,0,0.11031314966081547,0,non_informative
+"Manufacturing, value added (constant 2015 US$)",0.0706267488587253,8182,0.0706267488587253,0,0.3692851977307073,0,non_informative
+"Industry (including construction), value added (current US$)",0.0693568407031488,10172,0.0693568407031488,0,0.1073391659838662,0,non_informative
+Import unit value index (2015 = 100),0.0690328681888176,6641,0.0690328681888176,0,0.25135259063463544,0,non_informative
+"PPG, IDA (DOD, current US$)",0.0684941932442779,5311,0.0684941932442779,0,0.145847020263377,0,non_informative
+Adjusted savings: carbon dioxide damage (% of GNI),0.0672987575428926,7487,0.0672987575428926,0,0.35882864714643387,0,non_informative
+"International tourism, receipts for travel items (current US$)",0.0672249996812065,5583,0.0672249996812065,0,0.163991552478034,0,non_informative
+Labor force with advanced education (% of total working-age population with advanced education),0.0668724091467068,2726,0.0668724091467068,0,0.5972979372211961,1,informative
+"International tourism, expenditures for travel items (current US$)",0.0667991950071594,5511,0.0667991950071594,0,0.1685245515402632,0,non_informative
+Grants and other revenue (% of revenue),0.0667947611716904,5322,0.0667947611716904,0,0.33875807746090747,0,non_informative
+Gross national expenditure (current US$),0.066678920906317,9594,0.066678920906317,0,0.08713066408228637,0,non_informative
+High-technology exports (current US$),0.0662906427980508,3157,0.0662906427980508,0,0.22195685908472731,0,non_informative
+"Manufacturing, value added (current US$)",0.0656219163428332,9149,0.0656219163428332,0,0.1797538142696844,0,non_informative
+Scientific and technical journal articles,0.0643453435938141,6372,0.0643453435938141,0,0.4844528522551773,0,non_informative
+"Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)",0.064251855524955,8044,0.064251855524955,0,0.4921850307613931,0,non_informative
+Gross fixed capital formation (current US$),0.0642296599705844,9370,0.0642296599705844,0,0.0854170793184968,0,non_informative
+"Stocks traded, total value (current US$)",0.0639994270357552,4013,0.0639994270357552,0,0.15611777019977602,0,non_informative
+"IBRD loans and IDA credits (DOD, current US$)",0.0637093838733985,6208,0.0637093838733985,0,0.1654538924343614,0,non_informative
+"Net ODA provided, to the least developed countries (current US$)",0.0634665715205732,1366,0.0634665715205732,0,0.28313386043414446,0,non_informative
+Merchandise exports to economies in the Arab World (% of total merchandise exports),0.0628885092512681,10896,0.0628885092512681,0,0.17828110662200422,0,non_informative
+Claims on other sectors of the domestic economy (annual growth as % of broad money),0.0626784568618229,2798,0.0626784568618229,0,0.5031984997334111,1,informative
+Insurance and financial services (% of commercial service imports),0.0616789495858239,9140,0.0616789495858239,0,0.20269530329000346,0,non_informative
+Imports of goods and services (current US$),0.0604848183697404,10195,0.0604848183697404,0,0.05980766722747944,0,non_informative
+"Net bilateral aid flows from DAC donors, Hungary (current US$)",0.0604203801083809,1997,0.0604203801083809,0,0.10801756329186647,0,non_informative
+"Net bilateral aid flows from DAC donors, Poland (current US$)",0.059708936836032,2381,0.059708936836032,0,0.10198020529340755,0,non_informative
+"PPG, commercial banks (NFL, current US$)",0.0591857398479803,4577,0.0591857398479803,0,0.18698258745390273,0,non_informative
+Exports of goods and services (current US$),0.0590923925751868,10140,0.0590923925751868,0,0.06788889197506456,0,non_informative
+"Current education expenditure, tertiary (% of total expenditure in tertiary public institutions)",0.0582294484881356,1992,0.0582294484881356,0,0.4321239014909291,0,non_informative
+Market capitalization of listed domestic companies (current US$),0.0581554827427513,3641,0.0581554827427513,0,0.2903542826611684,0,non_informative
+Newborns protected against tetanus (%),0.0577755552859608,5428,0.0577755552859608,0,0.4121516372756273,0,non_informative
+"International tourism, number of arrivals",0.0567143135875333,5588,0.0567143135875333,0,0.22722703624385776,0,non_informative
+"Cause of death, by injury (% of total)",0.0565427934883413,1374,0.0565427934883413,0,0.690617482805354,1,informative
+"Households and NPISHs Final consumption expenditure, PPP (constant 2021 international $)",0.0558705804743606,6168,0.0558705804743606,0,0.46632421277444847,0,non_informative
+Gross domestic savings (current US$),0.0558439804766163,9832,0.0558439804766163,0,0.1798206713885324,0,non_informative
+"Net financial flows, multilateral (NFL, current US$)",0.0556662474431046,6281,0.0556662474431046,0,0.07816090064316912,0,non_informative
+"Net financial flows, others (NFL, current US$)",0.0555341985127155,5630,0.0555341985127155,0,0.08637996021124038,0,non_informative
+F-gases emissions from Industrial Processes (Mt CO2e),0.0553706789193932,7090,0.0553706789193932,0,0.18025978308160526,0,non_informative
+Arable land (hectares per person),0.0550410383386981,12479,0.0550410383386981,0,0.18747952588130706,0,non_informative
+Merchandise exports by the reporting economy (current US$),0.0544280574750778,11807,0.0544280574750778,0,0.09557583591951209,0,non_informative
+"Patent applications, residents",0.0543511981197925,4192,0.0543511981197925,0,0.3072192937158201,0,non_informative
+Female share of employment in senior and middle management (%),0.0542616925500965,1687,0.0542616925500965,0,0.7777255513552699,1,informative
+"Trademark applications, nonresident, by count",0.0542470815607395,2043,0.0542470815607395,0,0.3808814825590778,0,non_informative
+Imports of goods and services (% of GDP),0.0538789971774264,10189,0.0538789971774264,0,0.1767827765760961,0,non_informative
+Gross capital formation (current US$),0.0536565333650426,9692,0.0536565333650426,0,0.08100832415096892,0,non_informative
+Arable land (hectares),0.0530437957983605,9996,0.0530437957983605,0,0.1507729697903854,0,non_informative
+"Computer, communications and other services (% of commercial service imports)",0.0528983534875514,9412,0.0528983534875514,0,0.1668052689698755,0,non_informative
+Population living in areas where elevation is below 5 meters (% of total population),0.051659806000877,753,0.051659806000877,0,0.6178864366766248,1,informative
+"Net bilateral aid flows from DAC donors, Estonia (current US$)",0.0511936270399887,1071,0.0511936270399887,0,0.12387992326098796,0,non_informative
+Expenditure on tertiary education (% of government expenditure on education),0.0509118233949401,3776,0.0509118233949401,0,0.3286657788694196,0,non_informative
+"Net ODA provided, total (% of GNI)",0.0505608743798597,1177,0.0505608743798597,0,0.396876043613502,0,non_informative
+GDP (constant 2015 US$),0.0502539591739819,12417,0.0502539591739819,0,0.16614563750919267,0,non_informative
+"Total reserves (includes gold, current US$)",0.0494306841292979,8284,0.0494306841292979,0,0.11806935334004301,0,non_informative
+Merchandise imports (current US$),0.0492473414780506,12557,0.0492473414780506,0,0.025884530893524813,0,non_informative
+"International tourism, number of departures",0.0489596363727039,2968,0.0489596363727039,0,0.3131164310350858,0,non_informative
+Merchandise imports by the reporting economy (current US$),0.0488415052484029,11823,0.0488415052484029,0,0.08369392957920328,0,non_informative
+Fixed telephone subscriptions,0.0485535112765765,12715,0.0485535112765765,0,0.2523193961233856,0,non_informative
+"International migrant stock, total",0.0484735099662448,2008,0.0484735099662448,0,0.4652831068256485,0,non_informative
+Merchandise exports (current US$),0.0480535049977892,12598,0.0480535049977892,0,0.0456548588897128,0,non_informative
+Population in urban agglomerations of more than 1 million,0.0476905277071746,6600,0.0476905277071746,0,0.5869501421779877,1,informative
+Net ODA provided to the least developed countries (% of GNI),0.0473844278652208,1328,0.0473844278652208,0,0.4822106393509587,0,non_informative
+Wholesale price index (2010 = 100),0.0464997719719267,1457,0.0464997719719267,0,0.49895743815305577,0,non_informative
+"Industry (including construction), value added (constant 2015 US$)",0.0464992316965459,9403,0.0464992316965459,0,0.2119750609469428,0,non_informative
+"Foreign direct investment, net inflows (BoP, current US$)",0.046014023089479,11995,0.046014023089479,0,0.06069021778025459,0,non_informative
+Methane (CH4) emissions from Transport (Energy) (Mt CO2e),0.0458046991661133,13310,0.0458046991661133,0,0.08271494614296827,0,non_informative
+Carbon dioxide (CO2) emissions from Transport (Energy) (Mt CO2e),0.0456179902151767,13310,0.0456179902151767,0,0.11156495462493908,0,non_informative
+Trade in services (% of GDP),0.0453532885891745,9647,0.0453532885891745,0,0.31568564284349393,0,non_informative
+"ICT service exports (BoP, current US$)",0.0452003096429524,6171,0.0452003096429524,0,0.1062270312436113,0,non_informative
+"PNG, bonds (NFL, current US$)",0.0443143908635451,1065,0.0443143908635451,0,0.2366589547389668,0,non_informative
+"Communications, computer, etc. (% of service imports, BoP)",0.044294045164072,9379,0.044294045164072,0,0.17226725954426034,0,non_informative
+"GNI, Atlas method (current US$)",0.0442410971937375,11710,0.0442410971937375,0,0.17656363196384273,0,non_informative
+ICT goods exports (% of total goods exports),0.044215264991096,4392,0.044215264991096,0,0.3330746334920465,0,non_informative
+Total reserves (% of total external debt),0.0440559105516313,6905,0.0440559105516313,0,0.24476015530415154,0,non_informative
+Net lending (+) / net borrowing (-) (% of GDP),0.0436755041413701,5184,0.0436755041413701,0,0.3219379052956203,0,non_informative
+Children (ages 0-14) newly infected with HIV,0.0424966841049554,3006,0.0424966841049554,0,0.3457912212576124,0,non_informative
+Merchandise exports to low- and middle-income economies outside region (% of total merchandise exports),0.0422848426893417,11398,0.0422848426893417,0,0.12223418058534888,0,non_informative
+GDP (current US$),0.0418017440669788,12546,0.0418017440669788,0,0.04907162994794015,0,non_informative
+GNI (current US$),0.0417535187178289,11991,0.0417535187178289,0,0.05336435711350924,0,non_informative
+Net acquisition of financial assets (current LCU),0.0417022551475856,2474,0.0417022551475856,0,0.19897577071498293,0,non_informative
+Nitrous oxide (N2O) emissions from Transport (Energy) (Mt CO2e),0.0407857873470877,13310,0.0407857873470877,0,0.08618752279223753,0,non_informative
+Gross value added at basic prices (GVA) (constant 2015 US$),0.0402668339419595,8882,0.0402668339419595,0,0.2980379000881168,0,non_informative
+Total reserves minus gold (current US$),0.0399459728136151,8284,0.0399459728136151,0,0.12075373994945882,0,non_informative
+Carbon dioxide (CO2) emissions from Building (Energy) (Mt CO2e),0.0394325088337267,13255,0.0394325088337267,0,0.11508298226379085,0,non_informative
+"Net bilateral aid flows from DAC donors, Czechia (current US$)",0.0394141063583517,2390,0.0394141063583517,0,0.10184235785475938,0,non_informative
+"Net bilateral aid flows from DAC donors, Greece (current US$)",0.0393531121725245,3110,0.0393531121725245,0,0.09133781953043998,0,non_informative
+Export unit value index (2015 = 100),0.0390292192148732,6826,0.0390292192148732,0,0.25709258900126325,0,non_informative
+"Electricity production from renewable sources, excluding hydroelectric (kWh)",0.0387736252686052,7262,0.0387736252686052,0,0.19990406132765662,0,non_informative
+Nitrous oxide (N2O) emissions from Industrial Processes (Mt CO2e),0.0371158709555883,13805,0.0371158709555883,0,0.06622225453351549,0,non_informative
+"Government expenditure per student, secondary (% of GDP per capita)",0.0363113689964975,1636,0.0363113689964975,0,0.86685099801578,1,informative
+Net lending (+) / net borrowing (-) (current LCU),0.034008499026071,4411,0.034008499026071,0,0.06562999463761304,0,non_informative
+"GDP, PPP (constant 2021 international $)",0.0339309760582473,8256,0.0339309760582473,0,0.2747485345417593,0,non_informative
+"Industrial design applications, nonresident, by count",0.0336840021511507,2540,0.0336840021511507,0,0.3512602170784715,0,non_informative
+Import value index (2015 = 100),0.0329770525072192,7741,0.0329770525072192,0,0.2379584850716956,0,non_informative
+Carbon dioxide (CO2) emissions (total) excluding LULUCF (Mt CO2e),0.0326058177834717,13805,0.0326058177834717,0,0.10952891120590184,0,non_informative
+Manufactures exports (% of merchandise exports),0.0322922519287919,9021,0.0322922519287919,0,0.2291268291063823,0,non_informative
+"Current education expenditure, primary (% of total expenditure in primary public institutions)",0.0316248250882533,2023,0.0316248250882533,0,0.37281038350150314,0,non_informative
+Social contributions (current LCU),0.0316156436613611,3230,0.0316156436613611,0,0.3141409272449248,0,non_informative
+"Trademark applications, resident, by count",0.0315194549542597,2042,0.0315194549542597,0,0.38092251014983114,0,non_informative
+Methane (CH4) emissions from Power Industry (Energy) (Mt CO2e),0.0305155942737557,13310,0.0305155942737557,0,0.10577160620263425,0,non_informative
+"PPG, official creditors (NFL, US$)",0.0304034167641542,6331,0.0304034167641542,0,0.1717704570697618,0,non_informative
+"Foreign direct investment, net (BoP, current US$)",0.0302998657998788,7063,0.0302998657998788,0,0.11504070595980652,0,non_informative
+"Services, value added (constant 2015 US$)",0.0288825709759215,8978,0.0288825709759215,0,0.22746578315172095,0,non_informative
+Carbon dioxide (CO2) emissions from Power Industry (Energy) (Mt CO2e),0.0284602871520869,13310,0.0284602871520869,0,0.135733565162529,0,non_informative
+"GDP, PPP (current international $)",0.0281837519314021,8294,0.0281837519314021,0,0.3064265791571359,0,non_informative
+"Reserves and related items (BoP, current US$)",0.0279984984013866,7470,0.0279984984013866,0,0.11257227343601171,0,non_informative
+Asylum-seekers by country or territory of asylum,0.0275931874824856,5077,0.0275931874824856,0,0.41186281785415685,0,non_informative
+"GNI, PPP (current international $)",0.0273819111298196,8101,0.0273819111298196,0,0.29228240265992445,0,non_informative
+"New business density (new registrations per 1,000 people ages 15-64)",0.0273686052849558,2830,0.0273686052849558,0,0.6346221771968634,1,informative
+Secure Internet servers,0.0271912407872224,3029,0.0271912407872224,0,0.47927364015452634,0,non_informative
+Renewable internal freshwater resources per capita (cubic meters),0.0269291063021614,11412,0.0269291063021614,0,0.39330907791560854,0,non_informative
+"Net bilateral aid flows from DAC donors, Austria (current US$)",0.0269135631198882,7640,0.0269135631198882,0,0.04498126867539053,0,non_informative
+"Households and NPISHs Final consumption expenditure, PPP (current international $)",0.0264520270516745,6388,0.0264520270516745,0,0.4955804659007155,0,non_informative
+Total greenhouse gas emissions excluding LULUCF (% change from 1990),0.0258880231250762,8534,0.0258880231250762,0,0.21770540265737906,0,non_informative
+Adjusted savings: particulate emission damage (current US$),0.0258760511128923,5445,0.0258760511128923,0,0.28762131114345213,0,non_informative
+Adjusted savings: mineral depletion (current US$),0.0257238634747855,10553,0.0257238634747855,0,0.09498338734096148,0,non_informative
+Tax revenue (% of GDP),0.0253416129288896,5624,0.0253416129288896,0,0.36774095038437027,0,non_informative
+CPIA policy and institutions for environmental sustainability rating (1=low to 6=high),0.0245099674654689,2327,0.0245099674654689,0,0.28916381275697095,0,non_informative
+"Net primary income (BoP, current US$)",0.0237459816800055,7534,0.0237459816800055,0,0.07958993514014859,0,non_informative
+"Net financial flows, IMF nonconcessional (NFL, current US$)",0.0236544067571028,4192,0.0236544067571028,0,0.15155622335114033,0,non_informative
+Taxes on exports (% of tax revenue),0.0226141108226984,1582,0.0226141108226984,0,0.4465125456427981,0,non_informative
+Fixed broadband subscriptions,0.0223613648857856,5132,0.0223613648857856,0,0.3223877772337337,0,non_informative
+Methane (CH4) emissions (total) excluding LULUCF (% change from 1990),0.0223568508089526,8534,0.0223568508089526,0,0.18528405409001808,0,non_informative
+Statistical performance indicators (SPI): Pillar 1 data use score (scale 0-100),0.021992180935118,4299,0.021992180935118,0,0.4328122995118092,0,non_informative
+Gross value added at basic prices (GVA) (constant LCU),0.0209966266347139,7469,0.0209966266347139,0,0.22668688372009885,0,non_informative
+Net primary income (Net income from abroad) (current US$),0.0207948350993954,8683,0.0207948350993954,0,0.09359001004842422,0,non_informative
+"PPG, other private creditors (NFL, current US$)",0.0204982781707542,4597,0.0204982781707542,0,0.1204717281855346,0,non_informative
+Total greenhouse gas emissions including LULUCF (Mt CO2e),0.0204693333152591,5387,0.0204693333152591,0,0.2667684368249685,0,non_informative
+Total greenhouse gas emissions excluding LULUCF (Mt CO2e),0.0201724068359811,13805,0.0201724068359811,0,0.10200386430123745,0,non_informative
+Carbon dioxide (CO2) emissions from Fugitive Emissions (Energy) (Mt CO2e),0.0200801098973237,13090,0.0200801098973237,0,0.11733829152221088,0,non_informative
+External balance on goods and services (current US$),0.0197281450630424,8023,0.0197281450630424,0,0.09733648218627655,0,non_informative
+"Services, value added (constant LCU)",0.0196814330483018,7222,0.0196814330483018,0,0.12881727158249923,0,non_informative
+Carbon dioxide (CO2) emissions from Waste (Mt CO2e),0.0194922494647922,8136,0.0194922494647922,0,0.24203725468905896,0,non_informative
+Total reserves in months of imports,0.0188069591977717,9044,0.0188069591977717,0,0.22333959132468328,0,non_informative
+"Industrial design applications, resident, by count",0.0187085065727129,2542,0.0187085065727129,0,0.3511853262241996,0,non_informative
+"Industry (including construction), value added (constant LCU)",0.0182336312447623,7521,0.0182336312447623,0,0.15169438306200025,0,non_informative
+"Manufacturing, value added (constant LCU)",0.0173033315947794,6957,0.0173033315947794,0,0.22644346372038932,0,non_informative
+Changes in inventories (constant LCU),0.0172906304659217,3688,0.0172906304659217,0,0.25556943274445126,0,non_informative
+Secure Internet servers (per 1 million people),0.017037066201517,3739,0.017037066201517,0,0.8376345553478651,1,informative
+Nitrous oxide (N2O) emissions from Power Industry (Energy) (Mt CO2e),0.0170163625198933,13310,0.0170163625198933,0,0.10745867971061128,0,non_informative
+Land area where elevation is below 5 meters (% of total land area),0.0169578113684175,753,0.0169578113684175,0,0.4013733570174702,0,non_informative
+"Net official flows from UN agencies, ILO (current US$)",0.0161338276881316,2040,0.0161338276881316,0,0.1631944494988806,0,non_informative
+Carbon dioxide (CO2) emissions (total) excluding LULUCF (% change from 1990),0.0159906996927634,8466,0.0159906996927634,0,0.23202592229144153,0,non_informative
+"Net trade in goods and services (BoP, current US$)",0.0154172404671832,7543,0.0154172404671832,0,0.09155626377240035,0,non_informative
+Net primary income (Net income from abroad) (current LCU),0.0151359577683923,8694,0.0151359577683923,0,0.07966449051745159,0,non_informative
+"Net bilateral aid flows from DAC donors, European Union institutions (current US$)",0.0146633834159076,9029,0.0146633834159076,0,0.037884125344288616,0,non_informative
+Other taxes (% of revenue),0.0145821605605347,5124,0.0145821605605347,0,0.38999139332205274,0,non_informative
+Adjusted net national income per capita (annual % growth),0.0145697337940883,6243,0.0145697337940883,0,0.5520347382179848,1,informative
+"Net bilateral aid flows from DAC donors, Lithuania (current US$)",0.0133424463236785,1341,0.0133424463236785,0,0.11905875952835289,0,non_informative
+"Agriculture, forestry, and fishing, value added (constant LCU)",0.0132511103325433,7672,0.0132511103325433,0,0.3219152361125376,0,non_informative
+"Listed domestic companies, total",0.0131905500677488,4269,0.0131905500677488,0,0.3659133477840043,0,non_informative
+"Net trade in goods (BoP, current US$)",0.0124691794452421,7542,0.0124691794452421,0,0.09011682785587549,0,non_informative
+"Cause of death, by other COVID-19 pandemic-related outcomes (% of total)",0.012423030581705,1374,0.012423030581705,0,0.6472235451299484,1,informative
+Taxes less subsidies on products (constant LCU),0.0120655060561089,6686,0.0120655060561089,0,0.17191423848746779,0,non_informative
+Container port traffic (TEU: 20 foot equivalent units),0.0119628219884406,3485,0.0119628219884406,0,0.4076566585688096,0,non_informative
+Nitrous oxide (N2O) emissions (total) excluding LULUCF (% change from 1990),0.0115096904845206,8534,0.0115096904845206,0,0.18899549652647787,0,non_informative
+Gross domestic income (constant LCU),0.0115000680798839,6787,0.0115000680798839,0,0.22164690033817308,0,non_informative
+"Services, value added (current LCU)",0.0114443654981398,7734,0.0114443654981398,0,0.09553031695026473,0,non_informative
+"Foreign direct investment, net outflows (% of GDP)",0.0114409207291263,9265,0.0114409207291263,0,0.22743831390106944,0,non_informative
+"Net ODA provided, total (current US$)",0.0114002241585039,1454,0.0114002241585039,0,0.20780092967050537,0,non_informative
+"Industry (including construction), value added (current LCU)",0.0109632883466997,8084,0.0109632883466997,0,0.12098428071087004,0,non_informative
+Carbon dioxide (CO2) emissions from Industrial Combustion (Energy) (Mt CO2e),0.0108670561811639,13255,0.0108670561811639,0,0.10931767742383908,0,non_informative
+Exports of goods and services (constant LCU),0.010836376050981,6875,0.010836376050981,0,0.11341656694068383,0,non_informative
+Cereal production (metric tons),0.0107306438288684,11614,0.0107306438288684,0,0.16590079507140593,0,non_informative
+Gross value added at basic prices (GVA) (current LCU),0.0104934725772803,8054,0.0104934725772803,0,0.18347564339556152,0,non_informative
+GDP growth (annual %),0.0104454400414548,12366,0.0104454400414548,0,0.06730802257910502,0,non_informative
+GNI (constant LCU),0.0103939868167039,5548,0.0103939868167039,0,0.14637730776757366,0,non_informative
+Exports as a capacity to import (constant LCU),0.0103636222198062,6787,0.0103636222198062,0,0.12311486828955992,0,non_informative
+Methane (CH4) emissions from Waste (Mt CO2e),0.0097962417301071,13805,0.0097962417301071,0,0.08099566688485949,0,non_informative
+"Manufacturing, value added (current LCU)",0.0097715273895512,7453,0.0097715273895512,0,0.1783057171485781,0,non_informative
+Merchandise imports from low- and middle-income economies in Middle East & North Africa (% of total merchandise imports),0.0097271064321486,10959,0.0097271064321486,0,0.11012275488404691,0,non_informative
+"Net bilateral aid flows from DAC donors, New Zealand (current US$)",0.0097012804503035,5412,0.0097012804503035,0,0.06031251207198906,0,non_informative
+Adjusted net national income (annual % growth),0.0096999035034286,6243,0.0096999035034286,0,0.21849500400534586,0,non_informative
+Changes in inventories (current LCU),0.0096402478561653,7183,0.0096402478561653,0,0.13514523233881173,0,non_informative
+External balance on goods and services (constant LCU),0.0095729682197299,2997,0.0095729682197299,0,0.19942598197166356,0,non_informative
+Households and NPISHs Final consumption expenditure (constant LCU),0.0095015133107277,6607,0.0095015133107277,0,0.30659489894352343,0,non_informative
+General government final consumption expenditure (constant LCU),0.0094789392995687,6536,0.0094789392995687,0,0.17307829181029238,0,non_informative
+Gross fixed capital formation (constant LCU),0.009333944586355,6333,0.009333944586355,0,0.13421056921004387,0,non_informative
+Terms of trade adjustment (constant LCU),0.0092819067204024,6787,0.0092819067204024,0,0.20432606453964816,0,non_informative
+Gross capital formation (constant LCU),0.0092319279665306,6326,0.0092319279665306,0,0.13500600970887164,0,non_informative
+Gross national expenditure (constant LCU),0.0090110399629003,6289,0.0090110399629003,0,0.14476538963154562,0,non_informative
+Final consumption expenditure (constant LCU),0.0086356871676695,6719,0.0086356871676695,0,0.16559489092567176,0,non_informative
+Imports of goods and services (constant LCU),0.008450560570149,6875,0.008450560570149,0,0.1020091797290366,0,non_informative
+Discrepancy in expenditure estimate of GDP (current LCU),0.0083408375476316,7521,0.0083408375476316,0,0.21732437819828546,0,non_informative
+GNI per capita (constant LCU),0.0082399479045252,5548,0.0082399479045252,0,0.6808427321104485,1,informative
+"Net official flows from UN agencies, FAO (current US$)",0.0079877624550113,1255,0.0079877624550113,0,0.14653894554567218,0,non_informative
+Other expense (current LCU),0.0078363826479262,3251,0.0078363826479262,0,0.11864970891293543,0,non_informative
+Carbon dioxide (CO2) emissions from Industrial Processes (Mt CO2e),0.0077019268828679,13805,0.0077019268828679,0,0.08524976339417495,0,non_informative
+Other taxes (current LCU),0.0073694392886812,4173,0.0073694392886812,0,0.11932238843593874,0,non_informative
+Adjusted savings: education expenditure (% of GNI),0.0073174079201915,12477,0.0073174079201915,0,0.13678876224340142,0,non_informative
+Taxes less subsidies on products (current LCU),0.007029042478433,7531,0.007029042478433,0,0.11909655709043966,0,non_informative
+"Agriculture, forestry, and fishing, value added (current LCU)",0.0067171599254952,8138,0.0067171599254952,0,0.2762307783393298,0,non_informative
+Financial intermediary services indirectly Measured (FISIM) (current LCU),0.0067138744391603,1454,0.0067138744391603,0,0.2785016130889329,0,non_informative
+General government final consumption expenditure (current LCU),0.0066565088273439,7678,0.0066565088273439,0,0.12211636577830097,0,non_informative
+Net barter terms of trade index (2015 = 100),0.0065224170627831,6384,0.0065224170627831,0,0.3142920270620592,0,non_informative
+Gross domestic savings (current LCU),0.0061911448717551,7732,0.0061911448717551,0,0.19167451057479207,0,non_informative
+"Manufacturing, value added (% of GDP)",0.0060863131579763,9142,0.0060863131579763,0,0.478281505036016,0,non_informative
+GDP: linked series (current LCU),0.006036248880683,6801,0.006036248880683,0,0.11720254631001906,0,non_informative
+GNI: linked series (current LCU),0.0056816273144408,6597,0.0056816273144408,0,0.11511609809884107,0,non_informative
+Gross capital formation (current LCU),0.0055784513786257,7684,0.0055784513786257,0,0.0876025935233551,0,non_informative
+Gross fixed capital formation (current LCU),0.0052921290556109,7352,0.0052921290556109,0,0.09452880186336751,0,non_informative
+"Manufacturing, value added (annual % growth)",0.0051897036308916,8151,0.0051897036308916,0,0.22832331767431385,0,non_informative
+Gross national expenditure (current LCU),0.004314415402442,7558,0.004314415402442,0,0.09397610508877632,0,non_informative
+Carbon dioxide (CO2) net fluxes from LULUCF - Forest Land (Mt CO2e),0.0041328542808257,5377,0.0041328542808257,0,0.2060659250061537,0,non_informative
+"Interest rate spread (lending rate minus deposit rate, %)",0.0038826381824044,4977,0.0038826381824044,0,0.24083430845899864,0,non_informative
+Subsidies and other transfers (current LCU),0.0038015618325009,3750,0.0038015618325009,0,0.1753808422717864,0,non_informative
+Final consumption expenditure (current LCU),0.0037847879167309,7742,0.0037847879167309,0,0.11032453097113287,0,non_informative
+Imports of goods and services (current LCU),0.0036120552156128,8029,0.0036120552156128,0,0.06743073354654394,0,non_informative
+GNI per capita (current LCU),0.0035527654961224,9666,0.0035527654961224,0,0.4321625851458861,0,non_informative
+Households and NPISHs final consumption expenditure: linked series (current LCU),0.0035185535699004,5509,0.0035185535699004,0,0.2925970604835526,0,non_informative
+Exports of goods and services (current LCU),0.0035024507995686,8027,0.0035024507995686,0,0.07543707944049599,0,non_informative
+GDP per capita (current LCU),0.0034714199560434,10032,0.0034714199560434,0,0.39894776571995144,0,non_informative
+Households and NPISHs Final consumption expenditure (current LCU),0.0029463915937799,7672,0.0029463915937799,0,0.23546570198804584,0,non_informative
+GNI (current LCU),0.002765554105801,9666,0.002765554105801,0,0.05643555844949403,0,non_informative
+GDP (current LCU),0.0026088301153736,10032,0.0026088301153736,0,0.05276480436437864,0,non_informative
+"Net bilateral aid flows from DAC donors, Switzerland (current US$)",0.0024690097609401,7945,0.0024690097609401,0,0.042838895242507107,0,non_informative
+"Personal remittances, received (current US$)",0.0022149875745929,9491,0.0022149875745929,0,0.10626367056339585,0,non_informative
+"Revenue, excluding grants (current LCU)",0.0021260959319545,4633,0.0021260959319545,0,0.14823451143386882,0,non_informative
+Grants and other revenue (current LCU),0.0019691658743628,4253,0.0019691658743628,0,0.16600022622978552,0,non_informative
+"Net financial flows, IBRD (NFL, current US$)",0.0019017659706586,6306,0.0019017659706586,0,0.08745108071812208,0,non_informative
+GDP (constant LCU),0.0017666465494521,9890,0.0017666465494521,0,0.0769855509602712,0,non_informative
+Broad money (current LCU),0.0014551891971342,7483,0.0014551891971342,0,0.09307887798275065,0,non_informative
+GDP per capita (constant LCU),0.0013950629339882,9890,0.0013950629339882,0,0.49388593851405616,0,non_informative
+Merchandise exports to low- and middle-income economies in Middle East & North Africa (% of total merchandise exports),0.0009678887725707,10530,0.0009678887725707,0,0.1439257561870075,0,non_informative
+Merchandise exports to low- and middle-income economies in East Asia & Pacific (% of total merchandise exports),0.0008304177787322,11085,0.0008304177787322,0,0.1329265693232003,0,non_informative
+Net domestic credit (current LCU),0.0007765578676615,7843,0.0007765578676615,0,0.10258584764375712,0,non_informative
+Taxes on goods and services (% value added of industry and services),0.0006832209140314,3985,0.0006832209140314,0,0.3814999511490055,0,non_informative
+Expense (current LCU),0.0003551961671725,4406,0.0003551961671725,0,0.06896717699313981,0,non_informative
+"Net official flows from UN agencies, UNAIDS (current US$)",-0.0015391769665019,2423,0.0015391769665019,0,0.12374127076438517,0,non_informative
+Taxes on international trade (current LCU),-0.0019315874603423,3993,0.0019315874603423,0,0.26656898604107704,0,non_informative
+"Inflation, GDP deflator (annual %)",-0.0019433440487068,12332,0.0019433440487068,0,0.10232846930234323,0,non_informative
+"Inflation, GDP deflator: linked series (annual %)",-0.0023113833868539,6771,0.0023113833868539,0,0.21264287961892625,0,non_informative
+"Foreign direct investment, net inflows (% of GDP)",-0.0027700922915967,11645,0.0027700922915967,0,0.16335716104001777,0,non_informative
+Customs and other import duties (current LCU),-0.0028530375060427,3828,0.0028530375060427,0,0.19250402946454423,0,non_informative
+Military expenditure (current LCU),-0.0029308019144848,7362,0.0029308019144848,0,0.08136860518506084,0,non_informative
+"Taxes on income, profits and capital gains (current LCU)",-0.0030061565958965,4538,0.0030061565958965,0,0.1921024230177948,0,non_informative
+External balance on goods and services (current LCU),-0.0030215871137429,8027,0.0030215871137429,0,0.08138709191165826,0,non_informative
+Claims on private sector (annual growth as % of broad money),-0.0037058848940349,7285,0.0037058848940349,0,0.19202095485742748,0,non_informative
+"Net financial flows, RDB concessional (NFL, current US$)",-0.003863791185713,4584,0.003863791185713,0,0.1486497114766181,0,non_informative
+"Official exchange rate (LCU per US$, period average)",-0.0044517917169575,10209,0.0044517917169575,0,0.17271191750679513,0,non_informative
+Goods and services expense (current LCU),-0.0044586176547318,4422,0.0044586176547318,0,0.08654284140469022,0,non_informative
+Net acquisition of financial assets (% of GDP),-0.0046907236375357,2780,0.0046907236375357,0,0.5897980908916318,1,informative
+Forest area (sq. km),-0.0055697779658798,8302,0.0055697779658798,0,0.22247022305279904,0,non_informative
+Households and NPISHs Final consumption expenditure per capita growth (annual %),-0.0058326923381689,7904,0.0058326923381689,0,0.5611509865271468,1,informative
+GDP deflator (base year varies by country),-0.0060321761041608,9864,0.0060321761041608,0,0.24580452898956806,0,non_informative
+"Net incurrence of liabilities, total (current LCU)",-0.0062430702664476,2965,0.0062430702664476,0,0.22249032028649043,0,non_informative
+Net foreign assets (current LCU),-0.0063538902494318,7888,0.0063538902494318,0,0.07143798945488898,0,non_informative
+Carbon dioxide (CO2) net fluxes from LULUCF - Organic Soil (Mt CO2e),-0.0064714435331702,4980,0.0064714435331702,0,0.24563468827531143,0,non_informative
+Methane (CH4) emissions from Fugitive Emissions (Energy) (Mt CO2e),-0.0066076768614005,13200,0.0066076768614005,0,0.08911316313332361,0,non_informative
+"Net bilateral aid flows from DAC donors, Australia (current US$)",-0.0070621582960459,7019,0.0070621582960459,0,0.04966268811385547,0,non_informative
+Nitrous oxide (N2O) emissions (total) excluding LULUCF (Mt CO2e),-0.0071405432144016,13805,0.0071405432144016,0,0.08492634153620937,0,non_informative
+Discrepancy in expenditure estimate of GDP (constant LCU),-0.0072728707671011,2862,0.0072728707671011,0,0.4100306577934419,0,non_informative
+Tax revenue (current LCU),-0.0075089157805502,4658,0.0075089157805502,0,0.13070459740728088,0,non_informative
+"Agriculture, forestry, and fishing, value added (current US$)",-0.0079303169498828,10234,0.0079303169498828,0,0.25209349946663845,0,non_informative
+Deposit interest rate (%),-0.0080015333842161,4755,0.0080015333842161,0,0.2682070560047598,0,non_informative
+GDP deflator: linked series (base year varies by country),-0.0080878729205641,6801,0.0080878729205641,0,0.3107115356623718,0,non_informative
+Broad money growth (annual %),-0.0084109170181953,7402,0.0084109170181953,0,0.154290857517203,0,non_informative
+DEC alternative conversion factor (LCU per US$),-0.0086938097713079,10310,0.0086938097713079,0,0.16182202245994387,0,non_informative
+Consumer price index (2010 = 100),-0.0088979835227458,8144,0.0088979835227458,0,0.24541608084586453,0,non_informative
+Broad money (% of GDP),-0.0088991222506513,9642,0.0088991222506513,0,0.2924482201996695,0,non_informative
+Population density (people per sq. km of land area),-0.0089093302554282,12810,0.0089093302554282,0,0.2476557319046018,0,non_informative
+Alternative and nuclear energy (% of total energy use),-0.008914763202245,6574,0.008914763202245,0,0.5660994793934585,1,informative
+Lending interest rate (%),-0.0092633772037842,4558,0.0092633772037842,0,0.25079255707901515,0,non_informative
+"Computer, communications and other services (% of commercial service exports)",-0.0094727234937414,9340,0.0094727234937414,0,0.17130502767557185,0,non_informative
+GNI per capita growth (annual %),-0.0096858814032224,6322,0.0096858814032224,0,0.5699363475762241,1,informative
+Compensation of employees (current LCU),-0.0104395996635727,4439,0.0104395996635727,0,0.09956778091790634,0,non_informative
+Mobile cellular subscriptions,-0.0107887411586885,12295,0.0107887411586885,0,0.15804975457479695,0,non_informative
+Financial intermediary services indirectly Measured (FISIM) (constant LCU),-0.0108746683418135,965,0.0108746683418135,0,0.33339873324743696,0,non_informative
+Gross national expenditure deflator (base year varies by country),-0.0108822063309763,6203,0.0108822063309763,0,0.33370339087163575,0,non_informative
+"Net official flows from UN agencies, WHO (current US$)",-0.0119036284596962,2129,0.0119036284596962,0,0.14558642482101686,0,non_informative
+"Grants, excluding technical cooperation (BoP, current US$)",-0.0125632772953913,7768,0.0125632772953913,0,0.07636527663506115,0,non_informative
+"Net official flows from UN agencies, IAEA (current US$)",-0.0126473714211586,2560,0.0126473714211586,0,0.1212767463867622,0,non_informative
+Nitrous oxide (N2O) emissions from Industrial Combustion (Energy) (Mt CO2e),-0.01274380980635,13255,0.01274380980635,0,0.08611584729119827,0,non_informative
+"PPP conversion factor, private consumption (LCU per international $)",-0.0128440370132151,6017,0.0128440370132151,0,0.3046410309132747,0,non_informative
+Taxes on goods and services (current LCU),-0.0129518812136408,4581,0.0129518812136408,0,0.14438893766602495,0,non_informative
+Net investment in nonfinancial assets (current LCU),-0.013363342356889,4422,0.013363342356889,0,0.1648037089765513,0,non_informative
+"Secondary education, vocational pupils",-0.0138097593774951,8180,0.0138097593774951,0,0.27354702791608027,0,non_informative
+"PPP conversion factor, GDP (LCU per international $)",-0.0138763799161112,6636,0.0138763799161112,0,0.31755704375968336,0,non_informative
+"Net errors and omissions (BoP, current US$)",-0.0146853357727404,7504,0.0146853357727404,0,0.05531659194992152,0,non_informative
+"Short-term debt (% of exports of goods, services and primary income)",-0.0148275352867199,5780,0.0148275352867199,0,0.24879910847586814,0,non_informative
+"Merchandise exports by the reporting economy, residual (% of total merchandise exports)",-0.0150634596640367,11807,0.0150634596640367,0,0.15616411578322467,0,non_informative
+Methane (CH4) emissions from Industrial Combustion (Energy) (Mt CO2e),-0.0152231062388219,13255,0.0152231062388219,0,0.08317685886587185,0,non_informative
+Surface area (sq. km),-0.0152701257783608,13453,0.0152701257783608,0,0.11610427823353209,0,non_informative
+"Net bilateral aid flows from DAC donors, United States (current US$)",-0.0156596299899661,8555,0.0156596299899661,0,0.05155285502688197,0,non_informative
+"Inflation, consumer prices (annual %)",-0.0161184251434948,8143,0.0161184251434948,0,0.16677105471625217,0,non_informative
+GDP per capita growth (annual %),-0.016136819739955,12366,0.016136819739955,0,0.30981258834642,0,non_informative
+"Technical cooperation grants (BoP, current US$)",-0.0162054055986403,7727,0.0162054055986403,0,0.06666867872124156,0,non_informative
+Capture fisheries production (metric tons),-0.0166030777930117,13506,0.0166030777930117,0,0.10364807451732011,0,non_informative
+Aquaculture production (metric tons),-0.0166958187741851,13506,0.0166958187741851,0,0.10205569183646142,0,non_informative
+Land area (sq. km),-0.0166992969114172,12810,0.0166992969114172,0,0.09779980353112318,0,non_informative
+Diarrhea treatment (% of children under 5 who received ORS packet),-0.0167923667793546,1052,0.0167923667793546,0,0.6974483468451504,1,informative
+Forest area (% of land area),-0.0173347083938222,8302,0.0173347083938222,0,0.2046379337195513,0,non_informative
+Proportion of seats held by women in national parliaments (%),-0.0173578343964391,6196,0.0173578343964391,0,0.546082112270731,1,informative
+Young people (ages 15-24) newly infected with HIV,-0.0173695851129249,4717,0.0173695851129249,0,0.3611941822437482,0,non_informative
+Total fisheries production (metric tons),-0.0174826352668006,13506,0.0174826352668006,0,0.1021204918234143,0,non_informative
+Primary school starting age (years),-0.0176185375027774,10867,0.0176185375027774,0,0.1612626654087765,0,non_informative
+"Net bilateral aid flows from DAC donors, Spain (current US$)",-0.0176564681365445,5375,0.0176564681365445,0,0.06437757607967168,0,non_informative
+"Net bilateral aid flows from DAC donors, Korea, Rep. (current US$)",-0.0179425708409023,6133,0.0179425708409023,0,0.05714639474149381,0,non_informative
+S&P Global Equity Indices (annual % change),-0.0183862500818321,2194,0.0183862500818321,0,0.33718310466258283,0,non_informative
+"Central government debt, total (current LCU)",-0.0184241351840349,1609,0.0184241351840349,0,0.18880309793940261,0,non_informative
+Adults (ages 15+) and children (ages 0-14) newly infected with HIV,-0.0184801486039466,4984,0.0184801486039466,0,0.35256834399679227,0,non_informative
+Adults (ages 15-49) newly infected with HIV,-0.0186767544591703,4773,0.0186767544591703,0,0.3321160018765673,0,non_informative
+Merchandise exports to low- and middle-income economies in Europe & Central Asia (% of total merchandise exports),-0.018864040039701,9415,0.018864040039701,0,0.16218296335515148,0,non_informative
+Fertilizer consumption (% of fertilizer production),-0.0192732027413527,6645,0.0192732027413527,0,0.3259730651879815,0,non_informative
+"Internally displaced persons, new displacement associated with disasters (number of cases)",-0.0193023643592268,2337,0.0193023643592268,0,0.34003525695308934,0,non_informative
+Methane (CH4) emissions (total) excluding LULUCF (Mt CO2e),-0.0196749421041213,13805,0.0196749421041213,0,0.08211685597248392,0,non_informative
+"Annual freshwater withdrawals, total (billion cubic meters)",-0.0199032235568313,6598,0.0199032235568313,0,0.23724490982566623,0,non_informative
+Gross savings (current LCU),-0.0199243428939717,6181,0.0199243428939717,0,0.1173495178558769,0,non_informative
+Nitrous oxide (N2O) emissions from Agriculture (Mt CO2e),-0.0200702648306441,13692,0.0200702648306441,0,0.0827570262923777,0,non_informative
+"Net financial flows, IMF concessional (NFL, current US$)",-0.0203499231497729,1168,0.0203499231497729,0,0.2265529537928469,0,non_informative
+"Agriculture, forestry, and fishing, value added (annual % growth)",-0.0210880621744627,9627,0.0210880621744627,0,0.2799335735253807,0,non_informative
+Imports of goods and services (annual % growth),-0.0213423274725942,8282,0.0213423274725942,0,0.09822153171510879,0,non_informative
+Broad money to total reserves ratio,-0.021541149403803,6953,0.021541149403803,0,0.2940370375193332,0,non_informative
+Export volume index (2015 = 100),-0.0215671557466716,6582,0.0215671557466716,0,0.30155659468947593,0,non_informative
+"Agriculture, forestry, and fishing, value added (constant 2015 US$)",-0.021717559968232,9668,0.021717559968232,0,0.39369818075086976,0,non_informative
+"Net capital account (BoP, current US$)",-0.0218588407566354,4686,0.0218588407566354,0,0.09861579792653856,0,non_informative
+Exports of goods and services (annual % growth),-0.0229623457090837,8210,0.0229623457090837,0,0.10993531735672316,0,non_informative
+Nitrous oxide (N2O) emissions from Waste (Mt CO2e),-0.0232111936410089,13805,0.0232111936410089,0,0.08421300745961158,0,non_informative
+"Current account balance (BoP, current US$)",-0.0232425994047211,7541,0.0232425994047211,0,0.09387123954160105,0,non_informative
+"Net bilateral aid flows from DAC donors, Germany (current US$)",-0.024143221632959,9436,0.024143221632959,0,0.033698003751343214,0,non_informative
+"Net bilateral aid flows from DAC donors, Canada (current US$)",-0.0243755277579889,8789,0.0243755277579889,0,0.037407278563914216,0,non_informative
+Net secondary income (Net current transfers from abroad) (constant LCU),-0.0244875940399774,3398,0.0244875940399774,0,0.20049894087187134,0,non_informative
+Export value index (2015 = 100),-0.0252952095477972,7741,0.0252952095477972,0,0.25093742227416865,0,non_informative
+Prevalence of current tobacco use (% of adults),-0.0254454847249929,1664,0.0254454847249929,0,0.701626804369496,1,informative
+Coal rents (% of GDP),-0.0259740904664486,10620,0.0259740904664486,0,0.40100716702546435,0,non_informative
+"Net bilateral aid flows from DAC donors, Slovak Republic (current US$)",-0.0264857944023484,1311,0.0264857944023484,0,0.11958632304180807,0,non_informative
+"ICT service exports (% of service exports, BoP)",-0.0266961220752434,6325,0.0266961220752434,0,0.2472909437432145,0,non_informative
+Merchandise imports from low- and middle-income economies in Europe & Central Asia (% of total merchandise imports),-0.0271621174719174,10284,0.0271621174719174,0,0.11229565401849773,0,non_informative
+Population in largest city,-0.0271683046377561,8250,0.0271683046377561,0,0.5040021091955678,1,informative
+"Net bilateral aid flows from DAC donors, Norway (current US$)",-0.0273139695533822,7297,0.0273139695533822,0,0.04751245232838896,0,non_informative
+Agricultural land (sq. km),-0.0274919246280006,13280,0.0274919246280006,0,0.0923646508421405,0,non_informative
+External debt stocks (% of GNI),-0.0275332296307298,6097,0.0275332296307298,0,0.2386487186142202,0,non_informative
+"Net financial account (BoP, current US$)",-0.0280198089665163,7526,0.0280198089665163,0,0.08036253226335012,0,non_informative
+"Net financial flows, bilateral (NFL, current US$)",-0.028721563265121,6239,0.028721563265121,0,0.0774795811842994,0,non_informative
+Merchandise imports from low- and middle-income economies outside region (% of total merchandise imports),-0.028947204561383,11693,0.028947204561383,0,0.09188152215250572,0,non_informative
+Gross capital formation (annual % growth),-0.0292017725308667,7684,0.0292017725308667,0,0.12780686493916557,0,non_informative
+Nitrous oxide (N2O) emissions from Building (Energy) (Mt CO2e),-0.029209209425632,13475,0.029209209425632,0,0.08624963575301534,0,non_informative
+"Tariff rate, applied, weighted mean, primary products (%)",-0.0299552931156229,3771,0.0299552931156229,0,0.4326199651927225,0,non_informative
+Interest payments (current LCU),-0.0301249876240545,4457,0.0301249876240545,0,0.11141720297707262,0,non_informative
+Claims on central government (annual growth as % of broad money),-0.0303706978214562,7297,0.0303706978214562,0,0.19217841205655017,0,non_informative
+Short-term debt (% of total reserves),-0.0306323711039148,6128,0.0306323711039148,0,0.302918073055441,0,non_informative
+Net secondary income (Net current transfers from abroad) (current LCU),-0.0310152772443101,7638,0.0310152772443101,0,0.09826940726264753,0,non_informative
+Crop production index (2014-2016 = 100),-0.0310445509435986,11829,0.0310445509435986,0,0.14021273659186687,0,non_informative
+"Secondary education, teachers",-0.0311505150636828,7613,0.0311505150636828,0,0.42643335453061315,0,non_informative
+Land under cereal production (hectares),-0.031193125483492,11614,0.031193125483492,0,0.15626606035698914,0,non_informative
+Methane (CH4) emissions from Industrial Processes (Mt CO2e),-0.0338042972519297,7755,0.0338042972519297,0,0.15531563812135155,0,non_informative
+Livestock production index (2014-2016 = 100),-0.033927058059469,11797,0.033927058059469,0,0.14085955104233228,0,non_informative
+Final consumption expenditure (annual % growth),-0.034413423050762,8249,0.034413423050762,0,0.15879304387782361,0,non_informative
+"Renewable internal freshwater resources, total (billion cubic meters)",-0.0354572037483906,11268,0.0354572037483906,0,0.18792262365446388,0,non_informative
+Battle-related deaths (number of people),-0.0354583709668735,1482,0.0354583709668735,0,0.5182159873053273,1,informative
+Households and NPISHs Final consumption expenditure (annual % growth),-0.035507793528867,8118,0.035507793528867,0,0.27768418205080697,0,non_informative
+"Railways, passengers carried (million passenger-km)",-0.0366740809686978,2626,0.0366740809686978,0,0.492487006401433,0,non_informative
+Gross fixed capital formation (annual % growth),-0.0370965247447775,7504,0.0370965247447775,0,0.12807691486801107,0,non_informative
+"Net bilateral aid flows from DAC donors, Total (current US$)",-0.0376789754512637,10201,0.0376789754512637,0,0.03294356097918605,0,non_informative
+"Net bilateral aid flows from DAC donors, Sweden (current US$)",-0.0379573761029876,7039,0.0379573761029876,0,0.04950496394477806,0,non_informative
+"PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)",-0.0380894530815633,7471,0.0380894530815633,0,0.423639215082563,0,non_informative
+"Services, value added (annual % growth)",-0.0382917888684902,8848,0.0382917888684902,0,0.12835134551876104,0,non_informative
+"Net bilateral aid flows from DAC donors, Netherlands (current US$)",-0.0385181817949795,7988,0.0385181817949795,0,0.04254480656912573,0,non_informative
+"Net official flows from UN agencies, IFAD (current US$)",-0.0386112202594582,5985,0.0386112202594582,0,0.07218807466576728,0,non_informative
+Methane (CH4) emissions from Agriculture (Mt CO2e),-0.0387232827696276,13692,0.0387232827696276,0,0.07920043553335775,0,non_informative
+Net official development assistance received (current US$),-0.0393074056694162,10055,0.0393074056694162,0,0.07870196789739524,0,non_informative
+"Net bilateral aid flows from DAC donors, United Kingdom (current US$)",-0.0400174825487569,9061,0.0400174825487569,0,0.04756632443833502,0,non_informative
+Merchandise exports to low- and middle-income economies in Latin America & the Caribbean (% of total merchandise exports),-0.0413552768569394,10631,0.0413552768569394,0,0.1534557946372934,0,non_informative
+Net official development assistance and official aid received (current US$),-0.0422253615637873,10147,0.0422253615637873,0,0.0894279483500022,0,non_informative
+Arms imports (SIPRI trend indicator values),-0.0425185477685619,8098,0.0425185477685619,0,0.19387105231853152,0,non_informative
+"Gross intake ratio in first grade of primary education, total (% of relevant age group)",-0.0431695685784365,6983,0.0431695685784365,0,0.38290775653930287,0,non_informative
+"Net bilateral aid flows from DAC donors, Finland (current US$)",-0.0433101824670029,6662,0.0433101824670029,0,0.05255938248855817,0,non_informative
+"PM2.5 pollution, population exposed to levels exceeding WHO Interim Target-2 value (% of total)",-0.0435269090834027,2268,0.0435269090834027,0,0.56248385305531,1,informative
+"Tariff rate, most favored nation, weighted mean, primary products (%)",-0.0437636284540836,3773,0.0437636284540836,0,0.49292434690063847,0,non_informative
+"Net bilateral aid flows from DAC donors, Italy (current US$)",-0.0441956433157325,7876,0.0441956433157325,0,0.04331486669586778,0,non_informative
+"Bird species, threatened",-0.0447597949831789,501,0.0447597949831789,0,0.39557312759493574,0,non_informative
+"School enrollment, secondary, private (% of total secondary)",-0.0448310113010156,2946,0.0448310113010156,0,0.6339154752234759,1,informative
+Carbon dioxide (CO2) net fluxes from LULUCF - Other Land (Mt CO2e),-0.0458457633526671,5165,0.0458457633526671,0,0.2038958848558374,0,non_informative
+Nitrous oxide (N2O) emissions from Fugitive Emissions (Energy) (Mt CO2e),-0.0458683641257972,12925,0.0458683641257972,0,0.09555844155307908,0,non_informative
+"Personal transfers, receipts (BoP, current US$)",-0.0459915487773446,5167,0.0459915487773446,0,0.1398386593239682,0,non_informative
+"Fish species, threatened",-0.0466911669059053,501,0.0466911669059053,0,0.39557312759493574,0,non_informative
+Net official development assistance received (constant 2021 US$),-0.0467984292829649,10055,0.0467984292829649,0,0.12043551958117694,0,non_informative
+"Primary education, teachers",-0.0474845579034587,9372,0.0474845579034587,0,0.2849075595999376,0,non_informative
+"Net bilateral aid flows from DAC donors, Ireland (current US$)",-0.0477879821365232,5324,0.0477879821365232,0,0.06489355882961872,0,non_informative
+"Merchandise imports by the reporting economy, residual (% of total merchandise imports)",-0.0480066337092282,11823,0.0480066337092282,0,0.1290336560791653,0,non_informative
+"Labor force, total",-0.0482953570969617,8044,0.0482953570969617,0,0.22537740203365428,0,non_informative
+"Net official flows from UN agencies, WFP (current US$)",-0.0483701306168692,6791,0.0483701306168692,0,0.06365924652567698,0,non_informative
+"Net official flows from UN agencies, UNTA (current US$)",-0.0484437075017987,7435,0.0484437075017987,0,0.057529565299030194,0,non_informative
+"Central government debt, total (% of GDP)",-0.0485569910197994,1759,0.0485569910197994,0,0.449466090323865,0,non_informative
+"Population, total",-0.0486009439034835,13805,0.0486009439034835,0,0.29531166706860335,0,non_informative
+"Net bilateral aid flows from DAC donors, France (current US$)",-0.0489984509250951,8810,0.0489984509250951,0,0.0372809426472705,0,non_informative
+Merchandise exports to low- and middle-income economies in South Asia (% of total merchandise exports),-0.0490085268345488,10494,0.0490085268345488,0,0.14589403647685398,0,non_informative
+"Net bilateral aid flows from DAC donors, Luxembourg (current US$)",-0.0493687440288365,4064,0.0493687440288365,0,0.07892406319279459,0,non_informative
+Real interest rate (%),-0.0501763785892474,4545,0.0501763785892474,0,0.2712555698259113,0,non_informative
+"Net bilateral aid flows from DAC donors, Japan (current US$)",-0.0502430268577039,9485,0.0502430268577039,0,0.033432012084740254,0,non_informative
+"Public and publicly guaranteed debt service (% of exports of goods, services and primary income)",-0.0504408076827846,5836,0.0504408076827846,0,0.23339098886286747,0,non_informative
+"Net official flows from UN agencies, UNFPA (current US$)",-0.0505340647078797,7435,0.0505340647078797,0,0.057529565299030194,0,non_informative
+"Secondary education, pupils",-0.0506542252460101,9881,0.0506542252460101,0,0.22074066397328831,0,non_informative
+GNI growth (annual %),-0.050686637002919,6533,0.050686637002919,0,0.15085099444714686,0,non_informative
+"Secondary education, general pupils",-0.0508573655190968,9244,0.0508573655190968,0,0.24199362313882591,0,non_informative
+"Electricity production from renewable sources, excluding hydroelectric (% of total)",-0.052478644703648,7260,0.052478644703648,0,0.24130048299713128,0,non_informative
+Ores and metals exports (% of merchandise exports),-0.0526535884824035,8919,0.0526535884824035,0,0.26558912667516243,0,non_informative
+"Net bilateral aid flows from DAC donors, Denmark (current US$)",-0.0529015815718261,6503,0.0529015815718261,0,0.053900261855596016,0,non_informative
+Merchandise imports from low- and middle-income economies in East Asia & Pacific (% of total merchandise imports),-0.0531516708910755,11665,0.0531516708910755,0,0.09446170850301404,0,non_informative
+"International tourism, receipts (% of total exports)",-0.0534044955110988,4653,0.0534044955110988,0,0.31639723474812625,0,non_informative
+Food production index (2014-2016 = 100),-0.0534225441285312,11829,0.0534225441285312,0,0.1542620941819861,0,non_informative
+"Industry (including construction), value added (annual % growth)",-0.0543424987187917,9332,0.0543424987187917,0,0.13618898820542624,0,non_informative
+"Armed forces personnel, total",-0.0544595983138574,6790,0.0544595983138574,0,0.2590847470835246,0,non_informative
+Net official development assistance and official aid received (constant 2021 US$),-0.0550452316879829,10326,0.0550452316879829,0,0.1187299633368423,0,non_informative
+General government final consumption expenditure (annual % growth),-0.0553361159160219,7793,0.0553361159160219,0,0.16499440242804123,0,non_informative
+"Net incurrence of liabilities, total (% of GDP)",-0.0576319016884081,3373,0.0576319016884081,0,0.4589435657884609,0,non_informative
+Merchandise imports from low- and middle-income economies in Latin America & the Caribbean (% of total merchandise imports),-0.0589987149334425,11269,0.0589987149334425,0,0.11366056922652659,0,non_informative
+"Net official flows from UN agencies, UNICEF (current US$)",-0.0591897151773752,8300,0.0591897151773752,0,0.050165527195667296,0,non_informative
+Carbon dioxide (CO2) emissions from Agriculture (Mt CO2e),-0.059220250172915,8580,0.059220250172915,0,0.22257338249862502,0,non_informative
+"Portfolio Investment, net (BoP, current US$)",-0.0597653616783531,5671,0.0597653616783531,0,0.12361205097787711,0,non_informative
+Real effective exchange rate index (2010 = 100),-0.0600024495060081,4058,0.0600024495060081,0,0.34144295178265827,0,non_informative
+Merchandise imports from low- and middle-income economies in South Asia (% of total merchandise imports),-0.0621009968170411,11436,0.0621009968170411,0,0.1008691595831944,0,non_informative
+"Children out of school, primary",-0.0623634310575052,4629,0.0623634310575052,0,0.5885447509008308,1,informative
+"Plant species (higher), threatened",-0.0626611460270975,501,0.0626611460270975,0,0.4295369399160853,0,non_informative
+Adjusted savings: mineral depletion (% of GNI),-0.0638001804369018,10807,0.0638001804369018,0,0.17039332764071152,0,non_informative
+Methane (CH4) emissions from Building (Energy) (Mt CO2e),-0.0638405555161786,13475,0.0638405555161786,0,0.08306489011245434,0,non_informative
+"Net official flows from UN agencies, UNHCR (current US$)",-0.0645476916847148,5949,0.0645476916847148,0,0.07970559368268589,0,non_informative
+Mineral rents (% of GDP),-0.0648228522364705,11412,0.0648228522364705,0,0.37523316728891287,0,non_informative
+"Net financial flows, IDA (NFL, current US$)",-0.0659984862705381,7068,0.0659984862705381,0,0.07545178562787881,0,non_informative
+"Mammal species, threatened",-0.0660472257016199,501,0.0660472257016199,0,0.39557312759493574,0,non_informative
+"Debt service (PPG and IMF only, % of exports of goods, services and primary income)",-0.0675670205669069,5937,0.0675670205669069,0,0.24594244581149682,0,non_informative
+"Net official flows from UN agencies, UNDP (current US$)",-0.0679702640966013,9481,0.0679702640966013,0,0.04154302618716288,0,non_informative
+"Net bilateral aid flows from DAC donors, Belgium (current US$)",-0.069539107282585,7666,0.069539107282585,0,0.04479472864513346,0,non_informative
+"Claims on central government, etc. (% GDP)",-0.0701453876587856,10128,0.0701453876587856,0,0.17643169219389945,0,non_informative
+Adjusted savings: net forest depletion (current US$),-0.0711943554581346,8771,0.0711943554581346,0,0.094200139396692,0,non_informative
+Net ODA received (% of GNI),-0.0721595237028414,9158,0.0721595237028414,0,0.141248613500756,0,non_informative
+Asylum-seekers by country or territory of origin,-0.0724704427086575,5763,0.0724704427086575,0,0.3725430351222847,0,non_informative
+"Primary education, pupils",-0.0771978719002304,11153,0.0771978719002304,0,0.14254127948159734,0,non_informative
+Exclusive breastfeeding (% of children under 6 months),-0.0782445310441,768,0.0782445310441,0,0.7120852130689578,1,informative
+Internally displaced people (IDP) by country or territory of asylum / origin,-0.0793949441247016,1513,0.0793949441247016,0,0.5855113064353076,1,informative
+Net official aid received (constant 2021 US$),-0.0796850229973196,838,0.0796850229973196,0,0.37058982559901393,0,non_informative
+Bank capital to assets ratio (%),-0.0797118707303807,1985,0.0797118707303807,0,0.5357029168785548,1,informative
+Net official aid received (current US$),-0.0801456714563157,838,0.0801456714563157,0,0.24807123158965838,0,non_informative
+"Unemployment, total (% of total labor force) (modeled ILO estimate)",-0.0818899420132457,7814,0.0818899420132457,0,0.5222646944205814,1,informative
+Agricultural raw materials imports (% of merchandise imports),-0.0826315496530121,9089,0.0826315496530121,0,0.1676348598461209,0,non_informative
+"Communications, computer, etc. (% of service exports, BoP)",-0.0832038636669567,9311,0.0832038636669567,0,0.1744083547514589,0,non_informative
+Carbon dioxide (CO2) net fluxes from LULUCF - Deforestation (Mt CO2e),-0.0835590760855869,5355,0.0835590760855869,0,0.23419275418280813,0,non_informative
+Refugees under the mandate of the UNHCR by country or territory of asylum,-0.0884582732095606,9451,0.0884582732095606,0,0.3423285015411469,0,non_informative
+Number of infant deaths,-0.0889085942323693,11731,0.0889085942323693,0,0.11864030765718635,0,non_informative
+Number of under-five deaths,-0.0930574873085261,11552,0.0930574873085261,0,0.14119556186749335,0,non_informative
+"Employers, total (% of total employment) (modeled ILO estimate)",-0.0943311622156893,7814,0.0943311622156893,0,0.758831727197591,1,informative
+Tuberculosis treatment success rate (% of new cases),-0.0954126567976871,4805,0.0954126567976871,0,0.30125687174804394,0,non_informative
+Customs and other import duties (% of tax revenue),-0.0959342676480593,3821,0.0959342676480593,0,0.3356197926275583,0,non_informative
+Net ODA received (% of gross capital formation),-0.0963429135880775,7090,0.0963429135880775,0,0.17290596958423735,0,non_informative
+"Mortality rate attributed to unintentional poisoning (per 100,000 population)",-0.0966585108157043,5038,0.0966585108157043,0,0.5971921955697241,1,informative
+GDP per unit of energy use (PPP $ per kg of oil equivalent),-0.0991130639043436,6403,0.0991130639043436,0,0.6305808443861899,1,informative
+Statistical performance indicators (SPI): Pillar 3 data products score  (scale 0-100),-0.1004765632177314,4096,0.1004765632177314,0,0.45906633194056373,0,non_informative
+Number of neonatal deaths,-0.1012170022377535,10736,0.1012170022377535,0,0.13747843320728517,0,non_informative
+Bank liquid reserves to bank assets ratio (%),-0.1037039879013845,4027,0.1037039879013845,0,0.4760020999647371,0,non_informative
+"Primary education, duration (years)",-0.1046852711552317,13341,0.1046852711552317,0,0.09204875180026832,0,non_informative
+Children out of school (% of primary school age),-0.1059712696849366,4603,0.1059712696849366,0,0.5945212051258891,1,informative
+Carbon dioxide (CO2) net fluxes from LULUCF - Total excluding non-tropical fires (Mt CO2e),-0.1073853485054187,5376,0.1073853485054187,0,0.22427044638395133,0,non_informative
+"Incidence of HIV, ages 15-24 (per 1,000 uninfected population ages 15-24)",-0.1087309385300297,5185,0.1087309385300297,0,0.49737905605123534,0,non_informative
+Arable land (% of land area),-0.1093839562321548,12540,0.1093839562321548,0,0.09850141476008409,0,non_informative
+Lower secondary school starting age (years),-0.109912757052564,10740,0.109912757052564,0,0.23116579512787494,0,non_informative
+"Travel services (% of service exports, BoP)",-0.1100377937473525,9241,0.1100377937473525,0,0.163066241123202,0,non_informative
+Fuel imports (% of merchandise imports),-0.1102726368679773,9098,0.1102726368679773,0,0.22981821040157702,0,non_informative
+Forcibly displaced people,-0.1109169520428891,3221,0.1109169520428891,0,0.5142593854784315,1,informative
+"Incidence of HIV, ages 15-49 (per 1,000 uninfected population ages 15-49)",-0.1123318611862213,5703,0.1123318611862213,0,0.499034851481326,0,non_informative
+"Unemployment, total (% of total labor force) (national estimate)",-0.1165831060332898,5701,0.1165831060332898,0,0.40512263407293947,0,non_informative
+"Incidence of HIV, all (per 1,000 uninfected population)",-0.118449851619911,5634,0.118449851619911,0,0.5168416564818371,1,informative
+"Tariff rate, applied, weighted mean, all products (%)",-0.1186248136020482,3771,0.1186248136020482,0,0.5460171713480086,1,informative
+"Internally displaced persons, new displacement associated with conflict and violence (number of cases)",-0.1188032845426891,657,0.1188032845426891,0,0.4225649721186402,0,non_informative
+Number of maternal deaths,-0.1189192883249566,9165,0.1189192883249566,0,0.2633908001026783,0,non_informative
+Refugees under the mandate of the UNHCR by country or territory of origin,-0.1193216718399361,9343,0.1193216718399361,0,0.336324923636546,0,non_informative
+"Pupil-teacher ratio, tertiary",-0.1212033606256618,3772,0.1212033606256618,0,0.7547533487964931,1,informative
+Travel services (% of commercial service exports),-0.1218655487336737,9241,0.1218655487336737,0,0.19363069260654267,0,non_informative
+"Net official flows from UN agencies, CERF (current US$)",-0.1223296857137282,539,0.1223296857137282,0,0.16216741085132355,0,non_informative
+Net ODA received (% of central government expense),-0.1236453332117457,2625,0.1236453332117457,0,0.2682773617746738,0,non_informative
+"Part time employment, total (% of total employment)",-0.1240397249790602,2779,0.1240397249790602,0,0.7253236429599537,1,informative
+Agricultural irrigated land (% of total agricultural land),-0.1240441633391404,1184,0.1240441633391404,0,0.4617062666154601,0,non_informative
+"Over-age students, primary (% of enrollment)",-0.1246935746609597,4402,0.1246935746609597,0,0.46760738648964434,0,non_informative
+"Net official flows from UN agencies, UNPBF (current US$)",-0.1281387793816242,1150,0.1281387793816242,0,0.14875018252033298,0,non_informative
+GDP per unit of energy use (constant 2021 PPP $ per kg of oil equivalent),-0.1301060764245397,6365,0.1301060764245397,0,0.6280221627224102,1,informative
+Adolescents out of school (% of lower secondary school age),-0.131193252105291,3228,0.131193252105291,0,0.6917571023103126,1,informative
+"Net bilateral aid flows from DAC donors, Iceland (current US$)",-0.1315962342948457,1960,0.1315962342948457,0,0.10861559072345511,0,non_informative
+Agricultural raw materials exports (% of merchandise exports),-0.132462118823382,9010,0.132462118823382,0,0.20729610605374385,0,non_informative
+"Net ODA received (% of imports of goods, services and primary income)",-0.1343996263165308,7357,0.1343996263165308,0,0.15139505732528416,0,non_informative
+"Government expenditure on education, total (% of government expenditure)",-0.1345627816331987,5574,0.1345627816331987,0,0.2043091474023843,0,non_informative
+"PM2.5 pollution, population exposed to levels exceeding WHO Interim Target-3 value (% of total)",-0.1376289805936378,2268,0.1376289805936378,0,0.56248385305531,1,informative
+"Tariff rate, most favored nation, weighted mean, all products (%)",-0.1386404163630535,3773,0.1386404163630535,0,0.5895806294810239,1,informative
+"Risk premium on lending (lending rate minus treasury bill rate, %)",-0.1390358167075547,2363,0.1390358167075547,0,0.43154730113183226,0,non_informative
+"Lead time to export, median case (days)",-0.1396381919051663,923,0.1396381919051663,0,0.463873010013552,0,non_informative
+"Prevalence of HIV, total (% of population ages 15-49)",-0.1417417213224963,6065,0.1417417213224963,0,0.6510631273590795,1,informative
+Interest payments (% of revenue),-0.1460370371742613,5529,0.1460370371742613,0,0.33783096969502746,0,non_informative
+Electricity production from oil sources (% of total),-0.1467323834419188,7762,0.1467323834419188,0,0.24378269594996319,0,non_informative
+"Net bilateral aid flows from DAC donors, Portugal (current US$)",-0.1468142948602023,3032,0.1468142948602023,0,0.09242694792636055,0,non_informative
+Net investment in nonfinancial assets (% of GDP),-0.1477494566534091,5196,0.1477494566534091,0,0.3385019454608748,0,non_informative
+"Death rate, crude (per 1,000 people)",-0.1536084851256891,13805,0.1536084851256891,0,0.2867663509580855,0,non_informative
+"Net official flows from UN agencies, UNRWA (current US$)",-0.1536438207263235,1315,0.1536438207263235,0,0.14528764814124043,0,non_informative
+Agricultural land (% of land area),-0.1562003788317809,12702,0.1562003788317809,0,0.09245276357036199,0,non_informative
+"Personal remittances, received (% of GDP)",-0.160509135210776,8925,0.160509135210776,0,0.25973900181377874,0,non_informative
+"Pupil-teacher ratio, preprimary",-0.1622114457410463,5973,0.1622114457410463,0,0.6289344079431892,1,informative
+Permanent cropland (% of land area),-0.1629754066522887,12236,0.1629754066522887,0,0.125035279131918,0,non_informative
+Bank nonperforming loans to total gross loans (%),-0.1639090876292612,2024,0.1639090876292612,0,0.5721313724107671,1,informative
+"Repeaters, primary, total (% of total enrollment)",-0.166785307736836,6794,0.166785307736836,0,0.4314721353061162,0,non_informative
+Goods and services expense (% of expense),-0.1668713536249481,5243,0.1668713536249481,0,0.22714746904070293,0,non_informative
+"Net secondary income (BoP, current US$)",-0.1673256031360045,7513,0.1673256031360045,0,0.10747923423838603,0,non_informative
+Merchandise exports to low- and middle-income economies within region (% of total merchandise exports),-0.1677838709207109,11438,0.1677838709207109,0,0.12474500966997377,0,non_informative
+Merchandise imports from low- and middle-income economies in Sub-Saharan Africa (% of total merchandise imports),-0.1680616886332248,11294,0.1680616886332248,0,0.10939803432694645,0,non_informative
+Expenditure on primary education (% of government expenditure on education),-0.1690175103764532,3161,0.1690175103764532,0,0.32122761670523936,0,non_informative
+Merchandise imports from low- and middle-income economies within region (% of total merchandise imports),-0.172176722419558,11529,0.172176722419558,0,0.0967150632266406,0,non_informative
+Average transaction cost of sending remittances to a specific country (%),-0.1787290563538585,751,0.1787290563538585,0,0.6874910253272762,1,informative
+Merchandise exports to low- and middle-income economies in Sub-Saharan Africa (% of total merchandise exports),-0.1825766012675728,11054,0.1825766012675728,0,0.14115398390466544,0,non_informative
+Adjusted savings: net forest depletion (% of GNI),-0.183405013765402,10003,0.183405013765402,0,0.15624463775637595,0,non_informative
+"Intentional homicides (per 100,000 people)",-0.1843754929694782,4306,0.1843754929694782,0,0.6511295058385426,1,informative
+"Fertility rate, total (births per woman)",-0.1844253428439432,13805,0.1844253428439432,0,0.17084756235598278,0,non_informative
+Interest payments (% of expense),-0.1885017911171924,5279,0.1885017911171924,0,0.26779040196066695,0,non_informative
+Food imports (% of merchandise imports),-0.192294500034612,9108,0.192294500034612,0,0.19936210718311695,0,non_informative
+"Maternal mortality ratio (national estimate, per 100,000 live births)",-0.1924874912227833,1183,0.1924874912227833,0,0.796399989168693,1,informative
+"Transport services (% of service imports, BoP)",-0.1970117198588248,9395,0.1970117198588248,0,0.1514239113121662,0,non_informative
+Unemployment with intermediate education (% of total labor force with intermediate education),-0.2024196288017767,2766,0.2024196288017767,0,0.4532759325409242,0,non_informative
+"Incidence of tuberculosis (per 100,000 people)",-0.2030377053227143,5448,0.2030377053227143,0,0.5286141139823696,1,informative
+"Government expenditure per student, tertiary (% of GDP per capita)",-0.2040437353060562,1695,0.2040437353060562,0,0.8372734044781847,1,informative
+"Tariff rate, most favored nation, simple mean, primary products (%)",-0.2044156461814075,3793,0.2044156461814075,0,0.5901478007645717,1,informative
+"Tariff rate, applied, simple mean, primary products (%)",-0.2047334965902632,3771,0.2047334965902632,0,0.5873611084914395,1,informative
+"Lead time to import, median case (days)",-0.2063870914252863,908,0.2063870914252863,0,0.44383256539219385,0,non_informative
+Forest rents (% of GDP),-0.2073291727786232,11412,0.2073291727786232,0,0.37133829546571545,0,non_informative
+Net secondary income (Net current transfers from abroad) (current US$),-0.2087586743212262,7622,0.2087586743212262,0,0.11417457425382702,0,non_informative
+Transport services (% of commercial service imports),-0.2101264457606536,9395,0.2101264457606536,0,0.17790399787382016,0,non_informative
+Low-birthweight babies (% of births),-0.2155549452146609,3827,0.2155549452146609,0,0.55836201952432,1,informative
+Labor force with basic education (% of total working-age population with basic education),-0.2197325161997593,2751,0.2197325161997593,0,0.530686289411185,1,informative
+"Tariff rate, applied, weighted mean, manufactured products (%)",-0.2226858844625183,3771,0.2226858844625183,0,0.5416400849225612,1,informative
+Proportion of people living below 50 percent of median income (%),-0.2236024217601679,2328,0.2236024217601679,0,0.5570830211558313,1,informative
+External health expenditure (% of current health expenditure),-0.2269770049316952,4935,0.2269770049316952,0,0.4895220385567357,0,non_informative
+"Adolescent fertility rate (births per 1,000 women ages 15-19)",-0.2270339999449528,13805,0.2270339999449528,0,0.25656682900152333,0,non_informative
+Domestic private health expenditure (% of current health expenditure),-0.2276506178289704,5548,0.2276506178289704,0,0.5170145357320454,1,informative
+Vitamin A supplementation coverage rate (% of children ages 6-59 months),-0.2298438670406853,1602,0.2298438670406853,0,0.6044098264614884,1,informative
+"Mortality rate, under-5 (per 1,000 live births)",-0.2307275077554886,11782,0.2307275077554886,0,0.48508553937641397,0,non_informative
+"Mortality rate, infant (per 1,000 live births)",-0.231755937634608,11765,0.231755937634608,0,0.44570671638314713,0,non_informative
+"Bound rate, simple mean, manufactured products (%)",-0.2332930010373335,3130,0.2332930010373335,0,0.7262628634707743,1,informative
+Renewable electricity output (% of total electricity output),-0.2350411741010477,7144,0.2350411741010477,0,0.4356385071342752,0,non_informative
+Electricity production from hydroelectric sources (% of total),-0.235471062053105,7736,0.235471062053105,0,0.21554238541452073,0,non_informative
+"Annual freshwater withdrawals, agriculture (% of total freshwater withdrawal)",-0.2374665914870293,6194,0.2374665914870293,0,0.44595154465315606,0,non_informative
+"Mortality caused by road traffic injury (per 100,000 population)",-0.2390356665791192,4564,0.2390356665791192,0,0.5731378679725659,1,informative
+"Birth rate, crude (per 1,000 people)",-0.2400497733090458,13805,0.2400497733090458,0,0.28689023347776726,0,non_informative
+Proportion of population facing large (but non-impoverishing) out-of-pocket health expenditure (%),-0.2412247499688101,1287,0.2412247499688101,0,0.7900802846740477,1,informative
+Compensation of employees (% of expense),-0.2414372622617094,5284,0.2414372622617094,0,0.4483922878928015,0,non_informative
+"Pupil-teacher ratio, upper secondary",-0.2436253603258895,2709,0.2436253603258895,0,0.7414662704189033,1,informative
+Prevalence of anemia among non-pregnant women (% of women ages 15-49),-0.2442134083338822,5592,0.2442134083338822,0,0.6694082437230787,1,informative
+"Tariff rate, most favored nation, weighted mean, manufactured products (%)",-0.2513720247304966,3773,0.2513720247304966,1,0.5854619483467901,1,informative
+Prevalence of anemia among women of reproductive age (% of women ages 15-49),-0.2517138043312599,5592,0.2517138043312599,1,0.7311987161167367,1,informative
+Multilateral debt service (% of public and publicly guaranteed debt service),-0.2521885056219682,6220,0.2521885056219682,1,0.2516663363457119,0,non_informative
+"Energy imports, net (% of energy use)",-0.2588960152772633,5846,0.2588960152772633,1,0.48860594926573964,0,non_informative
+Taxes on goods and services (% of revenue),-0.2593800986817832,5667,0.2593800986817832,1,0.3211131445955184,0,non_informative
+Lifetime risk of maternal death (%),-0.2626179842720144,9165,0.2626179842720144,1,0.5749503828525672,1,informative
+"Tariff rate, most favored nation, simple mean, manufactured products (%)",-0.2640605327705642,3793,0.2640605327705642,1,0.6744015606198924,1,informative
+Textiles and clothing (% of value added in manufacturing),-0.2647230851684321,5113,0.2647230851684321,1,0.7513758339249519,1,informative
+"Tariff rate, applied, simple mean, all products (%)",-0.2653871595398018,3771,0.2653871595398018,1,0.6905610576460036,1,informative
+"Tariff rate, applied, simple mean, manufactured products (%)",-0.2671305522617436,3771,0.2671305522617436,1,0.6841458436625455,1,informative
+"Age dependency ratio, young (% of working-age population)",-0.2674085225062723,13805,0.2674085225062723,1,0.3218152085725348,0,non_informative
+Unmet need for contraception (% of married women ages 15-49),-0.2683911401756223,702,0.2683911401756223,1,0.7899934878843257,1,informative
+"Tariff rate, most favored nation, simple mean, all products (%)",-0.2712417875529822,3793,0.2712417875529822,1,0.6793557697626312,1,informative
+Out-of-pocket expenditure (% of current health expenditure),-0.271713526221973,5565,0.271713526221973,1,0.629176472500764,1,informative
+Average precipitation in depth (mm per year),-0.2722715556994058,8987,0.2722715556994058,1,0.6418561338655805,1,informative
+Food exports (% of merchandise exports),-0.2769803207569161,9066,0.2769803207569161,1,0.26133835798730404,0,non_informative
+"Bound rate, simple mean, all products (%)",-0.2771567057246055,3130,0.2771567057246055,1,0.7331991666357573,1,informative
+Age dependency ratio (% of working-age population),-0.2847290630248145,13805,0.2847290630248145,1,0.3387607576814396,0,non_informative
+"Maternal mortality ratio (modeled estimate, per 100,000 live births)",-0.2865525555021713,9165,0.2865525555021713,1,0.6169936420995357,1,informative
+People practicing open defecation (% of population),-0.2878861802326536,5996,0.2878861802326536,1,0.8907629855329022,1,informative
+"Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70 (%)",-0.2884839846320588,5038,0.2884839846320588,1,0.6105864772668783,1,informative
+"Bound rate, simple mean, primary products (%)",-0.2902132597036957,3130,0.2902132597036957,1,0.6306295100119964,1,informative
+Taxes on international trade (% of revenue),-0.2910504646564669,4924,0.2910504646564669,1,0.5210990813080838,1,informative
+"Pupil-teacher ratio, secondary",-0.2952894534756489,6296,0.2952894534756489,1,0.6811804604346714,1,informative
+Unemployment with advanced education (% of total labor force with advanced education),-0.3067755190644421,2704,0.3067755190644421,1,0.555304601037979,1,informative
+Gross national expenditure (% of GDP),-0.3068606412561654,7548,0.3068606412561654,1,0.3505318965859366,0,non_informative
+"Prevalence of severe wasting, weight for height (% of children under 5)",-0.3144186213396003,1298,0.3144186213396003,1,0.8514081186928665,1,informative
+"Incidence of malaria (per 1,000 population at risk)",-0.3157501227950552,3452,0.3157501227950552,1,0.8347972148963398,1,informative
+"PM2.5 air pollution, population exposed to levels exceeding WHO guideline value (% of total)",-0.3165622347275202,2844,0.3165622347275202,1,0.6188684766041629,1,informative
+Electric power transmission and distribution losses (% of output),-0.3238998303212078,7389,0.3238998303212078,1,0.5934786454052787,1,informative
+Prevalence of anemia among pregnant women (%),-0.3296893841154655,5592,0.3296893841154655,1,0.682804243687587,1,informative
+"Mortality rate, neonatal (per 1,000 live births)",-0.3352329922923927,10836,0.3352329922923927,1,0.5227236835899951,1,informative
+Proportion of population pushed into poverty (based on the societal poverty line) due to out-of-pocket health expenditure (%),-0.3386814426297484,1226,0.3386814426297484,1,0.867887386922413,1,informative
+"Share of youth not in education, employment or training, total (% of youth population) (modeled ILO estimate)",-0.3427097469338545,4594,0.3427097469338545,1,0.8915568050033478,1,informative
+"Pupil-teacher ratio, primary",-0.3436104243621898,8005,0.3436104243621898,1,0.5631495628529547,1,informative
+Renewable energy consumption (% of total final energy consumption),-0.3492919111869773,8012,0.3492919111869773,1,0.5327513271546618,1,informative
+"Pupil-teacher ratio, lower secondary",-0.3511190125692185,2860,0.3511190125692185,1,0.7752269411792697,1,informative
+"Prevalence of wasting, weight for height (% of children under 5)",-0.3562446984166746,1462,0.3562446984166746,1,0.8460791616634773,1,informative
+Women's share of population ages 15+ living with HIV (%),-0.3585942860337891,6574,0.3585942860337891,1,0.5218370383629883,1,informative
+Final consumption expenditure (% of GDP),-0.3643055807931148,7732,0.3643055807931148,1,0.4353484509116544,0,non_informative
+Gini index,-0.371168296763993,2351,0.371168296763993,1,0.7671896634309887,1,informative
+Prevalence of anemia among children (% of children ages 6-59 months),-0.3714997798440317,4616,0.3714997798440317,1,0.7046435785378641,1,informative
+Prevalence of severe food insecurity in the population (%),-0.3809034074310445,1100,0.3809034074310445,1,0.8446875829908684,1,informative
+"Food, beverages and tobacco (% of value added in manufacturing)",-0.3906346747723913,5137,0.3906346747723913,1,0.7315510384042684,1,informative
+Income share held by highest 20%,-0.3928212921729793,2351,0.3928212921729793,1,0.808282864207408,1,informative
+Adjusted savings: particulate emission damage (% of GNI),-0.394853631352734,6798,0.394853631352734,1,0.4272969758381178,0,non_informative
+"Share of youth not in education, employment or training, total (% of youth population)",-0.4043745763773783,2788,0.4043745763773783,1,0.8770181497627335,1,informative
+Income share held by highest 10%,-0.4063160166978664,2351,0.4063160166978664,1,0.7876140568128148,1,informative
+"Agriculture, forestry, and fishing, value added (% of GDP)",-0.4138402381162019,10253,0.4138402381162019,1,0.4815101184979471,0,non_informative
+"Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",-0.4219746280563939,1374,0.4219746280563939,1,0.7849903437264417,1,informative
+"Prevalence of underweight, weight for age (% of children under 5)",-0.4308313813317409,1460,0.4308313813317409,1,0.8313048515412353,1,informative
+Poverty headcount ratio at national poverty lines (% of population),-0.4315028755884104,1120,0.4315028755884104,1,0.9039045026871125,1,informative
+"Contributing family workers, total (% of total employment) (modeled ILO estimate)",-0.4397156227875043,7814,0.4397156227875043,1,0.7577779558286356,1,informative
+Households and NPISHs final consumption expenditure (% of GDP),-0.4460685226341066,9751,0.4460685226341066,1,0.4527331374386279,0,non_informative
+Combustible renewables and waste (% of total energy),-0.4463666086895588,6521,0.4463666086895588,1,0.6449905354687359,1,informative
+Prevalence of undernourishment (% of population),-0.4481041614029814,4885,0.4481041614029814,1,0.9124755201248615,1,informative
+Poverty gap at $2.15 a day (2017 PPP) (%),-0.4585158916230387,2924,0.4585158916230387,1,0.799729678704128,1,informative
+"Prevalence of stunting, height for age (modeled estimate, % of children under 5)",-0.4596309199849002,5086,0.4596309199849002,1,0.7994270199844512,1,informative
+"Prevalence of stunting, height for age (% of children under 5)",-0.4659286194309787,1113,0.4659286194309787,1,0.8454408128955204,1,informative
+Prevalence of moderate or severe food insecurity in the population (%),-0.4941143790041213,1109,0.4941143790041213,1,0.861884582413819,1,informative
+Employment in agriculture (% of total employment) (modeled ILO estimate),-0.4982804950431718,7814,0.4982804950431718,1,0.8090027777426172,1,informative
+"Proportion of population further impoverished due to out-of-pocket health expenditure, based on the societal poverty line (%)",-0.5011571155853392,1226,0.5011571155853392,1,0.8608427797132953,1,informative
+Risk of catastrophic expenditure for surgical care (% of people at risk),-0.5056372589734229,3034,0.5056372589734229,1,0.8112436283132466,1,informative
+Poverty gap at $4.20 a day (2021 PPP) (%),-0.5212538784516947,2912,0.5212538784516947,1,0.8122785191993889,1,informative
+Multidimensional poverty headcount ratio (World Bank) (% of population),-0.5225519962227534,1098,0.5225519962227534,1,0.8884395214581976,1,informative
+"Proportion of population facing impoverishing out-of-pocket health expenditure, based on the societal poverty line (%)",-0.5281136087651125,1287,0.5281136087651125,1,0.8343924392091867,1,informative
+Poverty headcount ratio at $2.15 a day (2017 PPP) (% of population),-0.5291213233623223,2924,0.5291213233623223,1,0.8936014674979781,1,informative
+Proportion of population facing financial hardship due to out-of-pocket health expenditure (%),-0.5537649908944023,1310,0.5537649908944023,1,0.8201069680818641,1,informative
+Prosperity gap (average shortfall from a prosperity standard of $25/day),-0.5591029084530186,2918,0.5591029084530186,1,0.7573673533002081,1,informative
+"Vulnerable employment, total (% of total employment) (modeled ILO estimate)",-0.5611052173682136,7814,0.5611052173682136,1,0.7428612771186949,1,informative
+Poverty headcount ratio at societal poverty line (% of population),-0.5697317231850958,2912,0.5697317231850958,1,0.874777674050936,1,informative
+"Self-employed, total (% of total employment) (modeled ILO estimate)",-0.5730576676287672,7814,0.5730576676287672,1,0.772209972596452,1,informative
+Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population),-0.5895322719388636,2924,0.5895322719388636,1,0.906308051405459,1,informative
+Poverty gap at $6.85 a day (2017 PPP) (%),-0.6238923749690729,2912,0.6238923749690729,1,0.8026112311236616,1,informative
+Risk of impoverishing expenditure for surgical care (% of people at risk),-0.6485904645006578,3034,0.6485904645006578,1,0.7960536777008967,1,informative
+Poverty headcount ratio at $6.85 a day (2017 PPP) (% of population),-0.6800817310917885,2924,0.6800817310917885,1,0.8938085761305573,1,informative

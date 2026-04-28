@@ -3,7 +3,7 @@ const countriesData = [
     {
         name: "Thailand",
         code: "TH",
-        flagUrl: "https://flagcdn.com/w240/th.png",
+        flagEmoji: "🇹🇭",
         coordinates: [15.870032, 100.992541],
         description: "Thailand is a Southeast Asian country known for its tropical climate and diverse ecosystems. The country faces distinct climate-related and economic transition risks due to its dependence on agriculture and tourism.",
         states: ["Bangkok", "Chiang Mai", "Phuket", "Krabi", "Ubon Ratchathani", "Nakhon Ratchasima", "Sukhothai"],
@@ -17,7 +17,7 @@ const countriesData = [
     {
         name: "Vietnam",
         code: "VN",
-        flagUrl: "https://flagcdn.com/w240/vn.png",
+        flagEmoji: "🇻🇳",
         coordinates: [14.058804, 108.277199],
         description: "Vietnam is a densely populated Southeast Asian nation with extensive coastlines. The country faces significant physical risks from sea-level rise and typhoons, along with transition risks from rapid industrialization.",
         states: ["Hanoi", "Ho Chi Minh City", "Da Nang", "Hai Phong", "Can Tho", "Hue", "Nha Trang"],
@@ -31,7 +31,7 @@ const countriesData = [
     {
         name: "Indonesia",
         code: "ID",
-        flagUrl: "https://flagcdn.com/w240/id.png",
+        flagEmoji: "🇮🇩",
         coordinates: [-0.789275, 113.921327],
         description: "Indonesia is the world's largest archipelago, stretching across multiple islands. It faces significant climate-related physical risks including flooding, earthquakes, and volcanic activity, alongside rapid economic development challenges.",
         states: ["Jakarta", "Surabaya", "Bandung", "Medan", "Semarang", "Makassar", "Bekasi"],
@@ -45,7 +45,7 @@ const countriesData = [
     {
         name: "Philippines",
         code: "PH",
-        flagUrl: "https://flagcdn.com/w240/ph.png",
+        flagEmoji: "🇵🇭",
         coordinates: [12.852926, 121.774017],
         description: "The Philippines is an island nation in Southeast Asia highly vulnerable to typhoons, flooding, and other natural hazards. The country experiences high exposure to physical climate risks and faces transition challenges from economic restructuring.",
         states: ["Manila", "Cebu", "Davao City", "Quezon City", "Caloocan", "Makati City", "Cagayan de Oro"],
@@ -59,7 +59,7 @@ const countriesData = [
     {
         name: "Malaysia",
         code: "MY",
-        flagUrl: "https://flagcdn.com/w240/my.png",
+        flagEmoji: "🇲🇾",
         coordinates: [4.210484, 101.975766],
         description: "Malaysia is a Southeast Asian country with a mix of urban development and natural resources. It faces physical risks from flooding and extreme weather, combined with transition risks from economic diversification.",
         states: ["Kuala Lumpur", "George Town", "Johor Bahru", "Shah Alam", "Subang Jaya", "Penang", "Klang"],
@@ -73,7 +73,7 @@ const countriesData = [
     {
         name: "Singapore",
         code: "SG",
-        flagUrl: "https://flagcdn.com/w240/sg.png",
+        flagEmoji: "🇸🇬",
         coordinates: [1.3521, 103.8198],
         description: "Singapore is a city-state and global financial hub, highly vulnerable to sea-level rise due to its coastal and low-elevation geography. Despite advanced adaptation capabilities, it faces notable physical risks.",
         states: ["Central Singapore", "East Singapore", "North-East Singapore", "North Singapore", "West Singapore"],
@@ -87,7 +87,7 @@ const countriesData = [
     {
         name: "Myanmar",
         code: "MM",
-        flagUrl: "https://flagcdn.com/w240/mm.png",
+        flagEmoji: "🇲🇲",
         coordinates: [21.913965, 95.956711],
         description: "Myanmar is a Southeast Asian country with diverse geography and weather patterns. It experiences monsoon flooding, cyclones, and droughts, presenting significant physical climate risks alongside development challenges.",
         states: ["Yangon", "Mandalay", "Naypyidaw", "Taunggyi", "Mawlamyine", "Magway", "Bagan"],
@@ -101,7 +101,7 @@ const countriesData = [
     {
         name: "Cambodia",
         code: "KH",
-        flagUrl: "https://flagcdn.com/w240/kh.png",
+        flagEmoji: "🇰🇭",
         coordinates: [12.565679, 104.990963],
         description: "Cambodia faces significant flooding risks due to the Mekong River system and monsoon patterns. The country experiences substantial physical risks from extreme weather and economic transition challenges.",
         states: ["Phnom Penh", "Siem Reap", "Battambang", "Sihanoukville", "Kampong Cham", "Takeo", "Kandal"],
@@ -115,7 +115,7 @@ const countriesData = [
     {
         name: "Laos",
         code: "LA",
-        flagUrl: "https://flagcdn.com/w240/la.png",
+        flagEmoji: "🇱🇦",
         coordinates: [19.855627, 102.495496],
         description: "Laos is a landlocked Southeast Asian country with mountainous terrain. It faces physical risks from flooding and erosion, particularly along the Mekong River, with limited economic resources for climate adaptation.",
         states: ["Vientiane", "Luang Prabang", "Savannakhet", "Pakse", "Thakhek", "Vang Vieng", "Luang Namtha"],
@@ -129,7 +129,7 @@ const countriesData = [
     {
         name: "Brunei",
         code: "BN",
-        flagUrl: "https://flagcdn.com/w240/bn.png",
+        flagEmoji: "🇧🇳",
         coordinates: [4.535277, 114.727669],
         description: "Brunei is a small Southeast Asian nation with significant oil and gas resources. It faces physical risks from flooding and maritime impacts, with transition risks related to fossil fuel dependency.",
         states: ["Bandar Seri Begawan", "Kuala Belait", "Tutong", "Limbang"],
@@ -143,7 +143,7 @@ const countriesData = [
     {
         name: "Timor-Leste",
         code: "TL",
-        flagUrl: "https://flagcdn.com/w240/tl.png",
+        flagEmoji: "🇹🇱",
         coordinates: [-8.874217, 125.727539],
         description: "Timor-Leste (East Timor) is a Southeast Asian island nation facing high exposure to tropical cyclones, flooding, and droughts. It experiences significant physical climate risks with limited economic adaptation capacity.",
         states: ["Dili", "Baucau", "Maliana", "Suai", "Oecusse", "Lospalos"],

@@ -21,13 +21,11 @@ let countryLayer = null;
 
 // Create custom icon for country flags
 function createFlagIcon(country) {
-    // Use REST Countries flag as fallback
-    const flagUrl = country.flagUrl.replace('flagcdn.com/h80', 'flagcdn.com/w240').replace('.svg', '.png');
     return L.divIcon({
         className: 'flag-marker',
         html: `<div class="flag-ball">
                     <div class="flag-image-container">
-                        <img src="${flagUrl}" alt="${country.name} flag" class="flag-image" onerror="this.src='https://via.placeholder.com/80?text=${country.code}'">
+                        <div class="flag-emoji">${country.flagEmoji}</div>
                     </div>
                     <div class="ball-shine"></div>
                 </div>`,
@@ -195,6 +193,15 @@ style.innerHTML = `
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
+    }
+
+    .flag-emoji {
+        font-size: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
     }
 
     .ball-shine {

@@ -1,0 +1,5 @@
+reference_mean_best_similarity: 0.936535008369379
+reference_median_best_similarity: 0.9656422601934784
+negative_mean_best_similarity: 0.9347377518428769
+negative_median_best_similarity: 0.963590183551818
+roc_auc_reference_vs_negative: 0.5045725039526662

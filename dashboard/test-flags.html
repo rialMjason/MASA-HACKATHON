@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flag Test</title>
+</head>
+<body>
+    <h2>Testing Flag URLs</h2>
+    <div>
+        <p>flagcdn.com w240 PNG:</p>
+        <img src="https://flagcdn.com/w240/th.png" alt="Thailand" onerror="this.src='failed'" style="border: 1px solid red; width: 100px;">
+        <p id="status1">Loading...</p>
+    </div>
+    
+    <div>
+        <p>flagcdn.com w80 SVG:</p>
+        <img src="https://flagcdn.com/w80/th.svg" alt="Thailand" onerror="this.src='failed'" style="border: 1px solid red; width: 100px;">
+        <p id="status2">Loading...</p>
+    </div>
+
+    <div>
+        <p>countryflagsapi PNG:</p>
+        <img src="https://countryflagsapi.com/png/th" alt="Thailand" onerror="this.src='failed'" style="border: 1px solid red; width: 100px;">
+        <p id="status3">Loading...</p>
+    </div>
+
+    <div>
+        <p>Emoji (as fallback):</p>
+        <div style="font-size: 40px;">🇹🇭</div>
+        <p id="status4">Emoji loaded</p>
+    </div>
+
+    <script>
+        document.querySelectorAll('img').forEach((img, i) => {
+            img.onload = function() {
+                document.getElementById('status' + (i+1)).textContent = 'LOADED ✓';
+            };
+            img.onerror = function() {
+                document.getElementById('status' + (i+1)).textContent = 'FAILED ✗';
+            };
+        });
+    </script>
+</body>
+</html>

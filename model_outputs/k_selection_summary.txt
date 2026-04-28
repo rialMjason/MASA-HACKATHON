@@ -1,0 +1,7 @@
+unique_labels: 1486
+k_range: 2-15
+feature_dims_after_svd: 100
+best_k_elbow: 4
+best_k_silhouette: 15
+best_k_calinski_harabasz: 2
+best_k_davies_bouldin: 15
