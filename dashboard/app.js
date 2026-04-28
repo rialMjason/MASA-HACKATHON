@@ -22,10 +22,13 @@ let countryLayer = null;
 function createFlagIcon(flag) {
     return L.divIcon({
         className: 'flag-marker',
-        html: `<div class="flag-bubble" title="Click to zoom">${flag}</div>`,
-        iconSize: [50, 50],
-        iconAnchor: [25, 25],
-        popupAnchor: [0, -25]
+        html: `<div class="flag-ball">
+                    <div class="ball-inner">${flag}</div>
+                    <div class="ball-shine"></div>
+                </div>`,
+        iconSize: [60, 60],
+        iconAnchor: [30, 30],
+        popupAnchor: [0, -30]
     });
 }
 
@@ -44,12 +47,14 @@ function initializeMarkers() {
         // Hover effect
         marker.on('mouseover', function() {
             this.setZIndexOffset(1001);
-            this.getElement().querySelector('.flag-bubble').style.transform = 'scale(1.2)';
+            this.getElement().querySelector('.flag-ball').style.transform = 'scale(1.3)';
+            this.getElement().querySelector('.flag-ball').style.boxShadow = '0 12px 24px rgba(102, 126, 234, 0.5)';
         });
 
         marker.on('mouseout', function() {
             this.setZIndexOffset(1000);
-            this.getElement().querySelector('.flag-bubble').style.transform = 'scale(1)';
+            this.getElement().querySelector('.flag-ball').style.transform = 'scale(1)';
+            this.getElement().querySelector('.flag-ball').style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)';
         });
 
         countryMarkers[country.code] = marker;
@@ -149,27 +154,54 @@ style.innerHTML = `
         border: none;
     }
 
-    .flag-bubble {
+    .flag-ball {
         font-size: 40px;
+        width: 60px;
+        height: 60px;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        transition: transform 0.2s ease, filter 0.2s ease;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-        animation: bounce 0.6s ease-in-out infinite;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset -2px -2px 8px rgba(0, 0, 0, 0.2);
+        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent);
+        position: relative;
+        animation: ballBounce 0.6s ease-in-out infinite;
     }
 
-    .flag-marker:hover .flag-bubble {
-        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+    .ball-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 2;
     }
 
-    @keyframes bounce {
+    .ball-shine {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.6), transparent);
+        border-radius: 50%;
+        top: 8px;
+        left: 8px;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .flag-marker:hover .flag-ball {
+        box-shadow: 0 12px 24px rgba(102, 126, 234, 0.5), inset -2px -2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes ballBounce {
         0%, 100% {
             transform: translateY(0);
         }
         50% {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
         }
     }
 
