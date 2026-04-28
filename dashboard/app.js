@@ -21,10 +21,14 @@ let countryLayer = null;
 
 // Create custom icon for country flags
 function createFlagIcon(country) {
+    // Use REST Countries flag as fallback
+    const flagUrl = country.flagUrl.replace('flagcdn.com/h80', 'flagcdn.com/w240').replace('.svg', '.png');
     return L.divIcon({
         className: 'flag-marker',
         html: `<div class="flag-ball">
-                    <img src="${country.flagUrl}" alt="${country.name} flag" class="flag-image">
+                    <div class="flag-image-container">
+                        <img src="${flagUrl}" alt="${country.name} flag" class="flag-image" onerror="this.src='https://via.placeholder.com/80?text=${country.code}'">
+                    </div>
                     <div class="ball-shine"></div>
                 </div>`,
         iconSize: [80, 80],
@@ -156,7 +160,6 @@ style.innerHTML = `
     }
 
     .flag-ball {
-        font-size: 56px;
         width: 80px;
         height: 80px;
         display: flex;
@@ -173,12 +176,25 @@ style.innerHTML = `
         overflow: hidden;
     }
 
+    .flag-image-container {
+        position: absolute;
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        overflow: hidden;
+        top: 2px;
+        left: 2px;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .flag-image {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
-        z-index: 3;
     }
 
     .ball-shine {
@@ -187,10 +203,10 @@ style.innerHTML = `
         height: 30px;
         background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.8), transparent);
         border-radius: 50%;
-        top: 12px;
-        left: 12px;
+        top: 8px;
+        left: 8px;
         pointer-events: none;
-        z-index: 1;
+        z-index: 4;
     }
 
     .flag-marker:hover .flag-ball {
