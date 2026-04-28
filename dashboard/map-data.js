@@ -143,7 +143,7 @@ const countriesData = [
     {
         name: "Timor-Leste",
         code: "TL",
-        flagEmoji: "🇹🇱",
+        flagUrl: "flags/tl.png",
         coordinates: [-8.874217, 125.727539],
         description: "Timor-Leste (East Timor) is a Southeast Asian island nation facing high exposure to tropical cyclones, flooding, and droughts. It experiences significant physical climate risks with limited economic adaptation capacity.",
         states: ["Dili", "Baucau", "Maliana", "Suai", "Oecusse", "Lospalos"],

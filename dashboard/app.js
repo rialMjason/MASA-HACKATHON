@@ -87,6 +87,9 @@ function initializeMarkers() {
 function selectCountry(country) {
     currentCountry = country;
 
+    // Add zoomed class to container
+    document.querySelector('.container').classList.add('zoomed');
+
     // Update info panel
     document.getElementById('countryName').textContent = country.name;
     document.getElementById('placeholderText').style.display = 'none';
@@ -195,6 +198,10 @@ function updateStatesList(country) {
 // Back button functionality
 document.getElementById('backButton').addEventListener('click', function() {
     currentCountry = null;
+    
+    // Remove zoomed class from container
+    document.querySelector('.container').classList.remove('zoomed');
+
     document.getElementById('countryName').textContent = 'Southeast Asia Dashboard';
     document.getElementById('placeholderText').style.display = 'block';
     document.getElementById('countryDetails').style.display = 'none';
@@ -308,6 +315,37 @@ style.innerHTML = `
     .leaflet-popup-content {
         margin: 0;
         padding: 8px;
+    }
+
+    /* Zoomed state - info panel repositioned */
+    .container.zoomed {
+        flex-direction: column;
+    }
+
+    .container.zoomed .map-container {
+        flex: 1;
+        order: 1;
+    }
+
+    .container.zoomed .info-panel {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 350px;
+        height: auto;
+        max-height: 60vh;
+        order: 2;
+        z-index: 500;
+        max-width: 25vw;
+    }
+
+    @media (max-width: 768px) {
+        .container.zoomed .info-panel {
+            width: 90vw;
+            max-width: 90vw;
+            left: 10px;
+            top: 10px;
+        }
     }
 `;
 document.head.appendChild(style);
