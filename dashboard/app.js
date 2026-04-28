@@ -21,18 +21,35 @@ let countryLayer = null;
 
 // Create custom icon for country flags
 function createFlagIcon(country) {
-    return L.divIcon({
-        className: 'flag-marker',
-        html: `<div class="flag-ball">
-                    <div class="flag-image-container">
-                        <div class="flag-emoji">${country.flagEmoji}</div>
-                    </div>
-                    <div class="ball-shine"></div>
-                </div>`,
-        iconSize: [80, 80],
-        iconAnchor: [40, 40],
-        popupAnchor: [0, -40]
-    });
+    // Use flagUrl if available, otherwise use emoji
+    if (country.flagUrl) {
+        return L.divIcon({
+            className: 'flag-marker',
+            html: `<div class="flag-ball">
+                        <div class="flag-image-container">
+                            <img src="${country.flagUrl}" alt="${country.name} flag" class="flag-image" onerror="this.parentElement.innerHTML='<div class=\\\"flag-emoji\\\">${country.flagEmoji || '🏴'}</div>'">
+                        </div>
+                        <div class="ball-shine"></div>
+                    </div>`,
+            iconSize: [80, 80],
+            iconAnchor: [40, 40],
+            popupAnchor: [0, -40]
+        });
+    } else {
+        // Fallback to emoji
+        return L.divIcon({
+            className: 'flag-marker',
+            html: `<div class="flag-ball">
+                        <div class="flag-image-container">
+                            <div class="flag-emoji">${country.flagEmoji}</div>
+                        </div>
+                        <div class="ball-shine"></div>
+                    </div>`,
+            iconSize: [80, 80],
+            iconAnchor: [40, 40],
+            popupAnchor: [0, -40]
+        });
+    }
 }
 
 // Initialize markers for all countries
