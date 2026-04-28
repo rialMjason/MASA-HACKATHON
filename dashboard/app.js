@@ -110,15 +110,38 @@ function selectCountry(country) {
         map.removeLayer(countryLayer);
     }
 
-    // Add highlighted border circle around country
-    countryLayer = L.circle(country.coordinates, {
-        radius: 150000, // ~150km radius for visibility
-        color: '#FFD700',
-        weight: 3,
-        opacity: 0.9,
-        fill: false,
-        dashArray: '5, 5'
-    }).addTo(map);
+    // Fetch and display country borders from GeoJSON
+    const countryCode = country.code.toUpperCase();
+    fetch(`https://restcountries.com/v3.1/alpha/${country.code}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data[0]?.borders) {
+                // Fetch GeoJSON borders
+                fetch(`https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_0_countries.geojson`)
+                    .then(res => res.json())
+                    .then(geojson => {
+                        // Find and draw this country's borders
+                        const countryFeature = geojson.features.find(f => 
+                            f.properties.ISO_A3 === countryCode || 
+                            f.properties.ISO_A2 === country.code
+                        );
+                        
+                        if (countryFeature && countryFeature.geometry) {
+                            countryLayer = L.geoJSON(countryFeature, {
+                                style: {
+                                    color: '#FFD700',
+                                    weight: 3,
+                                    opacity: 0.9,
+                                    fill: false,
+                                    dashArray: '5, 5'
+                                }
+                            }).addTo(map);
+                        }
+                    })
+                    .catch(err => console.log('Border data unavailable for', country.name));
+            }
+        })
+        .catch(err => console.log('Could not fetch country borders'));
 
     // Bring highlighted country marker to front
     const marker = countryMarkers[country.code];
