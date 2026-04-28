@@ -24,12 +24,13 @@ function createFlagIcon(flag) {
     return L.divIcon({
         className: 'flag-marker',
         html: `<div class="flag-ball">
+                    <div class="ball-background"></div>
                     <div class="ball-inner">${flag}</div>
                     <div class="ball-shine"></div>
                 </div>`,
-        iconSize: [60, 60],
-        iconAnchor: [30, 30],
-        popupAnchor: [0, -30]
+        iconSize: [70, 70],
+        iconAnchor: [35, 35],
+        popupAnchor: [0, -35]
     });
 }
 
@@ -48,14 +49,14 @@ function initializeMarkers() {
         // Hover effect
         marker.on('mouseover', function() {
             this.setZIndexOffset(1001);
-            this.getElement().querySelector('.flag-ball').style.transform = 'scale(1.3)';
-            this.getElement().querySelector('.flag-ball').style.boxShadow = '0 12px 24px rgba(102, 126, 234, 0.5)';
+            this.getElement().querySelector('.flag-ball').style.transform = 'scale(1.35)';
+            this.getElement().querySelector('.flag-ball').style.boxShadow = '0 14px 28px rgba(102, 126, 234, 0.6), inset -2px -2px 8px rgba(0, 0, 0, 0.2)';
         });
 
         marker.on('mouseout', function() {
             this.setZIndexOffset(1000);
             this.getElement().querySelector('.flag-ball').style.transform = 'scale(1)';
-            this.getElement().querySelector('.flag-ball').style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)';
+            this.getElement().querySelector('.flag-ball').style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.4), inset -2px -2px 8px rgba(0, 0, 0, 0.2)';
         });
 
         countryMarkers[country.code] = marker;
@@ -156,19 +157,30 @@ style.innerHTML = `
     }
 
     .flag-ball {
-        font-size: 40px;
-        width: 60px;
-        height: 60px;
+        font-size: 48px;
+        width: 70px;
+        height: 70px;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         border-radius: 50%;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset -2px -2px 8px rgba(0, 0, 0, 0.2);
-        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), inset -2px -2px 8px rgba(0, 0, 0, 0.2);
+        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
         position: relative;
         animation: ballBounce 0.6s ease-in-out infinite;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .ball-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+        opacity: 0.05;
+        z-index: 0;
     }
 
     .ball-inner {
@@ -179,22 +191,24 @@ style.innerHTML = `
         height: 100%;
         position: relative;
         z-index: 2;
+        line-height: 1;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .ball-shine {
         position: absolute;
-        width: 20px;
-        height: 20px;
-        background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.6), transparent);
+        width: 24px;
+        height: 24px;
+        background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.7), transparent);
         border-radius: 50%;
-        top: 8px;
-        left: 8px;
+        top: 10px;
+        left: 10px;
         pointer-events: none;
         z-index: 1;
     }
 
     .flag-marker:hover .flag-ball {
-        box-shadow: 0 12px 24px rgba(102, 126, 234, 0.5), inset -2px -2px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 14px 28px rgba(102, 126, 234, 0.6), inset -2px -2px 8px rgba(0, 0, 0, 0.2);
     }
 
     @keyframes ballBounce {
