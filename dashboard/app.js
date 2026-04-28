@@ -24,11 +24,18 @@ let originalCountryCoordinates = {};
 function createFlagIcon(country) {
     // Use flagUrl if available, otherwise use emoji
     if (country.flagUrl) {
+        const focusClassMap = {
+            MY: 'flag-focus-my',
+            SG: 'flag-focus-sg',
+            TL: 'flag-focus-tl'
+        };
+        const focusClass = focusClassMap[country.code] || '';
+
         return L.divIcon({
             className: 'flag-marker',
             html: `<div class="flag-ball">
                         <div class="flag-image-container">
-                            <img src="${country.flagUrl}" alt="${country.name} flag" class="flag-image" onerror="this.parentElement.innerHTML='<div class=\\\"flag-emoji\\\">${country.flagEmoji || '🏴'}</div>'">
+                            <img src="${country.flagUrl}" alt="${country.name} flag" class="flag-image ${focusClass}" onerror="this.parentElement.innerHTML='<div class=\\\"flag-emoji\\\">${country.flagEmoji || '🏴'}</div>'">
                         </div>
                         <div class="ball-shine"></div>
                     </div>`,
@@ -319,6 +326,23 @@ style.innerHTML = `
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
+        transform-origin: center;
+    }
+
+    /* Country-specific focus tuning for small marker balls */
+    .flag-image.flag-focus-my {
+        object-position: 34% 50%;
+        transform: scale(1.2);
+    }
+
+    .flag-image.flag-focus-sg {
+        object-position: 35% 45%;
+        transform: scale(1.18);
+    }
+
+    .flag-image.flag-focus-tl {
+        object-position: 36% 50%;
+        transform: scale(1.16);
     }
 
     .flag-emoji {
