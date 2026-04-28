@@ -176,6 +176,13 @@ function moveMarkerToTopLeft(country) {
     marker.setLatLng(topLeftCoords);
 }
 
+// Return the active marker to its original location when the map is zoomed again
+map.on('zoomstart', function() {
+    if (currentCountry) {
+        restoreCountryMarker(currentCountry.code);
+    }
+});
+
 // Restore a moved marker to its original position
 function restoreCountryMarker(code) {
     const marker = countryMarkers[code];
