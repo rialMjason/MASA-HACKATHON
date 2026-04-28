@@ -24,13 +24,12 @@ function createFlagIcon(flag) {
     return L.divIcon({
         className: 'flag-marker',
         html: `<div class="flag-ball">
-                    <div class="ball-background"></div>
                     <div class="ball-inner">${flag}</div>
                     <div class="ball-shine"></div>
                 </div>`,
-        iconSize: [70, 70],
-        iconAnchor: [35, 35],
-        popupAnchor: [0, -35]
+        iconSize: [80, 80],
+        iconAnchor: [40, 40],
+        popupAnchor: [0, -40]
     });
 }
 
@@ -49,14 +48,14 @@ function initializeMarkers() {
         // Hover effect
         marker.on('mouseover', function() {
             this.setZIndexOffset(1001);
-            this.getElement().querySelector('.flag-ball').style.transform = 'scale(1.35)';
-            this.getElement().querySelector('.flag-ball').style.boxShadow = '0 14px 28px rgba(102, 126, 234, 0.6), inset -2px -2px 8px rgba(0, 0, 0, 0.2)';
+            this.getElement().querySelector('.flag-ball').style.transform = 'scale(1.4)';
+            this.getElement().querySelector('.flag-ball').style.boxShadow = '0 16px 32px rgba(102, 126, 234, 0.7), inset -2px -2px 8px rgba(0, 0, 0, 0.15)';
         });
 
         marker.on('mouseout', function() {
             this.setZIndexOffset(1000);
             this.getElement().querySelector('.flag-ball').style.transform = 'scale(1)';
-            this.getElement().querySelector('.flag-ball').style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.4), inset -2px -2px 8px rgba(0, 0, 0, 0.2)';
+            this.getElement().querySelector('.flag-ball').style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.4), inset -2px -2px 8px rgba(0, 0, 0, 0.15)';
         });
 
         countryMarkers[country.code] = marker;
@@ -157,30 +156,20 @@ style.innerHTML = `
     }
 
     .flag-ball {
-        font-size: 48px;
-        width: 70px;
-        height: 70px;
+        font-size: 56px;
+        width: 80px;
+        height: 80px;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         border-radius: 50%;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), inset -2px -2px 8px rgba(0, 0, 0, 0.2);
-        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), inset -2px -2px 8px rgba(0, 0, 0, 0.15);
+        background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1) 40%, rgba(200, 200, 255, 0.1));
         position: relative;
         animation: ballBounce 0.6s ease-in-out infinite;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .ball-background {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-        opacity: 0.05;
-        z-index: 0;
+        border: 3px solid rgba(255, 255, 255, 0.4);
     }
 
     .ball-inner {
@@ -190,25 +179,26 @@ style.innerHTML = `
         width: 100%;
         height: 100%;
         position: relative;
-        z-index: 2;
+        z-index: 3;
         line-height: 1;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
     }
 
     .ball-shine {
         position: absolute;
-        width: 24px;
-        height: 24px;
-        background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.7), transparent);
+        width: 30px;
+        height: 30px;
+        background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.8), transparent);
         border-radius: 50%;
-        top: 10px;
-        left: 10px;
+        top: 12px;
+        left: 12px;
         pointer-events: none;
         z-index: 1;
     }
 
     .flag-marker:hover .flag-ball {
-        box-shadow: 0 14px 28px rgba(102, 126, 234, 0.6), inset -2px -2px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 16px 32px rgba(102, 126, 234, 0.7), inset -2px -2px 8px rgba(0, 0, 0, 0.15);
     }
 
     @keyframes ballBounce {
@@ -216,8 +206,9 @@ style.innerHTML = `
             transform: translateY(0);
         }
         50% {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
         }
+    }
     }
 
     .leaflet-popup-content-wrapper {
