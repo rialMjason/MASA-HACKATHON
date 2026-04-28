@@ -285,8 +285,8 @@ style.innerHTML = `
     }
 
     .flag-ball {
-        width: 64px;
-        height: 64px;
+        width: 56px;
+        height: 56px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -303,8 +303,8 @@ style.innerHTML = `
 
     .flag-image-container {
         position: absolute;
-        width: 60px;
-        height: 60px;
+        width: 52px;
+        height: 52px;
         border-radius: 50%;
         overflow: hidden;
         top: 50%;
@@ -330,7 +330,7 @@ style.innerHTML = `
     }
 
     .flag-emoji {
-        font-size: 36px;
+        font-size: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -340,12 +340,12 @@ style.innerHTML = `
 
     .ball-shine {
         position: absolute;
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.8), transparent);
         border-radius: 50%;
-        top: 7px;
-        left: 7px;
+        top: 6px;
+        left: 6px;
         pointer-events: none;
         z-index: 4;
     }
