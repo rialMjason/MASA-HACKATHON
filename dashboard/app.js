@@ -151,7 +151,12 @@ function selectCountry(country) {
     // Fetch and display country borders from GeoJSON
     const countryCode = country.code.toUpperCase();
     fetch(`https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_0_countries.geojson`)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`HTTP ${res.status}: Could not fetch country borders`);
+            }
+            return res.json();
+        })
         .then(geojson => {
             // Only process if this is still the current request
             if (currentFetchRequest !== requestId) {
@@ -198,8 +203,7 @@ function selectCountry(country) {
             if (currentFetchRequest !== requestId) {
                 return;
             }
-            console.log('Could not fetch country borders');
-            // Fallback to simple zoom
+            // Silently fallback to simple zoom on error (network issues expected)
             map.setView(country.coordinates, 7);
         });
 
