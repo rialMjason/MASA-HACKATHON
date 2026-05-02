@@ -1,3 +1,18 @@
+// Transition risk score descriptions
+const transitionRiskDescriptions = {
+    'Brunei': 'Brunei is assigned a relatively low transition risk score because it is largely following a Business-As-Usual (BAU) pathway with declining greenhouse gas (GHG) emissions and only gradual forest decline. The absence of aggressive policy shifts reduces exposure to sudden regulatory or market changes. While this also means limited progress toward sustainability goals, it keeps transition-related disruptions low in the near term.',
+    'Cambodia': 'Cambodia receives a high transition risk score due to its current trajectory of rapidly increasing GHG emissions and fast forest decline, combined with ambitious policy targets to reduce emissions and expand forest cover to 60%. The gap between current trends and policy goals implies a need for significant structural changes, making the transition potentially disruptive and costly.',
+    'Indonesia': 'Indonesia\'s moderate transition risk reflects its continued reliance on industrial activity, leading to rising GHG emissions and decreasing forest cover. While current policies are not very aggressive, the lack of strong intervention reduces immediate transition pressure. However, the country remains vulnerable to sudden shocks if critical climate events or policy shifts occur.',
+    'Laos': 'Laos has a moderate transition risk as it is already undergoing a transition with strong environmental policies in place, particularly for emissions reduction. However, ongoing forest decline presents a vulnerability. The country\'s proactive stance lowers policy-related risks, but environmental degradation may still pose challenges during the transition.',
+    'Malaysia': 'Malaysia is given a moderately high transition risk score due to increasing GHG emissions despite having relatively strong environmental policies. Although forest coverage remains above 50%, providing some buffer, the upward emissions trend suggests potential pressure from stricter future regulations or market expectations, which could create transition challenges.',
+    'Myanmar': 'Myanmar\'s transition risk is moderate because, while forest-related policies appear strong and forest targets have largely been achieved, there is limited focus on reducing GHG emissions. This imbalance reduces immediate transition pressure but may expose the country to future risks if global climate policies tighten.',
+    'Singapore': 'Singapore faces a relatively high transition risk due to its strong carbon tax and reforestation policies, which require significant economic adjustments despite only slight increases in GHG emissions. As a highly developed and urbanized economy with limited natural forest resources, implementing these policies can be costly and complex, increasing transition exposure.',
+    'Thailand': 'Thailand\'s transition risk is moderately high due to increasing emissions and decreasing forest cover, despite strong policy commitments and ambitious forest targets. Achieving these targets will likely require substantial economic and structural adjustments, contributing to transition risk.',
+    'Timor-Leste': 'Timor-Leste has a moderate transition risk, as its policies mainly focus on protecting existing forest resources rather than aggressively reducing emissions or expanding forest cover. This limited policy scope reduces immediate transition pressure but may not sufficiently address long-term environmental challenges.',
+    'Vietnam': 'Vietnam\'s transition risk is moderate, with both GHG emissions and forest areas increasing alongside strong policy efforts to manage land use and reduce emissions. The simultaneous growth and policy intervention suggest a balanced but evolving transition, with manageable risks.',
+    'Philippines': 'The Philippines is assigned a moderately high transition risk due to decreasing emissions and forest cover combined with high uncertainty. As the country has only recently begun implementing carbon and forest policies, the lack of established frameworks and experience increases the risk of disruptions during the transition process.'
+};
+
 // Initialize map
 const map = L.map('map').setView([10, 108], 5);
 
@@ -574,6 +589,14 @@ function showTransitionRiskModal(country) {
     
     // Update risk score
     document.getElementById('modalRiskScore').textContent = country.transitionRisk.toFixed(1);
+    
+    // Update transition risk explanation
+    const explanationDiv = document.getElementById('transitionRiskExplanation');
+    const description = transitionRiskDescriptions[country.name] || 'Transition risk analysis for this country.';
+    if (explanationDiv) {
+        explanationDiv.textContent = description;
+    }
+    
     updateForecastSummary(country);
     
     // Show modal
