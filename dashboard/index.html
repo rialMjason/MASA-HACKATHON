@@ -258,6 +258,139 @@
             display: block;
         }
 
+        .learn-more-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .learn-more-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 5000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #764ba2;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .modal-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-body {
+            padding: 25px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-bottom: 30px;
+        }
+
+        .chart-description {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .transition-risk-score {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #FFA500;
+            margin-bottom: 20px;
+        }
+
+        .risk-score-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .risk-score-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+        }
+
         /* Water effect animations */
         .leaflet-container {
             background: linear-gradient(180deg, #4a90e2 0%, #357abd 50%, #1f4f89 100%);
@@ -337,7 +470,10 @@
 
                     <div class="risk-metrics">
                         <div class="risk-card physical">
-                            <div class="risk-label">Physical Risk</div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div class="risk-label">Physical Risk</div>
+                                <button class="learn-more-button" id="learnMorePhysical">Learn More →</button>
+                            </div>
                             <div class="risk-value" id="physicalRisk">--</div>
                             <div class="risk-bar">
                                 <div class="risk-bar-fill high" id="physicalBar" style="width: 0%;"></div>
@@ -345,7 +481,10 @@
                         </div>
 
                         <div class="risk-card transition">
-                            <div class="risk-label">Transition Risk</div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div class="risk-label">Transition Risk</div>
+                                <button class="learn-more-button" id="learnMoreTransition">Learn More →</button>
+                            </div>
                             <div class="risk-value" id="transitionRisk">--</div>
                             <div class="risk-bar">
                                 <div class="risk-bar-fill medium" id="transitionBar" style="width: 0%;"></div>
@@ -353,7 +492,10 @@
                         </div>
 
                         <div class="risk-card liability">
-                            <div class="risk-label">Liability Risk</div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div class="risk-label">Liability Risk</div>
+                                <button class="learn-more-button" id="learnMoreLiability">Learn More →</button>
+                            </div>
                             <div class="risk-value" id="liabilityRisk">--</div>
                             <div class="risk-bar">
                                 <div class="risk-bar-fill" id="liabilityBar" style="width: 0%;"></div>
@@ -371,6 +513,35 @@
     </div>
 
     <script src="map-data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    
+    <!-- Modal for Transition Risk Details -->
+    <div class="modal" id="transitionRiskModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalCountryName">Transition Risk Details</h2>
+                <button class="modal-close" id="modalCloseButton">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="transition-risk-score">
+                    <div class="risk-score-label">Transition Risk Score</div>
+                    <div class="risk-score-value" id="modalRiskScore">--</div>
+                    <div style="font-size: 12px; color: #666; margin-top: 8px;">Out of 10</div>
+                </div>
+                <p class="chart-description">
+                    The charts below show historical and forecasted trends for GHG emissions and forest area in this country from 1970 to 2030. 
+                    These indicators reflect major drivers of transition risk including energy transformation and land-use change.
+                </p>
+                <div class="chart-container">
+                    <canvas id="ghgForestChart"></canvas>
+                </div>
+                <div style="font-size: 12px; color: #999; text-align: center;">
+                    Data source: Historical World Bank data and ARIMA forecasts for 2025-2030
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>

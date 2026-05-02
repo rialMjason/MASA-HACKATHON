@@ -8,8 +8,8 @@ map.setMaxZoom(10);
 // Limit map to Southeast Asia region only
 // Bounds: [South, West] to [North, East]
 const seaBounds = L.latLngBounds(
-    L.latLng(-10.6, 90.0),  // Southwest corner (farther west for more SEA coverage)
-    L.latLng(29.0, 141.0)   // Northeast corner (Myanmar north, Indonesia east)
+    L.latLng(-10.6, 85.0),  // Southwest corner (farther west for more SEA coverage)
+    L.latLng(30.0, 141.0)   // Northeast corner (Myanmar north, Indonesia east)
 );
 map.setMaxBounds(seaBounds);
 map.on('drag', function() {
@@ -463,3 +463,204 @@ function updateCountryRiskData(updates) {
 
 // Export function for use in console or external scripts
 window.updateCountryRiskData = updateCountryRiskData;
+
+// ===== TRANSITION RISK MODAL FUNCTIONALITY =====
+
+let chart = null;
+
+// Modal elements
+const transitionRiskModal = document.getElementById('transitionRiskModal');
+const modalCloseButton = document.getElementById('modalCloseButton');
+const learnMoreTransition = document.getElementById('learnMoreTransition');
+
+// Close modal when X button is clicked
+if (modalCloseButton) {
+    modalCloseButton.addEventListener('click', function() {
+        transitionRiskModal.classList.remove('active');
+        if (chart) {
+            chart.destroy();
+            chart = null;
+        }
+    });
+}
+
+// Close modal when clicking outside the modal content
+if (transitionRiskModal) {
+    transitionRiskModal.addEventListener('click', function(e) {
+        if (e.target === transitionRiskModal) {
+            transitionRiskModal.classList.remove('active');
+            if (chart) {
+                chart.destroy();
+                chart = null;
+            }
+        }
+    });
+}
+
+// Learn More button for Transition Risk
+if (learnMoreTransition) {
+    learnMoreTransition.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (currentCountry) {
+            showTransitionRiskModal(currentCountry);
+        }
+    });
+}
+
+function showTransitionRiskModal(country) {
+    // Update modal header with country name
+    document.getElementById('modalCountryName').textContent = `${country.name} - Transition Risk Details`;
+    
+    // Update risk score
+    document.getElementById('modalRiskScore').textContent = country.transitionRisk.toFixed(1);
+    
+    // Show modal
+    transitionRiskModal.classList.add('active');
+    
+    // Create chart after modal is visible
+    setTimeout(() => {
+        createGHGForestChart(country);
+    }, 100);
+}
+
+function createGHGForestChart(country) {
+    if (chart) {
+        chart.destroy();
+    }
+    
+    // Get forecast data
+    if (!window.forecastData || !window.forecastData.ghgData || !window.forecastData.forestData) {
+        // If data is not loaded yet, try again
+        setTimeout(() => createGHGForestChart(country), 500);
+        return;
+    }
+    
+    // Find country code in forecast data
+    const countryCodeMap = {
+        'TH': 'THA', 'VN': 'VNM', 'ID': 'IDN', 'PH': 'PHL', 'MY': 'MYS',
+        'SG': 'SGP', 'MM': 'MMR', 'KH': 'KHM', 'LA': 'LAO', 'BN': 'BRN', 'TL': 'TLS'
+    };
+    
+    const forecastCountryCode = countryCodeMap[country.code];
+    
+    let ghgData = [];
+    let ghgYears = [];
+    let forestData = [];
+    let forestYears = [];
+    
+    // Get GHG data
+    if (forecastCountryCode && window.forecastData.ghgData[forecastCountryCode]) {
+        const ghgCountryData = window.forecastData.ghgData[forecastCountryCode];
+        ghgYears = ghgCountryData.years || [];
+        ghgData = ghgCountryData.actual || [];
+    }
+    
+    // Get forest data - use the same years for both
+    if (forecastCountryCode && window.forecastData.forestData[forecastCountryCode]) {
+        const forestCountryData = window.forecastData.forestData[forecastCountryCode];
+        forestYears = forestCountryData.years || [];
+        forestData = forestCountryData.actual || [];
+    }
+    
+    // Use GHG years as primary
+    const years = ghgYears.length > 0 ? ghgYears : forestYears;
+    
+    if (years.length === 0) {
+        console.warn(`No forecast data available for ${country.name}`);
+        return;
+    }
+    
+    const ctx = document.getElementById('ghgForestChart');
+    if (!ctx) return;
+    
+    chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: years.map(y => y.toString()),
+            datasets: [
+                {
+                    label: 'GHG Emissions (Per Capita, metric tons CO2e)',
+                    data: ghgData,
+                    borderColor: '#FF6B6B',
+                    backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.4,
+                    yAxisID: 'y',
+                    pointRadius: 3,
+                    pointHoverRadius: 5
+                },
+                {
+                    label: 'Forest Area (% of land)',
+                    data: forestData,
+                    borderColor: '#4ECDC4',
+                    backgroundColor: 'rgba(78, 205, 196, 0.1)',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.4,
+                    yAxisID: 'y1',
+                    pointRadius: 3,
+                    pointHoverRadius: 5
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                mode: 'index',
+                intersect: false,
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        font: { size: 12 },
+                        usePointStyle: true,
+                        padding: 15
+                    }
+                },
+                title: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
+                    title: {
+                        display: true,
+                        text: 'GHG Emissions (metric tons CO2e per capita)',
+                        font: { size: 12 }
+                    },
+                    ticks: {
+                        font: { size: 11 }
+                    }
+                },
+                y1: {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+                    title: {
+                        display: true,
+                        text: 'Forest Area (% of land)',
+                        font: { size: 12 }
+                    },
+                    ticks: {
+                        font: { size: 11 }
+                    },
+                    grid: {
+                        drawOnChartArea: false,
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: { size: 11 }
+                    }
+                }
+            }
+        }
+    });
+}

@@ -155,3 +155,33 @@ const countriesData = [
         liabilityRiskPercent: 0
     }
 ];
+
+// Load forecast data and populate transition risk scores
+let forecastData = {};
+
+fetch('forecast-data.json')
+    .then(response => response.json())
+    .then(data => {
+        forecastData = data;
+        window.forecastData = data;  // Make it globally accessible
+        
+        // Update transition risk scores for each country
+        countriesData.forEach(country => {
+            // Map country name to transition risk score
+            const transitionRiskInfo = data.transitionRiskScores[country.name];
+            if (transitionRiskInfo) {
+                country.transitionRisk = transitionRiskInfo.score;
+                country.transitionRiskPercent = transitionRiskInfo.percent;
+            }
+            
+            // Set placeholder values for physical and liability risks
+            country.physicalRisk = 3.5;
+            country.physicalRiskPercent = 35;
+            country.liabilityRisk = 2.5;
+            country.liabilityRiskPercent = 25;
+        });
+        
+        console.log('Forecast data loaded successfully');
+        console.log('Transition risk scores updated');
+    })
+    .catch(error => console.error('Error loading forecast data:', error));
