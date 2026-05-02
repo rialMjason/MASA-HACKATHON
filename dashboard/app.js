@@ -8,7 +8,7 @@ map.setMaxZoom(10);
 // Limit map to Southeast Asia region only
 // Bounds: [South, West] to [North, East]
 const seaBounds = L.latLngBounds(
-    L.latLng(-10.6, 92.5),  // Southwest corner (Indonesia south, Myanmar west)
+    L.latLng(-10.6, 90.0),  // Southwest corner (farther west for more SEA coverage)
     L.latLng(29.0, 141.0)   // Northeast corner (Myanmar north, Indonesia east)
 );
 map.setMaxBounds(seaBounds);
