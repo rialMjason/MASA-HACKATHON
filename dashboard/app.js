@@ -473,26 +473,87 @@ const transitionRiskModal = document.getElementById('transitionRiskModal');
 const modalCloseButton = document.getElementById('modalCloseButton');
 const learnMoreTransition = document.getElementById('learnMoreTransition');
 
+function destroyTransitionChart() {
+    if (chart) {
+        chart.destroy();
+        chart = null;
+    }
+}
+
+function closeTransitionModal() {
+    if (transitionRiskModal) {
+        transitionRiskModal.classList.remove('active');
+    }
+    destroyTransitionChart();
+}
+
+function formatForecastValue(value) {
+    if (value === null || value === undefined || Number.isNaN(value)) {
+        return '--';
+    }
+
+    return Number(value).toFixed(2);
+}
+
+function formatForecastRange(lower, upper) {
+    if (
+        lower === null || lower === undefined || Number.isNaN(lower) ||
+        upper === null || upper === undefined || Number.isNaN(upper)
+    ) {
+        return '95% CI: --';
+    }
+
+    return `95% CI: ${Number(lower).toFixed(2)} to ${Number(upper).toFixed(2)}`;
+}
+
+function mergeYears(primaryYears, secondaryYears) {
+    return Array.from(new Set([...(primaryYears || []), ...(secondaryYears || [])])).sort((a, b) => a - b);
+}
+
+function alignSeries(series, years, field) {
+    if (!series || !Array.isArray(series.years)) {
+        return years.map(() => null);
+    }
+
+    const lookup = new Map(series.years.map((year, index) => [year, series[field] ? series[field][index] : null]));
+    return years.map(year => lookup.has(year) ? lookup.get(year) : null);
+}
+
+function getCountryForecastBundle(country) {
+    if (!window.forecastData) {
+        return null;
+    }
+
+    return {
+        ghg: window.forecastData.ghgData ? window.forecastData.ghgData[country.code] : null,
+        forest: window.forecastData.forestData ? window.forecastData.forestData[country.code] : null,
+        summary: window.forecastData.forecast2030 ? window.forecastData.forecast2030[country.code] : null
+    };
+}
+
+function updateForecastSummary(country) {
+    const bundle = getCountryForecastBundle(country);
+    const summary = bundle ? bundle.summary : null;
+
+    const ghgSummary = summary && summary.ghg ? summary.ghg : null;
+    const forestSummary = summary && summary.forest ? summary.forest : null;
+
+    document.getElementById('ghg2030Value').textContent = ghgSummary ? formatForecastValue(ghgSummary.forecast) : '--';
+    document.getElementById('ghg2030Ci').textContent = ghgSummary ? formatForecastRange(ghgSummary.lowerCI, ghgSummary.upperCI) : '95% CI: --';
+    document.getElementById('forest2030Value').textContent = forestSummary ? formatForecastValue(forestSummary.forecast) : '--';
+    document.getElementById('forest2030Ci').textContent = forestSummary ? formatForecastRange(forestSummary.lowerCI, forestSummary.upperCI) : '95% CI: --';
+}
+
 // Close modal when X button is clicked
 if (modalCloseButton) {
-    modalCloseButton.addEventListener('click', function() {
-        transitionRiskModal.classList.remove('active');
-        if (chart) {
-            chart.destroy();
-            chart = null;
-        }
-    });
+    modalCloseButton.addEventListener('click', closeTransitionModal);
 }
 
 // Close modal when clicking outside the modal content
 if (transitionRiskModal) {
     transitionRiskModal.addEventListener('click', function(e) {
         if (e.target === transitionRiskModal) {
-            transitionRiskModal.classList.remove('active');
-            if (chart) {
-                chart.destroy();
-                chart = null;
-            }
+            closeTransitionModal();
         }
     });
 }
@@ -513,6 +574,7 @@ function showTransitionRiskModal(country) {
     
     // Update risk score
     document.getElementById('modalRiskScore').textContent = country.transitionRisk.toFixed(1);
+    updateForecastSummary(country);
     
     // Show modal
     transitionRiskModal.classList.add('active');
@@ -524,51 +586,33 @@ function showTransitionRiskModal(country) {
 }
 
 function createGHGForestChart(country) {
-    if (chart) {
-        chart.destroy();
-    }
+    destroyTransitionChart();
     
     // Get forecast data
-    if (!window.forecastData || !window.forecastData.ghgData || !window.forecastData.forestData) {
+    const bundle = getCountryForecastBundle(country);
+    if (!bundle || !bundle.ghg || !bundle.forest) {
         // If data is not loaded yet, try again
         setTimeout(() => createGHGForestChart(country), 500);
         return;
     }
-    
-    // Find country code in forecast data
-    const countryCodeMap = {
-        'TH': 'THA', 'VN': 'VNM', 'ID': 'IDN', 'PH': 'PHL', 'MY': 'MYS',
-        'SG': 'SGP', 'MM': 'MMR', 'KH': 'KHM', 'LA': 'LAO', 'BN': 'BRN', 'TL': 'TLS'
-    };
-    
-    const forecastCountryCode = countryCodeMap[country.code];
-    
-    let ghgData = [];
-    let ghgYears = [];
-    let forestData = [];
-    let forestYears = [];
-    
-    // Get GHG data
-    if (forecastCountryCode && window.forecastData.ghgData[forecastCountryCode]) {
-        const ghgCountryData = window.forecastData.ghgData[forecastCountryCode];
-        ghgYears = ghgCountryData.years || [];
-        ghgData = ghgCountryData.actual || [];
-    }
-    
-    // Get forest data - use the same years for both
-    if (forecastCountryCode && window.forecastData.forestData[forecastCountryCode]) {
-        const forestCountryData = window.forecastData.forestData[forecastCountryCode];
-        forestYears = forestCountryData.years || [];
-        forestData = forestCountryData.actual || [];
-    }
-    
-    // Use GHG years as primary
-    const years = ghgYears.length > 0 ? ghgYears : forestYears;
+    const ghgYears = bundle.ghg.years || [];
+    const forestYears = bundle.forest.years || [];
+    const years = mergeYears(ghgYears, forestYears);
     
     if (years.length === 0) {
         console.warn(`No forecast data available for ${country.name}`);
         return;
     }
+
+    const ghgActual = alignSeries(bundle.ghg, years, 'actual');
+    const ghgForecast = alignSeries(bundle.ghg, years, 'forecast');
+    const ghgLower = alignSeries(bundle.ghg, years, 'lowerCI');
+    const ghgUpper = alignSeries(bundle.ghg, years, 'upperCI');
+
+    const forestActual = alignSeries(bundle.forest, years, 'actual');
+    const forestForecast = alignSeries(bundle.forest, years, 'forecast');
+    const forestLower = alignSeries(bundle.forest, years, 'lowerCI');
+    const forestUpper = alignSeries(bundle.forest, years, 'upperCI');
     
     const ctx = document.getElementById('ghgForestChart');
     if (!ctx) return;
@@ -579,28 +623,102 @@ function createGHGForestChart(country) {
             labels: years.map(y => y.toString()),
             datasets: [
                 {
-                    label: 'GHG Emissions (Per Capita, metric tons CO2e)',
-                    data: ghgData,
+                    label: 'GHG actual',
+                    data: ghgActual,
                     borderColor: '#FF6B6B',
-                    backgroundColor: 'rgba(255, 107, 107, 0.1)',
                     borderWidth: 2,
                     fill: false,
                     tension: 0.4,
                     yAxisID: 'y',
                     pointRadius: 3,
-                    pointHoverRadius: 5
+                    pointHoverRadius: 5,
+                    spanGaps: true
                 },
                 {
-                    label: 'Forest Area (% of land)',
-                    data: forestData,
+                    label: 'GHG forecast',
+                    data: ghgForecast,
+                    borderColor: '#FF6B6B',
+                    borderDash: [8, 5],
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.4,
+                    yAxisID: 'y',
+                    pointRadius: 3,
+                    pointHoverRadius: 5,
+                    spanGaps: true
+                },
+                {
+                    label: 'GHG lower CI',
+                    data: ghgLower,
+                    borderColor: 'rgba(255, 107, 107, 0.45)',
+                    borderDash: [2, 4],
+                    borderWidth: 1,
+                    fill: false,
+                    tension: 0.2,
+                    yAxisID: 'y',
+                    pointRadius: 0,
+                    spanGaps: true
+                },
+                {
+                    label: 'GHG upper CI',
+                    data: ghgUpper,
+                    borderColor: 'rgba(255, 107, 107, 0.45)',
+                    borderDash: [2, 4],
+                    borderWidth: 1,
+                    fill: false,
+                    tension: 0.2,
+                    yAxisID: 'y',
+                    pointRadius: 0,
+                    spanGaps: true
+                },
+                {
+                    label: 'Forest actual',
+                    data: forestActual,
                     borderColor: '#4ECDC4',
-                    backgroundColor: 'rgba(78, 205, 196, 0.1)',
                     borderWidth: 2,
                     fill: false,
                     tension: 0.4,
                     yAxisID: 'y1',
                     pointRadius: 3,
-                    pointHoverRadius: 5
+                    pointHoverRadius: 5,
+                    spanGaps: true
+                },
+                {
+                    label: 'Forest forecast',
+                    data: forestForecast,
+                    borderColor: '#4ECDC4',
+                    borderDash: [8, 5],
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.4,
+                    yAxisID: 'y1',
+                    pointRadius: 3,
+                    pointHoverRadius: 5,
+                    spanGaps: true
+                },
+                {
+                    label: 'Forest lower CI',
+                    data: forestLower,
+                    borderColor: 'rgba(78, 205, 196, 0.45)',
+                    borderDash: [2, 4],
+                    borderWidth: 1,
+                    fill: false,
+                    tension: 0.2,
+                    yAxisID: 'y1',
+                    pointRadius: 0,
+                    spanGaps: true
+                },
+                {
+                    label: 'Forest upper CI',
+                    data: forestUpper,
+                    borderColor: 'rgba(78, 205, 196, 0.45)',
+                    borderDash: [2, 4],
+                    borderWidth: 1,
+                    fill: false,
+                    tension: 0.2,
+                    yAxisID: 'y1',
+                    pointRadius: 0,
+                    spanGaps: true
                 }
             ]
         },
@@ -618,7 +736,8 @@ function createGHGForestChart(country) {
                     labels: {
                         font: { size: 12 },
                         usePointStyle: true,
-                        padding: 15
+                        padding: 12,
+                        boxWidth: 14
                     }
                 },
                 title: {
@@ -635,6 +754,7 @@ function createGHGForestChart(country) {
                         text: 'GHG Emissions (metric tons CO2e per capita)',
                         font: { size: 12 }
                     },
+                    beginAtZero: false,
                     ticks: {
                         font: { size: 11 }
                     }
@@ -648,6 +768,7 @@ function createGHGForestChart(country) {
                         text: 'Forest Area (% of land)',
                         font: { size: 12 }
                     },
+                    beginAtZero: false,
                     ticks: {
                         font: { size: 11 }
                     },

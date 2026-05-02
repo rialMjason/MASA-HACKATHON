@@ -377,6 +377,49 @@
             margin-bottom: 20px;
         }
 
+        .forecast-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .forecast-summary-card {
+            background: #f8f9fa;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .forecast-summary-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+        .forecast-summary-value {
+            font-size: 26px;
+            font-weight: 800;
+            color: #111827;
+            line-height: 1.1;
+        }
+
+        .forecast-summary-ci {
+            margin-top: 8px;
+            font-size: 12px;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+
+        .forecast-summary-subtle {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 6px;
+        }
+
         .risk-score-label {
             font-size: 12px;
             font-weight: 700;
@@ -528,15 +571,29 @@
                     <div class="risk-score-value" id="modalRiskScore">--</div>
                     <div style="font-size: 12px; color: #666; margin-top: 8px;">Out of 10</div>
                 </div>
+                <div class="forecast-summary-grid">
+                    <div class="forecast-summary-card">
+                        <div class="forecast-summary-label">GHG 2030 Forecast</div>
+                        <div class="forecast-summary-value" id="ghg2030Value">--</div>
+                        <div class="forecast-summary-ci" id="ghg2030Ci">95% CI: --</div>
+                        <div class="forecast-summary-subtle">Metric tons CO2e per capita</div>
+                    </div>
+                    <div class="forecast-summary-card">
+                        <div class="forecast-summary-label">Forest 2030 Forecast</div>
+                        <div class="forecast-summary-value" id="forest2030Value">--</div>
+                        <div class="forecast-summary-ci" id="forest2030Ci">95% CI: --</div>
+                        <div class="forecast-summary-subtle">Forest area (% of land)</div>
+                    </div>
+                </div>
                 <p class="chart-description">
-                    The charts below show historical and forecasted trends for GHG emissions and forest area in this country from 1970 to 2030. 
-                    These indicators reflect major drivers of transition risk including energy transformation and land-use change.
+                    The charts below show historical and forecasted trends for GHG emissions and forest area in this country from 1970 to 2030.
+                    The forecast section includes the 2030 point estimate and its 95% confidence interval for both indicators.
                 </p>
                 <div class="chart-container">
                     <canvas id="ghgForestChart"></canvas>
                 </div>
                 <div style="font-size: 12px; color: #999; text-align: center;">
-                    Data source: Historical World Bank data and ARIMA forecasts for 2025-2030
+                    Data source: Historical World Bank data and 2030 forecast workbook with confidence intervals
                 </div>
             </div>
         </div>
