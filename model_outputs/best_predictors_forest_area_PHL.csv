@@ -1,0 +1,6 @@
+country_code,country_name,rank,indicator,abs_correlation
+PHL,Philippines,1,Forest area (sq. km),0.9999999999999994
+PHL,Philippines,2,People with basic handwashing facilities including soap and water (% of population),0.9594604206415535
+PHL,Philippines,3,Multidimensional poverty headcount ratio (World Bank) (% of population),0.9586191806999471
+PHL,Philippines,4,"People with basic handwashing facilities including soap and water, rural (% of rural population)",0.9580368489658075
+PHL,Philippines,5,"People with basic handwashing facilities including soap and water, urban (% of urban population)",0.9580368489658071

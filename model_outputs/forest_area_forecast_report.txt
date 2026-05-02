@@ -1,0 +1,184 @@
+================================================================================
+FOREST AREA FORECASTING MODEL - COMPREHENSIVE REPORT
+11 Southeast Asian Countries
+================================================================================
+
+EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+Target variable: Forest area (% of land area)
+Countries analyzed: 11
+Models compared: Regression vs ARIMA
+Backtest design: rolling-origin with 20-year initial window
+
+OVERALL MODEL PERFORMANCE
+--------------------------------------------------------------------------------
+Model              Avg RMSE       Wins       Win %     
+--------------------------------------------------------------------------------
+Regression         0.4234         10         6.5      %
+ARIMA              0.1593         144        93.5     %
+--------------------------------------------------------------------------------
+Recommended model: ARIMA
+
+SELECTED INDICATORS
+--------------------------------------------------------------------------------
+BRN - Brunei
+  1. Forest area (sq. km) (|corr|=1.0000)
+  2. Population ages 15-64, female (% of female population) (|corr|=0.9952)
+  3. Age dependency ratio (% of working-age population) (|corr|=0.9912)
+  4. Urban population (% of total population) (|corr|=0.9910)
+  5. Rural population (% of total population) (|corr|=0.9910)
+
+KHM - Cambodia
+  1. Forest area (sq. km) (|corr|=1.0000)
+  2. Arable land (% of land area) (|corr|=0.9940)
+  3. Arable land (hectares) (|corr|=0.9940)
+  4. Rural population (% of total population) (|corr|=0.9930)
+  5. Urban population (% of total population) (|corr|=0.9930)
+
+IDN - Indonesia
+  1. People with basic handwashing facilities including soap and water (% of population) (|corr|=0.9954)
+  2. People with basic handwashing facilities including soap and water, urban (% of urban population) (|corr|=0.9952)
+  3. People with basic handwashing facilities including soap and water, rural (% of rural population) (|corr|=0.9952)
+  4. Forest area (sq. km) (|corr|=0.9951)
+  5. Educational attainment, at least completed lower secondary, population 25+, male (%) (cumulative) (|corr|=0.9921)
+
+LAO - Laos
+  1. Forest area (sq. km) (|corr|=1.0000)
+  2. People practicing open defecation (% of population) (|corr|=0.9988)
+  3. People using at least basic sanitation services (% of population) (|corr|=0.9984)
+  4. People using safely managed sanitation services (% of population) (|corr|=0.9981)
+  5. People using at least basic drinking water services (% of population) (|corr|=0.9979)
+
+MYS - Malaysia
+  1. Forest area (sq. km) (|corr|=1.0000)
+  2. Educational attainment, at least Bachelor's or equivalent, population 25+, total (%) (cumulative) (|corr|=0.9791)
+  3. Population ages 45-49, female (% of female population) (|corr|=0.9741)
+  4. Educational attainment, at least Bachelor's or equivalent, population 25+, female (%) (cumulative) (|corr|=0.9711)
+  5. Population ages 45-49, male (% of male population) (|corr|=0.9654)
+
+MMR - Myanmar
+  1. Forest area (sq. km) (|corr|=1.0000)
+  2. Urban population (|corr|=0.9997)
+  3. Population ages 15-64, male (|corr|=0.9996)
+  4. Population ages 15-64, total (|corr|=0.9996)
+  5. Population ages 15-64, female (|corr|=0.9996)
+
+PHL - Philippines
+  1. Forest area (sq. km) (|corr|=1.0000)
+  2. People with basic handwashing facilities including soap and water (% of population) (|corr|=0.9595)
+  3. Multidimensional poverty headcount ratio (World Bank) (% of population) (|corr|=0.9586)
+  4. People with basic handwashing facilities including soap and water, rural (% of rural population) (|corr|=0.9580)
+  5. People with basic handwashing facilities including soap and water, urban (% of urban population) (|corr|=0.9580)
+
+SGP - Singapore
+  1. Individuals using the Internet, female (% of female population) (|corr|=0.9702)
+  2. Trademark applications, resident, by count (|corr|=0.9672)
+  3. Labor force with advanced education, male (% of male working-age population with advanced education) (|corr|=0.9656)
+  4. Trademark applications, nonresident, by count (|corr|=0.9648)
+  5. Individuals using the Internet, male (% of male population) (|corr|=0.9627)
+
+THA - Thailand
+  1. Forest area (sq. km) (|corr|=1.0000)
+  2. People with basic handwashing facilities including soap and water, rural (% of rural population) (|corr|=0.9972)
+  3. People with basic handwashing facilities including soap and water, urban (% of urban population) (|corr|=0.9972)
+  4. People with basic handwashing facilities including soap and water (% of population) (|corr|=0.9969)
+  5. Educational attainment, at least Bachelor's or equivalent, population 25+, female (%) (cumulative) (|corr|=0.9720)
+
+TLS - Timor-Leste
+  1. Forest area (sq. km) (|corr|=1.0000)
+  2. People practicing open defecation, rural (% of rural population) (|corr|=1.0000)
+  3. People using at least basic sanitation services (% of population) (|corr|=1.0000)
+  4. People using at least basic drinking water services (% of population) (|corr|=0.9999)
+  5. People using at least basic sanitation services, rural (% of rural population) (|corr|=0.9998)
+
+VNM - Vietnam
+  1. People practicing open defecation, urban (% of urban population) (|corr|=0.9980)
+  2. People practicing open defecation (% of population) (|corr|=0.9980)
+  3. Forest area (sq. km) (|corr|=0.9973)
+  4. People using safely managed sanitation services (% of population) (|corr|=0.9966)
+  5. People using at least basic drinking water services (% of population) (|corr|=0.9961)
+
+PER-COUNTRY RESULTS
+--------------------------------------------------------------------------------
+Country: BRN - Brunei
+  Regression (base): RMSE=0.2357, MAE=0.1896, Wins=0
+  Regression (with policy dummies): RMSE=0.0983, MAE=0.0601, Wins=1
+  ARIMA:      RMSE=0.0861, MAE=0.0230, Wins=14, Order=(1, 1, 0)
+  Test points: 14
+
+Country: KHM - Cambodia
+  Regression (base): RMSE=1.4171, MAE=1.1456, Wins=0
+  Regression (with policy dummies): RMSE=1.3726, MAE=1.2056, Wins=0
+  ARIMA:      RMSE=0.5893, MAE=0.3282, Wins=14, Order=(1, 1, 0)
+  Test points: 14
+
+Country: IDN - Indonesia
+  Regression (base): RMSE=0.6861, MAE=0.6479, Wins=1
+  Regression (with policy dummies): RMSE=0.3759, MAE=0.2949, Wins=4
+  ARIMA:      RMSE=0.2714, MAE=0.1999, Wins=13, Order=(1, 1, 1)
+  Test points: 14
+
+Country: LAO - Laos
+  Regression (base): RMSE=0.1987, MAE=0.1977, Wins=0
+  Regression (with policy dummies): RMSE=0.1451, MAE=0.1178, Wins=0
+  ARIMA:      RMSE=0.0162, MAE=0.0052, Wins=14, Order=(1, 1, 0)
+  Test points: 14
+
+Country: MYS - Malaysia
+  Regression (base): RMSE=0.2703, MAE=0.2254, Wins=4
+  Regression (with policy dummies): RMSE=0.3321, MAE=0.2705, Wins=4
+  ARIMA:      RMSE=0.2536, MAE=0.1309, Wins=10, Order=(1, 1, 0)
+  Test points: 14
+
+Country: MMR - Myanmar
+  Regression (base): RMSE=0.4534, MAE=0.4385, Wins=0
+  Regression (with policy dummies): RMSE=0.5333, MAE=0.5038, Wins=0
+  ARIMA:      RMSE=0.0218, MAE=0.0108, Wins=14, Order=(1, 1, 0)
+  Test points: 14
+
+Country: PHL - Philippines
+  Regression (base): RMSE=0.1055, MAE=0.1034, Wins=1
+  Regression (with policy dummies): RMSE=0.1495, MAE=0.1381, Wins=1
+  ARIMA:      RMSE=0.0738, MAE=0.0267, Wins=13, Order=(1, 1, 0)
+  Test points: 14
+
+Country: SGP - Singapore
+  Regression (base): RMSE=0.4083, MAE=0.3628, Wins=2
+  Regression (with policy dummies): RMSE=0.3371, MAE=0.2469, Wins=4
+  ARIMA:      RMSE=0.1347, MAE=0.0778, Wins=12, Order=(1, 1, 0)
+  Test points: 14
+
+Country: THA - Thailand
+  Regression (base): RMSE=0.0676, MAE=0.0436, Wins=1
+  Regression (with policy dummies): RMSE=0.0842, MAE=0.0628, Wins=1
+  ARIMA:      RMSE=0.0578, MAE=0.0262, Wins=13, Order=(1, 1, 0)
+  Test points: 14
+
+Country: TLS - Timor-Leste
+  Regression (base): RMSE=0.1192, MAE=0.1189, Wins=0
+  Regression (with policy dummies): RMSE=0.1395, MAE=0.1228, Wins=0
+  ARIMA:      RMSE=0.0261, MAE=0.0113, Wins=14, Order=(1, 1, 1)
+  Test points: 14
+
+Country: VNM - Vietnam
+  Regression (base): RMSE=0.6962, MAE=0.6608, Wins=1
+  Regression (with policy dummies): RMSE=0.3759, MAE=0.3351, Wins=2
+  ARIMA:      RMSE=0.2212, MAE=0.1617, Wins=13, Order=(1, 1, 1)
+  Test points: 14
+
+RECOMMENDATIONS
+--------------------------------------------------------------------------------
+1. Use the selected top-correlation indicators as the regression feature set for each country.
+2. ARIMA is the strongest baseline when only the forest-area history is used.
+3. If future exogenous forecasts become available, rerun the regression model with better predictor projections.
+4. Country-specific tuning is likely to improve results more than a single global specification.
+5. Forest-area forecasts should be interpreted alongside land-use policy and deforestation indicators.
+
+FILES WRITTEN
+--------------------------------------------------------------------------------
+- model_outputs/forest_area_forecast_report.txt
+- model_outputs/forest_area_forecast_summary.csv
+- model_outputs/forest_area_forecast_detailed.csv
+- model_outputs/best_predictors_forest_area_<country>.csv
+- model_outputs/forest_area_policy_dummy_ablation.csv
+================================================================================

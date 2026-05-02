@@ -1,0 +1,210 @@
+====================================================================================================
+BEST PREDICTIVE INDICATORS FOR GHG EMISSIONS PER CAPITA - ALL 11 SEA COUNTRIES
+====================================================================================================
+
+
+7. PHILIPPINES (PHL)
+----------------------------------------------------------------------------------------------------
+Number of Predictors: 3
+
+Selected Indicators:
+  1. Gross national expenditure (current LCU)
+  2. GNI (current LCU)
+  3. Households and NPISHs Final consumption expenditure (current LCU)
+
+Model Performance:
+  Cross-Validation RMSE: 0.072506
+  AIC:                   -291.84
+  AICc:                  -291.37
+  BIC:                   -285.82
+  R-squared:             0.901581
+
+3. INDONESIA (IDN)
+----------------------------------------------------------------------------------------------------
+Number of Predictors: 10
+
+Selected Indicators:
+  1. GDP (current LCU)
+  2. Gross capital formation (constant LCU)
+  3. GNI (current LCU)
+  4. Gross national expenditure (constant LCU)
+  5. Gross national expenditure (current LCU)
+  6. GNI: linked series (current LCU)
+  7. Final consumption expenditure (current LCU)
+  8. Households and NPISHs final consumption expenditure: linked series (current LCU)
+  9. GDP (constant LCU)
+  10. Changes in inventories (constant LCU)
+
+Model Performance:
+  Cross-Validation RMSE: 0.090328
+  AIC:                   -270.51
+  AICc:                  -265.51
+  BIC:                   -250.44
+  R-squared:             0.993794
+
+6. MYANMAR (MMR)
+----------------------------------------------------------------------------------------------------
+Number of Predictors: 10
+
+Selected Indicators:
+  1. Agriculture, forestry, and fishing, value added (current LCU)
+  2. Industry (including construction), value added (current LCU)
+  3. GNI (current LCU)
+  4. Industry (including construction), value added (constant LCU)
+  5. GDP (current LCU)
+  6. GDP (constant LCU)
+  7. Gross value added at basic prices (GVA) (current LCU)
+  8. Gross value added at basic prices (GVA) (constant LCU)
+  9. Broad money (current LCU)
+  10. Net domestic credit (current LCU)
+
+Model Performance:
+  Cross-Validation RMSE: 0.120822
+  AIC:                   -243.98
+  AICc:                  -238.98
+  BIC:                   -223.91
+  R-squared:             0.896233
+
+9. THAILAND (THA)
+----------------------------------------------------------------------------------------------------
+Number of Predictors: 9
+
+Selected Indicators:
+  1. Final consumption expenditure (current LCU)
+  2. GDP (constant LCU)
+  3. Net domestic credit (current LCU)
+  4. Gross domestic income (constant LCU)
+  5. GDP: linked series (current LCU)
+  6. GNI: linked series (current LCU)
+  7. Imports of goods and services (current LCU)
+  8. Gross value added at basic prices (GVA) (current LCU)
+  9. GDP (current LCU)
+
+Model Performance:
+  Cross-Validation RMSE: 0.156503
+  AIC:                   -228.21
+  AICc:                  -224.21
+  BIC:                   -210.14
+  R-squared:             0.993881
+
+2. CAMBODIA (KHM)
+----------------------------------------------------------------------------------------------------
+Number of Predictors: 6
+
+Selected Indicators:
+  1. Gross national expenditure (constant LCU)
+  2. Net domestic credit (current LCU)
+  3. GNI (constant LCU)
+  4. Gross value added at basic prices (GVA) (current LCU)
+  5. Broad money (current LCU)
+  6. GDP: linked series (current LCU)
+
+Model Performance:
+  Cross-Validation RMSE: 0.285679
+  AIC:                   -137.84
+  AICc:                  -136.09
+  BIC:                   -125.79
+  R-squared:             0.679689
+
+5. MALAYSIA (MYS)
+----------------------------------------------------------------------------------------------------
+Number of Predictors: 2
+
+Selected Indicators:
+  1. Imports of goods and services (current LCU)
+  2. Final consumption expenditure (current LCU)
+
+Model Performance:
+  Cross-Validation RMSE: 0.387994
+  AIC:                   -113.54
+  AICc:                  -113.31
+  BIC:                   -109.53
+  R-squared:             0.979343
+
+10. TIMOR-LESTE (TLS)
+----------------------------------------------------------------------------------------------------
+Number of Predictors: 3
+
+Selected Indicators:
+  1. Net primary income (Net income from abroad) (current LCU)
+  2. Net primary income (BoP, current US$)
+  3. GNI (current US$)
+
+Model Performance:
+  Cross-Validation RMSE: 0.416901
+  AIC:                   -95.25
+  AICc:                  -94.78
+  BIC:                   -89.22
+  R-squared:             0.436118
+
+4. LAOS (LAO)
+----------------------------------------------------------------------------------------------------
+Number of Predictors: 3
+
+Selected Indicators:
+  1. GNI (current LCU)
+  2. GDP (constant LCU)
+  3. Gross national expenditure (constant LCU)
+
+Model Performance:
+  Cross-Validation RMSE: 0.459486
+  AIC:                   -85.23
+  AICc:                  -84.76
+  BIC:                   -79.21
+  R-squared:             0.867869
+
+11. VIETNAM (VNM)
+----------------------------------------------------------------------------------------------------
+Number of Predictors: 2
+
+Selected Indicators:
+  1. Gross national expenditure (current LCU)
+  2. Net domestic credit (current LCU)
+
+Model Performance:
+  Cross-Validation RMSE: 0.694002
+  AIC:                   -43.28
+  AICc:                  -43.05
+  BIC:                   -39.27
+  R-squared:             0.738727
+
+8. SINGAPORE (SGP)
+----------------------------------------------------------------------------------------------------
+Number of Predictors: 9
+
+Selected Indicators:
+  1. Central government debt, total (current LCU)
+  2. Exports of goods and services (current US$)
+  3. Imports of goods and services (constant LCU)
+  4. Imports of goods and services (current US$)
+  5. Exports of goods and services (BoP, current US$)
+  6. Exports of goods and services (constant LCU)
+  7. Market capitalization of listed domestic companies (current US$)
+  8. Imports of goods and services (BoP, current US$)
+  9. Exports of goods, services and primary income (BoP, current US$)
+
+Model Performance:
+  Cross-Validation RMSE: 2.029122
+  AIC:                   0.50
+  AICc:                  4.50
+  BIC:                   18.56
+  R-squared:             0.918035
+
+1. BRUNEI (BRN)
+----------------------------------------------------------------------------------------------------
+Number of Predictors: 6
+
+Selected Indicators:
+  1. GNI: linked series (current LCU)
+  2. Gross domestic savings (current LCU)
+  3. Gross value added at basic prices (GVA) (current LCU)
+  4. Industry (including construction), value added (current LCU)
+  5. GDP: linked series (current LCU)
+  6. GDP (current LCU)
+
+Model Performance:
+  Cross-Validation RMSE: 2.346624
+  AIC:                   90.44
+  AICc:                  92.19
+  BIC:                   102.48
+  R-squared:             0.514077

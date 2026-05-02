@@ -1,0 +1,505 @@
+====================================================================================================
+GHG EMISSIONS PER CAPITA FORECAST TO 2030 - DETAILED REPORT
+ALL 11 SEA COUNTRIES - WITH PREPROCESSING, VALIDATION, AND MODEL DETAILS
+====================================================================================================
+
+
+====================================================================================================
+BRUNEI (BRN)
+====================================================================================================
+
+[MODEL SELECTION]
+Number of Predictors: 6
+Selected Indicators:
+  1. GNI: linked series (current LCU)
+  2. Gross domestic savings (current LCU)
+  3. Gross value added at basic prices (GVA) (current LCU)
+  4. Industry (including construction), value added (current LCU)
+  5. GDP: linked series (current LCU)
+  6. GDP (current LCU)
+
+[PREPROCESSING]
+• Data alignment and imputation: Mean strategy for missing features
+• Feature scaling: StandardScaler (mean=0, std=1)
+• Training samples: 11 time periods
+
+[VALIDATION METRICS]
+• Cross-Validation RMSE (5-fold): 2.830275
+• Cross-Validation R²: -0.189255
+• Full Model RMSE: 2.396121
+• Full Model R²: 0.329812
+
+[MODEL COEFFICIENTS]
+Intercept (scaled features): 25.693595
+Regression Coefficients:
+  • GNI: linked series (current LCU): -0.330159
+  • Gross domestic savings (current LCU): -1.408923
+  • Gross value added at basic prices (GVA) (current LCU): -3.727163
+  • Industry (including construction), value added (current LCU): 3.851551
+  • GDP: linked series (current LCU): 1.031731
+  • GDP (current LCU): 1.810628
+
+[GHG EMISSIONS FORECAST]
+Latest Year: 2024
+  GHG Emissions: 25.6429 t CO2e/capita
+
+Forecast Year: 2030
+  GHG Emissions: 28.3583 t CO2e/capita
+
+Change 2030 vs 2024:
+  Absolute: +2.7154 t CO2e/capita
+  Percentage: +10.6%
+
+====================================================================================================
+CAMBODIA (KHM)
+====================================================================================================
+
+[MODEL SELECTION]
+Number of Predictors: 6
+Selected Indicators:
+  1. Gross national expenditure (constant LCU)
+  2. Net domestic credit (current LCU)
+  3. GNI (constant LCU)
+  4. Gross value added at basic prices (GVA) (current LCU)
+  5. Broad money (current LCU)
+  6. GDP: linked series (current LCU)
+
+[PREPROCESSING]
+• Data alignment and imputation: Mean strategy for missing features
+• Feature scaling: StandardScaler (mean=0, std=1)
+• Training samples: 11 time periods
+
+[VALIDATION METRICS]
+• Cross-Validation RMSE (5-fold): 0.355679
+• Cross-Validation R²: 0.317669
+• Full Model RMSE: 0.332163
+• Full Model R²: 0.461208
+
+[MODEL COEFFICIENTS]
+Intercept (scaled features): 1.915958
+Regression Coefficients:
+  • Gross national expenditure (constant LCU): 0.457643
+  • Net domestic credit (current LCU): -0.030781
+  • GNI (constant LCU): 0.044461
+  • Gross value added at basic prices (GVA) (current LCU): -0.468071
+  • Broad money (current LCU): 0.174150
+  • GDP: linked series (current LCU): 0.144198
+
+[GHG EMISSIONS FORECAST]
+Latest Year: 2024
+  GHG Emissions: 2.8253 t CO2e/capita
+
+Forecast Year: 2030
+  GHG Emissions: 3.1055 t CO2e/capita
+
+Change 2030 vs 2024:
+  Absolute: +0.2802 t CO2e/capita
+  Percentage: +9.9%
+
+====================================================================================================
+INDONESIA (IDN)
+====================================================================================================
+
+[MODEL SELECTION]
+Number of Predictors: 10
+Selected Indicators:
+  1. GDP (current LCU)
+  2. Gross capital formation (constant LCU)
+  3. GNI (current LCU)
+  4. Gross national expenditure (constant LCU)
+  5. Gross national expenditure (current LCU)
+  6. GNI: linked series (current LCU)
+  7. Final consumption expenditure (current LCU)
+  8. Households and NPISHs final consumption expenditure: linked series (current LCU)
+  9. GDP (constant LCU)
+  10. Changes in inventories (constant LCU)
+
+[PREPROCESSING]
+• Data alignment and imputation: Mean strategy for missing features
+• Feature scaling: StandardScaler (mean=0, std=1)
+• Training samples: 11 time periods
+
+[VALIDATION METRICS]
+• Cross-Validation RMSE (5-fold): 0.092645
+• Cross-Validation R²: 0.986499
+• Full Model RMSE: 0.063277
+• Full Model R²: 0.995111
+
+[MODEL COEFFICIENTS]
+Intercept (scaled features): 2.389062
+Regression Coefficients:
+  • GDP (current LCU): -13.089930
+  • Gross capital formation (constant LCU): -3.296069
+  • GNI (current LCU): 19.239540
+  • Gross national expenditure (constant LCU): 2.307079
+  • Gross national expenditure (current LCU): 1.902418
+  • GNI: linked series (current LCU): -4.863527
+  • Final consumption expenditure (current LCU): -8.413230
+  • Households and NPISHs final consumption expenditure: linked series (current LCU): 4.673200
+  • GDP (constant LCU): 0.780009
+  • Changes in inventories (constant LCU): 1.299698
+
+[GHG EMISSIONS FORECAST]
+Latest Year: 2024
+  GHG Emissions: 4.6696 t CO2e/capita
+
+Forecast Year: 2030
+  GHG Emissions: 7.7419 t CO2e/capita
+
+Change 2030 vs 2024:
+  Absolute: +3.0723 t CO2e/capita
+  Percentage: +65.8%
+
+====================================================================================================
+LAOS (LAO)
+====================================================================================================
+
+[MODEL SELECTION]
+Number of Predictors: 3
+Selected Indicators:
+  1. GNI (current LCU)
+  2. GDP (constant LCU)
+  3. Gross national expenditure (constant LCU)
+
+[PREPROCESSING]
+• Data alignment and imputation: Mean strategy for missing features
+• Feature scaling: StandardScaler (mean=0, std=1)
+• Training samples: 11 time periods
+
+[VALIDATION METRICS]
+• Cross-Validation RMSE (5-fold): 0.536645
+• Cross-Validation R²: 0.712704
+• Full Model RMSE: 0.499556
+• Full Model R²: 0.826806
+
+[MODEL COEFFICIENTS]
+Intercept (scaled features): 2.227500
+Regression Coefficients:
+  • GNI (current LCU): 0.563519
+  • GDP (constant LCU): 0.558341
+  • Gross national expenditure (constant LCU): -0.060634
+
+[GHG EMISSIONS FORECAST]
+Latest Year: 2024
+  GHG Emissions: 5.3476 t CO2e/capita
+
+Forecast Year: 2030
+  GHG Emissions: 10.5861 t CO2e/capita
+
+Change 2030 vs 2024:
+  Absolute: +5.2385 t CO2e/capita
+  Percentage: +98.0%
+
+====================================================================================================
+MALAYSIA (MYS)
+====================================================================================================
+
+[MODEL SELECTION]
+Number of Predictors: 2
+Selected Indicators:
+  1. Imports of goods and services (current LCU)
+  2. Final consumption expenditure (current LCU)
+
+[PREPROCESSING]
+• Data alignment and imputation: Mean strategy for missing features
+• Feature scaling: StandardScaler (mean=0, std=1)
+• Training samples: 11 time periods
+
+[VALIDATION METRICS]
+• Cross-Validation RMSE (5-fold): 0.880715
+• Cross-Validation R²: 0.843344
+• Full Model RMSE: 0.791611
+• Full Model R²: 0.890287
+
+[MODEL COEFFICIENTS]
+Intercept (scaled features): 6.171181
+Regression Coefficients:
+  • Imports of goods and services (current LCU): 5.038673
+  • Final consumption expenditure (current LCU): -2.977774
+
+[GHG EMISSIONS FORECAST]
+Latest Year: 2024
+  GHG Emissions: 9.3416 t CO2e/capita
+
+Forecast Year: 2030
+  GHG Emissions: 24.3910 t CO2e/capita
+
+Change 2030 vs 2024:
+  Absolute: +15.0494 t CO2e/capita
+  Percentage: +161.1%
+
+====================================================================================================
+MYANMAR (MMR)
+====================================================================================================
+
+[MODEL SELECTION]
+Number of Predictors: 10
+Selected Indicators:
+  1. Agriculture, forestry, and fishing, value added (current LCU)
+  2. Industry (including construction), value added (current LCU)
+  3. GNI (current LCU)
+  4. Industry (including construction), value added (constant LCU)
+  5. GDP (current LCU)
+  6. GDP (constant LCU)
+  7. Gross value added at basic prices (GVA) (current LCU)
+  8. Gross value added at basic prices (GVA) (constant LCU)
+  9. Broad money (current LCU)
+  10. Net domestic credit (current LCU)
+
+[PREPROCESSING]
+• Data alignment and imputation: Mean strategy for missing features
+• Feature scaling: StandardScaler (mean=0, std=1)
+• Training samples: 11 time periods
+
+[VALIDATION METRICS]
+• Cross-Validation RMSE (5-fold): 0.107378
+• Cross-Validation R²: 0.847365
+• Full Model RMSE: 0.089786
+• Full Model R²: 0.898388
+
+[MODEL COEFFICIENTS]
+Intercept (scaled features): 1.973759
+Regression Coefficients:
+  • Agriculture, forestry, and fishing, value added (current LCU): -0.133095
+  • Industry (including construction), value added (current LCU): -0.515977
+  • GNI (current LCU): -0.134353
+  • Industry (including construction), value added (constant LCU): -0.029586
+  • GDP (current LCU): 0.717679
+  • GDP (constant LCU): -0.167462
+  • Gross value added at basic prices (GVA) (current LCU): 0.063446
+  • Gross value added at basic prices (GVA) (constant LCU): 0.388182
+  • Broad money (current LCU): -0.073529
+  • Net domestic credit (current LCU): 0.031043
+
+[GHG EMISSIONS FORECAST]
+Latest Year: 2024
+  GHG Emissions: 2.1612 t CO2e/capita
+
+Forecast Year: 2030
+  GHG Emissions: 1.5447 t CO2e/capita
+
+Change 2030 vs 2024:
+  Absolute: -0.6166 t CO2e/capita
+  Percentage: -28.5%
+
+====================================================================================================
+PHILIPPINES (PHL)
+====================================================================================================
+
+[MODEL SELECTION]
+Number of Predictors: 3
+Selected Indicators:
+  1. Gross national expenditure (current LCU)
+  2. GNI (current LCU)
+  3. Households and NPISHs Final consumption expenditure (current LCU)
+
+[PREPROCESSING]
+• Data alignment and imputation: Mean strategy for missing features
+• Feature scaling: StandardScaler (mean=0, std=1)
+• Training samples: 11 time periods
+
+[VALIDATION METRICS]
+• Cross-Validation RMSE (5-fold): 0.074803
+• Cross-Validation R²: 0.818253
+• Full Model RMSE: 0.071132
+• Full Model R²: 0.888047
+
+[MODEL COEFFICIENTS]
+Intercept (scaled features): 1.697645
+Regression Coefficients:
+  • Gross national expenditure (current LCU): 1.103366
+  • GNI (current LCU): -0.054414
+  • Households and NPISHs Final consumption expenditure (current LCU): -0.858759
+
+[GHG EMISSIONS FORECAST]
+Latest Year: 2024
+  GHG Emissions: 2.3014 t CO2e/capita
+
+Forecast Year: 2030
+  GHG Emissions: 3.4928 t CO2e/capita
+
+Change 2030 vs 2024:
+  Absolute: +1.1915 t CO2e/capita
+  Percentage: +51.8%
+
+====================================================================================================
+SINGAPORE (SGP)
+====================================================================================================
+
+[MODEL SELECTION]
+Number of Predictors: 9
+Selected Indicators:
+  1. Central government debt, total (current LCU)
+  2. Exports of goods and services (current US$)
+  3. Imports of goods and services (constant LCU)
+  4. Imports of goods and services (current US$)
+  5. Exports of goods and services (BoP, current US$)
+  6. Exports of goods and services (constant LCU)
+  7. Market capitalization of listed domestic companies (current US$)
+  8. Imports of goods and services (BoP, current US$)
+  9. Exports of goods, services and primary income (BoP, current US$)
+
+[PREPROCESSING]
+• Data alignment and imputation: Mean strategy for missing features
+• Feature scaling: StandardScaler (mean=0, std=1)
+• Training samples: 11 time periods
+
+[VALIDATION METRICS]
+• Cross-Validation RMSE (5-fold): 1.181197
+• Cross-Validation R²: 0.766213
+• Full Model RMSE: 0.928726
+• Full Model R²: 0.902811
+
+[MODEL COEFFICIENTS]
+Intercept (scaled features): 10.112414
+Regression Coefficients:
+  • Central government debt, total (current LCU): -3.647547
+  • Exports of goods and services (current US$): -20.991942
+  • Imports of goods and services (constant LCU): 1.035846
+  • Imports of goods and services (current US$): 23.994969
+  • Exports of goods and services (BoP, current US$): 35.906066
+  • Exports of goods and services (constant LCU): 1.169302
+  • Market capitalization of listed domestic companies (current US$): -1.696666
+  • Imports of goods and services (BoP, current US$): -39.783597
+  • Exports of goods, services and primary income (BoP, current US$): 4.411540
+
+[GHG EMISSIONS FORECAST]
+Latest Year: 2024
+  GHG Emissions: 12.6047 t CO2e/capita
+
+Forecast Year: 2030
+  GHG Emissions: 17.1835 t CO2e/capita
+
+Change 2030 vs 2024:
+  Absolute: +4.5788 t CO2e/capita
+  Percentage: +36.3%
+
+====================================================================================================
+THAILAND (THA)
+====================================================================================================
+
+[MODEL SELECTION]
+Number of Predictors: 9
+Selected Indicators:
+  1. Final consumption expenditure (current LCU)
+  2. GDP (constant LCU)
+  3. Net domestic credit (current LCU)
+  4. Gross domestic income (constant LCU)
+  5. GDP: linked series (current LCU)
+  6. GNI: linked series (current LCU)
+  7. Imports of goods and services (current LCU)
+  8. Gross value added at basic prices (GVA) (current LCU)
+  9. GDP (current LCU)
+
+[PREPROCESSING]
+• Data alignment and imputation: Mean strategy for missing features
+• Feature scaling: StandardScaler (mean=0, std=1)
+• Training samples: 11 time periods
+
+[VALIDATION METRICS]
+• Cross-Validation RMSE (5-fold): 0.166753
+• Cross-Validation R²: 0.981845
+• Full Model RMSE: 0.115671
+• Full Model R²: 0.992802
+
+[MODEL COEFFICIENTS]
+Intercept (scaled features): 4.060802
+Regression Coefficients:
+  • Final consumption expenditure (current LCU): 0.625311
+  • GDP (constant LCU): -0.046244
+  • Net domestic credit (current LCU): -0.038100
+  • Gross domestic income (constant LCU): 2.220194
+  • GDP: linked series (current LCU): 0.443034
+  • GNI: linked series (current LCU): -0.627884
+  • Imports of goods and services (current LCU): 0.895264
+  • Gross value added at basic prices (GVA) (current LCU): -1.105728
+  • GDP (current LCU): -1.105728
+
+[GHG EMISSIONS FORECAST]
+Latest Year: 2024
+  GHG Emissions: 5.8937 t CO2e/capita
+
+Forecast Year: 2030
+  GHG Emissions: 8.6196 t CO2e/capita
+
+Change 2030 vs 2024:
+  Absolute: +2.7260 t CO2e/capita
+  Percentage: +46.3%
+
+====================================================================================================
+TIMOR-LESTE (TLS)
+====================================================================================================
+
+[MODEL SELECTION]
+Number of Predictors: 3
+Selected Indicators:
+  1. Net primary income (Net income from abroad) (current LCU)
+  2. Net primary income (BoP, current US$)
+  3. GNI (current US$)
+
+[PREPROCESSING]
+• Data alignment and imputation: Mean strategy for missing features
+• Feature scaling: StandardScaler (mean=0, std=1)
+• Training samples: 11 time periods
+
+[VALIDATION METRICS]
+• Cross-Validation RMSE (5-fold): 0.482808
+• Cross-Validation R²: 0.105307
+• Full Model RMSE: 0.449285
+• Full Model R²: 0.282708
+
+[MODEL COEFFICIENTS]
+Intercept (scaled features): 1.207208
+Regression Coefficients:
+  • Net primary income (Net income from abroad) (current LCU): -0.141756
+  • Net primary income (BoP, current US$): 0.167972
+  • GNI (current US$): 0.291757
+
+[GHG EMISSIONS FORECAST]
+Latest Year: 2024
+  GHG Emissions: 1.3852 t CO2e/capita
+
+Forecast Year: 2030
+  GHG Emissions: 1.2698 t CO2e/capita
+
+Change 2030 vs 2024:
+  Absolute: -0.1153 t CO2e/capita
+  Percentage: -8.3%
+
+====================================================================================================
+VIETNAM (VNM)
+====================================================================================================
+
+[MODEL SELECTION]
+Number of Predictors: 2
+Selected Indicators:
+  1. Gross national expenditure (current LCU)
+  2. Net domestic credit (current LCU)
+
+[PREPROCESSING]
+• Data alignment and imputation: Mean strategy for missing features
+• Feature scaling: StandardScaler (mean=0, std=1)
+• Training samples: 11 time periods
+
+[VALIDATION METRICS]
+• Cross-Validation RMSE (5-fold): 1.353651
+• Cross-Validation R²: -0.399288
+• Full Model RMSE: 0.958946
+• Full Model R²: 0.432391
+
+[MODEL COEFFICIENTS]
+Intercept (scaled features): 2.457940
+Regression Coefficients:
+  • Gross national expenditure (current LCU): 0.665250
+  • Net domestic credit (current LCU): 0.202408
+
+[GHG EMISSIONS FORECAST]
+Latest Year: 2024
+  GHG Emissions: 5.7854 t CO2e/capita
+
+Forecast Year: 2030
+  GHG Emissions: 5.9779 t CO2e/capita
+
+Change 2030 vs 2024:
+  Absolute: +0.1924 t CO2e/capita
+  Percentage: +3.3%

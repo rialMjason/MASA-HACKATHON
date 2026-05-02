@@ -1,0 +1,6 @@
+country_code,country_name,rank,indicator,abs_correlation
+LAO,Laos,1,Forest area (sq. km),1.0
+LAO,Laos,2,People practicing open defecation (% of population),0.9987625467086013
+LAO,Laos,3,People using at least basic sanitation services (% of population),0.9984433702270729
+LAO,Laos,4,People using safely managed sanitation services (% of population),0.9981234885880959
+LAO,Laos,5,People using at least basic drinking water services (% of population),0.9979423285514154

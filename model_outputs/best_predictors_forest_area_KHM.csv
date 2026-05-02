@@ -1,0 +1,6 @@
+country_code,country_name,rank,indicator,abs_correlation
+KHM,Cambodia,1,Forest area (sq. km),1.0
+KHM,Cambodia,2,Arable land (% of land area),0.9939696281827226
+KHM,Cambodia,3,Arable land (hectares),0.9939696281827225
+KHM,Cambodia,4,Rural population (% of total population),0.993039935450997
+KHM,Cambodia,5,Urban population (% of total population),0.993039935450997

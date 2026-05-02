@@ -1,0 +1,6 @@
+country_code,country_name,rank,indicator,abs_correlation
+IDN,Indonesia,1,People with basic handwashing facilities including soap and water (% of population),0.995382193818176
+IDN,Indonesia,2,"People with basic handwashing facilities including soap and water, urban (% of urban population)",0.9952004808938821
+IDN,Indonesia,3,"People with basic handwashing facilities including soap and water, rural (% of rural population)",0.9952004808938817
+IDN,Indonesia,4,Forest area (sq. km),0.9950736088251446
+IDN,Indonesia,5,"Educational attainment, at least completed lower secondary, population 25+, male (%) (cumulative)",0.9920700250806677

@@ -1,0 +1,332 @@
+from __future__ import annotations
+
+import traceback
+import warnings
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+try:
+    from statsmodels.tsa.arima.model import ARIMA
+    from statsmodels.tsa.statespace.sarimax import SARIMAX
+except ImportError as exc:
+    raise SystemExit("statsmodels is required. Install it and rerun.") from exc
+
+warnings.filterwarnings("ignore")
+
+SEA_COUNTRIES = {
+    "Brunei Darussalam": "Brunei",
+    "Cambodia": "Cambodia",
+    "Indonesia": "Indonesia",
+    "Lao PDR": "Laos",
+    "Malaysia": "Malaysia",
+    "Myanmar": "Myanmar",
+    "Philippines": "Philippines",
+    "Singapore": "Singapore",
+    "Thailand": "Thailand",
+    "Timor-Leste": "Timor-Leste",
+    "Vietnam": "Vietnam",
+}
+
+GHG_INDICATOR = "Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)"
+FOREST_INDICATOR = "Forest area (% of land area)"
+
+POLICY_DUMMIES = {
+    "all": [2021],
+    "SGP": [2019, 2023],
+    "IDN": [2014, 2023],
+    "KHM": [2023],
+    "LAO": [2023],
+    "MYS": [2023],
+    "THA": [2023],
+    "VNM": [2023],
+}
+
+COUNTRY_CODE_MAP = {
+    "Brunei Darussalam": "SGP",
+    "Singapore": "SGP",
+    "Indonesia": "IDN",
+    "Lao PDR": "LAO",
+    "Vietnam": "VNM",
+    "Thailand": "THA",
+    "Malaysia": "MYS",
+    "Philippines": "PHL",
+    "Cambodia": "KHM",
+    "Myanmar": "MMR",
+    "Timor-Leste": "TLS",
+}
+
+TARGET_YEAR = 2030
+
+
+def load_world_bank_data():
+    repo_root = Path(__file__).resolve().parent
+    df = pd.read_csv(repo_root / "WB_WDI_WIDEF.csv")
+    print(f"  Loaded CSV: {len(df)} rows, columns: {list(df.columns[:6])} ...")
+    return df
+
+
+def extract_country_indicator(df, country_label, indicator_name):
+    mask = (df["REF_AREA_LABEL"] == country_label) & (
+        df["INDICATOR_LABEL"].str.contains(indicator_name, case=False, na=False, regex=False)
+    )
+    if not mask.any():
+        print(f"    [extract] No match for '{country_label}' / '{indicator_name[:50]}'")
+        avail = df[df["REF_AREA_LABEL"] == country_label]["INDICATOR_LABEL"].tolist()
+        if avail:
+            print(f"    [extract] Available indicators for {country_label}:")
+            for ind in avail:
+                print(f"              - {ind}")
+        else:
+            print(f"    [extract] Country '{country_label}' not found in REF_AREA_LABEL at all.")
+        return None
+
+    row = df[mask].iloc[0]
+    years = [int(c) for c in row.index if c.isdigit()]
+    values = [float(row[str(y)]) if pd.notna(row[str(y)]) else np.nan for y in years]
+    ts = pd.Series(values, index=years).dropna()
+    print(f"    [extract] '{indicator_name[:45]}' -> {len(ts)} obs, range {ts.index.min()}-{ts.index.max()}")
+    return ts
+
+
+def build_policy_dummies(country_label, start_year, end_year):
+    country_code = COUNTRY_CODE_MAP.get(country_label)
+    dummies = {}
+
+    for py in POLICY_DUMMIES.get("all", []):
+        dummies[f"shell_{py}"] = [1 if y == py else 0 for y in range(start_year, end_year + 1)]
+
+    if country_code and country_code in POLICY_DUMMIES:
+        for py in POLICY_DUMMIES[country_code]:
+            dummies[f"{country_code.lower()}_policy_{py}"] = [
+                1 if y >= py else 0 for y in range(start_year, end_year + 1)
+            ]
+
+    if not dummies:
+        return None
+    return pd.DataFrame(dummies, index=range(start_year, end_year + 1))
+
+
+def fit_ghg_arima(ts, country_name):
+    if len(ts) < 10:
+        print(f"    [ghg_fit] Too few observations ({len(ts)}), skipping.")
+        return None
+
+    candidate_orders = [(0, 1, 0), (1, 1, 0), (1, 1, 1), (0, 1, 1)]
+    best_model, best_aic, best_order = None, np.inf, None
+
+    for order in candidate_orders:
+        try:
+            fitted = ARIMA(ts, order=order).fit()
+            if fitted.aic < best_aic:
+                best_aic, best_model, best_order = fitted.aic, fitted, order
+        except Exception as e:
+            print(f"    [ghg_fit] ARIMA{order} failed: {e}")
+
+    if best_model is None:
+        print(f"    [ghg_fit] All orders failed for {country_name}.")
+    else:
+        print(f"    [ghg_fit] Best: ARIMA{best_order}, AIC={best_aic:.2f}")
+    return best_model
+
+
+def fit_forest_arimax(ts, country_label):
+    if len(ts) < 10:
+        print(f"    [forest_fit] Too few observations ({len(ts)}), skipping.")
+        return None, None
+
+    start_year, end_year = ts.index.min(), ts.index.max()
+    exog = build_policy_dummies(country_label, start_year, end_year)
+
+    if exog is not None and len(exog) != len(ts):
+        print(f"    [forest_fit] Exog length mismatch: exog={len(exog)}, ts={len(ts)}. Dropping exog.")
+        exog = None
+
+    if exog is not None:
+        print(f"    [forest_fit] Exog columns: {list(exog.columns)}")
+    else:
+        print(f"    [forest_fit] No exog — pure ARIMA fallback.")
+
+    candidate_orders = [(0, 1, 0), (1, 1, 0), (1, 1, 1), (0, 1, 1)]
+    best_model, best_aic, best_order = None, np.inf, None
+
+    for order in candidate_orders:
+        try:
+            if exog is not None:
+                fitted = SARIMAX(ts, exog=exog, order=order, seasonal_order=(0, 0, 0, 0)).fit(disp=False)
+            else:
+                fitted = ARIMA(ts, order=order).fit()
+            if fitted.aic < best_aic:
+                best_aic, best_model, best_order = fitted.aic, fitted, order
+        except Exception as e:
+            label = "SARIMAX" if exog is not None else "ARIMA"
+            print(f"    [forest_fit] {label}{order} failed: {e}")
+
+    if best_model is None:
+        print(f"    [forest_fit] All orders failed for {country_label}.")
+    else:
+        print(f"    [forest_fit] Best: {best_order}, AIC={best_aic:.2f}")
+    return best_model, exog
+
+
+def forecast_series(model, steps, exog_future=None, label=""):
+    try:
+        fc = (
+            model.get_forecast(steps=steps, exog=exog_future)
+            if exog_future is not None
+            else model.get_forecast(steps=steps)
+        )
+        df = fc.conf_int()
+        df.columns = ["lower_ci", "upper_ci"]
+        df["forecast"] = fc.predicted_mean
+        print(f"    [forecast:{label}] OK, {steps} steps")
+        return df
+    except Exception as e:
+        print(f"    [forecast:{label}] FAILED: {e}")
+        traceback.print_exc()
+        return None
+
+
+def build_summary(results_df):
+    rows = []
+    for _, country_name in SEA_COUNTRIES.items():
+        def get_2030(variable, name=country_name):
+            subset = results_df[
+                (results_df["Country"] == name) &
+                (results_df["Variable"] == variable) &
+                (results_df["Year"] == TARGET_YEAR)
+            ]["Forecast"].values
+            return round(subset[0], 4) if len(subset) > 0 else np.nan
+
+        rows.append({
+            "Country": country_name,
+            "GHG_2030_Forecast (t CO2e/capita)": get_2030("GHG (t CO2e/capita)"),
+            "Forest_2030_Forecast (% of land)": get_2030("Forest Area (% of land)"),
+        })
+    return pd.DataFrame(rows)
+
+
+def write_excel(results_df, summary_df, output_path):
+    output_path.parent.mkdir(exist_ok=True)
+    empty_forecast_cols = ["Country", "Year", "Variable", "Forecast", "Lower_CI", "Upper_CI"]
+    empty_summary_cols = ["Country", "GHG_2030_Forecast (t CO2e/capita)", "Forest_2030_Forecast (% of land)"]
+
+    with pd.ExcelWriter(output_path, engine="openpyxl") as writer:
+        if results_df.empty:
+            print("  [excel] No forecast data — writing empty placeholder workbook.")
+            pd.DataFrame(columns=empty_forecast_cols).to_excel(writer, sheet_name="Forecasts", index=False)
+            pd.DataFrame(columns=empty_summary_cols).to_excel(writer, sheet_name="Summary 2030", index=False)
+        else:
+            results_df.to_excel(writer, sheet_name="Forecasts", index=False)
+            out_summary = summary_df if not summary_df.empty else pd.DataFrame(columns=empty_summary_cols)
+            out_summary.to_excel(writer, sheet_name="Summary 2030", index=False)
+            print(f"  [excel] Rows: {len(results_df)}, countries: {results_df['Country'].nunique()}")
+
+    print(f"  [excel] Saved to: {output_path}")
+
+
+def main() -> None:
+    repo_root = Path(__file__).resolve().parent
+    output_path = repo_root / "model_outputs" / "final_forecast_2030.xlsx"
+
+    print("Loading World Bank data...")
+    wb_data = load_world_bank_data()
+
+    results = []
+
+    for country_label, country_name in SEA_COUNTRIES.items():
+        print(f"\n{'='*55}")
+        print(f"Processing: {country_name} ({country_label})")
+
+        # Extract
+        ghg_ts = extract_country_indicator(wb_data, country_label, GHG_INDICATOR)
+        forest_ts = extract_country_indicator(wb_data, country_label, FOREST_INDICATOR)
+
+        if ghg_ts is None:
+            print(f"  SKIP: missing GHG data.")
+            continue
+        if forest_ts is None:
+            print(f"  SKIP: missing forest data.")
+            continue
+
+        # Fit
+        ghg_model = fit_ghg_arima(ghg_ts, country_name)
+        forest_model, exog_train = fit_forest_arimax(forest_ts, country_label)
+
+        if ghg_model is None:
+            print(f"  SKIP: GHG model fitting failed.")
+            continue
+        if forest_model is None:
+            print(f"  SKIP: Forest model fitting failed.")
+            continue
+
+        # Forecast horizons — always to TARGET_YEAR
+        last_ghg = int(ghg_ts.index.max())
+        last_forest = int(forest_ts.index.max())
+        steps_ghg = TARGET_YEAR - last_ghg
+        steps_forest = TARGET_YEAR - last_forest
+
+        print(f"    GHG horizon:    {last_ghg} -> {TARGET_YEAR} ({steps_ghg} steps)")
+        print(f"    Forest horizon: {last_forest} -> {TARGET_YEAR} ({steps_forest} steps)")
+
+        # GHG forecast
+        if steps_ghg <= 0:
+            print(f"    [GHG] Data already at or past {TARGET_YEAR}, no forecast needed.")
+            ghg_fc = None
+        else:
+            ghg_fc = forecast_series(ghg_model, steps_ghg, label="GHG")
+
+        # Forest forecast — build future exog aligned to forecast horizon
+        exog_future = None
+        if exog_train is not None and steps_forest > 0:
+            exog_future = build_policy_dummies(country_label, last_forest + 1, last_forest + steps_forest)
+            if exog_future is not None:
+                print(f"    [forest] Future exog shape: {exog_future.shape}, cols: {list(exog_future.columns)}")
+
+        if steps_forest <= 0:
+            print(f"    [Forest] Data already at or past {TARGET_YEAR}, no forecast needed.")
+            forest_fc = None
+        else:
+            forest_fc = forecast_series(forest_model, steps_forest, exog_future=exog_future, label="Forest")
+
+        # Store GHG results
+        if ghg_fc is not None:
+            for i, year in enumerate(range(last_ghg + 1, TARGET_YEAR + 1)):
+                results.append({
+                    "Country": country_name,
+                    "Year": year,
+                    "Variable": "GHG (t CO2e/capita)",
+                    "Forecast": ghg_fc.iloc[i]["forecast"],
+                    "Lower_CI": ghg_fc.iloc[i]["lower_ci"],
+                    "Upper_CI": ghg_fc.iloc[i]["upper_ci"],
+                })
+
+        # Store forest results
+        if forest_fc is not None:
+            for i, year in enumerate(range(last_forest + 1, TARGET_YEAR + 1)):
+                results.append({
+                    "Country": country_name,
+                    "Year": year,
+                    "Variable": "Forest Area (% of land)",
+                    "Forecast": forest_fc.iloc[i]["forecast"],
+                    "Lower_CI": forest_fc.iloc[i]["lower_ci"],
+                    "Upper_CI": forest_fc.iloc[i]["upper_ci"],
+                })
+
+        print(f"  DONE: {country_name}")
+
+    print(f"\n{'='*55}")
+
+    results_df = (
+        pd.DataFrame(results)
+        if results
+        else pd.DataFrame(columns=["Country", "Year", "Variable", "Forecast", "Lower_CI", "Upper_CI"])
+    )
+    summary_df = build_summary(results_df) if not results_df.empty else pd.DataFrame()
+
+    write_excel(results_df, summary_df, output_path)
+
+
+if __name__ == "__main__":
+    main()

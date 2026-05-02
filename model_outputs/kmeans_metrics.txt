@@ -1,26 +1,34 @@
-rows: 1486
-unique_labels: 1486
+rows: 1093
+unique_labels: 1093
 input_column: INDICATOR_LABEL
+max_missing_ratio: 0.8
 svd_components: 100
-selected_k: 15
-silhouette_score: 0.12772947746668487
+selected_k: 9
+silhouette_score: 0.09237404210454961
 
 k_search_inertia:
-k=15: 1119.1588782923777
+k=2: 1023.6511852251026
+k=3: 1000.9129570219525
+k=4: 983.3764071925922
+k=5: 963.4596817966858
+k=6: 942.6694775318672
+k=7: 925.4200760809878
+k=8: 903.7662289629125
+k=9: 885.1638216416886
+k=10: 869.7278959116577
+k=11: 850.6128308959421
+k=12: 836.5447043356482
+k=13: 827.8261177098021
+k=14: 810.593221198242
+k=15: 793.4711547432682
 
 cluster_sizes:
-cluster_0: 104
-cluster_1: 79
-cluster_2: 237
-cluster_3: 65
-cluster_4: 104
-cluster_5: 75
-cluster_6: 43
-cluster_7: 71
-cluster_8: 124
-cluster_9: 138
-cluster_10: 33
-cluster_11: 253
-cluster_12: 66
-cluster_13: 33
-cluster_14: 61
+cluster_0: 101
+cluster_1: 94
+cluster_2: 430
+cluster_3: 101
+cluster_4: 120
+cluster_5: 131
+cluster_6: 44
+cluster_7: 44
+cluster_8: 28

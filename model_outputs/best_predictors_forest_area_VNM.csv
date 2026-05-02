@@ -1,0 +1,6 @@
+country_code,country_name,rank,indicator,abs_correlation
+VNM,Vietnam,1,"People practicing open defecation, urban (% of urban population)",0.9980072082787824
+VNM,Vietnam,2,People practicing open defecation (% of population),0.9979801928841342
+VNM,Vietnam,3,Forest area (sq. km),0.9972712453489485
+VNM,Vietnam,4,People using safely managed sanitation services (% of population),0.9966355772491375
+VNM,Vietnam,5,People using at least basic drinking water services (% of population),0.9961096475188143

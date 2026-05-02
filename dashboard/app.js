@@ -1,10 +1,25 @@
 // Initialize map
 const map = L.map('map').setView([10, 108], 5);
 
+// Set zoom constraints to prevent excessive zooming
+map.setMinZoom(3);
+map.setMaxZoom(10);
+
+// Limit map to Southeast Asia region only
+// Bounds: [South, West] to [North, East]
+const seaBounds = L.latLngBounds(
+    L.latLng(-10.6, 92.5),  // Southwest corner (Indonesia south, Myanmar west)
+    L.latLng(20.8, 141.0)   // Northeast corner (Thailand north, Indonesia east)
+);
+map.setMaxBounds(seaBounds);
+map.on('drag', function() {
+    map.panInsideBounds(seaBounds, { animate: false });
+});
+
 // Add Google Maps tile layer
 L.tileLayer('https://{s}.google.com/maps/vt/lyrs=m@221097413,padmc@221205649&hl=en&src=apk&apn=com.google.android.apps.maps&pn=com.google.maps.android&x={x}&y={y}&z={z}&s=Galile', {
-    minZoom: 0,
-    maxZoom: 21,
+    minZoom: 3,
+    maxZoom: 10,
     attribution: '© Google Maps',
     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
 }).addTo(map);
@@ -19,6 +34,7 @@ let countryMarkers = {};
 let currentCountry = null;
 let countryLayer = null;
 let originalCountryCoordinates = {};
+let currentFetchRequest = null;
 
 // Create custom icon for country flags
 function createFlagIcon(country) {
@@ -125,13 +141,23 @@ function selectCountry(country) {
     // Close any existing country layer
     if (countryLayer) {
         map.removeLayer(countryLayer);
+        countryLayer = null;
     }
+
+    // Create a unique request ID to track this fetch
+    const requestId = Date.now() + Math.random();
+    currentFetchRequest = requestId;
 
     // Fetch and display country borders from GeoJSON
     const countryCode = country.code.toUpperCase();
     fetch(`https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_0_countries.geojson`)
         .then(res => res.json())
         .then(geojson => {
+            // Only process if this is still the current request
+            if (currentFetchRequest !== requestId) {
+                return;
+            }
+
             // Find and draw this country's borders
             const countryFeature = geojson.features.find(f => 
                 f.properties.ISO_A3 === countryCode || 
@@ -139,6 +165,11 @@ function selectCountry(country) {
             );
             
             if (countryFeature && countryFeature.geometry) {
+                // Remove any existing layer before adding new one
+                if (countryLayer) {
+                    map.removeLayer(countryLayer);
+                }
+
                 countryLayer = L.geoJSON(countryFeature, {
                     style: {
                         color: '#FFD700',
@@ -149,9 +180,9 @@ function selectCountry(country) {
                     }
                 }).addTo(map);
 
-                // Fit map bounds to show entire country with padding
+                // Fit map bounds to show entire country with padding (capped at zoom 9)
                 const bounds = countryLayer.getBounds();
-                map.fitBounds(bounds, { padding: [50, 50] });
+                map.fitBounds(bounds, { padding: [50, 50], maxZoom: 9 });
                 
                 // Move marker to top-right after zoom completes
                 map.once('moveend', () => {
@@ -163,6 +194,10 @@ function selectCountry(country) {
             }
         })
         .catch(err => {
+            // Only process if this is still the current request
+            if (currentFetchRequest !== requestId) {
+                return;
+            }
             console.log('Could not fetch country borders');
             // Fallback to simple zoom
             map.setView(country.coordinates, 7);
@@ -191,6 +226,8 @@ function moveMarkerToTopRight(country) {
 // Return the active marker to its original location when the map is zoomed again
 map.on('zoomstart', function() {
     if (currentCountry) {
+        // Cancel any pending fetch requests
+        currentFetchRequest = null;
         restoreCountryMarker(currentCountry.code);
     }
 });
@@ -251,6 +288,7 @@ function updateStatesList(country) {
 // Back button functionality
 document.getElementById('backButton').addEventListener('click', function() {
     currentCountry = null;
+    currentFetchRequest = null;
 
     document.getElementById('countryName').textContent = 'Southeast Asia Dashboard';
     const countryFlagPreview = document.getElementById('countryFlagPreview');
@@ -267,6 +305,7 @@ document.getElementById('backButton').addEventListener('click', function() {
 
     if (countryLayer) {
         map.removeLayer(countryLayer);
+        countryLayer = null;
     }
 
     // Reset all marker positions to original coordinates

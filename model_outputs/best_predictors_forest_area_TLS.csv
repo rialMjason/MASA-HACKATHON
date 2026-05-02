@@ -1,0 +1,6 @@
+country_code,country_name,rank,indicator,abs_correlation
+TLS,Timor-Leste,1,Forest area (sq. km),1.0
+TLS,Timor-Leste,2,"People practicing open defecation, rural (% of rural population)",0.9999757917232905
+TLS,Timor-Leste,3,People using at least basic sanitation services (% of population),0.9999747071151038
+TLS,Timor-Leste,4,People using at least basic drinking water services (% of population),0.9999223666962107
+TLS,Timor-Leste,5,"People using at least basic sanitation services, rural (% of rural population)",0.9998332600392823

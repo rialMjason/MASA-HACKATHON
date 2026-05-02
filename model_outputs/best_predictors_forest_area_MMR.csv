@@ -1,0 +1,6 @@
+country_code,country_name,rank,indicator,abs_correlation
+MMR,Myanmar,1,Forest area (sq. km),0.9999979861370103
+MMR,Myanmar,2,Urban population,0.9996808717521396
+MMR,Myanmar,3,"Population ages 15-64, male",0.9996468459005958
+MMR,Myanmar,4,"Population ages 15-64, total",0.9996354346798909
+MMR,Myanmar,5,"Population ages 15-64, female",0.9996171916329082

@@ -1,0 +1,1133 @@
+
+====================================================================================================
+STEP 1: LOADING DATA AND BEST INDICATORS
+====================================================================================================
+✓ Loaded main dataset: (289303, 105)
+✓ Loaded best indicators for 11 countries
+✓ Year range in data: 1960 - 2025
+
+====================================================================================================
+STEP 2: PREPROCESSING, VALIDATION, AND FORECASTING FOR EACH COUNTRY
+====================================================================================================
+
+====================================================================================================
+COUNTRY: BRUNEI (BRN)
+====================================================================================================
+
+[MODEL SELECTION] Selected 6 predictors (BIC-optimized):
+  1. GNI: linked series (current LCU)
+  2. Gross domestic savings (current LCU)
+  3. Gross value added at basic prices (GVA) (current LCU)
+  4. Industry (including construction), value added (current LCU)
+  5. GDP: linked series (current LCU)
+  6. GDP (current LCU)
+
+[PREPROCESSING] Step 1: Extracting Target and Features
+  ✓ Target variable: Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)
+    - Data points with values: 55 / 66
+
+[PREPROCESSING] Step 2: Data Alignment and Missing Value Handling
+  ✓ Data shape before imputation: X=(66, 6), y=(66,)
+  ✓ Valid target samples: 55
+    - Year range: 1970 - 2024
+    - Missing features per year: [5 5 5 5 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+  ✓ Imputed missing feature values using mean strategy
+    - Data shape after imputation: (55, 6)
+
+[PREPROCESSING] Step 3: Feature Scaling
+  ✓ Scaled features using StandardScaler
+    - Feature means (should be ~0): [-0.  0. -0.  0.  0. -0.]
+    - Feature stds (should be ~1): [1. 1. 1. 1. 1. 1.]
+
+[VALIDATION] Step 1: K-Fold Cross-Validation (k=5)
+  Fold Results:
+    Fold 1: train=44, test=11, RMSE=2.3417, R²=-0.6226
+    Fold 2: train=44, test=11, RMSE=3.4267, R²=0.2934
+    Fold 3: train=44, test=11, RMSE=2.5284, R²=-0.2034
+    Fold 4: train=44, test=11, RMSE=2.8185, R²=-0.5511
+    Fold 5: train=44, test=11, RMSE=3.0361, R²=0.1374
+  ✓ Cross-Validation Summary:
+    - Mean CV-RMSE: 2.830275 (±0.381589)
+    - Mean CV-R²: -0.189255
+
+[VALIDATION] Step 2: Full Model Training
+  ✓ Full Model Performance (on all training data):
+    - RMSE: 2.396121
+    - R²: 0.329812
+    - Mean Residual: 0.000000
+    - Residual Std: 2.396121
+
+[MODEL] Fitted Coefficients
+  Intercept: 25.693595
+  Coefficients (on scaled features):
+    - GNI: linked series (current LCU): -0.330159
+    - Gross domestic savings (current LCU): -1.408923
+    - Gross value added at basic prices (GVA) (current LCU): -3.727163
+    - Industry (including construction), value added (current LCU): 3.851551
+    - GDP: linked series (current LCU): 1.031731
+    - GDP (current LCU): 1.810628
+
+[FORECASTING] Predicting to 2030
+  ✓ Latest year in data: 2024
+    - Target value: 25.6429 t CO2e/capita
+    - Latest feature values (original scale):
+      • GNI: linked series (current LCU): 2.12e+10
+      • Gross domestic savings (current LCU): 9.96e+09
+      • Gross value added at basic prices (GVA) (current LCU): 2.09e+10
+      • Industry (including construction), value added (current LCU): 1.26e+10
+      • GDP: linked series (current LCU): 2.05e+10
+      • GDP (current LCU): 2.05e+10
+  ✓ Estimated feature growth rates (from last 5 years):
+    - GNI: linked series (current LCU): 5.52% annually
+    - Gross domestic savings (current LCU): 4.31% annually
+    - Gross value added at basic prices (GVA) (current LCU): 5.47% annually
+    - Industry (including construction), value added (current LCU): 6.58% annually
+    - GDP: linked series (current LCU): 5.47% annually
+    - GDP (current LCU): 5.47% annually
+
+  ✓ Projected features to 2030:
+    - GNI: linked series (current LCU):
+      Now (2024): 2.12e+10
+      2030: 2.92e+10 (+38.0%)
+    - Gross domestic savings (current LCU):
+      Now (2024): 9.96e+09
+      2030: 1.28e+10 (+28.8%)
+    - Gross value added at basic prices (GVA) (current LCU):
+      Now (2024): 2.09e+10
+      2030: 2.87e+10 (+37.6%)
+    - Industry (including construction), value added (current LCU):
+      Now (2024): 1.26e+10
+      2030: 1.85e+10 (+46.6%)
+    - GDP: linked series (current LCU):
+      Now (2024): 2.05e+10
+      2030: 2.82e+10 (+37.6%)
+    - GDP (current LCU):
+      Now (2024): 2.05e+10
+      2030: 2.82e+10 (+37.6%)
+
+  ✓ GHG EMISSIONS FORECAST:
+    - 2024: 25.6429 t CO2e/capita
+    - 2030: 28.3583 t CO2e/capita
+    - Change: +2.7154 (+10.6%)
+
+====================================================================================================
+COUNTRY: CAMBODIA (KHM)
+====================================================================================================
+
+[MODEL SELECTION] Selected 6 predictors (BIC-optimized):
+  1. Gross national expenditure (constant LCU)
+  2. Net domestic credit (current LCU)
+  3. GNI (constant LCU)
+  4. Gross value added at basic prices (GVA) (current LCU)
+  5. Broad money (current LCU)
+  6. GDP: linked series (current LCU)
+
+[PREPROCESSING] Step 1: Extracting Target and Features
+  ✓ Target variable: Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)
+    - Data points with values: 55 / 66
+
+[PREPROCESSING] Step 2: Data Alignment and Missing Value Handling
+  ✓ Data shape before imputation: X=(66, 6), y=(66,)
+  ✓ Valid target samples: 55
+    - Year range: 1970 - 2024
+    - Missing features per year: [6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 5 5 5 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+  ✓ Imputed missing feature values using mean strategy
+    - Data shape after imputation: (55, 6)
+
+[PREPROCESSING] Step 3: Feature Scaling
+  ✓ Scaled features using StandardScaler
+    - Feature means (should be ~0): [-0.  0.  0.  0.  0.  0.]
+    - Feature stds (should be ~1): [1. 1. 1. 1. 1. 1.]
+
+[VALIDATION] Step 1: K-Fold Cross-Validation (k=5)
+  Fold Results:
+    Fold 1: train=44, test=11, RMSE=0.3919, R²=0.2680
+    Fold 2: train=44, test=11, RMSE=0.4693, R²=0.2198
+    Fold 3: train=44, test=11, RMSE=0.3221, R²=0.5534
+    Fold 4: train=44, test=11, RMSE=0.4418, R²=0.1035
+    Fold 5: train=44, test=11, RMSE=0.1533, R²=0.4438
+  ✓ Cross-Validation Summary:
+    - Mean CV-RMSE: 0.355679 (±0.112890)
+    - Mean CV-R²: 0.317669
+
+[VALIDATION] Step 2: Full Model Training
+  ✓ Full Model Performance (on all training data):
+    - RMSE: 0.332163
+    - R²: 0.461208
+    - Mean Residual: -0.000000
+    - Residual Std: 0.332163
+
+[MODEL] Fitted Coefficients
+  Intercept: 1.915958
+  Coefficients (on scaled features):
+    - Gross national expenditure (constant LCU): 0.457643
+    - Net domestic credit (current LCU): -0.030781
+    - GNI (constant LCU): 0.044461
+    - Gross value added at basic prices (GVA) (current LCU): -0.468071
+    - Broad money (current LCU): 0.174150
+    - GDP: linked series (current LCU): 0.144198
+
+[FORECASTING] Predicting to 2030
+  ✓ Latest year in data: 2024
+    - Target value: 2.8253 t CO2e/capita
+    - Latest feature values (original scale):
+      • Gross national expenditure (constant LCU): 1.56e+14
+      • Net domestic credit (current LCU): 2.14e+14
+      • GNI (constant LCU): 1.55e+14
+      • Gross value added at basic prices (GVA) (current LCU): 1.77e+14
+      • Broad money (current LCU): 2.27e+14
+      • GDP: linked series (current LCU): 1.89e+14
+  ✓ Estimated feature growth rates (from last 5 years):
+    - Gross national expenditure (constant LCU): 2.65% annually
+    - Net domestic credit (current LCU): 13.86% annually
+    - GNI (constant LCU): 3.88% annually
+    - Gross value added at basic prices (GVA) (current LCU): 7.36% annually
+    - Broad money (current LCU): 13.61% annually
+    - GDP: linked series (current LCU): 7.28% annually
+
+  ✓ Projected features to 2030:
+    - Gross national expenditure (constant LCU):
+      Now (2024): 1.56e+14
+      2030: 1.82e+14 (+17.0%)
+    - Net domestic credit (current LCU):
+      Now (2024): 2.14e+14
+      2030: 4.66e+14 (+117.9%)
+    - GNI (constant LCU):
+      Now (2024): 1.55e+14
+      2030: 1.95e+14 (+25.6%)
+    - Gross value added at basic prices (GVA) (current LCU):
+      Now (2024): 1.77e+14
+      2030: 2.72e+14 (+53.1%)
+    - Broad money (current LCU):
+      Now (2024): 2.27e+14
+      2030: 4.89e+14 (+115.0%)
+    - GDP: linked series (current LCU):
+      Now (2024): 1.89e+14
+      2030: 2.88e+14 (+52.5%)
+
+  ✓ GHG EMISSIONS FORECAST:
+    - 2024: 2.8253 t CO2e/capita
+    - 2030: 3.1055 t CO2e/capita
+    - Change: +0.2802 (+9.9%)
+
+====================================================================================================
+COUNTRY: INDONESIA (IDN)
+====================================================================================================
+
+[MODEL SELECTION] Selected 10 predictors (BIC-optimized):
+  1. GDP (current LCU)
+  2. Gross capital formation (constant LCU)
+  3. GNI (current LCU)
+  4. Gross national expenditure (constant LCU)
+  5. Gross national expenditure (current LCU)
+  6. GNI: linked series (current LCU)
+  7. Final consumption expenditure (current LCU)
+  8. Households and NPISHs final consumption expenditure: linked series (current LCU)
+  9. GDP (constant LCU)
+  10. Changes in inventories (constant LCU)
+
+[PREPROCESSING] Step 1: Extracting Target and Features
+  ✓ Target variable: Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)
+    - Data points with values: 55 / 66
+
+[PREPROCESSING] Step 2: Data Alignment and Missing Value Handling
+  ✓ Data shape before imputation: X=(66, 10), y=(66,)
+  ✓ Valid target samples: 55
+    - Year range: 1970 - 2024
+    - Missing features per year: [3 3 3 3 3 3 3 3 3 3 3 3 3 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+  ✓ Imputed missing feature values using mean strategy
+    - Data shape after imputation: (55, 10)
+
+[PREPROCESSING] Step 3: Feature Scaling
+  ✓ Scaled features using StandardScaler
+    - Feature means (should be ~0): [-0.  0.  0. -0.  0. -0.  0.  0. -0. -0.]
+    - Feature stds (should be ~1): [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+
+[VALIDATION] Step 1: K-Fold Cross-Validation (k=5)
+  Fold Results:
+    Fold 1: train=44, test=11, RMSE=0.1488, R²=0.9695
+    Fold 2: train=44, test=11, RMSE=0.0902, R²=0.9913
+    Fold 3: train=44, test=11, RMSE=0.0565, R²=0.9969
+    Fold 4: train=44, test=11, RMSE=0.0932, R²=0.9890
+    Fold 5: train=44, test=11, RMSE=0.0746, R²=0.9859
+  ✓ Cross-Validation Summary:
+    - Mean CV-RMSE: 0.092645 (±0.030940)
+    - Mean CV-R²: 0.986499
+
+[VALIDATION] Step 2: Full Model Training
+  ✓ Full Model Performance (on all training data):
+    - RMSE: 0.063277
+    - R²: 0.995111
+    - Mean Residual: 0.000000
+    - Residual Std: 0.063277
+
+[MODEL] Fitted Coefficients
+  Intercept: 2.389062
+  Coefficients (on scaled features):
+    - GDP (current LCU): -13.089930
+    - Gross capital formation (constant LCU): -3.296069
+    - GNI (current LCU): 19.239540
+    - Gross national expenditure (constant LCU): 2.307079
+    - Gross national expenditure (current LCU): 1.902418
+    - GNI: linked series (current LCU): -4.863527
+    - Final consumption expenditure (current LCU): -8.413230
+    - Households and NPISHs final consumption expenditure: linked series (current LCU): 4.673200
+    - GDP (constant LCU): 0.780009
+    - Changes in inventories (constant LCU): 1.299698
+
+[FORECASTING] Predicting to 2030
+  ✓ Latest year in data: 2024
+    - Target value: 4.6696 t CO2e/capita
+    - Latest feature values (original scale):
+      • GDP (current LCU): 2.21e+16
+      • Gross capital formation (constant LCU): 4.25e+15
+      • GNI (current LCU): 2.16e+16
+      • Gross national expenditure (constant LCU): 1.22e+16
+      • Gross national expenditure (current LCU): 2.09e+16
+      • GNI: linked series (current LCU): 2.16e+16
+      • Final consumption expenditure (current LCU): 1.40e+16
+      • Households and NPISHs final consumption expenditure: linked series (current LCU): 1.23e+16
+      • GDP (constant LCU): 1.29e+16
+      • Changes in inventories (constant LCU): 2.47e+14
+  ✓ Estimated feature growth rates (from last 5 years):
+    - GDP (current LCU): 9.42% annually
+    - Gross capital formation (constant LCU): 5.19% annually
+    - GNI (current LCU): 9.45% annually
+    - Gross national expenditure (constant LCU): 4.40% annually
+    - Gross national expenditure (current LCU): 7.64% annually
+    - GNI: linked series (current LCU): 9.45% annually
+    - Final consumption expenditure (current LCU): 7.18% annually
+    - Households and NPISHs final consumption expenditure: linked series (current LCU): 7.74% annually
+    - GDP (constant LCU): 4.77% annually
+    - Changes in inventories (constant LCU): 48.05% annually
+
+  ✓ Projected features to 2030:
+    - GDP (current LCU):
+      Now (2024): 2.21e+16
+      2030: 3.80e+16 (+71.6%)
+    - Gross capital formation (constant LCU):
+      Now (2024): 4.25e+15
+      2030: 5.75e+15 (+35.4%)
+    - GNI (current LCU):
+      Now (2024): 2.16e+16
+      2030: 3.71e+16 (+71.9%)
+    - Gross national expenditure (constant LCU):
+      Now (2024): 1.22e+16
+      2030: 1.58e+16 (+29.5%)
+    - Gross national expenditure (current LCU):
+      Now (2024): 2.09e+16
+      2030: 3.26e+16 (+55.6%)
+    - GNI: linked series (current LCU):
+      Now (2024): 2.16e+16
+      2030: 3.71e+16 (+71.9%)
+    - Final consumption expenditure (current LCU):
+      Now (2024): 1.40e+16
+      2030: 2.12e+16 (+51.6%)
+    - Households and NPISHs final consumption expenditure: linked series (current LCU):
+      Now (2024): 1.23e+16
+      2030: 1.92e+16 (+56.4%)
+    - GDP (constant LCU):
+      Now (2024): 1.29e+16
+      2030: 1.71e+16 (+32.3%)
+    - Changes in inventories (constant LCU):
+      Now (2024): 2.47e+14
+      2030: 2.60e+15 (+953.2%)
+
+  ✓ GHG EMISSIONS FORECAST:
+    - 2024: 4.6696 t CO2e/capita
+    - 2030: 7.7419 t CO2e/capita
+    - Change: +3.0723 (+65.8%)
+
+====================================================================================================
+COUNTRY: LAOS (LAO)
+====================================================================================================
+
+[MODEL SELECTION] Selected 3 predictors (BIC-optimized):
+  1. GNI (current LCU)
+  2. GDP (constant LCU)
+  3. Gross national expenditure (constant LCU)
+
+[PREPROCESSING] Step 1: Extracting Target and Features
+  ✓ Target variable: Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)
+    - Data points with values: 55 / 66
+
+[PREPROCESSING] Step 2: Data Alignment and Missing Value Handling
+  ✓ Data shape before imputation: X=(66, 3), y=(66,)
+  ✓ Valid target samples: 55
+    - Year range: 1970 - 2024
+    - Missing features per year: [3 3 3 3 3 3 3 3 3 3 3 3 3 3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1]
+  ✓ Imputed missing feature values using mean strategy
+    - Data shape after imputation: (55, 3)
+
+[PREPROCESSING] Step 3: Feature Scaling
+  ✓ Scaled features using StandardScaler
+    - Feature means (should be ~0): [ 0. -0. -0.]
+    - Feature stds (should be ~1): [1. 1. 1.]
+
+[VALIDATION] Step 1: K-Fold Cross-Validation (k=5)
+  Fold Results:
+    Fold 1: train=44, test=11, RMSE=0.5446, R²=0.8486
+    Fold 2: train=44, test=11, RMSE=0.6877, R²=0.6721
+    Fold 3: train=44, test=11, RMSE=0.4993, R²=0.8777
+    Fold 4: train=44, test=11, RMSE=0.6015, R²=0.7238
+    Fold 5: train=44, test=11, RMSE=0.3501, R²=0.4414
+  ✓ Cross-Validation Summary:
+    - Mean CV-RMSE: 0.536645 (±0.112503)
+    - Mean CV-R²: 0.712704
+
+[VALIDATION] Step 2: Full Model Training
+  ✓ Full Model Performance (on all training data):
+    - RMSE: 0.499556
+    - R²: 0.826806
+    - Mean Residual: -0.000000
+    - Residual Std: 0.499556
+
+[MODEL] Fitted Coefficients
+  Intercept: 2.227500
+  Coefficients (on scaled features):
+    - GNI (current LCU): 0.563519
+    - GDP (constant LCU): 0.558341
+    - Gross national expenditure (constant LCU): -0.060634
+
+[FORECASTING] Predicting to 2030
+  ✓ Latest year in data: 2024
+    - Target value: 5.3476 t CO2e/capita
+    - Latest feature values (original scale):
+      • GNI (current LCU): 3.12e+14
+      • GDP (constant LCU): 1.49e+14
+      • Gross national expenditure (constant LCU): 7.17e+13
+  ✓ Estimated feature growth rates (from last 5 years):
+    - GNI (current LCU): 17.87% annually
+    - GDP (constant LCU): 3.28% annually
+    - Gross national expenditure (constant LCU): 0.00% annually
+
+  ✓ Projected features to 2030:
+    - GNI (current LCU):
+      Now (2024): 3.12e+14
+      2030: 8.36e+14 (+168.1%)
+    - GDP (constant LCU):
+      Now (2024): 1.49e+14
+      2030: 1.81e+14 (+21.3%)
+    - Gross national expenditure (constant LCU):
+      Now (2024): 7.17e+13
+      2030: 7.17e+13 (+0.0%)
+
+  ✓ GHG EMISSIONS FORECAST:
+    - 2024: 5.3476 t CO2e/capita
+    - 2030: 10.5861 t CO2e/capita
+    - Change: +5.2385 (+98.0%)
+
+====================================================================================================
+COUNTRY: MALAYSIA (MYS)
+====================================================================================================
+
+[MODEL SELECTION] Selected 2 predictors (BIC-optimized):
+  1. Imports of goods and services (current LCU)
+  2. Final consumption expenditure (current LCU)
+
+[PREPROCESSING] Step 1: Extracting Target and Features
+  ✓ Target variable: Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)
+    - Data points with values: 55 / 66
+
+[PREPROCESSING] Step 2: Data Alignment and Missing Value Handling
+  ✓ Data shape before imputation: X=(66, 2), y=(66,)
+  ✓ Valid target samples: 55
+    - Year range: 1970 - 2024
+    - Missing features per year: [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+  ✓ Imputed missing feature values using mean strategy
+    - Data shape after imputation: (55, 2)
+
+[PREPROCESSING] Step 3: Feature Scaling
+  ✓ Scaled features using StandardScaler
+    - Feature means (should be ~0): [-0. -0.]
+    - Feature stds (should be ~1): [1. 1.]
+
+[VALIDATION] Step 1: K-Fold Cross-Validation (k=5)
+  Fold Results:
+    Fold 1: train=44, test=11, RMSE=0.9512, R²=0.7657
+    Fold 2: train=44, test=11, RMSE=1.0995, R²=0.8007
+    Fold 3: train=44, test=11, RMSE=0.8795, R²=0.8401
+    Fold 4: train=44, test=11, RMSE=0.7276, R²=0.9254
+    Fold 5: train=44, test=11, RMSE=0.7458, R²=0.8849
+  ✓ Cross-Validation Summary:
+    - Mean CV-RMSE: 0.880715 (±0.137485)
+    - Mean CV-R²: 0.843344
+
+[VALIDATION] Step 2: Full Model Training
+  ✓ Full Model Performance (on all training data):
+    - RMSE: 0.791611
+    - R²: 0.890287
+    - Mean Residual: -0.000000
+    - Residual Std: 0.791611
+
+[MODEL] Fitted Coefficients
+  Intercept: 6.171181
+  Coefficients (on scaled features):
+    - Imports of goods and services (current LCU): 5.038673
+    - Final consumption expenditure (current LCU): -2.977774
+
+[FORECASTING] Predicting to 2030
+  ✓ Latest year in data: 2024
+    - Target value: 9.3416 t CO2e/capita
+    - Latest feature values (original scale):
+      • Imports of goods and services (current LCU): 1.28e+12
+      • Final consumption expenditure (current LCU): 1.41e+12
+  ✓ Estimated feature growth rates (from last 5 years):
+    - Imports of goods and services (current LCU): 12.97% annually
+    - Final consumption expenditure (current LCU): 7.58% annually
+
+  ✓ Projected features to 2030:
+    - Imports of goods and services (current LCU):
+      Now (2024): 1.28e+12
+      2030: 2.65e+12 (+107.9%)
+    - Final consumption expenditure (current LCU):
+      Now (2024): 1.41e+12
+      2030: 2.18e+12 (+55.0%)
+
+  ✓ GHG EMISSIONS FORECAST:
+    - 2024: 9.3416 t CO2e/capita
+    - 2030: 24.3910 t CO2e/capita
+    - Change: +15.0494 (+161.1%)
+
+====================================================================================================
+COUNTRY: MYANMAR (MMR)
+====================================================================================================
+
+[MODEL SELECTION] Selected 10 predictors (BIC-optimized):
+  1. Agriculture, forestry, and fishing, value added (current LCU)
+  2. Industry (including construction), value added (current LCU)
+  3. GNI (current LCU)
+  4. Industry (including construction), value added (constant LCU)
+  5. GDP (current LCU)
+  6. GDP (constant LCU)
+  7. Gross value added at basic prices (GVA) (current LCU)
+  8. Gross value added at basic prices (GVA) (constant LCU)
+  9. Broad money (current LCU)
+  10. Net domestic credit (current LCU)
+
+[PREPROCESSING] Step 1: Extracting Target and Features
+  ✓ Target variable: Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)
+    - Data points with values: 55 / 66
+
+[PREPROCESSING] Step 2: Data Alignment and Missing Value Handling
+  ✓ Data shape before imputation: X=(66, 10), y=(66,)
+  ✓ Valid target samples: 55
+    - Year range: 1970 - 2024
+    - Missing features per year: [6 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 2 2]
+  ✓ Imputed missing feature values using mean strategy
+    - Data shape after imputation: (55, 10)
+
+[PREPROCESSING] Step 3: Feature Scaling
+  ✓ Scaled features using StandardScaler
+    - Feature means (should be ~0): [-0.  0. -0. -0.  0. -0.  0. -0.  0.  0.]
+    - Feature stds (should be ~1): [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+
+[VALIDATION] Step 1: K-Fold Cross-Validation (k=5)
+  Fold Results:
+    Fold 1: train=44, test=11, RMSE=0.1240, R²=0.8164
+    Fold 2: train=44, test=11, RMSE=0.1013, R²=0.8258
+    Fold 3: train=44, test=11, RMSE=0.0835, R²=0.8739
+    Fold 4: train=44, test=11, RMSE=0.1479, R²=0.8085
+    Fold 5: train=44, test=11, RMSE=0.0802, R²=0.9122
+  ✓ Cross-Validation Summary:
+    - Mean CV-RMSE: 0.107378 (±0.025578)
+    - Mean CV-R²: 0.847365
+
+[VALIDATION] Step 2: Full Model Training
+  ✓ Full Model Performance (on all training data):
+    - RMSE: 0.089786
+    - R²: 0.898388
+    - Mean Residual: -0.000000
+    - Residual Std: 0.089786
+
+[MODEL] Fitted Coefficients
+  Intercept: 1.973759
+  Coefficients (on scaled features):
+    - Agriculture, forestry, and fishing, value added (current LCU): -0.133095
+    - Industry (including construction), value added (current LCU): -0.515977
+    - GNI (current LCU): -0.134353
+    - Industry (including construction), value added (constant LCU): -0.029586
+    - GDP (current LCU): 0.717679
+    - GDP (constant LCU): -0.167462
+    - Gross value added at basic prices (GVA) (current LCU): 0.063446
+    - Gross value added at basic prices (GVA) (constant LCU): 0.388182
+    - Broad money (current LCU): -0.073529
+    - Net domestic credit (current LCU): 0.031043
+
+[FORECASTING] Predicting to 2030
+  ✓ Latest year in data: 2024
+    - Target value: 2.1612 t CO2e/capita
+    - Latest feature values (original scale):
+      • Agriculture, forestry, and fishing, value added (current LCU): 3.24e+13
+      • Industry (including construction), value added (current LCU): 5.88e+13
+      • GNI (current LCU): 1.53e+14
+      • Industry (including construction), value added (constant LCU): 2.91e+13
+      • GDP (current LCU): 1.56e+14
+      • GDP (constant LCU): 7.70e+13
+      • Gross value added at basic prices (GVA) (current LCU): 1.56e+14
+      • Gross value added at basic prices (GVA) (constant LCU): 7.70e+13
+      • Broad money (current LCU): 8.44e+12
+      • Net domestic credit (current LCU): 7.12e+12
+  ✓ Estimated feature growth rates (from last 5 years):
+    - Agriculture, forestry, and fishing, value added (current LCU): 7.58% annually
+    - Industry (including construction), value added (current LCU): 9.77% annually
+    - GNI (current LCU): 9.58% annually
+    - Industry (including construction), value added (constant LCU): -0.25% annually
+    - GDP (current LCU): 9.57% annually
+    - GDP (constant LCU): -2.19% annually
+    - Gross value added at basic prices (GVA) (current LCU): 9.57% annually
+    - Gross value added at basic prices (GVA) (constant LCU): -2.19% annually
+    - Broad money (current LCU): -42.03% annually
+    - Net domestic credit (current LCU): -41.53% annually
+
+  ✓ Projected features to 2030:
+    - Agriculture, forestry, and fishing, value added (current LCU):
+      Now (2024): 3.24e+13
+      2030: 5.02e+13 (+55.0%)
+    - Industry (including construction), value added (current LCU):
+      Now (2024): 5.88e+13
+      2030: 1.03e+14 (+74.9%)
+    - GNI (current LCU):
+      Now (2024): 1.53e+14
+      2030: 2.64e+14 (+73.2%)
+    - Industry (including construction), value added (constant LCU):
+      Now (2024): 2.91e+13
+      2030: 2.87e+13 (-1.5%)
+    - GDP (current LCU):
+      Now (2024): 1.56e+14
+      2030: 2.69e+14 (+73.0%)
+    - GDP (constant LCU):
+      Now (2024): 7.70e+13
+      2030: 6.74e+13 (-12.5%)
+    - Gross value added at basic prices (GVA) (current LCU):
+      Now (2024): 1.56e+14
+      2030: 2.69e+14 (+73.0%)
+    - Gross value added at basic prices (GVA) (constant LCU):
+      Now (2024): 7.70e+13
+      2030: 6.74e+13 (-12.5%)
+    - Broad money (current LCU):
+      Now (2024): 8.44e+12
+      2030: 3.20e+11 (-96.2%)
+    - Net domestic credit (current LCU):
+      Now (2024): 7.12e+12
+      2030: 2.84e+11 (-96.0%)
+
+  ✓ GHG EMISSIONS FORECAST:
+    - 2024: 2.1612 t CO2e/capita
+    - 2030: 1.5447 t CO2e/capita
+    - Change: -0.6166 (-28.5%)
+
+====================================================================================================
+COUNTRY: PHILIPPINES (PHL)
+====================================================================================================
+
+[MODEL SELECTION] Selected 3 predictors (BIC-optimized):
+  1. Gross national expenditure (current LCU)
+  2. GNI (current LCU)
+  3. Households and NPISHs Final consumption expenditure (current LCU)
+
+[PREPROCESSING] Step 1: Extracting Target and Features
+  ✓ Target variable: Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)
+    - Data points with values: 55 / 66
+
+[PREPROCESSING] Step 2: Data Alignment and Missing Value Handling
+  ✓ Data shape before imputation: X=(66, 3), y=(66,)
+  ✓ Valid target samples: 55
+    - Year range: 1970 - 2024
+    - Missing features per year: [2 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+  ✓ Imputed missing feature values using mean strategy
+    - Data shape after imputation: (55, 3)
+
+[PREPROCESSING] Step 3: Feature Scaling
+  ✓ Scaled features using StandardScaler
+    - Feature means (should be ~0): [-0.  0. -0.]
+    - Feature stds (should be ~1): [1. 1. 1.]
+
+[VALIDATION] Step 1: K-Fold Cross-Validation (k=5)
+  Fold Results:
+    Fold 1: train=44, test=11, RMSE=0.0993, R²=0.8362
+    Fold 2: train=44, test=11, RMSE=0.0728, R²=0.7610
+    Fold 3: train=44, test=11, RMSE=0.0581, R²=0.9542
+    Fold 4: train=44, test=11, RMSE=0.0815, R²=0.8533
+    Fold 5: train=44, test=11, RMSE=0.0624, R²=0.6865
+  ✓ Cross-Validation Summary:
+    - Mean CV-RMSE: 0.074803 (±0.014722)
+    - Mean CV-R²: 0.818253
+
+[VALIDATION] Step 2: Full Model Training
+  ✓ Full Model Performance (on all training data):
+    - RMSE: 0.071132
+    - R²: 0.888047
+    - Mean Residual: -0.000000
+    - Residual Std: 0.071132
+
+[MODEL] Fitted Coefficients
+  Intercept: 1.697645
+  Coefficients (on scaled features):
+    - Gross national expenditure (current LCU): 1.103366
+    - GNI (current LCU): -0.054414
+    - Households and NPISHs Final consumption expenditure (current LCU): -0.858759
+
+[FORECASTING] Predicting to 2030
+  ✓ Latest year in data: 2024
+    - Target value: 2.3014 t CO2e/capita
+    - Latest feature values (original scale):
+      • Gross national expenditure (current LCU): 3.02e+13
+      • GNI (current LCU): 2.99e+13
+      • Households and NPISHs Final consumption expenditure (current LCU): 2.01e+13
+  ✓ Estimated feature growth rates (from last 5 years):
+    - Gross national expenditure (current LCU): 11.81% annually
+    - GNI (current LCU): 11.54% annually
+    - Households and NPISHs Final consumption expenditure (current LCU): 10.56% annually
+
+  ✓ Projected features to 2030:
+    - Gross national expenditure (current LCU):
+      Now (2024): 3.02e+13
+      2030: 5.91e+13 (+95.4%)
+    - GNI (current LCU):
+      Now (2024): 2.99e+13
+      2030: 5.76e+13 (+92.6%)
+    - Households and NPISHs Final consumption expenditure (current LCU):
+      Now (2024): 2.01e+13
+      2030: 3.68e+13 (+82.7%)
+
+  ✓ GHG EMISSIONS FORECAST:
+    - 2024: 2.3014 t CO2e/capita
+    - 2030: 3.4928 t CO2e/capita
+    - Change: +1.1915 (+51.8%)
+
+====================================================================================================
+COUNTRY: SINGAPORE (SGP)
+====================================================================================================
+
+[MODEL SELECTION] Selected 9 predictors (BIC-optimized):
+  1. Central government debt, total (current LCU)
+  2. Exports of goods and services (current US$)
+  3. Imports of goods and services (constant LCU)
+  4. Imports of goods and services (current US$)
+  5. Exports of goods and services (BoP, current US$)
+  6. Exports of goods and services (constant LCU)
+  7. Market capitalization of listed domestic companies (current US$)
+  8. Imports of goods and services (BoP, current US$)
+  9. Exports of goods, services and primary income (BoP, current US$)
+
+[PREPROCESSING] Step 1: Extracting Target and Features
+  ✓ Target variable: Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)
+    - Data points with values: 55 / 66
+
+[PREPROCESSING] Step 2: Data Alignment and Missing Value Handling
+  ✓ Data shape before imputation: X=(66, 9), y=(66,)
+  ✓ Valid target samples: 55
+    - Year range: 1970 - 2024
+    - Missing features per year: [5 5 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+  ✓ Imputed missing feature values using mean strategy
+    - Data shape after imputation: (55, 9)
+
+[PREPROCESSING] Step 3: Feature Scaling
+  ✓ Scaled features using StandardScaler
+    - Feature means (should be ~0): [ 0.  0.  0. -0. -0.  0.  0.  0. -0.]
+    - Feature stds (should be ~1): [1. 1. 1. 1. 1. 1. 1. 1. 1.]
+
+[VALIDATION] Step 1: K-Fold Cross-Validation (k=5)
+  Fold Results:
+    Fold 1: train=44, test=11, RMSE=0.8971, R²=0.8433
+    Fold 2: train=44, test=11, RMSE=0.9112, R²=0.9205
+    Fold 3: train=44, test=11, RMSE=1.5959, R²=0.5783
+    Fold 4: train=44, test=11, RMSE=0.8872, R²=0.9074
+    Fold 5: train=44, test=11, RMSE=1.6146, R²=0.5816
+  ✓ Cross-Validation Summary:
+    - Mean CV-RMSE: 1.181197 (±0.346373)
+    - Mean CV-R²: 0.766213
+
+[VALIDATION] Step 2: Full Model Training
+  ✓ Full Model Performance (on all training data):
+    - RMSE: 0.928726
+    - R²: 0.902811
+    - Mean Residual: -0.000000
+    - Residual Std: 0.928726
+
+[MODEL] Fitted Coefficients
+  Intercept: 10.112414
+  Coefficients (on scaled features):
+    - Central government debt, total (current LCU): -3.647547
+    - Exports of goods and services (current US$): -20.991942
+    - Imports of goods and services (constant LCU): 1.035846
+    - Imports of goods and services (current US$): 23.994969
+    - Exports of goods and services (BoP, current US$): 35.906066
+    - Exports of goods and services (constant LCU): 1.169302
+    - Market capitalization of listed domestic companies (current US$): -1.696666
+    - Imports of goods and services (BoP, current US$): -39.783597
+    - Exports of goods, services and primary income (BoP, current US$): 4.411540
+
+[FORECASTING] Predicting to 2030
+  ✓ Latest year in data: 2024
+    - Target value: 12.6047 t CO2e/capita
+    - Latest feature values (original scale):
+      • Central government debt, total (current LCU): 1.28e+12
+      • Exports of goods and services (current US$): 9.79e+11
+      • Imports of goods and services (constant LCU): 9.52e+11
+      • Imports of goods and services (current US$): 7.86e+11
+      • Exports of goods and services (BoP, current US$): 1.00e+12
+      • Exports of goods and services (constant LCU): 1.12e+12
+      • Market capitalization of listed domestic companies (current US$): 6.38e+11
+      • Imports of goods and services (BoP, current US$): 7.94e+11
+      • Exports of goods, services and primary income (BoP, current US$): 1.21e+12
+  ✓ Estimated feature growth rates (from last 5 years):
+    - Central government debt, total (current LCU): 15.14% annually
+    - Exports of goods and services (current US$): 11.43% annually
+    - Imports of goods and services (constant LCU): 6.67% annually
+    - Imports of goods and services (current US$): 10.63% annually
+    - Exports of goods and services (BoP, current US$): 11.98% annually
+    - Exports of goods and services (constant LCU): 6.21% annually
+    - Market capitalization of listed domestic companies (current US$): -0.58% annually
+    - Imports of goods and services (BoP, current US$): 10.83% annually
+    - Exports of goods, services and primary income (BoP, current US$): 12.81% annually
+
+  ✓ Projected features to 2030:
+    - Central government debt, total (current LCU):
+      Now (2024): 1.28e+12
+      2030: 2.99e+12 (+133.0%)
+    - Exports of goods and services (current US$):
+      Now (2024): 9.79e+11
+      2030: 1.87e+12 (+91.4%)
+    - Imports of goods and services (constant LCU):
+      Now (2024): 9.52e+11
+      2030: 1.40e+12 (+47.3%)
+    - Imports of goods and services (current US$):
+      Now (2024): 7.86e+11
+      2030: 1.44e+12 (+83.4%)
+    - Exports of goods and services (BoP, current US$):
+      Now (2024): 1.00e+12
+      2030: 1.97e+12 (+97.2%)
+    - Exports of goods and services (constant LCU):
+      Now (2024): 1.12e+12
+      2030: 1.60e+12 (+43.5%)
+    - Market capitalization of listed domestic companies (current US$):
+      Now (2024): 6.38e+11
+      2030: 6.16e+11 (-3.4%)
+    - Imports of goods and services (BoP, current US$):
+      Now (2024): 7.94e+11
+      2030: 1.47e+12 (+85.3%)
+    - Exports of goods, services and primary income (BoP, current US$):
+      Now (2024): 1.21e+12
+      2030: 2.49e+12 (+106.1%)
+
+  ✓ GHG EMISSIONS FORECAST:
+    - 2024: 12.6047 t CO2e/capita
+    - 2030: 17.1835 t CO2e/capita
+    - Change: +4.5788 (+36.3%)
+
+====================================================================================================
+COUNTRY: THAILAND (THA)
+====================================================================================================
+
+[MODEL SELECTION] Selected 9 predictors (BIC-optimized):
+  1. Final consumption expenditure (current LCU)
+  2. GDP (constant LCU)
+  3. Net domestic credit (current LCU)
+  4. Gross domestic income (constant LCU)
+  5. GDP: linked series (current LCU)
+  6. GNI: linked series (current LCU)
+  7. Imports of goods and services (current LCU)
+  8. Gross value added at basic prices (GVA) (current LCU)
+  9. GDP (current LCU)
+
+[PREPROCESSING] Step 1: Extracting Target and Features
+  ✓ Target variable: Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)
+    - Data points with values: 55 / 66
+
+[PREPROCESSING] Step 2: Data Alignment and Missing Value Handling
+  ✓ Data shape before imputation: X=(66, 9), y=(66,)
+  ✓ Valid target samples: 55
+    - Year range: 1970 - 2024
+    - Missing features per year: [2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+  ✓ Imputed missing feature values using mean strategy
+    - Data shape after imputation: (55, 9)
+
+[PREPROCESSING] Step 3: Feature Scaling
+  ✓ Scaled features using StandardScaler
+    - Feature means (should be ~0): [ 0.  0. -0. -0. -0. -0.  0. -0. -0.]
+    - Feature stds (should be ~1): [1. 1. 1. 1. 1. 1. 1. 1. 1.]
+
+[VALIDATION] Step 1: K-Fold Cross-Validation (k=5)
+  Fold Results:
+    Fold 1: train=44, test=11, RMSE=0.2193, R²=0.9683
+    Fold 2: train=44, test=11, RMSE=0.1553, R²=0.9885
+    Fold 3: train=44, test=11, RMSE=0.2077, R²=0.9702
+    Fold 4: train=44, test=11, RMSE=0.1593, R²=0.9888
+    Fold 5: train=44, test=11, RMSE=0.0921, R²=0.9935
+  ✓ Cross-Validation Summary:
+    - Mean CV-RMSE: 0.166753 (±0.045184)
+    - Mean CV-R²: 0.981845
+
+[VALIDATION] Step 2: Full Model Training
+  ✓ Full Model Performance (on all training data):
+    - RMSE: 0.115671
+    - R²: 0.992802
+    - Mean Residual: -0.000000
+    - Residual Std: 0.115671
+
+[MODEL] Fitted Coefficients
+  Intercept: 4.060802
+  Coefficients (on scaled features):
+    - Final consumption expenditure (current LCU): 0.625311
+    - GDP (constant LCU): -0.046244
+    - Net domestic credit (current LCU): -0.038100
+    - Gross domestic income (constant LCU): 2.220194
+    - GDP: linked series (current LCU): 0.443034
+    - GNI: linked series (current LCU): -0.627884
+    - Imports of goods and services (current LCU): 0.895264
+    - Gross value added at basic prices (GVA) (current LCU): -1.105728
+    - GDP (current LCU): -1.105728
+
+[FORECASTING] Predicting to 2030
+  ✓ Latest year in data: 2024
+    - Target value: 5.8937 t CO2e/capita
+    - Latest feature values (original scale):
+      • Final consumption expenditure (current LCU): 1.39e+13
+      • GDP (constant LCU): 1.12e+13
+      • Net domestic credit (current LCU): 2.70e+13
+      • Gross domestic income (constant LCU): 1.10e+13
+      • GDP: linked series (current LCU): 1.86e+13
+      • GNI: linked series (current LCU): 1.80e+13
+      • Imports of goods and services (current LCU): 1.24e+13
+      • Gross value added at basic prices (GVA) (current LCU): 1.86e+13
+      • GDP (current LCU): 1.86e+13
+  ✓ Estimated feature growth rates (from last 5 years):
+    - Final consumption expenditure (current LCU): 5.83% annually
+    - GDP (constant LCU): 2.17% annually
+    - Net domestic credit (current LCU): 4.92% annually
+    - Gross domestic income (constant LCU): 0.76% annually
+    - GDP: linked series (current LCU): 4.37% annually
+    - GNI: linked series (current LCU): 4.14% annually
+    - Imports of goods and services (current LCU): 14.34% annually
+    - Gross value added at basic prices (GVA) (current LCU): 4.37% annually
+    - GDP (current LCU): 4.37% annually
+
+  ✓ Projected features to 2030:
+    - Final consumption expenditure (current LCU):
+      Now (2024): 1.39e+13
+      2030: 1.96e+13 (+40.5%)
+    - GDP (constant LCU):
+      Now (2024): 1.12e+13
+      2030: 1.27e+13 (+13.8%)
+    - Net domestic credit (current LCU):
+      Now (2024): 2.70e+13
+      2030: 3.61e+13 (+33.4%)
+    - Gross domestic income (constant LCU):
+      Now (2024): 1.10e+13
+      2030: 1.16e+13 (+4.7%)
+    - GDP: linked series (current LCU):
+      Now (2024): 1.86e+13
+      2030: 2.40e+13 (+29.2%)
+    - GNI: linked series (current LCU):
+      Now (2024): 1.80e+13
+      2030: 2.30e+13 (+27.6%)
+    - Imports of goods and services (current LCU):
+      Now (2024): 1.24e+13
+      2030: 2.77e+13 (+123.4%)
+    - Gross value added at basic prices (GVA) (current LCU):
+      Now (2024): 1.86e+13
+      2030: 2.40e+13 (+29.2%)
+    - GDP (current LCU):
+      Now (2024): 1.86e+13
+      2030: 2.40e+13 (+29.2%)
+
+  ✓ GHG EMISSIONS FORECAST:
+    - 2024: 5.8937 t CO2e/capita
+    - 2030: 8.6196 t CO2e/capita
+    - Change: +2.7260 (+46.3%)
+
+====================================================================================================
+COUNTRY: TIMOR-LESTE (TLS)
+====================================================================================================
+
+[MODEL SELECTION] Selected 3 predictors (BIC-optimized):
+  1. Net primary income (Net income from abroad) (current LCU)
+  2. Net primary income (BoP, current US$)
+  3. GNI (current US$)
+
+[PREPROCESSING] Step 1: Extracting Target and Features
+  ✓ Target variable: Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)
+    - Data points with values: 55 / 66
+
+[PREPROCESSING] Step 2: Data Alignment and Missing Value Handling
+  ✓ Data shape before imputation: X=(66, 3), y=(66,)
+  ✓ Valid target samples: 55
+    - Year range: 1970 - 2024
+    - Missing features per year: [3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+  ✓ Imputed missing feature values using mean strategy
+    - Data shape after imputation: (55, 3)
+
+[PREPROCESSING] Step 3: Feature Scaling
+  ✓ Scaled features using StandardScaler
+    - Feature means (should be ~0): [-0.  0.  0.]
+    - Feature stds (should be ~1): [1. 1. 1.]
+
+[VALIDATION] Step 1: K-Fold Cross-Validation (k=5)
+  Fold Results:
+    Fold 1: train=44, test=11, RMSE=0.3964, R²=0.2605
+    Fold 2: train=44, test=11, RMSE=0.4538, R²=0.0030
+    Fold 3: train=44, test=11, RMSE=0.5599, R²=-0.1425
+    Fold 4: train=44, test=11, RMSE=0.5469, R²=0.0578
+    Fold 5: train=44, test=11, RMSE=0.4572, R²=0.3478
+  ✓ Cross-Validation Summary:
+    - Mean CV-RMSE: 0.482808 (±0.061673)
+    - Mean CV-R²: 0.105307
+
+[VALIDATION] Step 2: Full Model Training
+  ✓ Full Model Performance (on all training data):
+    - RMSE: 0.449285
+    - R²: 0.282708
+    - Mean Residual: 0.000000
+    - Residual Std: 0.449285
+
+[MODEL] Fitted Coefficients
+  Intercept: 1.207208
+  Coefficients (on scaled features):
+    - Net primary income (Net income from abroad) (current LCU): -0.141756
+    - Net primary income (BoP, current US$): 0.167972
+    - GNI (current US$): 0.291757
+
+[FORECASTING] Predicting to 2030
+  ✓ Latest year in data: 2024
+    - Target value: 1.3852 t CO2e/capita
+    - Latest feature values (original scale):
+      • Net primary income (Net income from abroad) (current LCU): 2.62e+08
+      • Net primary income (BoP, current US$): 2.36e+08
+      • GNI (current US$): 2.13e+09
+  ✓ Estimated feature growth rates (from last 5 years):
+    - Net primary income (Net income from abroad) (current LCU): 6.16% annually
+    - Net primary income (BoP, current US$): 28.62% annually
+    - GNI (current US$): -2.66% annually
+
+  ✓ Projected features to 2030:
+    - Net primary income (Net income from abroad) (current LCU):
+      Now (2024): 2.62e+08
+      2030: 3.75e+08 (+43.2%)
+    - Net primary income (BoP, current US$):
+      Now (2024): 2.36e+08
+      2030: 1.07e+09 (+352.7%)
+    - GNI (current US$):
+      Now (2024): 2.13e+09
+      2030: 1.81e+09 (-14.9%)
+
+  ✓ GHG EMISSIONS FORECAST:
+    - 2024: 1.3852 t CO2e/capita
+    - 2030: 1.2698 t CO2e/capita
+    - Change: -0.1153 (-8.3%)
+
+====================================================================================================
+COUNTRY: VIETNAM (VNM)
+====================================================================================================
+
+[MODEL SELECTION] Selected 2 predictors (BIC-optimized):
+  1. Gross national expenditure (current LCU)
+  2. Net domestic credit (current LCU)
+
+[PREPROCESSING] Step 1: Extracting Target and Features
+  ✓ Target variable: Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)
+    - Data points with values: 55 / 66
+
+[PREPROCESSING] Step 2: Data Alignment and Missing Value Handling
+  ✓ Data shape before imputation: X=(66, 2), y=(66,)
+  ✓ Valid target samples: 55
+    - Year range: 1970 - 2024
+    - Missing features per year: [2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1]
+  ✓ Imputed missing feature values using mean strategy
+    - Data shape after imputation: (55, 2)
+
+[PREPROCESSING] Step 3: Feature Scaling
+  ✓ Scaled features using StandardScaler
+    - Feature means (should be ~0): [ 0. -0.]
+    - Feature stds (should be ~1): [1. 1.]
+
+[VALIDATION] Step 1: K-Fold Cross-Validation (k=5)
+  Fold Results:
+    Fold 1: train=44, test=11, RMSE=1.0577, R²=0.5170
+    Fold 2: train=44, test=11, RMSE=1.0263, R²=0.2754
+    Fold 3: train=44, test=11, RMSE=2.7553, R²=-2.4357
+    Fold 4: train=44, test=11, RMSE=0.9144, R²=0.3439
+    Fold 5: train=44, test=11, RMSE=1.0146, R²=-0.6970
+  ✓ Cross-Validation Summary:
+    - Mean CV-RMSE: 1.353651 (±0.702466)
+    - Mean CV-R²: -0.399288
+
+[VALIDATION] Step 2: Full Model Training
+  ✓ Full Model Performance (on all training data):
+    - RMSE: 0.958946
+    - R²: 0.432391
+    - Mean Residual: -0.000000
+    - Residual Std: 0.958946
+
+[MODEL] Fitted Coefficients
+  Intercept: 2.457940
+  Coefficients (on scaled features):
+    - Gross national expenditure (current LCU): 0.665250
+    - Net domestic credit (current LCU): 0.202408
+
+[FORECASTING] Predicting to 2030
+  ✓ Latest year in data: 2024
+    - Target value: 5.7854 t CO2e/capita
+    - Latest feature values (original scale):
+      • Gross national expenditure (current LCU): 1.07e+16
+      • Net domestic credit (current LCU): 3.10e+15
+  ✓ Estimated feature growth rates (from last 5 years):
+    - Gross national expenditure (current LCU): 8.22% annually
+    - Net domestic credit (current LCU): -24.72% annually
+
+  ✓ Projected features to 2030:
+    - Gross national expenditure (current LCU):
+      Now (2024): 1.07e+16
+      2030: 1.73e+16 (+60.6%)
+    - Net domestic credit (current LCU):
+      Now (2024): 3.10e+15
+      2030: 5.64e+14 (-81.8%)
+
+  ✓ GHG EMISSIONS FORECAST:
+    - 2024: 5.7854 t CO2e/capita
+    - 2030: 5.9779 t CO2e/capita
+    - Change: +0.1924 (+3.3%)
+
+====================================================================================================
+STEP 3: COMPILING RESULTS AND EXPORTING
+====================================================================================================
+
+FORECAST SUMMARY - GHG EMISSIONS PER CAPITA TO 2030:
+
+Country_Name  Latest_Year  Latest_GHG_Per_Capita  GHG_2030_Forecast  Change_2030  Pct_Change_2030
+      Brunei         2024              25.642882          28.358305     2.715423        10.589383
+    Malaysia         2024               9.341635          24.391043    15.049408       161.100367
+   Singapore         2024              12.604698          17.183452     4.578754        36.325770
+        Laos         2024               5.347563          10.586098     5.238535        97.961155
+    Thailand         2024               5.893666           8.619633     2.725968        46.252497
+   Indonesia         2024               4.669609           7.741938     3.072328        65.794115
+     Vietnam         2024               5.785434           5.977872     0.192438         3.326256
+ Philippines         2024               2.301354           3.492825     1.191471        51.772604
+    Cambodia         2024               2.825294           3.105451     0.280157         9.916019
+     Myanmar         2024               2.161235           1.544666    -0.616569       -28.528528
+ Timor-Leste         2024               1.385154           1.269837    -0.115317        -8.325230
+
+✓ Saved: model_outputs/ghg_forecast_2030.csv
+
+Generating detailed report...
+✓ Saved: model_outputs/ghg_forecast_2030_detailed.txt
+
+====================================================================================================
+FORECASTING COMPLETE
+====================================================================================================
+
+Output files:
+  - model_outputs/ghg_forecast_2030.csv
+  - model_outputs/ghg_forecast_2030_detailed.txt

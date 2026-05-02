@@ -1,0 +1,6 @@
+country_code,country_name,rank,indicator,abs_correlation
+THA,Thailand,1,Forest area (sq. km),1.0
+THA,Thailand,2,"People with basic handwashing facilities including soap and water, rural (% of rural population)",0.9971574689596052
+THA,Thailand,3,"People with basic handwashing facilities including soap and water, urban (% of urban population)",0.9971574689596051
+THA,Thailand,4,People with basic handwashing facilities including soap and water (% of population),0.9969171950072969
+THA,Thailand,5,"Educational attainment, at least Bachelor's or equivalent, population 25+, female (%) (cumulative)",0.9719597736273943

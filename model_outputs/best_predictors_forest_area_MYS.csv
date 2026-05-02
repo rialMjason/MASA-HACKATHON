@@ -1,0 +1,6 @@
+country_code,country_name,rank,indicator,abs_correlation
+MYS,Malaysia,1,Forest area (sq. km),1.0
+MYS,Malaysia,2,"Educational attainment, at least Bachelor's or equivalent, population 25+, total (%) (cumulative)",0.9791337361368138
+MYS,Malaysia,3,"Population ages 45-49, female (% of female population)",0.9740956675116456
+MYS,Malaysia,4,"Educational attainment, at least Bachelor's or equivalent, population 25+, female (%) (cumulative)",0.971137939770017
+MYS,Malaysia,5,"Population ages 45-49, male (% of male population)",0.9654168616468405

@@ -1,0 +1,41 @@
+====================================================================================================
+GHG FORECASTING HACKATHON SUBMISSION
+Final model: ARIMAX_DUMMY
+====================================================================================================
+
+Target variable: Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)
+Countries analyzed: 11
+Baseline model: univariate ARIMA
+Final model: ARIMAX with policy / penalty dummy exogenous variables
+
+OVERALL COMPARISON
+----------------------------------------------------------------------------------------------------
+Mean ARIMA RMSE:        0.442609
+Mean ARIMAX_DUMMY RMSE:  0.440984
+Mean delta RMSE:         -0.001625  (ARIMAX_DUMMY - ARIMA)
+Countries improved:      4/11
+Recommended model:       ARIMAX_DUMMY
+
+COUNTRY-LEVEL RESULTS
+----------------------------------------------------------------------------------------------------
+Brunei         | ARIMA RMSE=2.502067 | ARIMAX_DUMMY RMSE=2.403337 | delta=-0.098730
+Timor-Leste    | ARIMA RMSE=0.191240 | ARIMAX_DUMMY RMSE=0.180811 | delta=-0.010429
+Laos           | ARIMA RMSE=0.255023 | ARIMAX_DUMMY RMSE=0.251806 | delta=-0.003217
+Philippines    | ARIMA RMSE=0.067265 | ARIMAX_DUMMY RMSE=0.065567 | delta=-0.001698
+Thailand       | ARIMA RMSE=0.172296 | ARIMAX_DUMMY RMSE=0.173045 | delta=0.000749
+Cambodia       | ARIMA RMSE=0.098730 | ARIMAX_DUMMY RMSE=0.100422 | delta=0.001693
+Malaysia       | ARIMA RMSE=0.340268 | ARIMAX_DUMMY RMSE=0.351685 | delta=0.011416
+Myanmar        | ARIMA RMSE=0.109369 | ARIMAX_DUMMY RMSE=0.125921 | delta=0.016552
+Indonesia      | ARIMA RMSE=0.143206 | ARIMAX_DUMMY RMSE=0.163592 | delta=0.020385
+Singapore      | ARIMA RMSE=0.792591 | ARIMAX_DUMMY RMSE=0.815057 | delta=0.022466
+Vietnam        | ARIMA RMSE=0.196644 | ARIMAX_DUMMY RMSE=0.219577 | delta=0.022933
+
+FILES WRITTEN
+----------------------------------------------------------------------------------------------------
+- model_outputs/ghg_arimax_dummy_summary.csv
+- model_outputs/ghg_arimax_dummy_detailed.csv
+- model_outputs/ghg_arimax_dummy_report.txt
+
+Notes:
+- ARIMAX_DUMMY adds policy / penalty dummy variables as exogenous regressors.
+- The dummy inputs include event-style series such as Singapore carbon tax, Indonesia ETS, PT Kallista Alam, Shell ruling, and country-level net-zero announcement proxies.

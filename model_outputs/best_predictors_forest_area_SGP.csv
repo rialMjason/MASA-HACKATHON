@@ -1,0 +1,6 @@
+country_code,country_name,rank,indicator,abs_correlation
+SGP,Singapore,1,"Individuals using the Internet, female (% of female population)",0.9702401797218801
+SGP,Singapore,2,"Trademark applications, resident, by count",0.9672335637200457
+SGP,Singapore,3,"Labor force with advanced education, male (% of male working-age population with advanced education)",0.9655504023371203
+SGP,Singapore,4,"Trademark applications, nonresident, by count",0.964800024214685
+SGP,Singapore,5,"Individuals using the Internet, male (% of male population)",0.962738963364077

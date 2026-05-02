@@ -1,0 +1,40 @@
+BEST PREDICTIVE INDICATORS FOR MALAYSIA'S TOTAL GHG EMISSIONS PER CAPITA
+
+Summary of recommended models and alternatives
+
+1) Best by BIC (recommended for parsimony)
+- Predictors: 2
+- Indicators:
+	- Gross domestic income (constant LCU)
+	- Final consumption expenditure (current LCU)
+- Performance: BIC = -109.5296 | AIC = -113.5443 | CV-RMSE = 0.3880 | R² = 0.9793
+
+2) Best by AIC / AICc (balance fit and complexity)
+- Predictors: 5
+- Indicators:
+	- Net domestic credit (current LCU)
+	- Broad money (current LCU)
+	- GNI (current LCU)
+	- Gross domestic income (constant LCU)
+	- Exports of goods and services (current LCU)
+- Performance: AIC = -119.0487 | AICc = -117.8242 | BIC = -109.0120 | CV-RMSE = 0.3535 | R² = 0.9832
+
+3) Best by CV-RMSE (best predictive accuracy)
+- Predictors: 6
+- Indicators:
+	- Net domestic credit (current LCU)
+	- Broad money (current LCU)
+	- GDP (constant LCU)
+	- GNI: linked series (current LCU)
+	- Exports of goods and services (current LCU)
+	- Final consumption expenditure (current LCU)
+- Performance: CV-RMSE = 0.3465 | BIC = -106.6851 | R² = 0.9837
+
+Top recommended alternative (appears in top-10 by both BIC and CV):
+- Net domestic credit; Broad money; GNI; Gross domestic income; Exports of goods and services
+
+Notes:
+- BIC-selected model is very parsimonious and explains ~98% of variance.
+- AIC/AICc and CV-optimal models include more economic indicators and offer slightly better predictive accuracy.
+
+Saved results: `model_outputs/best_indicators_analysis.csv` (detailed models), `model_outputs/best_indicators_summary.txt` (this file)

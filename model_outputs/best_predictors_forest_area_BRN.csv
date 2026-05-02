@@ -1,0 +1,6 @@
+country_code,country_name,rank,indicator,abs_correlation
+BRN,Brunei,1,Forest area (sq. km),1.0
+BRN,Brunei,2,"Population ages 15-64, female (% of female population)",0.9951898422993064
+BRN,Brunei,3,Age dependency ratio (% of working-age population),0.9912055585995083
+BRN,Brunei,4,Urban population (% of total population),0.9910445286923867
+BRN,Brunei,5,Rural population (% of total population),0.9910445286923866

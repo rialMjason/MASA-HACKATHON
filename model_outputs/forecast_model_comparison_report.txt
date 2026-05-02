@@ -1,0 +1,46 @@
+====================================================================================================
+REGRESSION VS ARIMA ROLLING BACKTEST
+====================================================================================================
+
+Initial training window: 20 years
+Regression baseline: BIC-selected predictors + imputation + scaling + linear regression
+Neural network baseline: MLPRegressor on the same projected exogenous features
+ARIMA baseline: univariate ARIMA selected by initial-window AIC
+ARIMAX baseline: SARIMAX with projected exogenous predictors selected by initial-window AIC
+
+OVERALL RESULTS
+----------------------------------------------------------------------------------------------------
+Regression RMSE: 1.108187
+Regression MAE:  0.559665
+NN RMSE:         1.334575
+NN MAE:          0.504154
+ARIMA RMSE:      0.810220
+ARIMA MAE:       0.312789
+ARIMAX RMSE:     0.825552
+ARIMAX MAE:      0.328662
+ARIMAX_DUMMY RMSE:0.785973
+ARIMAX_DUMMY MAE: 0.304026
+Regression wins: 56
+NN wins:         89
+ARIMA wins:      63
+ARIMAX wins:     85
+ARIMAX_DUMMY wins:72
+Ties:            20
+
+BY COUNTRY
+----------------------------------------------------------------------------------------------------
+Brunei         | reg RMSE=2.772590 | nn RMSE=4.240548 | arima RMSE=2.502067 | arimax RMSE=2.543111 | reg wins=6   | nn wins=6   | arima wins=5   | arimax wins=7   | arima order=(0, 1, 0) | arimax order=(0, 1, 1)
+Cambodia       | reg RMSE=0.195786 | nn RMSE=0.156427 | arima RMSE=0.098730 | arimax RMSE=0.109369 | reg wins=6   | nn wins=7   | arima wins=4   | arimax wins=13  | arima order=(0, 1, 0) | arimax order=(0, 1, 0)
+Indonesia      | reg RMSE=0.168532 | nn RMSE=0.165156 | arima RMSE=0.143206 | arimax RMSE=0.145523 | reg wins=3   | nn wins=8   | arima wins=8   | arimax wins=11  | arima order=(0, 1, 1) | arimax order=(1, 1, 0)
+Laos           | reg RMSE=0.381595 | nn RMSE=0.371596 | arima RMSE=0.255023 | arimax RMSE=0.226056 | reg wins=13  | nn wins=9   | arima wins=3   | arimax wins=3   | arima order=(0, 1, 0) | arimax order=(0, 1, 0)
+Malaysia       | reg RMSE=1.065193 | nn RMSE=0.471629 | arima RMSE=0.340268 | arimax RMSE=0.399968 | reg wins=9   | nn wins=8   | arima wins=6   | arimax wins=5   | arima order=(0, 1, 0) | arimax order=(1, 1, 1)
+Myanmar        | reg RMSE=0.152558 | nn RMSE=0.144646 | arima RMSE=0.109369 | arimax RMSE=0.127668 | reg wins=3   | nn wins=3   | arima wins=3   | arimax wins=10  | arima order=(0, 1, 0) | arimax order=(0, 1, 0)
+Philippines    | reg RMSE=0.115008 | nn RMSE=0.071765 | arima RMSE=0.067265 | arimax RMSE=0.077050 | reg wins=3   | nn wins=10  | arima wins=7   | arimax wins=5   | arima order=(1, 1, 1) | arimax order=(1, 1, 0)
+Singapore      | reg RMSE=2.011146 | nn RMSE=0.858252 | arima RMSE=0.792591 | arimax RMSE=0.815707 | reg wins=3   | nn wins=13  | arima wins=5   | arimax wins=9   | arima order=(1, 1, 1) | arimax order=(1, 1, 1)
+Thailand       | reg RMSE=0.320340 | nn RMSE=0.172901 | arima RMSE=0.172296 | arimax RMSE=0.194764 | reg wins=3   | nn wins=14  | arima wins=9   | arimax wins=4   | arima order=(1, 1, 0) | arimax order=(0, 1, 0)
+Timor-Leste    | reg RMSE=0.344556 | nn RMSE=0.428629 | arima RMSE=0.191240 | arimax RMSE=0.181738 | reg wins=4   | nn wins=5   | arima wins=7   | arimax wins=10  | arima order=(1, 1, 2) | arimax order=(0, 1, 0)
+Vietnam        | reg RMSE=0.414820 | nn RMSE=0.470322 | arima RMSE=0.196644 | arimax RMSE=0.163385 | reg wins=3   | nn wins=6   | arima wins=6   | arimax wins=8   | arima order=(1, 0, 0) | arimax order=(0, 1, 0)
+
+INTERPRETATION
+----------------------------------------------------------------------------------------------------
+ARIMA is better on this backtest by RMSE, but ARIMAX did not improve further.
