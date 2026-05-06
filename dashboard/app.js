@@ -649,24 +649,26 @@ function createOrUpdateGauge(canvasId, chartRef, percent) {
     context.clearRect(0, 0, width, height);
 
     const centerX = width / 2;
-    const centerY = height - 3;
-    const radius = Math.min(width * 0.43, height * 0.92);
+    const lineWidth = Math.max(9, Math.min(14, height * 0.18));
+    const centerY = height - (lineWidth / 2) - 2;
+    // Keep the arc fully inside the canvas to prevent clipping on small sizes.
+    const radius = Math.max(8, Math.min((width / 2) - lineWidth, centerY - (lineWidth / 2) - 2));
     const startAngle = Math.PI;
-    const endAngle = 0;
+    const endAngle = 2 * Math.PI;
 
     // Base arc
-    context.lineWidth = Math.max(9, Math.min(14, height * 0.18));
+    context.lineWidth = lineWidth;
     context.lineCap = 'round';
     context.strokeStyle = '#dbe3ee';
     context.beginPath();
-    context.arc(centerX, centerY, radius, startAngle, endAngle, true);
+    context.arc(centerX, centerY, radius, startAngle, endAngle, false);
     context.stroke();
 
     // Segmented progress arc
-    const progressAngle = startAngle - (Math.PI * value / 100);
+    const progressAngle = startAngle + (Math.PI * value / 100);
     context.strokeStyle = color;
     context.beginPath();
-    context.arc(centerX, centerY, radius, startAngle, progressAngle, true);
+    context.arc(centerX, centerY, radius, startAngle, progressAngle, false);
     context.stroke();
 
     // Tick marks
@@ -675,7 +677,7 @@ function createOrUpdateGauge(canvasId, chartRef, percent) {
     context.lineWidth = 1.5;
     for (let i = 0; i <= 10; i += 1) {
         const ratio = i / 10;
-        const angle = Math.PI - (Math.PI * ratio);
+        const angle = Math.PI + (Math.PI * ratio);
         const inner = radius - Math.max(8, height * 0.16);
         const outer = radius - (i % 5 === 0 ? Math.max(1, height * 0.03) : Math.max(5, height * 0.1));
         const x1 = centerX + Math.cos(angle) * inner;
@@ -690,7 +692,7 @@ function createOrUpdateGauge(canvasId, chartRef, percent) {
     context.restore();
 
     // Needle
-    const needleAngle = startAngle - (Math.PI * value / 100);
+    const needleAngle = startAngle + (Math.PI * value / 100);
     const needleLength = radius - Math.max(10, height * 0.14);
     const needleX = centerX + Math.cos(needleAngle) * needleLength;
     const needleY = centerY + Math.sin(needleAngle) * needleLength;
