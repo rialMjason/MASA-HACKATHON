@@ -755,16 +755,19 @@ function showPhysicalRiskModal(country) {
     document.getElementById('modalPhysicalCountryName').textContent = `${country.name} - Physical Frequency`;
 
     // Build and show series
+    const emptyState = document.getElementById('physicalFreqEmpty');
+    const chartCanvas = document.getElementById('physicalFreqChart');
     const aliases = window.countryNameAliases || {};
     const canonicalName = aliases[country.name] || country.name;
     const freqData = window.physicalFrequencyData && (window.physicalFrequencyData[canonicalName] || window.physicalFrequencyData[country.name])
         ? (window.physicalFrequencyData[canonicalName] || window.physicalFrequencyData[country.name])
         : null;
     if (freqData && freqData.years && freqData.years.length > 0) {
-        const ctx = document.getElementById('physicalFreqChart');
-        if (ctx) {
+        if (emptyState) emptyState.style.display = 'none';
+        if (chartCanvas) {
             if (physicalFreqChart) { physicalFreqChart.destroy(); physicalFreqChart = null; }
-            physicalFreqChart = new Chart(ctx, {
+            chartCanvas.style.display = 'block';
+            physicalFreqChart = new Chart(chartCanvas, {
                 type: 'line',
                 data: {
                     labels: freqData.years.map(y => y.toString()),
@@ -781,6 +784,10 @@ function showPhysicalRiskModal(country) {
                 options: { responsive: true, maintainAspectRatio: false }
             });
         }
+    } else {
+        if (physicalFreqChart) { physicalFreqChart.destroy(); physicalFreqChart = null; }
+        if (chartCanvas) chartCanvas.style.display = 'none';
+        if (emptyState) emptyState.style.display = 'block';
     }
 
     // Show modal
