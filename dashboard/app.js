@@ -278,9 +278,7 @@ function updateRiskMetrics(country) {
     document.getElementById('physicalRisk').textContent = formatRiskValue(country.physicalRisk);
     document.getElementById('physicalBar').style.width = (country.physicalRiskPercent || 0) + '%';
     document.getElementById('physicalFrequency').textContent = formatRiskValue(country.physicalFrequency);
-    document.getElementById('physicalFrequencyBar').style.width = (country.physicalFrequencyPercent || 0) + '%';
     document.getElementById('physicalSeverity').textContent = formatRiskValue(country.physicalSeverity);
-    document.getElementById('physicalSeverityBar').style.width = (country.physicalSeverityPercent || 0) + '%';
 
     // Transition Risk
     document.getElementById('transitionRisk').textContent = formatRiskValue(country.transitionRisk);
@@ -294,8 +292,6 @@ function updateRiskMetrics(country) {
 
     // Determine bar colors based on risk levels
     updateBarColor('physicalBar', country.physicalRiskPercent || 0);
-    updateBarColor('physicalFrequencyBar', country.physicalFrequencyPercent || 0);
-    updateBarColor('physicalSeverityBar', country.physicalSeverityPercent || 0);
     updateBarColor('transitionBar', country.transitionRiskPercent || 0);
     updateBarColor('averageBar', averageRiskPercent || 0);
     // Update semi-gauge visuals
@@ -622,37 +618,92 @@ if (learnMorePhysical) {
     });
 }
 
-// Gauge charts (doughnut-based) for frequency and severity
+// Gauge charts for frequency and severity
 let physicalFrequencyGauge = null;
 let physicalSeverityGauge = null;
 let physicalFreqChart = null;
 
 function createOrUpdateGauge(canvasId, chartRef, percent) {
-    const ctx = document.getElementById(canvasId);
-    if (!ctx) return null;
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return null;
 
-    const data = {
-        datasets: [{
-            data: [percent, Math.max(0, 100 - percent)],
-            backgroundColor: [percent >= 66 ? '#FF6B6B' : percent >= 33 ? '#FFA500' : '#4ECDC4', '#e9eef6'],
-            borderWidth: 0
-        }]
-    };
+    const context = canvas.getContext('2d');
+    if (!context) return null;
 
-    const opts = {
-        type: 'doughnut',
-        data: data,
-        options: {
-            rotation: -Math.PI,
-            circumference: Math.PI,
-            cutout: '65%',
-            responsive: false,
-            plugins: { legend: { display: false }, tooltip: { enabled: false } }
-        }
-    };
+    const width = canvas.width;
+    const height = canvas.height;
+    const value = Math.max(0, Math.min(100, Number(percent) || 0));
+    const color = value >= 66 ? '#FF6B6B' : value >= 33 ? '#FFA500' : '#4ECDC4';
 
-    if (chartRef && chartRef.destroy) chartRef.destroy();
-    return new Chart(ctx, opts);
+    context.clearRect(0, 0, width, height);
+
+    const centerX = width / 2;
+    const centerY = height - 8;
+    const radius = Math.min(width * 0.42, height * 0.92);
+    const startAngle = Math.PI;
+    const endAngle = 2 * Math.PI;
+
+    // Base arc
+    context.lineWidth = 16;
+    context.lineCap = 'round';
+    context.strokeStyle = '#dbe3ee';
+    context.beginPath();
+    context.arc(centerX, centerY, radius, startAngle, endAngle, false);
+    context.stroke();
+
+    // Segmented progress arc
+    const progressAngle = startAngle + (Math.PI * value / 100);
+    context.strokeStyle = color;
+    context.beginPath();
+    context.arc(centerX, centerY, radius, startAngle, progressAngle, false);
+    context.stroke();
+
+    // Tick marks
+    context.save();
+    context.strokeStyle = 'rgba(44, 49, 64, 0.28)';
+    context.lineWidth = 2;
+    for (let i = 0; i <= 10; i += 1) {
+        const ratio = i / 10;
+        const angle = Math.PI + (Math.PI * ratio);
+        const inner = radius - 14;
+        const outer = radius - (i % 5 === 0 ? 2 : 8);
+        const x1 = centerX + Math.cos(angle) * inner;
+        const y1 = centerY + Math.sin(angle) * inner;
+        const x2 = centerX + Math.cos(angle) * outer;
+        const y2 = centerY + Math.sin(angle) * outer;
+        context.beginPath();
+        context.moveTo(x1, y1);
+        context.lineTo(x2, y2);
+        context.stroke();
+    }
+    context.restore();
+
+    // Needle
+    const needleAngle = startAngle + (Math.PI * value / 100);
+    const needleLength = radius - 18;
+    const needleX = centerX + Math.cos(needleAngle) * needleLength;
+    const needleY = centerY + Math.sin(needleAngle) * needleLength;
+
+    context.strokeStyle = '#1f2430';
+    context.lineWidth = 3;
+    context.beginPath();
+    context.moveTo(centerX, centerY);
+    context.lineTo(needleX, needleY);
+    context.stroke();
+
+    context.fillStyle = '#1f2430';
+    context.beginPath();
+    context.arc(centerX, centerY, 5, 0, Math.PI * 2);
+    context.fill();
+
+    // Center label
+    context.fillStyle = '#2c3140';
+    context.font = '700 14px sans-serif';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText(`${value.toFixed(0)}%`, centerX, centerY - 28);
+
+    return null;
 }
 
 function showTransitionRiskModal(country) {
