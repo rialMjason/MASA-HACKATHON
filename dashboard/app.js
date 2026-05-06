@@ -630,21 +630,32 @@ function createOrUpdateGauge(canvasId, chartRef, percent) {
     const context = canvas.getContext('2d');
     if (!context) return null;
 
-    const width = canvas.width;
-    const height = canvas.height;
+    const rect = canvas.getBoundingClientRect();
+    const displayWidth = Math.max(1, Math.floor(rect.width || canvas.clientWidth || canvas.width || 1));
+    const displayHeight = Math.max(1, Math.floor(rect.height || canvas.clientHeight || canvas.height || 1));
+    const pixelRatio = window.devicePixelRatio || 1;
+
+    if (canvas.width !== Math.floor(displayWidth * pixelRatio) || canvas.height !== Math.floor(displayHeight * pixelRatio)) {
+        canvas.width = Math.floor(displayWidth * pixelRatio);
+        canvas.height = Math.floor(displayHeight * pixelRatio);
+    }
+
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    const width = displayWidth;
+    const height = displayHeight;
     const value = Math.max(0, Math.min(100, Number(percent) || 0));
     const color = value >= 66 ? '#FF6B6B' : value >= 33 ? '#FFA500' : '#4ECDC4';
 
     context.clearRect(0, 0, width, height);
 
     const centerX = width / 2;
-    const centerY = height - 8;
-    const radius = Math.min(width * 0.42, height * 0.92);
+    const centerY = height - 6;
+    const radius = Math.min(width * 0.43, height * 0.92);
     const startAngle = Math.PI;
     const endAngle = 2 * Math.PI;
 
     // Base arc
-    context.lineWidth = 16;
+    context.lineWidth = Math.max(9, Math.min(14, height * 0.18));
     context.lineCap = 'round';
     context.strokeStyle = '#dbe3ee';
     context.beginPath();
@@ -661,12 +672,12 @@ function createOrUpdateGauge(canvasId, chartRef, percent) {
     // Tick marks
     context.save();
     context.strokeStyle = 'rgba(44, 49, 64, 0.28)';
-    context.lineWidth = 2;
+    context.lineWidth = 1.5;
     for (let i = 0; i <= 10; i += 1) {
         const ratio = i / 10;
         const angle = Math.PI + (Math.PI * ratio);
-        const inner = radius - 14;
-        const outer = radius - (i % 5 === 0 ? 2 : 8);
+        const inner = radius - Math.max(8, height * 0.16);
+        const outer = radius - (i % 5 === 0 ? Math.max(1, height * 0.03) : Math.max(5, height * 0.1));
         const x1 = centerX + Math.cos(angle) * inner;
         const y1 = centerY + Math.sin(angle) * inner;
         const x2 = centerX + Math.cos(angle) * outer;
@@ -680,12 +691,12 @@ function createOrUpdateGauge(canvasId, chartRef, percent) {
 
     // Needle
     const needleAngle = startAngle + (Math.PI * value / 100);
-    const needleLength = radius - 18;
+    const needleLength = radius - Math.max(10, height * 0.14);
     const needleX = centerX + Math.cos(needleAngle) * needleLength;
     const needleY = centerY + Math.sin(needleAngle) * needleLength;
 
     context.strokeStyle = '#1f2430';
-    context.lineWidth = 3;
+    context.lineWidth = Math.max(2, height * 0.05);
     context.beginPath();
     context.moveTo(centerX, centerY);
     context.lineTo(needleX, needleY);
@@ -693,15 +704,15 @@ function createOrUpdateGauge(canvasId, chartRef, percent) {
 
     context.fillStyle = '#1f2430';
     context.beginPath();
-    context.arc(centerX, centerY, 5, 0, Math.PI * 2);
+    context.arc(centerX, centerY, Math.max(4, height * 0.06), 0, Math.PI * 2);
     context.fill();
 
     // Center label
     context.fillStyle = '#2c3140';
-    context.font = '700 14px sans-serif';
+    context.font = `700 ${Math.max(11, Math.round(height * 0.18))}px sans-serif`;
     context.textAlign = 'center';
     context.textBaseline = 'middle';
-    context.fillText(`${value.toFixed(0)}%`, centerX, centerY - 28);
+    context.fillText(`${value.toFixed(0)}%`, centerX, centerY - Math.max(18, height * 0.34));
 
     return null;
 }
