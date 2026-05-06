@@ -755,7 +755,11 @@ function showPhysicalRiskModal(country) {
     document.getElementById('modalPhysicalCountryName').textContent = `${country.name} - Physical Frequency`;
 
     // Build and show series
-    const freqData = window.physicalFrequencyData && window.physicalFrequencyData[country.name] ? window.physicalFrequencyData[country.name] : null;
+    const aliases = window.countryNameAliases || {};
+    const canonicalName = aliases[country.name] || country.name;
+    const freqData = window.physicalFrequencyData && (window.physicalFrequencyData[canonicalName] || window.physicalFrequencyData[country.name])
+        ? (window.physicalFrequencyData[canonicalName] || window.physicalFrequencyData[country.name])
+        : null;
     if (freqData && freqData.years && freqData.years.length > 0) {
         const ctx = document.getElementById('physicalFreqChart');
         if (ctx) {

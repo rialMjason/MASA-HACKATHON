@@ -170,6 +170,16 @@ const physicalRiskData = {
     Singapore: { frequency: 1.0, severity: 1.0, score: 1.0 }
 };
 
+const countryNameAliases = {
+    'Brunei Darussalam': 'Brunei',
+    'Lao PDR': 'Laos',
+    'Viet Nam': 'Vietnam'
+};
+
+function normalizeCountryName(name) {
+    return countryNameAliases[name] || name;
+}
+
 // Raw frequency dataset (id,country,year,count) provided by user — parsed below
 const _physicalFrequencyRaw = `
 207,Myanmar,2020,2
@@ -377,7 +387,7 @@ const physicalFrequencyData = {};
 _physicalFrequencyRaw.trim().split('\n').forEach(line => {
     const parts = line.trim().split(',');
     if (parts.length < 4) return;
-    const country = parts[1].trim();
+    const country = normalizeCountryName(parts[1].trim());
     const year = Number(parts[2]);
     const value = Number(parts[3]);
     if (!physicalFrequencyData[country]) {
@@ -387,6 +397,7 @@ _physicalFrequencyRaw.trim().split('\n').forEach(line => {
     physicalFrequencyData[country].values.push(value);
 });
 window.physicalFrequencyData = physicalFrequencyData;
+window.countryNameAliases = countryNameAliases;
 
 // Load forecast data and populate transition risk scores
 let forecastData = {};
