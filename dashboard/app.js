@@ -709,13 +709,6 @@ function createOrUpdateGauge(canvasId, chartRef, percent) {
     context.arc(centerX, centerY, Math.max(4, height * 0.06), 0, Math.PI * 2);
     context.fill();
 
-    // Center label
-    context.fillStyle = '#2c3140';
-    context.font = `700 ${Math.max(11, Math.round(height * 0.18))}px sans-serif`;
-    context.textAlign = 'center';
-    context.textBaseline = 'middle';
-    context.fillText(`${value.toFixed(0)}%`, centerX, centerY - Math.max(18, height * 0.34));
-
     return null;
 }
 
