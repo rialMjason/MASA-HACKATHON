@@ -409,14 +409,34 @@ fetch('forecast-data.json')
                 country.physicalRiskPercent = physicalInfo.score * 10;
             }
 
-            // Map country name to transition risk score
-            const transitionRiskInfo = data.transitionRiskScores[country.name];
+            // Map country name to transition risk score with fallbacks
+            let transitionRiskInfo = (data.transitionRiskScores || {})[country.name];
+
+            // Fallback: use countryCodeMap to find a matching name for this country.code
+            if (!transitionRiskInfo && data.countryCodeMap) {
+                const entry = Object.values(data.countryCodeMap).find(e => e.code === country.code);
+                if (entry && data.transitionRiskScores && data.transitionRiskScores[entry.name]) {
+                    transitionRiskInfo = data.transitionRiskScores[entry.name];
+                }
+            }
+
+            // Fallback: case-insensitive / spacing-insensitive name match
+            if (!transitionRiskInfo && data.transitionRiskScores) {
+                const normalizedTarget = country.name.toLowerCase().replace(/\s+/g, '');
+                const foundKey = Object.keys(data.transitionRiskScores).find(k => k.toLowerCase().replace(/\s+/g, '') === normalizedTarget);
+                if (foundKey) transitionRiskInfo = data.transitionRiskScores[foundKey];
+            }
+
             if (transitionRiskInfo) {
                 country.transitionRisk = transitionRiskInfo.score;
                 country.transitionRiskPercent = transitionRiskInfo.percent;
+            } else {
+                // Ensure safe defaults so UI doesn't render NaN/-- for arithmetic
+                country.transitionRisk = country.transitionRisk || 0;
+                country.transitionRiskPercent = country.transitionRiskPercent || 0;
             }
-            
-            const averageRisk = (country.physicalRisk * 0.8) + (country.transitionRisk * 0.2);
+
+            const averageRisk = (Number(country.physicalRisk || 0) * 0.8) + (Number(country.transitionRisk || 0) * 0.2);
             country.averageRisk = Number(averageRisk.toFixed(1));
             country.averageRiskPercent = country.averageRisk * 10;
             country.liabilityRisk = country.averageRisk;
