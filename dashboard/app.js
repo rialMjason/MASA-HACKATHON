@@ -292,11 +292,14 @@ function updateRiskMetrics(country) {
     updateBarColor('physicalSeverityBar', country.physicalSeverityPercent || 0);
     updateBarColor('transitionBar', country.transitionRiskPercent || 0);
     updateBarColor('averageBar', averageRiskPercent || 0);
+    // Update semi-gauge visuals
+    updateGauges(country);
 }
 
 // Update bar colors based on risk level
 function updateBarColor(barId, percentage) {
     const bar = document.getElementById(barId);
+    if (!bar) return;
     bar.classList.remove('low', 'medium', 'high');
 
     if (percentage < 33) {
@@ -505,6 +508,7 @@ let chart = null;
 const transitionRiskModal = document.getElementById('transitionRiskModal');
 const modalCloseButton = document.getElementById('modalCloseButton');
 const learnMoreTransition = document.getElementById('learnMoreTransition');
+const learnMorePhysical = document.getElementById('learnMorePhysical');
 
 function destroyTransitionChart() {
     if (chart) {
@@ -601,6 +605,49 @@ if (learnMoreTransition) {
     });
 }
 
+// Physical Learn More button
+if (learnMorePhysical) {
+    learnMorePhysical.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (currentCountry) {
+            showPhysicalRiskModal(currentCountry);
+        }
+    });
+}
+
+// Gauge charts (doughnut-based) for frequency and severity
+let physicalFrequencyGauge = null;
+let physicalSeverityGauge = null;
+let physicalFreqChart = null;
+
+function createOrUpdateGauge(canvasId, chartRef, percent) {
+    const ctx = document.getElementById(canvasId);
+    if (!ctx) return null;
+
+    const data = {
+        datasets: [{
+            data: [percent, Math.max(0, 100 - percent)],
+            backgroundColor: [percent >= 66 ? '#FF6B6B' : percent >= 33 ? '#FFA500' : '#4ECDC4', '#e9eef6'],
+            borderWidth: 0
+        }]
+    };
+
+    const opts = {
+        type: 'doughnut',
+        data: data,
+        options: {
+            rotation: -Math.PI,
+            circumference: Math.PI,
+            cutout: '65%',
+            responsive: false,
+            plugins: { legend: { display: false }, tooltip: { enabled: false } }
+        }
+    };
+
+    if (chartRef && chartRef.destroy) chartRef.destroy();
+    return new Chart(ctx, opts);
+}
+
 function showTransitionRiskModal(country) {
     // Update modal header with country name
     document.getElementById('modalCountryName').textContent = `${country.name} - Transition Risk Details`;
@@ -624,6 +671,66 @@ function showTransitionRiskModal(country) {
     setTimeout(() => {
         createGHGForestChart(country);
     }, 100);
+}
+
+// Physical modal logic
+const physicalRiskModal = document.getElementById('physicalRiskModal');
+const modalClosePhysical = document.getElementById('modalClosePhysical');
+
+if (modalClosePhysical) {
+    modalClosePhysical.addEventListener('click', function() {
+        if (physicalRiskModal) physicalRiskModal.classList.remove('active');
+        if (physicalFreqChart) { physicalFreqChart.destroy(); physicalFreqChart = null; }
+    });
+}
+
+if (physicalRiskModal) {
+    physicalRiskModal.addEventListener('click', function(e) {
+        if (e.target === physicalRiskModal) {
+            physicalRiskModal.classList.remove('active');
+            if (physicalFreqChart) { physicalFreqChart.destroy(); physicalFreqChart = null; }
+        }
+    });
+}
+
+function showPhysicalRiskModal(country) {
+    document.getElementById('modalPhysicalCountryName').textContent = `${country.name} - Physical Frequency`;
+
+    // Build and show series
+    const freqData = window.physicalFrequencyData && window.physicalFrequencyData[country.name] ? window.physicalFrequencyData[country.name] : null;
+    if (freqData && freqData.years && freqData.years.length > 0) {
+        const ctx = document.getElementById('physicalFreqChart');
+        if (ctx) {
+            if (physicalFreqChart) { physicalFreqChart.destroy(); physicalFreqChart = null; }
+            physicalFreqChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: freqData.years.map(y => y.toString()),
+                    datasets: [{
+                        label: 'Frequency',
+                        data: freqData.values,
+                        borderColor: '#FF6B6B',
+                        backgroundColor: 'rgba(255,107,107,0.12)',
+                        fill: true,
+                        tension: 0.2,
+                        pointRadius: 2
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+    }
+
+    // Show modal
+    if (physicalRiskModal) physicalRiskModal.classList.add('active');
+}
+
+// Create/update gauges when metrics update
+function updateGauges(country) {
+    const freqPct = Math.min(100, Math.round((country.physicalFrequencyPercent || 0)));
+    const sevPct = Math.min(100, Math.round((country.physicalSeverityPercent || 0)));
+    physicalFrequencyGauge = createOrUpdateGauge('physicalFrequencyGauge', physicalFrequencyGauge, freqPct);
+    physicalSeverityGauge = createOrUpdateGauge('physicalSeverityGauge', physicalSeverityGauge, sevPct);
 }
 
 function createGHGForestChart(country) {

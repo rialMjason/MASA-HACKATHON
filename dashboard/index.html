@@ -600,16 +600,12 @@
                                     <div class="risk-mini-meter">
                                         <div class="risk-mini-label">Frequency (F)</div>
                                         <div class="risk-mini-value" id="physicalFrequency">--</div>
-                                        <div class="risk-mini-bar">
-                                            <div class="risk-mini-bar-fill high" id="physicalFrequencyBar"></div>
-                                        </div>
+                                        <canvas id="physicalFrequencyGauge" width="180" height="90"></canvas>
                                     </div>
                                     <div class="risk-mini-meter">
                                         <div class="risk-mini-label">Severity (S)</div>
                                         <div class="risk-mini-value" id="physicalSeverity">--</div>
-                                        <div class="risk-mini-bar">
-                                            <div class="risk-mini-bar-fill high" id="physicalSeverityBar"></div>
-                                        </div>
+                                        <canvas id="physicalSeverityGauge" width="180" height="90"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -696,6 +692,25 @@
         </div>
     </div>
 
+    <!-- Modal for Physical Risk Details -->
+    <div class="modal" id="physicalRiskModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalPhysicalCountryName">Physical Risk Details</h2>
+                <button class="modal-close" id="modalClosePhysical">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="transition-risk-score">
+                    <div class="risk-score-label">Physical Frequency (yearly)</div>
+                    <div style="font-size: 12px; color: #666; margin-top: 8px;">Counts per year</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="physicalFreqChart"></canvas>
+                </div>
+                <div style="font-size: 12px; color: #999; text-align: center; margin-top:8px;">Data source: yearly incident frequencies</div>
+            </div>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
