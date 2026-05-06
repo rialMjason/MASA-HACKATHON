@@ -649,24 +649,24 @@ function createOrUpdateGauge(canvasId, chartRef, percent) {
     context.clearRect(0, 0, width, height);
 
     const centerX = width / 2;
-    const centerY = height - 6;
+    const centerY = height - 3;
     const radius = Math.min(width * 0.43, height * 0.92);
     const startAngle = Math.PI;
-    const endAngle = 2 * Math.PI;
+    const endAngle = 0;
 
     // Base arc
     context.lineWidth = Math.max(9, Math.min(14, height * 0.18));
     context.lineCap = 'round';
     context.strokeStyle = '#dbe3ee';
     context.beginPath();
-    context.arc(centerX, centerY, radius, startAngle, endAngle, false);
+    context.arc(centerX, centerY, radius, startAngle, endAngle, true);
     context.stroke();
 
     // Segmented progress arc
-    const progressAngle = startAngle + (Math.PI * value / 100);
+    const progressAngle = startAngle - (Math.PI * value / 100);
     context.strokeStyle = color;
     context.beginPath();
-    context.arc(centerX, centerY, radius, startAngle, progressAngle, false);
+    context.arc(centerX, centerY, radius, startAngle, progressAngle, true);
     context.stroke();
 
     // Tick marks
@@ -675,7 +675,7 @@ function createOrUpdateGauge(canvasId, chartRef, percent) {
     context.lineWidth = 1.5;
     for (let i = 0; i <= 10; i += 1) {
         const ratio = i / 10;
-        const angle = Math.PI + (Math.PI * ratio);
+        const angle = Math.PI - (Math.PI * ratio);
         const inner = radius - Math.max(8, height * 0.16);
         const outer = radius - (i % 5 === 0 ? Math.max(1, height * 0.03) : Math.max(5, height * 0.1));
         const x1 = centerX + Math.cos(angle) * inner;
@@ -690,7 +690,7 @@ function createOrUpdateGauge(canvasId, chartRef, percent) {
     context.restore();
 
     // Needle
-    const needleAngle = startAngle + (Math.PI * value / 100);
+    const needleAngle = startAngle - (Math.PI * value / 100);
     const needleLength = radius - Math.max(10, height * 0.14);
     const needleX = centerX + Math.cos(needleAngle) * needleLength;
     const needleY = centerY + Math.sin(needleAngle) * needleLength;
@@ -773,32 +773,38 @@ function showPhysicalRiskModal(country) {
     const freqData = window.physicalFrequencyData && (window.physicalFrequencyData[canonicalName] || window.physicalFrequencyData[country.name])
         ? (window.physicalFrequencyData[canonicalName] || window.physicalFrequencyData[country.name])
         : null;
-    if (freqData && freqData.years && freqData.years.length > 0) {
-        if (emptyState) emptyState.style.display = 'none';
-        if (chartCanvas) {
-            if (physicalFreqChart) { physicalFreqChart.destroy(); physicalFreqChart = null; }
-            chartCanvas.style.display = 'block';
-            physicalFreqChart = new Chart(chartCanvas, {
-                type: 'line',
-                data: {
-                    labels: freqData.years.map(y => y.toString()),
-                    datasets: [{
-                        label: 'Frequency',
-                        data: freqData.values,
-                        borderColor: '#FF6B6B',
-                        backgroundColor: 'rgba(255,107,107,0.12)',
-                        fill: true,
-                        tension: 0.2,
-                        pointRadius: 2
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false }
-            });
-        }
-    } else {
+
+    // If country has no yearly rows, render a zero-filled fallback series
+    // so countries like Cambodia/Laos still show a physical frequency graph.
+    const fallbackStartYear = 2000;
+    const fallbackEndYear = 2026;
+    const chartSeries = (freqData && freqData.years && freqData.years.length > 0)
+        ? freqData
+        : {
+            years: Array.from({ length: fallbackEndYear - fallbackStartYear + 1 }, (_, i) => fallbackStartYear + i),
+            values: Array.from({ length: fallbackEndYear - fallbackStartYear + 1 }, () => 0)
+        };
+
+    if (emptyState) emptyState.style.display = 'none';
+    if (chartCanvas) {
         if (physicalFreqChart) { physicalFreqChart.destroy(); physicalFreqChart = null; }
-        if (chartCanvas) chartCanvas.style.display = 'none';
-        if (emptyState) emptyState.style.display = 'block';
+        chartCanvas.style.display = 'block';
+        physicalFreqChart = new Chart(chartCanvas, {
+            type: 'line',
+            data: {
+                labels: chartSeries.years.map(y => y.toString()),
+                datasets: [{
+                    label: 'Frequency',
+                    data: chartSeries.values,
+                    borderColor: '#FF6B6B',
+                    backgroundColor: 'rgba(255,107,107,0.12)',
+                    fill: true,
+                    tension: 0.2,
+                    pointRadius: 2
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false }
+        });
     }
 
     // Show modal

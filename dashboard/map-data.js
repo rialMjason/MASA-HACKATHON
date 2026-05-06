@@ -173,6 +173,7 @@ const physicalRiskData = {
 const countryNameAliases = {
     'Brunei Darussalam': 'Brunei',
     'Lao PDR': 'Laos',
+    "Lao People's Democratic Republic": 'Laos',
     'Viet Nam': 'Vietnam'
 };
 
@@ -182,11 +183,52 @@ function normalizeCountryName(name) {
 
 // Raw frequency dataset (id,country,year,count) provided by user — parsed below
 const _physicalFrequencyRaw = `
-207,Myanmar,2020,2
-208,Myanmar,2021,1
-209,Myanmar,2023,5
-210,Myanmar,2024,3
-211,Myanmar,2025,4
+167,Myanmar,1902,1
+168,Myanmar,1923,1
+169,Myanmar,1926,1
+170,Myanmar,1936,1
+171,Myanmar,1963,1
+172,Myanmar,1965,2
+173,Myanmar,1967,2
+174,Myanmar,1968,1
+175,Myanmar,1970,1
+176,Myanmar,1974,1
+177,Myanmar,1975,1
+178,Myanmar,1976,1
+179,Myanmar,1977,1
+180,Myanmar,1978,1
+181,Myanmar,1979,2
+182,Myanmar,1981,1
+183,Myanmar,1982,1
+184,Myanmar,1991,1
+185,Myanmar,1992,1
+186,Myanmar,1994,1
+187,Myanmar,1995,1
+188,Myanmar,1997,1
+189,Myanmar,1999,1
+190,Myanmar,2001,1
+191,Myanmar,2002,1
+192,Myanmar,2004,1
+193,Myanmar,2005,1
+194,Myanmar,2006,2
+195,Myanmar,2007,4
+196,Myanmar,2008,1
+197,Myanmar,2009,1
+198,Myanmar,2010,3
+199,Myanmar,2011,1
+200,Myanmar,2012,1
+201,Myanmar,2013,2
+202,Myanmar,2014,2
+203,Myanmar,2015,6
+204,Myanmar,2016,5
+205,Myanmar,2017,2
+206,Myanmar,2018,4
+207,Myanmar,2019,3
+208,Myanmar,2020,2
+209,Myanmar,2021,1
+210,Myanmar,2023,5
+211,Myanmar,2024,3
+212,Myanmar,2025,4
 212,Philippines,1905,1
 213,Philippines,1912,1
 214,Philippines,1931,1
@@ -380,6 +422,171 @@ const _physicalFrequencyRaw = `
 402,Viet Nam,2024,10
 403,Viet Nam,2025,14
 404,Viet Nam,2026,1
+405,Cambodia,1987,1
+406,Cambodia,1991,1
+407,Cambodia,1994,2
+408,Cambodia,1996,1
+409,Cambodia,1997,1
+410,Cambodia,1999,2
+411,Cambodia,2000,1
+412,Cambodia,2001,2
+413,Cambodia,2002,2
+414,Cambodia,2004,1
+415,Cambodia,2005,2
+416,Cambodia,2006,2
+417,Cambodia,2007,1
+418,Cambodia,2009,2
+419,Cambodia,2010,1
+420,Cambodia,2011,1
+421,Cambodia,2012,1
+422,Cambodia,2013,1
+423,Cambodia,2014,1
+424,Cambodia,2015,2
+425,Cambodia,2016,1
+426,Cambodia,2018,1
+427,Cambodia,2019,1
+428,Cambodia,2020,2
+429,Cambodia,2021,4
+430,Cambodia,2022,2
+431,Cambodia,2023,1
+432,Cambodia,2024,1
+433,Cambodia,2025,1
+434,Lao People's Democratic Republic,1966,1
+435,Lao People's Democratic Republic,1968,1
+436,Lao People's Democratic Republic,1969,1
+437,Lao People's Democratic Republic,1971,1
+438,Lao People's Democratic Republic,1977,1
+439,Lao People's Democratic Republic,1978,1
+440,Lao People's Democratic Republic,1981,1
+441,Lao People's Democratic Republic,1984,1
+442,Lao People's Democratic Republic,1987,1
+443,Lao People's Democratic Republic,1988,1
+444,Lao People's Democratic Republic,1991,2
+445,Lao People's Democratic Republic,1992,2
+446,Lao People's Democratic Republic,1993,1
+447,Lao People's Democratic Republic,1994,1
+448,Lao People's Democratic Republic,1995,3
+449,Lao People's Democratic Republic,1996,1
+450,Lao People's Democratic Republic,1999,1
+451,Lao People's Democratic Republic,2000,1
+452,Lao People's Democratic Republic,2001,1
+453,Lao People's Democratic Republic,2002,1
+454,Lao People's Democratic Republic,2008,1
+455,Lao People's Democratic Republic,2009,2
+456,Lao People's Democratic Republic,2011,2
+457,Lao People's Democratic Republic,2013,2
+458,Lao People's Democratic Republic,2014,1
+459,Lao People's Democratic Republic,2015,2
+460,Lao People's Democratic Republic,2016,1
+461,Lao People's Democratic Republic,2017,1
+462,Lao People's Democratic Republic,2018,3
+463,Lao People's Democratic Republic,2019,2
+464,Lao People's Democratic Republic,2020,2
+465,Lao People's Democratic Republic,2021,1
+466,Lao People's Democratic Republic,2022,1
+467,Lao People's Democratic Republic,2023,1
+468,Lao People's Democratic Republic,2024,4
+469,Lao People's Democratic Republic,2025,2
+470,Malaysia,1965,1
+471,Malaysia,1967,1
+472,Malaysia,1968,1
+473,Malaysia,1970,1
+474,Malaysia,1978,1
+475,Malaysia,1983,1
+476,Malaysia,1986,1
+477,Malaysia,1987,1
+478,Malaysia,1988,1
+479,Malaysia,1993,1
+480,Malaysia,1995,2
+481,Malaysia,1996,3
+482,Malaysia,1997,2
+483,Malaysia,1998,3
+484,Malaysia,1999,1
+485,Malaysia,2000,2
+486,Malaysia,2001,4
+487,Malaysia,2002,2
+488,Malaysia,2003,3
+489,Malaysia,2004,5
+490,Malaysia,2005,3
+491,Malaysia,2006,4
+492,Malaysia,2007,2
+493,Malaysia,2008,2
+494,Malaysia,2009,2
+495,Malaysia,2011,2
+496,Malaysia,2013,1
+497,Malaysia,2014,2
+498,Malaysia,2015,1
+499,Malaysia,2016,4
+500,Malaysia,2017,4
+501,Malaysia,2018,2
+502,Malaysia,2019,4
+503,Malaysia,2020,5
+504,Malaysia,2021,8
+505,Malaysia,2022,6
+506,Malaysia,2023,4
+507,Malaysia,2025,7
+508,Indonesia,1953,1
+509,Indonesia,1955,1
+510,Indonesia,1956,1
+511,Indonesia,1966,2
+512,Indonesia,1967,4
+513,Indonesia,1968,1
+514,Indonesia,1970,1
+515,Indonesia,1972,1
+516,Indonesia,1973,1
+517,Indonesia,1974,1
+518,Indonesia,1976,2
+519,Indonesia,1977,4
+520,Indonesia,1978,5
+521,Indonesia,1979,4
+522,Indonesia,1980,3
+523,Indonesia,1981,4
+524,Indonesia,1982,7
+525,Indonesia,1983,4
+526,Indonesia,1984,4
+527,Indonesia,1985,4
+528,Indonesia,1986,5
+529,Indonesia,1987,6
+530,Indonesia,1988,3
+531,Indonesia,1989,3
+532,Indonesia,1990,2
+533,Indonesia,1991,4
+534,Indonesia,1992,2
+535,Indonesia,1993,2
+536,Indonesia,1994,7
+537,Indonesia,1995,5
+538,Indonesia,1996,6
+539,Indonesia,1997,2
+540,Indonesia,1998,2
+541,Indonesia,1999,4
+542,Indonesia,2000,8
+543,Indonesia,2001,7
+544,Indonesia,2002,9
+545,Indonesia,2003,13
+546,Indonesia,2004,7
+547,Indonesia,2005,6
+548,Indonesia,2006,12
+549,Indonesia,2007,10
+550,Indonesia,2008,13
+551,Indonesia,2009,7
+552,Indonesia,2010,8
+553,Indonesia,2011,8
+554,Indonesia,2012,11
+555,Indonesia,2013,12
+556,Indonesia,2014,8
+557,Indonesia,2015,11
+558,Indonesia,2016,12
+559,Indonesia,2017,10
+560,Indonesia,2018,8
+561,Indonesia,2019,14
+562,Indonesia,2020,26
+563,Indonesia,2021,21
+564,Indonesia,2022,13
+565,Indonesia,2023,10
+566,Indonesia,2024,14
+567,Indonesia,2025,15
+568,Indonesia,2026,5
+569,Brunei Darussalam,1998,1
 `;
 
 // Parse raw data into per-country timeseries
@@ -415,6 +622,15 @@ Object.keys(physicalFrequencyData).forEach(country => {
 
     physicalFrequencyData[country] = { years: denseYears, values: denseValues };
 });
+
+if (!physicalFrequencyData.Singapore) {
+    const startYear = 1953;
+    const endYear = 2026;
+    physicalFrequencyData.Singapore = {
+        years: Array.from({ length: endYear - startYear + 1 }, (_, i) => startYear + i),
+        values: Array.from({ length: endYear - startYear + 1 }, () => 0)
+    };
+}
 
 window.physicalFrequencyData = physicalFrequencyData;
 window.countryNameAliases = countryNameAliases;
