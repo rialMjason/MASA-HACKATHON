@@ -270,6 +270,10 @@ function formatRiskValue(value) {
 }
 
 function updateRiskMetrics(country) {
+    // Debug: log risk values to help diagnose missing transition scores
+    try {
+        console.log('updateRiskMetrics', country.name, 'physical:', country.physicalRisk, 'transition:', country.transitionRisk, 'transitionPct:', country.transitionRiskPercent);
+    } catch (e) { /* ignore logging errors */ }
     // Physical Risk
     document.getElementById('physicalRisk').textContent = formatRiskValue(country.physicalRisk);
     document.getElementById('physicalBar').style.width = (country.physicalRiskPercent || 0) + '%';
