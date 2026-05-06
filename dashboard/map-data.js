@@ -391,11 +391,31 @@ _physicalFrequencyRaw.trim().split('\n').forEach(line => {
     const year = Number(parts[2]);
     const value = Number(parts[3]);
     if (!physicalFrequencyData[country]) {
-        physicalFrequencyData[country] = { years: [], values: [] };
+        physicalFrequencyData[country] = { points: {} };
     }
-    physicalFrequencyData[country].years.push(year);
-    physicalFrequencyData[country].values.push(value);
+    physicalFrequencyData[country].points[year] = value;
 });
+
+Object.keys(physicalFrequencyData).forEach(country => {
+    const years = Object.keys(physicalFrequencyData[country].points).map(Number).sort((a, b) => a - b);
+    if (years.length === 0) {
+        physicalFrequencyData[country] = { years: [], values: [] };
+        return;
+    }
+
+    const startYear = years[0];
+    const endYear = years[years.length - 1];
+    const denseYears = [];
+    const denseValues = [];
+
+    for (let year = startYear; year <= endYear; year += 1) {
+        denseYears.push(year);
+        denseValues.push(physicalFrequencyData[country].points[year] ?? 0);
+    }
+
+    physicalFrequencyData[country] = { years: denseYears, values: denseValues };
+});
+
 window.physicalFrequencyData = physicalFrequencyData;
 window.countryNameAliases = countryNameAliases;
 
