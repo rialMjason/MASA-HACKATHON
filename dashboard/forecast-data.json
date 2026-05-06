@@ -1,48 +1,48 @@
 {
   "transitionRiskScores": {
     "Brunei": {
-      "score": 3,
-      "percent": 30.0
+      "score": 1.88,
+      "percent": 18.8
     },
     "Cambodia": {
-      "score": 8,
-      "percent": 80.0
+      "score": 6.9,
+      "percent": 69.0
     },
     "Indonesia": {
-      "score": 4,
-      "percent": 40.0
+      "score": 6.36,
+      "percent": 63.6
     },
     "Laos": {
-      "score": 4,
-      "percent": 40.0
+      "score": 2.74,
+      "percent": 27.4
     },
     "Malaysia": {
-      "score": 6,
-      "percent": 60.0
+      "score": 2.3,
+      "percent": 23.0
     },
     "Myanmar": {
-      "score": 4,
-      "percent": 40.0
+      "score": 6.32,
+      "percent": 63.2
     },
     "Singapore": {
-      "score": 7,
-      "percent": 70.0
+      "score": 4.78,
+      "percent": 47.8
     },
     "Thailand": {
-      "score": 6,
-      "percent": 60.0
+      "score": 2.66,
+      "percent": 26.6
     },
     "Timor-Leste": {
-      "score": 4,
-      "percent": 40.0
+      "score": 2.8,
+      "percent": 28.0
     },
     "Vietnam": {
-      "score": 5,
-      "percent": 50.0
+      "score": 7.54,
+      "percent": 75.4
     },
     "Philippines": {
-      "score": 6,
-      "percent": 60.0
+      "score": 1.52,
+      "percent": 15.2
     }
   },
   "countryCodeMap": {

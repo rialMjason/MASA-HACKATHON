@@ -193,15 +193,19 @@
         }
 
         .risk-mini-meters {
-            display: grid;
+            display: flex;
             gap: 10px;
+            align-items: stretch;
+            flex-wrap: wrap;
         }
 
         .risk-mini-meter {
+            flex: 1 1 140px;
             background: rgba(255, 255, 255, 0.35);
             border: 1px solid rgba(102, 126, 234, 0.14);
             border-radius: 10px;
-            padding: 10px 12px;
+            padding: 8px 10px;
+            min-width: 140px;
         }
 
         .risk-mini-label {
@@ -214,10 +218,17 @@
         }
 
         .risk-mini-value {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: #2c3140;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+
+        .risk-mini-meter canvas {
+            display: block;
+            width: 100%;
+            height: 74px;
         }
 
         .risk-mini-bar {
@@ -600,12 +611,12 @@
                                     <div class="risk-mini-meter">
                                         <div class="risk-mini-label">Frequency (F)</div>
                                         <div class="risk-mini-value" id="physicalFrequency">--</div>
-                                        <canvas id="physicalFrequencyGauge" width="180" height="90"></canvas>
+                                        <canvas id="physicalFrequencyGauge" width="140" height="74"></canvas>
                                     </div>
                                     <div class="risk-mini-meter">
                                         <div class="risk-mini-label">Severity (S)</div>
                                         <div class="risk-mini-value" id="physicalSeverity">--</div>
-                                        <canvas id="physicalSeverityGauge" width="180" height="90"></canvas>
+                                        <canvas id="physicalSeverityGauge" width="140" height="74"></canvas>
                                     </div>
                                 </div>
                             </div>
