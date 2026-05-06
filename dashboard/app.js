@@ -130,6 +130,8 @@ function selectCountry(country) {
     }
 
     currentCountry = country;
+    // Expose current country on window so other modules can refresh UI after async loads
+    window.currentCountry = country;
 
     // Update info panel
     document.getElementById('countryName').textContent = country.name;
@@ -322,6 +324,7 @@ function updateStatesList(country) {
 // Back button functionality
 document.getElementById('backButton').addEventListener('click', function() {
     currentCountry = null;
+    window.currentCountry = null;
     currentFetchRequest = null;
 
     document.getElementById('countryName').textContent = 'Southeast Asia Dashboard';
