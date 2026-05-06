@@ -422,6 +422,13 @@ fetch('forecast-data.json')
             country.liabilityRisk = country.averageRisk;
             country.liabilityRiskPercent = country.averageRiskPercent;
         });
+
+        // If a country is currently selected, refresh the displayed metrics (guard if function exists)
+        if (window.currentCountry && typeof window.updateRiskMetrics === 'function') {
+            // find matching country object by code/name and update UI
+            const matched = countriesData.find(c => c.code === window.currentCountry.code || c.name === window.currentCountry.name);
+            if (matched) window.updateRiskMetrics(matched);
+        }
         
         console.log('Forecast data loaded successfully');
         console.log('Transition risk scores updated');
