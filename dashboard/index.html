@@ -170,8 +170,68 @@
             border-left-color: #FFA500;
         }
 
-        .risk-card.liability {
+        .risk-card.average {
             border-left-color: #4ECDC4;
+        }
+
+        .risk-score-and-meters {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+            gap: 14px;
+            align-items: center;
+        }
+
+        .risk-score-block .risk-value {
+            margin-bottom: 4px;
+        }
+
+        .risk-score-caption {
+            font-size: 12px;
+            color: #666;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .risk-mini-meters {
+            display: grid;
+            gap: 10px;
+        }
+
+        .risk-mini-meter {
+            background: rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(102, 126, 234, 0.14);
+            border-radius: 10px;
+            padding: 10px 12px;
+        }
+
+        .risk-mini-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #5a6478;
+            margin-bottom: 6px;
+        }
+
+        .risk-mini-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2c3140;
+            margin-bottom: 8px;
+        }
+
+        .risk-mini-bar {
+            height: 6px;
+            background: #dbe3ee;
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .risk-mini-bar-fill {
+            height: 100%;
+            border-radius: inherit;
+            transition: width 0.3s ease;
+            width: 0%;
         }
 
         .risk-label {
@@ -203,15 +263,18 @@
             transition: width 0.3s ease;
         }
 
-        .risk-bar-fill.high {
+        .risk-bar-fill.high,
+        .risk-mini-bar-fill.high {
             background: #FF6B6B;
         }
 
-        .risk-bar-fill.medium {
+        .risk-bar-fill.medium,
+        .risk-mini-bar-fill.medium {
             background: #FFA500;
         }
 
-        .risk-bar-fill.low {
+        .risk-bar-fill.low,
+        .risk-mini-bar-fill.low {
             background: #4ECDC4;
         }
 
@@ -511,7 +574,7 @@
 
             <div class="panel-content">
                 <div class="placeholder-text" id="placeholderText">
-                    Select a country from the map to view detailed information about physical risk, transition risk, and liability risk.
+                    Select a country from the map to view detailed information about physical risk, transition risk, and average risk.
                 </div>
 
                 <div id="countryDetails" style="display: none;">
@@ -528,8 +591,29 @@
                                 <div class="risk-label">Physical Risk</div>
                                 <button class="learn-more-button" id="learnMorePhysical">Learn More →</button>
                             </div>
-                            <div class="risk-value" id="physicalRisk">--</div>
-                            <div class="risk-bar">
+                            <div class="risk-score-and-meters">
+                                <div class="risk-score-block">
+                                    <div class="risk-value" id="physicalRisk">--</div>
+                                    <div class="risk-score-caption">Physical Risk Score</div>
+                                </div>
+                                <div class="risk-mini-meters">
+                                    <div class="risk-mini-meter">
+                                        <div class="risk-mini-label">Frequency (F)</div>
+                                        <div class="risk-mini-value" id="physicalFrequency">--</div>
+                                        <div class="risk-mini-bar">
+                                            <div class="risk-mini-bar-fill high" id="physicalFrequencyBar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="risk-mini-meter">
+                                        <div class="risk-mini-label">Severity (S)</div>
+                                        <div class="risk-mini-value" id="physicalSeverity">--</div>
+                                        <div class="risk-mini-bar">
+                                            <div class="risk-mini-bar-fill high" id="physicalSeverityBar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="risk-bar" style="margin-top: 14px;">
                                 <div class="risk-bar-fill high" id="physicalBar" style="width: 0%;"></div>
                             </div>
                         </div>
@@ -545,14 +629,15 @@
                             </div>
                         </div>
 
-                        <div class="risk-card liability">
+                        <div class="risk-card average">
                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <div class="risk-label">Liability Risk</div>
-                                <button class="learn-more-button" id="learnMoreLiability">Learn More →</button>
+                                <div class="risk-label">Average Risk</div>
+                                <button class="learn-more-button" id="learnMoreAverage">Learn More →</button>
                             </div>
-                            <div class="risk-value" id="liabilityRisk">--</div>
+                            <div class="risk-value" id="averageRisk">--</div>
+                            <div class="risk-score-caption">Average Risk Score</div>
                             <div class="risk-bar">
-                                <div class="risk-bar-fill" id="liabilityBar" style="width: 0%;"></div>
+                                <div class="risk-bar-fill" id="averageBar" style="width: 0%;"></div>
                             </div>
                         </div>
                     </div>

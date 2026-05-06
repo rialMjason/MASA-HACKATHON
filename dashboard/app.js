@@ -263,23 +263,35 @@ function restoreCountryMarker(code) {
 }
 
 // Update risk metrics display
+function formatRiskValue(value) {
+    return Number.isFinite(Number(value)) ? Number(value).toFixed(1) : '--';
+}
+
 function updateRiskMetrics(country) {
     // Physical Risk
-    document.getElementById('physicalRisk').textContent = country.physicalRisk.toFixed(1);
-    document.getElementById('physicalBar').style.width = country.physicalRiskPercent + '%';
+    document.getElementById('physicalRisk').textContent = formatRiskValue(country.physicalRisk);
+    document.getElementById('physicalBar').style.width = (country.physicalRiskPercent || 0) + '%';
+    document.getElementById('physicalFrequency').textContent = formatRiskValue(country.physicalFrequency);
+    document.getElementById('physicalFrequencyBar').style.width = (country.physicalFrequencyPercent || 0) + '%';
+    document.getElementById('physicalSeverity').textContent = formatRiskValue(country.physicalSeverity);
+    document.getElementById('physicalSeverityBar').style.width = (country.physicalSeverityPercent || 0) + '%';
 
     // Transition Risk
-    document.getElementById('transitionRisk').textContent = country.transitionRisk.toFixed(1);
-    document.getElementById('transitionBar').style.width = country.transitionRiskPercent + '%';
+    document.getElementById('transitionRisk').textContent = formatRiskValue(country.transitionRisk);
+    document.getElementById('transitionBar').style.width = (country.transitionRiskPercent || 0) + '%';
 
-    // Liability Risk
-    document.getElementById('liabilityRisk').textContent = country.liabilityRisk.toFixed(1);
-    document.getElementById('liabilityBar').style.width = country.liabilityRiskPercent + '%';
+    // Average Risk
+    const averageRisk = country.averageRisk !== undefined ? country.averageRisk : country.liabilityRisk;
+    const averageRiskPercent = country.averageRiskPercent !== undefined ? country.averageRiskPercent : country.liabilityRiskPercent;
+    document.getElementById('averageRisk').textContent = formatRiskValue(averageRisk);
+    document.getElementById('averageBar').style.width = (averageRiskPercent || 0) + '%';
 
     // Determine bar colors based on risk levels
-    updateBarColor('physicalBar', country.physicalRiskPercent);
-    updateBarColor('transitionBar', country.transitionRiskPercent);
-    updateBarColor('liabilityBar', country.liabilityRiskPercent);
+    updateBarColor('physicalBar', country.physicalRiskPercent || 0);
+    updateBarColor('physicalFrequencyBar', country.physicalFrequencyPercent || 0);
+    updateBarColor('physicalSeverityBar', country.physicalSeverityPercent || 0);
+    updateBarColor('transitionBar', country.transitionRiskPercent || 0);
+    updateBarColor('averageBar', averageRiskPercent || 0);
 }
 
 // Update bar colors based on risk level
@@ -463,10 +475,16 @@ function updateCountryRiskData(updates) {
         if (country) {
             country.physicalRisk = update.physicalRisk || 0;
             country.transitionRisk = update.transitionRisk || 0;
-            country.liabilityRisk = update.liabilityRisk || 0;
             country.physicalRiskPercent = update.physicalRiskPercent || 0;
+            country.physicalFrequency = update.physicalFrequency || 0;
+            country.physicalFrequencyPercent = update.physicalFrequencyPercent || 0;
+            country.physicalSeverity = update.physicalSeverity || 0;
+            country.physicalSeverityPercent = update.physicalSeverityPercent || 0;
             country.transitionRiskPercent = update.transitionRiskPercent || 0;
-            country.liabilityRiskPercent = update.liabilityRiskPercent || 0;
+            country.averageRisk = update.averageRisk || update.liabilityRisk || 0;
+            country.averageRiskPercent = update.averageRiskPercent || update.liabilityRiskPercent || 0;
+            country.liabilityRisk = country.averageRisk;
+            country.liabilityRiskPercent = country.averageRiskPercent;
 
             // If this country is currently selected, update display
             if (currentCountry && currentCountry.code === update.code) {

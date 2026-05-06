@@ -156,6 +156,20 @@ const countriesData = [
     }
 ];
 
+const physicalRiskData = {
+    Thailand: { frequency: 3.6, severity: 10.0, score: 7.4 },
+    Philippines: { frequency: 10.0, severity: 5.5, score: 7.3 },
+    Vietnam: { frequency: 5.1, severity: 7.2, score: 6.4 },
+    Myanmar: { frequency: 2.0, severity: 8.0, score: 5.6 },
+    Indonesia: { frequency: 5.9, severity: 4.1, score: 4.8 },
+    Cambodia: { frequency: 1.6, severity: 4.5, score: 3.3 },
+    Laos: { frequency: 1.7, severity: 3.2, score: 2.6 },
+    Malaysia: { frequency: 2.4, severity: 2.5, score: 2.5 },
+    'Timor-Leste': { frequency: 1.1, severity: 1.2, score: 1.2 },
+    Brunei: { frequency: 1.0, severity: 1.1, score: 1.1 },
+    Singapore: { frequency: 1.0, severity: 1.0, score: 1.0 }
+};
+
 // Load forecast data and populate transition risk scores
 let forecastData = {};
 
@@ -167,6 +181,16 @@ fetch('forecast-data.json')
         
         // Update transition risk scores for each country
         countriesData.forEach(country => {
+            const physicalInfo = physicalRiskData[country.name];
+            if (physicalInfo) {
+                country.physicalFrequency = physicalInfo.frequency;
+                country.physicalFrequencyPercent = physicalInfo.frequency * 10;
+                country.physicalSeverity = physicalInfo.severity;
+                country.physicalSeverityPercent = physicalInfo.severity * 10;
+                country.physicalRisk = physicalInfo.score;
+                country.physicalRiskPercent = physicalInfo.score * 10;
+            }
+
             // Map country name to transition risk score
             const transitionRiskInfo = data.transitionRiskScores[country.name];
             if (transitionRiskInfo) {
@@ -174,11 +198,11 @@ fetch('forecast-data.json')
                 country.transitionRiskPercent = transitionRiskInfo.percent;
             }
             
-            // Set placeholder values for physical and liability risks
-            country.physicalRisk = 3.5;
-            country.physicalRiskPercent = 35;
-            country.liabilityRisk = 2.5;
-            country.liabilityRiskPercent = 25;
+            const averageRisk = (country.physicalRisk * 0.8) + (country.transitionRisk * 0.2);
+            country.averageRisk = Number(averageRisk.toFixed(1));
+            country.averageRiskPercent = country.averageRisk * 10;
+            country.liabilityRisk = country.averageRisk;
+            country.liabilityRiskPercent = country.averageRiskPercent;
         });
         
         console.log('Forecast data loaded successfully');
