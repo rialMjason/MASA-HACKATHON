@@ -70,11 +70,19 @@ let currentFetchRequest = null;
 function createFlagIcon(country) {
     // Use flagUrl if available, otherwise use emoji
     if (country.flagUrl) {
+        const focusClassMap = {
+            MY: 'flag-focus-my',
+            SG: 'flag-focus-sg',
+            PH: 'flag-focus-ph',
+            TL: 'flag-focus-tl'
+        };
+        const focusClass = focusClassMap[country.code] || '';
+
         return L.divIcon({
             className: 'flag-marker',
             html: `<div class="flag-ball">
                         <div class="flag-image-container">
-                            <img src="${country.flagUrl}" alt="${country.name} flag" class="flag-image" onerror="this.parentElement.innerHTML='<div class=\\"flag-emoji\\">${country.flagEmoji || '🏴'}</div>'">
+                            <img src="${country.flagUrl}" alt="${country.name} flag" class="flag-image ${focusClass}" onerror="this.parentElement.innerHTML='<div class=\\"flag-emoji\\">${country.flagEmoji || '🏴'}</div>'">
                         </div>
                         <div class="ball-shine"></div>
                     </div>`,
@@ -414,19 +422,28 @@ style.innerHTML = `
         transform-origin: center;
     }
 
-    /* Country-specific focus tuning for small marker balls */
+    /* Country-specific focus tuning for small marker balls (emblem-left flags) */
     .flag-image.flag-focus-my {
-        object-position: center center !important;
+        /* Malaysia emblem sits left — nudge image to the left */
+        object-position: 18% 50% !important;
         transform: none !important;
     }
 
     .flag-image.flag-focus-sg {
-        object-position: center center !important;
+        /* Singapore emblem slightly higher-left */
+        object-position: 20% 42% !important;
         transform: none !important;
     }
 
     .flag-image.flag-focus-tl {
-        object-position: center center !important;
+        /* Timor-Leste emblem left-aligned */
+        object-position: 16% 50% !important;
+        transform: none !important;
+    }
+
+    .flag-image.flag-focus-ph {
+        /* Philippines crest sits toward the left; nudge left */
+        object-position: 18% 50% !important;
         transform: none !important;
     }
 
