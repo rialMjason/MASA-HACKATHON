@@ -423,27 +423,12 @@ style.innerHTML = `
     }
 
     /* Country-specific focus tuning for small marker balls (emblem-left flags) */
-    .flag-image.flag-focus-my {
-        /* Malaysia emblem sits left — nudge image to the left */
-        object-position: 18% 50% !important;
-        transform: none !important;
-    }
-
-    .flag-image.flag-focus-sg {
-        /* Singapore emblem slightly higher-left */
-        object-position: 20% 42% !important;
-        transform: none !important;
-    }
-
-    .flag-image.flag-focus-tl {
-        /* Timor-Leste emblem left-aligned */
-        object-position: 16% 50% !important;
-        transform: none !important;
-    }
-
+    .flag-image.flag-focus-my,
+    .flag-image.flag-focus-sg,
+    .flag-image.flag-focus-tl,
     .flag-image.flag-focus-ph {
-        /* Philippines crest sits toward the left; nudge left */
-        object-position: 18% 50% !important;
+        /* Show leftmost edge of emblem-left flags inside the ball */
+        object-position: left center !important;
         transform: none !important;
     }
 
