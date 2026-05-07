@@ -1,15 +1,123 @@
-from __future__ import annotations
+"""
+Converted from R: panel negative-binomial regression
 
+This block prepares a panel dataset joining EMDAT event frequencies with
+World Bank indicators (GHG per-capita and forest area), creates lagged
+predictors, and fits a Negative Binomial GLM similar to R's glm.nb.
+
+Usage: the script will look for `WB_WDI_WIDEF.csv` and an EMDAT export
+file starting with `public_emdat_custom_request` in the repository root.
+Run the NB portion directly with:
+
+    python -c "from final_forecast_2030_improved import main_nb; main_nb()"
+
+Or run the whole `final_forecast_2030_improved.py` as before; this block
+is safe to call independently.
+"""
+
+import glob
+import re
 import warnings
 from pathlib import Path
 import numpy as np
 import pandas as pd
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
 
-try:
-    from statsmodels.tsa.arima.model import ARIMA
-    from statsmodels.tsa.statespace.sarimax import SARIMAX
-except ImportError as exc:
-    raise SystemExit("statsmodels required") from exc
+warnings.filterwarnings("ignore")
+
+# Indicator labels (must match strings in WB_WDI_WIDEF.csv)
+GHG_IND = "Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)"
+FOREST_IND = "Forest area (% of land area)"
+
+SEA_CODES = ["MYS","IDN","THA","VNM","PHL","SGP","BRN","KHM","LAO","MMR","TLS"]
+
+def find_emdat_file(repo_root: Path):
+    patterns = [
+        str(repo_root / "public_emdat_custom_request*.csv"),
+        str(repo_root / "public_emdat_custom_request*.txt"),
+        str(repo_root / "data" / "public_emdat_custom_request*.csv"),
+    ]
+    for p in patterns:
+        for f in glob.glob(p):
+            return Path(f)
+    return None
+
+def load_and_pivot_wb(wb_path: Path):
+    df = pd.read_csv(wb_path, low_memory=False)
+    year_cols = [c for c in df.columns if re.match(r"^\d{4}$", c)]
+
+    ghg_df = df[(df["REF_AREA"].isin(SEA_CODES)) & (df["INDICATOR_LABEL"] == GHG_IND)].copy()
+    ghg_long = ghg_df.melt(id_vars=["REF_AREA","INDICATOR_LABEL"], value_vars=year_cols,
+                            var_name="Year", value_name="ghg")
+    ghg_long = ghg_long.rename(columns={"REF_AREA": "Country"})
+    ghg_long["Year"] = pd.to_numeric(ghg_long["Year"], errors="coerce")
+
+    forest_df = df[(df["REF_AREA"].isin(SEA_CODES)) & (df["INDICATOR_LABEL"] == FOREST_IND)].copy()
+    forest_long = forest_df.melt(id_vars=["REF_AREA","INDICATOR_LABEL"], value_vars=year_cols,
+                                 var_name="Year", value_name="forest")
+    forest_long = forest_long.rename(columns={"REF_AREA": "Country"})
+    forest_long["Year"] = pd.to_numeric(forest_long["Year"], errors="coerce")
+
+    return ghg_long, forest_long
+
+def build_panel_and_fit(wb_path: Path, repo_root: Path):
+    ghg_long, forest_long = load_and_pivot_wb(wb_path)
+
+    emdat_file = find_emdat_file(repo_root)
+    if emdat_file is None:
+        raise FileNotFoundError("Could not find EMDAT file (public_emdat_custom_request...csv). Place it in the repo root.")
+
+    emdat = pd.read_csv(emdat_file)
+    if 'Start Year' not in emdat.columns:
+        # try variant names
+        possible = [c for c in emdat.columns if 'Start' in c and 'Year' in c]
+        if possible:
+            emdat = emdat.rename(columns={possible[0]: 'Start Year'})
+        else:
+            raise KeyError("EMDAT file missing 'Start Year' column")
+
+    freq_table = (
+        emdat.groupby(['Country', 'Start Year'])
+             .size()
+             .reset_index(name='Frequency')
+             .rename(columns={'Start Year': 'Year'})
+    )
+
+    country_map = pd.DataFrame({
+        'Country': ["Malaysia","Indonesia","Thailand","Viet Nam","Philippines",
+                    "Singapore","Brunei Darussalam","Cambodia","Lao People's Democratic Republic","Myanmar","Timor-Leste"],
+        'REF_AREA': ["MYS","IDN","THA","VNM","PHL","SGP","BRN","KHM","LAO","MMR","TLS"]
+    })
+
+    freq_table = freq_table.merge(country_map, on='Country', how='left')
+    freq_table = freq_table.drop(columns=['Country']).rename(columns={'REF_AREA': 'Country'})
+
+    panel = (
+        freq_table.merge(ghg_long[['Country','Year','ghg']], on=['Country','Year'], how='left')
+                  .merge(forest_long[['Country','Year','forest']], on=['Country','Year'], how='left')
+                  .sort_values(['Country','Year'])
+    )
+
+    panel['ghg_lag9'] = panel.groupby('Country')['ghg'].shift(9)
+    panel['forest_lag1'] = panel.groupby('Country')['forest'].shift(1)
+
+    panel_model = panel[panel['ghg_lag9'].notna()].copy()
+    if panel_model.empty:
+        raise ValueError('No rows with ghg_lag9 available to fit the model')
+
+    formula = 'Frequency ~ ghg_lag9 + forest_lag1 + Year + C(Country)'
+    model = smf.glm(formula=formula, data=panel_model, family=sm.families.NegativeBinomial())
+    res = model.fit()
+    return res, panel_model
+
+def main_nb(repo_root: Path = Path(__file__).resolve().parent):
+    wb_path = repo_root / 'WB_WDI_WIDEF.csv'
+    if not wb_path.exists():
+        raise FileNotFoundError('WB_WDI_WIDEF.csv not found in repository root')
+
+    res, panel_model = build_panel_and_fit(wb_path, repo_root)
+    print(res.summary())
 
 warnings.filterwarnings("ignore")
 

@@ -43,19 +43,19 @@ COUNTRY_NAME_TO_CODE = {value['name']: value['code'] for value in COUNTRY_MAPPIN
 GHG_INDICATOR = 'Total greenhouse gas emissions excluding LULUCF per capita (t CO2e/capita)'
 FOREST_INDICATOR = 'Forest area (% of land area)'
 
-# Transition risk scores
+# Transition risk scores (scaled 0-10, based on updated methodology)
 TRANSITION_RISK_SCORES = {
-    'Brunei': 3,
-    'Cambodia': 8,
-    'Indonesia': 4,
-    'Laos': 4,
-    'Malaysia': 6,
-    'Myanmar': 4,
-    'Singapore': 7,
-    'Thailand': 6,
-    'Timor-Leste': 4,
-    'Vietnam': 5,
-    'Philippines': 6
+    'Vietnam': 9.23,
+    'Cambodia': 8.17,
+    'Indonesia': 7.27,
+    'Myanmar': 7.20,
+    'Singapore': 4.63,
+    'Timor-Leste': 1.33,
+    'Laos': 1.23,
+    'Thailand': 1.10,
+    'Malaysia': 0.50,
+    'Brunei': 0.0,  # Floored from -0.20
+    'Philippines': 0.0  # Floored
 }
 
 def convert_to_percent(score, max_score=10):
