@@ -78,14 +78,25 @@ function createFlagIcon(country) {
         };
         const focusClass = focusClassMap[country.code] || '';
 
-        return L.divIcon({
-            className: 'flag-marker',
-            html: `<div class="flag-ball">
+        // Use background div for emblem-left flags so `background-position` reliably controls visible area
+        const useBg = Boolean(focusClass);
+        const innerHtml = useBg
+            ? `<div class="flag-ball">
                         <div class="flag-image-container">
-                            <img src="${country.flagUrl}" alt="${country.name} flag" class="flag-image ${focusClass}" onerror="this.parentElement.innerHTML='<div class=\\"flag-emoji\\">${country.flagEmoji || '🏴'}</div>'">
+                            <div class="flag-bg ${focusClass}" style="background-image: url('${country.flagUrl}');"></div>
                         </div>
                         <div class="ball-shine"></div>
-                    </div>`,
+                    </div>`
+            : `<div class="flag-ball">
+                        <div class="flag-image-container">
+                            <img src="${country.flagUrl}" alt="${country.name} flag" class="flag-image" onerror="this.parentElement.innerHTML='<div class=\\"flag-emoji\\">${country.flagEmoji || '🏴'}</div>'">
+                        </div>
+                        <div class="ball-shine"></div>
+                    </div>`;
+
+        return L.divIcon({
+            className: 'flag-marker',
+            html: innerHtml,
             iconSize: [64, 64],
             iconAnchor: [32, 32],
             popupAnchor: [0, -40]
@@ -420,6 +431,15 @@ style.innerHTML = `
         object-position: center center;
         border-radius: 50%;
         transform-origin: center;
+    }
+
+    /* Background-based flag container for emblem-left flags */
+    .flag-bg {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 50%;
     }
 
     /* Country-specific focus tuning for small marker balls (emblem-left flags) */
