@@ -3,29 +3,29 @@ const transitionRiskDescriptions = {
     'Brunei': 'Brunei is assigned a relatively low transition risk score because it is largely following a Business-As-Usual (BAU) pathway with declining greenhouse gas (GHG) emissions and only gradual forest decline. The absence of aggressive policy shifts reduces exposure to sudden regulatory or market changes. While this also means limited progress toward sustainability goals, it keeps transition-related disruptions low in the near term.',
     'Cambodia': 'Cambodia receives a high transition risk score due to its current trajectory of rapidly increasing GHG emissions and fast forest decline, combined with ambitious policy targets to reduce emissions and expand forest cover to 60%. The gap between current trends and policy goals implies a need for significant structural changes, making the transition potentially disruptive and costly.',
     'Indonesia': 'Indonesia\'s moderate transition risk reflects its continued reliance on industrial activity, leading to rising GHG emissions and decreasing forest cover. While current policies are not very aggressive, the lack of strong intervention reduces immediate transition pressure. However, the country remains vulnerable to sudden shocks if critical climate events or policy shifts occur.',
-    'Laos': 'Laos has a moderate transition risk as it is already undergoing a transition with strong environmental policies in place, particularly for emissions reduction. However, ongoing forest decline presents a vulnerability. The country\'s proactive stance lowers policy-related risks, but environmental degradation may still pose challenges during the transition.',
-    'Malaysia': 'Malaysia is given a moderately high transition risk score due to increasing GHG emissions despite having relatively strong environmental policies. Although forest coverage remains above 50%, providing some buffer, the upward emissions trend suggests potential pressure from stricter future regulations or market expectations, which could create transition challenges.',
+    'Laos': 'Laos has a low transition risk as it is already undergoing a transition with strong environmental policies in place, particularly for emissions reduction. However, ongoing forest decline presents a vulnerability. The country\'s proactive stance lowers policy-related risks, but environmental degradation may still pose challenges during the transition.',
+    'Malaysia': 'Malaysia is given a moderately low transition risk score due to its strong environmental policies despite increasing GHG emissions. Although the upward emissions trend suggests potential pressure from stricter future regulations or market expectations, which could create transition challenges, but the forest coverage remains above 50%, providing some buffer, and the government\'s commitment to sustainability may help mitigate risks.',
     'Myanmar': 'Myanmar\'s transition risk is moderate because, while forest-related policies appear strong and forest targets have largely been achieved, there is limited focus on reducing GHG emissions. This imbalance reduces immediate transition pressure but may expose the country to future risks if global climate policies tighten.',
-    'Singapore': 'Singapore faces a relatively high transition risk due to its strong carbon tax and reforestation policies, which require significant economic adjustments despite only slight increases in GHG emissions. As a highly developed and urbanized economy with limited natural forest resources, implementing these policies can be costly and complex, increasing transition exposure.',
-    'Thailand': 'Thailand\'s transition risk is moderately high due to increasing emissions and decreasing forest cover, despite strong policy commitments and ambitious forest targets. Achieving these targets will likely require substantial economic and structural adjustments, contributing to transition risk.',
-    'Timor-Leste': 'Timor-Leste has a moderate transition risk, as its policies mainly focus on protecting existing forest resources rather than aggressively reducing emissions or expanding forest cover. This limited policy scope reduces immediate transition pressure but may not sufficiently address long-term environmental challenges.',
-    'Vietnam': 'Vietnam\'s transition risk is moderate, with both GHG emissions and forest areas increasing alongside strong policy efforts to manage land use and reduce emissions. The simultaneous growth and policy intervention suggest a balanced but evolving transition, with manageable risks.',
-    'Philippines': 'The Philippines is assigned a moderately high transition risk due to decreasing emissions and forest cover combined with high uncertainty. As the country has only recently begun implementing carbon and forest policies, the lack of established frameworks and experience increases the risk of disruptions during the transition process.'
+    'Singapore': 'Singapore faces a moderate transition risk due to its strong carbon tax and reforestation policies, which require significant economic adjustments despite only slight increases in GHG emissions. As a highly developed and urbanized economy with limited natural forest resources, implementing these policies can be costly and complex, increasing transition exposure.',
+    'Thailand': 'Thailand\'s transition risk is low because there are practising policies that focus mainly on protecting existing forest resources rather than aggressively reducing emissions. This may limit the pace of structural transition.But Overall it show a moderately good progress.',
+    'Timor-Leste': 'Timor-Leste has a low transition risk, as its policies mainly focus on protecting existing forest resources rather than aggressively reducing emissions or expanding forest cover. This limited policy scope reduces immediate transition pressure but may not sufficiently address long-term environmental challenges.',
+    'Vietnam': 'Vietnam\'s transition risk is high, with both GHG emissions and forest areas increasing alongside strong policy efforts to manage land use and reduce emissions. The simultaneous growth and policy intervention should suggest a balanced transition, with manageable risks.But the unrealistic targets from gouvernement lead to high transition risk.',
+    'Philippines': 'The Philippines is assigned a moderately low transition risk due to decreasing emissions and forest cover combined with moderate uncertainty. As the country has only recently begun implementing carbon and forest policies, but the established frameworks and experience decrease the risk of disruptions during the transition process.'
 };
 
 // Physical risk score descriptions
 const physicalRiskDescriptions = {
-    'Philippines': 'Highest overall physical risk exposure: frequent typhoons and storms occurring constantly on an annual basis, causing persistent and high event frequency disruption.',
-    'Indonesia': 'Flood-dominant risk profile with an exceptionally high number of flood events annually, making it a chronic inundation hotspot with considerable asset exposure.',
-    'Vietnam': 'Dual storm–flood exposure creating balanced but persistent typhoon impacts combined with significant flood losses, resulting in recurring annual hazards.',
-    'Thailand': 'Low frequency but extreme severity risk: rare events but catastrophic losses per incident, with notably major flood tail risk potential.',
-    'Myanmar': 'High severity per event risk: fewer disasters recorded overall, but weak infrastructure and limited early warning capacity leads to amplified damage when events occur.',
-    'Malaysia': 'Moderate flood risk profile: fewer events overall compared to neighbors, but floods remain the primary driver of economic and infrastructure losses.',
-    'Cambodia': 'Low-to-moderate flood exposure driven mainly by flood events, generally smaller scale but with recurring annual patterns due to Mekong River geography.',
-    'Laos': 'Lower frequency but vulnerable geography: exposed to floods and droughts, with fewer recorded large-scale events but significant geographic vulnerability.',
-    'Timor-Leste': 'Data-limited but high vulnerability risk: fewer recorded events in databases, likely underreported due to limited monitoring infrastructure with high sensitivity to tropical cyclones.',
-    'Singapore': 'Lowest physical disaster risk in the region: minimal exposure to major natural catastrophes due to modern urban drainage systems and small land area.',
-    'Brunei': 'Low frequency, localized flood risk: generally low disaster occurrence across the region with limited large-scale impacts historically recorded.'
+    'Philippines': 'The Philippines faces very high physical risk driven by frequent and intense typhoons and storms that occur annually and create persistent disruption',
+    'Indonesia': 'Indonesia has a flood-dominant risk profile with an exceptionally high number of flood events annually, making it a chronic inundation hotspot with considerable asset exposure.',
+    'Vietnam': 'Vietnam has a moderately high physical risk due to repeated exposure to typhoons and floods, creating a continuous cycle of climate-related damage',
+    'Thailand': 'Thailand has a high physical risk because it experiences rare but extremely severe flooding events that can cause widespread economic disruption and large infrastructure losses. These events are not frequent, but their high intensity leads to significant overall risk exposure.',
+    'Myanmar': 'Myanmar experiences moderate physical risk because disasters are less frequent but tend to be highly destructive due to weak infrastructure and limited adaptive capacity.',
+    'Malaysia': 'Malaysia has a moderate flood risk profile due to fewer events overall compared to neighbors, but floods remain the primary driver of economic and infrastructure losses.',
+    'Cambodia': 'Cambodia has a low-to-moderate flood exposure driven mainly by flood events, generally smaller scale but with recurring annual patterns due to Mekong River geography.',
+    'Laos': 'Laos has a significant low frequency but vulnerable geography. With also fewer recorded large-scale events but significant geographic vulnerability.',
+    'Timor-Leste': 'Timor-Leste has a low physical risk.Its low population density and limited industrial infrastructure also reduce overall exposure to large-scale hazard impacts, though data limitations may slightly understate true vulnerability.',
+    'Singapore': 'Singapore has the lowest physical disaster risk in the region: minimal exposure to major natural catastrophes due to modern urban drainage systems and small land area.',
+    'Brunei': 'Brunei has a low frequency, localized flood risk due to generally low disaster occurrence across the region with limited large-scale impacts historically recorded.'
 };
 
 // Initialize map
@@ -767,12 +767,22 @@ if (physicalRiskModal) {
 
 function showPhysicalRiskModal(country) {
     document.getElementById('modalPhysicalCountryName').textContent = `${country.name} - Physical Risk Details`;
-    
+
     // Update physical risk description
     const descriptionDiv = document.getElementById('physicalRiskExplanation');
     const description = physicalRiskDescriptions[country.name] || 'Physical risk analysis for this country.';
     if (descriptionDiv) {
         descriptionDiv.textContent = description;
+    }
+
+    // Update physical risk score display (same behavior as transition modal)
+    const scoreEl = document.getElementById('modalPhysicalRiskScore');
+    if (scoreEl) {
+        try {
+            scoreEl.textContent = Number.isFinite(Number(country.physicalRisk)) ? Number(country.physicalRisk).toFixed(1) : '--';
+        } catch (e) {
+            scoreEl.textContent = '--';
+        }
     }
 
     // Build and show series
