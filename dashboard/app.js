@@ -408,18 +408,18 @@ style.innerHTML = `
 
     /* Country-specific focus tuning for small marker balls */
     .flag-image.flag-focus-my {
-        object-position: 18% 50%;
-        transform: scale(1.24);
+        object-position: center center !important;
+        transform: none !important;
     }
 
     .flag-image.flag-focus-sg {
-        object-position: 20% 42%;
-        transform: scale(1.24);
+        object-position: center center !important;
+        transform: none !important;
     }
 
     .flag-image.flag-focus-tl {
-        object-position: 16% 50%;
-        transform: scale(1.22);
+        object-position: center center !important;
+        transform: none !important;
     }
 
     .flag-emoji {
