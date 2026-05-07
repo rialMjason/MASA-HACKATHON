@@ -13,6 +13,21 @@ const transitionRiskDescriptions = {
     'Philippines': 'The Philippines is assigned a moderately high transition risk due to decreasing emissions and forest cover combined with high uncertainty. As the country has only recently begun implementing carbon and forest policies, the lack of established frameworks and experience increases the risk of disruptions during the transition process.'
 };
 
+// Physical risk score descriptions
+const physicalRiskDescriptions = {
+    'Philippines': 'Highest overall physical risk exposure: frequent typhoons and storms occurring constantly on an annual basis, causing persistent and high event frequency disruption.',
+    'Indonesia': 'Flood-dominant risk profile with an exceptionally high number of flood events annually, making it a chronic inundation hotspot with considerable asset exposure.',
+    'Vietnam': 'Dual storm–flood exposure creating balanced but persistent typhoon impacts combined with significant flood losses, resulting in recurring annual hazards.',
+    'Thailand': 'Low frequency but extreme severity risk: rare events but catastrophic losses per incident, with notably major flood tail risk potential.',
+    'Myanmar': 'High severity per event risk: fewer disasters recorded overall, but weak infrastructure and limited early warning capacity leads to amplified damage when events occur.',
+    'Malaysia': 'Moderate flood risk profile: fewer events overall compared to neighbors, but floods remain the primary driver of economic and infrastructure losses.',
+    'Cambodia': 'Low-to-moderate flood exposure driven mainly by flood events, generally smaller scale but with recurring annual patterns due to Mekong River geography.',
+    'Laos': 'Lower frequency but vulnerable geography: exposed to floods and droughts, with fewer recorded large-scale events but significant geographic vulnerability.',
+    'Timor-Leste': 'Data-limited but high vulnerability risk: fewer recorded events in databases, likely underreported due to limited monitoring infrastructure with high sensitivity to tropical cyclones.',
+    'Singapore': 'Lowest physical disaster risk in the region: minimal exposure to major natural catastrophes due to modern urban drainage systems and small land area.',
+    'Brunei': 'Low frequency, localized flood risk: generally low disaster occurrence across the region with limited large-scale impacts historically recorded.'
+};
+
 // Initialize map
 const map = L.map('map').setView([10, 108], 5);
 
@@ -751,7 +766,14 @@ if (physicalRiskModal) {
 }
 
 function showPhysicalRiskModal(country) {
-    document.getElementById('modalPhysicalCountryName').textContent = `${country.name} - Physical Frequency`;
+    document.getElementById('modalPhysicalCountryName').textContent = `${country.name} - Physical Risk Details`;
+    
+    // Update physical risk description
+    const descriptionDiv = document.getElementById('physicalRiskExplanation');
+    const description = physicalRiskDescriptions[country.name] || 'Physical risk analysis for this country.';
+    if (descriptionDiv) {
+        descriptionDiv.textContent = description;
+    }
 
     // Build and show series
     const emptyState = document.getElementById('physicalFreqEmpty');
